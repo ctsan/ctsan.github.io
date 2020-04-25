@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>equation on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/tags/equation/</link>
+    <description>Recent content in equation on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Tue, 05 Dec 2017 15:43:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/tags/equation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A functional approach for solving equations</title>
+      <link>http://ctsan.github.io/post/functional-approach-for-solving-equations/</link>
+      <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/functional-approach-for-solving-equations/</guid>
+      <description>Solving or interpreting equations is a fundamental topic, usually taught in young ages, when students are not very eager to capture the essence of the equations or do not know some more advanced concepts that can reinforce their understanding of them.
+When students are presented with an equation $x+4=13$, usually they are asked about the value of $x$. As a student I was shown a number of manipulations that I had to learn in isolation, making the task cumbersome initially but then mechanic.</description>
+    </item>
+    
+  </channel>
+</rss>

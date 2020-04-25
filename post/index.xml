@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/post/</link>
+    <description>Recent content in Posts on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 29 Mar 2020 14:47:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Modelling and Simulating a Pandemic</title>
+      <link>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</link>
+      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
+      <description>Disclaimer: This is a rough model. The author is not an epidemiologist. The model was built based on his anecdotal experience.
+Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device.
+   Population Density     Town Size       Connections Radius     Connectivity Chance       Infection Chance     Mean Days Sick       Can you get Reinfected?</description>
+    </item>
+    
+    <item>
+      <title>Learning by Generalizing and Exploring</title>
+      <link>http://ctsan.github.io/post/learn-by-generalizing/</link>
+      <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/learn-by-generalizing/</guid>
+      <description>When learning, the following principles can be very useful:
+ generalizing what we learn, exploring the concept we learn, naming things.  Generalizing-Exploring helps us learn more than what we are actually taught while naming help us recognize-apply what we learn in random occurances in our lives [1]. When we learn a new practical technique, the steps required to start incorporating it in our lives are:
+ understand the technique/advice, make it a habit (the hard part).</description>
+    </item>
+    
+    <item>
+      <title>Steps taken for the creation of a virtual football betting game</title>
+      <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
+      <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
+      <description>-- I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
+Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
+    </item>
+    
+    <item>
+      <title>A functional approach for solving equations</title>
+      <link>http://ctsan.github.io/post/functional-approach-for-solving-equations/</link>
+      <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/functional-approach-for-solving-equations/</guid>
+      <description>Solving or interpreting equations is a fundamental topic, usually taught in young ages, when students are not very eager to capture the essence of the equations or do not know some more advanced concepts that can reinforce their understanding of them.
+When students are presented with an equation $x+4=13$, usually they are asked about the value of $x$. As a student I was shown a number of manipulations that I had to learn in isolation, making the task cumbersome initially but then mechanic.</description>
+    </item>
+    
+    <item>
+      <title>A Gambler, enlightened - A simple simulation of the Doubling Method</title>
+      <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
+      <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
+      <description>When I&amp;rsquo;m having conversations with people about gambling, I come across massive misinformation and misunderstanding, and should I attempt to explain, the normal person, understandably, struggles to understand in a casual conversation that probabilities can guarantee your loss in long term with numerous fallacies [3] complicating that attempt.
+The problem is exacerbated when we consider games that intentionally convolute the determining mechanism, making it harder to infer that you are deemed (again in the long run) to lose your money.</description>
+    </item>
+    
+    <item>
+      <title>Counting the number of elements in Sequences made simple</title>
+      <link>http://ctsan.github.io/post/counting-insight/</link>
+      <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/counting-insight/</guid>
+      <description>Counting the number of elements in a sequence of elements can often be confusing, and this is something that frequently comes up in mathematics, computer science or even programming (I won&amp;rsquo;t get deeper in the use cases in this post). Thankfully there is a simple method that I am using in such scenarios which makes these mini problems straightforward. Only basic mathematics are required.
+Examples First Let&amp;rsquo;s start in an unorthodox fashion, providing a few examples before the description.</description>
+    </item>
+    
+    <item>
+      <title>Hierarchies - Logarithmic counting for humans</title>
+      <link>http://ctsan.github.io/post/hierarchies/</link>
+      <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/hierarchies/</guid>
+      <description>Assumption: Rearrangement of objects for counting is possible.
+People are capable of processing and understanding a very specific range of patterns with ease. Likely a subset of those relevant to our past survivability. For instance we are unable to enumerate instantly small number of objects - for today&amp;rsquo;s requirements - and therefore we have to reduce the problem into maintanable chunks, appropriate for our capabilities. A way to reduce the problem is building hierarchies.</description>
+    </item>
+    
+  </channel>
+</rss>

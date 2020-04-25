@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pursuit on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/tags/pursuit/</link>
+    <description>Recent content in pursuit on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 06 Nov 2016 16:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/tags/pursuit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mice Make Art!</title>
+      <link>http://ctsan.github.io/project/mice-make-art/</link>
+      <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/project/mice-make-art/</guid>
+      <description>Concept The concept is the following: Having N mice, deploy them randomly in a rectangular area. Each mouse targets exactly one other mouse. Every mouse is targeted by one mouse, forming a circle of references-targets.
+Phenomena   Each mouse \(A\) is confined in the rectangular area: since it targets a mouse \(B\) that is within the rectangular area, it moves in this direction. Mouse \(B\) itself targets a mouse \(C\) which for the same reason is in the rectangular area.</description>
+    </item>
+    
+  </channel>
+</rss>

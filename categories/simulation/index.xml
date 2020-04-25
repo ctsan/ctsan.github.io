@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simulation on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/categories/simulation/</link>
+    <description>Recent content in Simulation on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 29 Mar 2020 14:47:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/categories/simulation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Modelling and Simulating a Pandemic</title>
+      <link>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</link>
+      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
+      <description>Disclaimer: This is a rough model. The author is not an epidemiologist. The model was built based on his anecdotal experience.
+Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device.
+   Population Density     Town Size       Connections Radius     Connectivity Chance       Infection Chance     Mean Days Sick       Can you get Reinfected?</description>
+    </item>
+    
+    <item>
+      <title>Steps taken for the creation of a virtual football betting game</title>
+      <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
+      <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
+      <description>-- I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
+Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
+    </item>
+    
+    <item>
+      <title>A Gambler, enlightened - A simple simulation of the Doubling Method</title>
+      <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
+      <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
+      <description>When I&amp;rsquo;m having conversations with people about gambling, I come across massive misinformation and misunderstanding, and should I attempt to explain, the normal person, understandably, struggles to understand in a casual conversation that probabilities can guarantee your loss in long term with numerous fallacies [3] complicating that attempt.
+The problem is exacerbated when we consider games that intentionally convolute the determining mechanism, making it harder to infer that you are deemed (again in the long run) to lose your money.</description>
+    </item>
+    
+    <item>
+      <title>QuTy - M/M/1 web simulation</title>
+      <link>http://ctsan.github.io/project/quty/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/project/quty/</guid>
+      <description>This is a web simulation of a M/M/1 queue and server for educational purposes. Axis/graph/queue are drawn with custom code. The system is stable.
+Check the web simulation
+ Possible Extension   Allow the user to create a Directed acyclic graph of queues-servers with possible inspection of the graph of each queue.
+  Allow modification of parameters
+  </description>
+    </item>
+    
+  </channel>
+</rss>

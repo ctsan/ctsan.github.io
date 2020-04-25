@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>heat equation on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/tags/heat-equation/</link>
+    <description>Recent content in heat equation on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Fri, 19 Feb 2016 16:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/tags/heat-equation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Heat Equation PDE Simulation</title>
+      <link>http://ctsan.github.io/project/heat-equation/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/project/heat-equation/</guid>
+      <description>Heat equation The heat equation is a partial differential equation, that is, it involves both derivatives of the time and of spatial variables.
+$$\frac {\partial u} {\partial t} - \alpha \frac {\partial^2 u}{\partial x^2} = 0 $$
+Where the parameter \(\alpha\) determines how much conductive the material is.
+This is the case for one variable, and thus one dimension. You can imagine that as a long but very thin wire. Of course in reality there is no such thing as 1 Dimension material, but from physicists and mostly engineers we know that this can be approximated when the long side is much bigger than the radius of the wire.</description>
+    </item>
+    
+  </channel>
+</rss>

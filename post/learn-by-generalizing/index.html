@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Learning by Generalizing and Exploring - Christos Tsanikidis - CS, Math, Life</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Christos Tsanikidis" /><meta name="description" content="When learning, the following principles can be very useful:
+ generalizing what we learn, exploring the concept we learn, naming things.  Generalizing-Exploring helps us learn more than what we are actually taught while naming help us recognize-apply what we learn in random occurances in our lives [1]. When we learn a new practical technique, the steps required to start incorporating it in our lives are:
+ understand the technique/advice, make it a habit (the hard part)." /><meta name="keywords" content="Math, CS, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.69.2 with theme even" />
+
+
+<link rel="canonical" href="http://ctsan.github.io/post/learn-by-generalizing/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.b480bb55.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Learning by Generalizing and Exploring" />
+<meta property="og:description" content="When learning, the following principles can be very useful:
+ generalizing what we learn, exploring the concept we learn, naming things.  Generalizing-Exploring helps us learn more than what we are actually taught while naming help us recognize-apply what we learn in random occurances in our lives [1]. When we learn a new practical technique, the steps required to start incorporating it in our lives are:
+ understand the technique/advice, make it a habit (the hard part)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ctsan.github.io/post/learn-by-generalizing/" />
+<meta property="article:published_time" content="2018-02-04T17:50:48+08:00" />
+<meta property="article:modified_time" content="2018-02-04T17:50:48+08:00" />
+<meta itemprop="name" content="Learning by Generalizing and Exploring">
+<meta itemprop="description" content="When learning, the following principles can be very useful:
+ generalizing what we learn, exploring the concept we learn, naming things.  Generalizing-Exploring helps us learn more than what we are actually taught while naming help us recognize-apply what we learn in random occurances in our lives [1]. When we learn a new practical technique, the steps required to start incorporating it in our lives are:
+ understand the technique/advice, make it a habit (the hard part).">
+<meta itemprop="datePublished" content="2018-02-04T17:50:48&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-04T17:50:48&#43;08:00" />
+<meta itemprop="wordCount" content="1012">
+
+
+
+<meta itemprop="keywords" content="generalizing,sequences," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learning by Generalizing and Exploring"/>
+<meta name="twitter:description" content="When learning, the following principles can be very useful:
+ generalizing what we learn, exploring the concept we learn, naming things.  Generalizing-Exploring helps us learn more than what we are actually taught while naming help us recognize-apply what we learn in random occurances in our lives [1]. When we learn a new practical technique, the steps required to start incorporating it in our lives are:
+ understand the technique/advice, make it a habit (the hard part)."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Christos Tsanikidis</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/project/">
+        <li class="mobile-menu-item">Projects</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Christos Tsanikidis</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/project/">Projects</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Learning by Generalizing and Exploring</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-04 </span>
+        <div class="post-category">
+            <a href="/categories/life/"> Life </a>
+            <a href="/categories/math/"> Math </a>
+            </div>
+          <span class="more-meta"> 1012 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#an-example-of-the-generalization">An example of the Generalization</a>
+      <ul>
+        <li><a href="#generalizing">Generalizing</a></li>
+        <li><a href="#exploring">Exploring</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>When learning, the following principles can be very useful:</p>
+<ol>
+<li>generalizing what we learn,</li>
+<li>exploring the concept we learn,</li>
+<li>naming things.</li>
+</ol>
+<p>Generalizing-Exploring helps us learn more than what we are actually taught
+while naming help us recognize-apply what we learn in random occurances in our
+lives [1]. When we learn a new practical technique, the steps required
+to start incorporating it in our lives are:</p>
+<ol>
+<li>understand the technique/advice,</li>
+<li>make it a habit (the hard part).</li>
+</ol>
+<p>In this post I will provide the technique to approach learning, and it will
+be the challenge for you to adopt it, if, of course, you believe in its validity.</p>
+<h2 id="an-example-of-the-generalization">An example of the Generalization</h2>
+<p>A friend of mine recently asked me to compute the sum
+$ J = \frac {1}{1 \times 2} + \frac {1}{2 \times 3} + \frac {1}{3 \times 4} + &hellip;$</p>
+<p>To compute that infinite sum we can initially rewrite it in a more succinct form
+$\sum_{n=1}^{\infty} \frac {1}{n (n+1)}$</p>
+<p>The solution of this problem is easily found if you notice that
+$\frac {1}{n(n+1)} \equiv \frac {A} {n} + \frac {B}{n+1}$
+Where $A=1, B=-1$, and thus we have:</p>
+<p>$$J =\sum_{n=1}^{\infty} \left(\frac {1} {n} + \frac {-1}{n+1}\right) $$</p>
+<p>One could see that terms cancel with the next term in the sequence and we are left with: $J=1$. [2]</p>
+<h3 id="generalizing">Generalizing</h3>
+<p>To generalize that idea we have to pinpoint the precise structure that
+allowed us to perform that trick or the combination of tricks.
+In this case we took advantage of two major tricks,
+one was the decomposition and the other was cancellation. We will
+initially try to generalize the <strong>cancellation part</strong>.
+First of all we can agree that if $a_n = \frac {1} {n}$ then
+we have $J =\sum _{n=1}^{\infty} \left( a _n - a _{n+1} \right)$</p>
+<p>We can then observe that the same could work similarly if we had
+$$ J_1 = \sum _{\text{consecutive integers}}(a _n - a _{n+1})$$</p>
+<p>Or for some integer $i$ we could have [2]
+$$ J _2= \sum _{\text{consecutive integers}}(a _n - a _{n+i})$$</p>
+<p>Where instead of the cancellation happening with the next term it would happen after $i$ terms.
+Can we further generalize this? Let&rsquo;s consider the intermediate general case:</p>
+<p>$$ J _3= \sum _{\text{consecutive integers}}( c_0 a _n - c_1 a _{n+i} - c_2 a _{n+i+j})$$</p>
+<p>Where $(i,j)$ positive integers. One instance of those general series could be</p>
+<p>$$ J _3'= \sum _{\text{consecutive integers}}( a _n - 9 a _{n+2} + 3 a _{n+5})$$</p>
+<p>Where $(i=2,j=3)$. Of course this particular series might not have the cancellation
+property that we aspire to. To find out under which constraints there will be a
+cancellation (if there will be a cancellation at all) consider the following figure,
+where each row represents one term of the series, starting from $(i=1)$ and
+ending in a finite row-term $(i=k+i+j)$</p>
+<center>
+<img style="width:45%" src="/post-images/generalizing/pattern.png"/>
+</center>
+<p>We can see that after a certain row, if there are sufficiently many rows, $a(1+i+j)$
+appear in each column only once. The same is true for $a(k+i+j)$ and all the
+intermediary terms. Therefore those terms will have a coefficient of $(c_0+c_1+c_2)$
+in the final sum, and for them to be zero we simply require that $c_0+c_1+c_2 = 0$</p>
+<p>If that&rsquo;s true, then the dark-grey area in the figure will cancel out! As an interesting
+exercise you could</p>
+<p>The part we didn&rsquo;t try to generalize was the decomposition of the initial fraction in
+simple fractions. As a fun little experiment you can try to see what other fractions
+will have a similar cancellation.</p>
+<h3 id="exploring">Exploring</h3>
+<p>After writing that sum in this form, one could observe that the product of consecutive
+integers is &ldquo;visually&rdquo; similar to the left hand side of</p>
+<p>$$ \frac {n(n+1)}{2} = \sum_{k=1}^{n} k $$</p>
+<p>But they are not quite the same. That&rsquo;s not a major problem though, since we can simply
+rewrite this as</p>
+<p>$$ n(n+1) = 2 \sum _{k=1}^{n} k \Rightarrow \frac {1}{ n(n+1) } = 0.5 \frac {1 } {\sum _{k=1}^{n} k}$$</p>
+<p>Using this derived result in the original series, we get
+$ J = \sum_{n=1}^{\infty} \frac {1}{n (n+1)} = 0.5 \sum _{n=1}^{\infty} \frac 1 {\sum _{k=1}^{n} k} $</p>
+<p>By exploring this path we 1) have fun, 2) get more familiar with manipulating series, and also
+3) capture the relation of this special-looking series in our memory with the initial sum $J$.
+Even making the thought of the existance of a correspondence between $J$ and the weird
+looking inverse sum might help us depending on whether that formula has a structure that emerges
+in many cases.</p>
+<p>Of course we are humans, and unfortunately that practice will possibly not scale very well if abused.
+It is important to explore around your field of interest or around critical concepts to avoid getting lost.
+For instance let&rsquo;s say that your field of interest is Graph Theory.
+In that case you would want to attempt to correlate the initial series with a graph-theoretic result.
+For instance the formula $$\frac {n(n-1)}{2}$$ describes the number of
+edges, $|E_n|$, in a complete graph $K_n$ with $n$-nodes. Thus</p>
+<p>$$ \frac 1 {n(n+1)} = \frac {0.5} {|E_{n+1}|}$$</p>
+<p>Finally</p>
+<p>$$2J = \sum _{n=1}^{\infty} \frac 1 {|E _{n+1}|} $$</p>
+<p>Now you should ask yourself: Can I describe the final expression in simple words relating
+to graphs? The more precise, specific, and simple the wording you will employ, the better
+the result you have. In this case I would say that we have an expression that relates
+inversely the edges of complete graphs $K_n$ with the series.</p>
+<p>If your field of interest is Electric Circuits, you might find useful to relate this formula
+with $$\frac 1 {R_{total}} = \sum _{i=1} ^{k} \frac 1 {R_i}$$
+Considering each term in the series as a parallel resistance. You might think that this
+is not terribly useful, and indeed it might not be, but its not unheard of to have such
+decompositions in stunningly &ldquo;out of the box&rdquo; proofs.</p>
+<p>It is important to being just the right amount of general of course - being very general can
+make things either hard to recognize or not very useful in practice.</p>
+<h1 id="references--links">References &amp; Links</h1>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=NNnIGh9g6fA">Introduction to Human Behavioral Biology</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Telescoping_series">Telescoping Series</a></li>
+</ol>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/generalizing/">generalizing</a>
+          <a href="/tags/sequences/">sequences</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/modeling-and-simulating-a-pandemic/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Modelling and Simulating a Pandemic</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/creating-a-football-betting-game/">
+            <span class="next-text nav-default">Steps taken for the creation of a virtual football betting game</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-02-04 17:50:48 \x2b0800 \x2b0800',
+        title: 'Learning by Generalizing and Exploring',
+        link: decodeURI(location.href),
+        desc: 'When learning, the following principles can be very useful:\n generalizing what we learn, exploring the concept we learn, naming things.  Generalizing-Exploring helps us learn more than what we are actually taught while naming help us recognize-apply what we learn in random occurances in our lives [1]. When we learn a new practical technique, the steps required to start incorporating it in our lives are:\n understand the technique\/advice, make it a habit (the hard part).',
+        owner: 'ctsan',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="/about" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020,
+    <span class="author">Christos Tsanikidis</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+        onload='renderMathInElement(document.body,{delimiters: [ {left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false} ]})'>
+
+		</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111355141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://ctsan.github.io/sitemap.xml

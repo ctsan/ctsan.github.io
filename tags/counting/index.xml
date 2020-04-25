@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>counting on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/tags/counting/</link>
+    <description>Recent content in counting on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 13 Aug 2017 15:43:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/tags/counting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Counting the number of elements in Sequences made simple</title>
+      <link>http://ctsan.github.io/post/counting-insight/</link>
+      <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/counting-insight/</guid>
+      <description>Counting the number of elements in a sequence of elements can often be confusing, and this is something that frequently comes up in mathematics, computer science or even programming (I won&amp;rsquo;t get deeper in the use cases in this post). Thankfully there is a simple method that I am using in such scenarios which makes these mini problems straightforward. Only basic mathematics are required.
+Examples First Let&amp;rsquo;s start in an unorthodox fashion, providing a few examples before the description.</description>
+    </item>
+    
+  </channel>
+</rss>

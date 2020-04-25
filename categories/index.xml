@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/categories/</link>
+    <description>Recent content in Categories on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 29 Mar 2020 14:47:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Life</title>
+      <link>http://ctsan.github.io/categories/life/</link>
+      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Simulation</title>
+      <link>http://ctsan.github.io/categories/simulation/</link>
+      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/simulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>http://ctsan.github.io/categories/math/</link>
+      <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data visualization</title>
+      <link>http://ctsan.github.io/categories/data-visualization/</link>
+      <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/data-visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualization</title>
+      <link>http://ctsan.github.io/categories/visualization/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Application</title>
+      <link>http://ctsan.github.io/categories/application/</link>
+      <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Human Computer Interaction</title>
+      <link>http://ctsan.github.io/categories/human-computer-interaction/</link>
+      <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/human-computer-interaction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>differential game theory</title>
+      <link>http://ctsan.github.io/categories/differential-game-theory/</link>
+      <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/differential-game-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Numerical methods</title>
+      <link>http://ctsan.github.io/categories/numerical-methods/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/numerical-methods/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Art</title>
+      <link>http://ctsan.github.io/categories/art/</link>
+      <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experiments</title>
+      <link>http://ctsan.github.io/categories/experiments/</link>
+      <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/experiments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Educational platform</title>
+      <link>http://ctsan.github.io/categories/educational-platform/</link>
+      <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/educational-platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Game</title>
+      <link>http://ctsan.github.io/categories/game/</link>
+      <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/categories/game/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

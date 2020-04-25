@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/tags/</link>
+    <description>Recent content in Tags on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 29 Mar 2020 14:47:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>simulation</title>
+      <link>http://ctsan.github.io/tags/simulation/</link>
+      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/simulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>generalizing</title>
+      <link>http://ctsan.github.io/tags/generalizing/</link>
+      <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/generalizing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sequences</title>
+      <link>http://ctsan.github.io/tags/sequences/</link>
+      <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/sequences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>betting</title>
+      <link>http://ctsan.github.io/tags/betting/</link>
+      <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/betting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>poisson</title>
+      <link>http://ctsan.github.io/tags/poisson/</link>
+      <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/poisson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>http://ctsan.github.io/tags/probability/</link>
+      <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>equation</title>
+      <link>http://ctsan.github.io/tags/equation/</link>
+      <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/equation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math exploration</title>
+      <link>http://ctsan.github.io/tags/math-exploration/</link>
+      <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/math-exploration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>counting</title>
+      <link>http://ctsan.github.io/tags/counting/</link>
+      <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/counting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>equations</title>
+      <link>http://ctsan.github.io/tags/equations/</link>
+      <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/equations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mathematics</title>
+      <link>http://ctsan.github.io/tags/mathematics/</link>
+      <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/mathematics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data gathering</title>
+      <link>http://ctsan.github.io/tags/data-gathering/</link>
+      <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/data-gathering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://ctsan.github.io/tags/python/</link>
+      <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>voronoi</title>
+      <link>http://ctsan.github.io/tags/voronoi/</link>
+      <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/voronoi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>greece</title>
+      <link>http://ctsan.github.io/tags/greece/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/greece/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Queue Theory</title>
+      <link>http://ctsan.github.io/tags/queue-theory/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/queue-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>turkey</title>
+      <link>http://ctsan.github.io/tags/turkey/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/turkey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hci</title>
+      <link>http://ctsan.github.io/tags/hci/</link>
+      <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/hci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>library</title>
+      <link>http://ctsan.github.io/tags/library/</link>
+      <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>http://ctsan.github.io/tags/terminal/</link>
+      <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game theory</title>
+      <link>http://ctsan.github.io/tags/game-theory/</link>
+      <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/game-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pursuit</title>
+      <link>http://ctsan.github.io/tags/pursuit/</link>
+      <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/pursuit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pursuit-evasion</title>
+      <link>http://ctsan.github.io/tags/pursuit-evasion/</link>
+      <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/pursuit-evasion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zero-sum game</title>
+      <link>http://ctsan.github.io/tags/zero-sum-game/</link>
+      <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/zero-sum-game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>heat equation</title>
+      <link>http://ctsan.github.io/tags/heat-equation/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/heat-equation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interactive app</title>
+      <link>http://ctsan.github.io/tags/interactive-app/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/interactive-app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualization</title>
+      <link>http://ctsan.github.io/tags/visualization/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>perception</title>
+      <link>http://ctsan.github.io/tags/perception/</link>
+      <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/perception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regular expressions</title>
+      <link>http://ctsan.github.io/tags/regular-expressions/</link>
+      <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/regular-expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Games</title>
+      <link>http://ctsan.github.io/tags/games/</link>
+      <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/games/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pimp my Peon</title>
+      <link>http://ctsan.github.io/tags/pimp-my-peon/</link>
+      <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/pimp-my-peon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Warcraft 3</title>
+      <link>http://ctsan.github.io/tags/warcraft-3/</link>
+      <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/warcraft-3/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

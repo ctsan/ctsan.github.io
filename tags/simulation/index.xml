@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>simulation on Christos Tsanikidis - CS, Math, Life</title>
+    <link>http://ctsan.github.io/tags/simulation/</link>
+    <description>Recent content in simulation on Christos Tsanikidis - CS, Math, Life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 29 Mar 2020 14:47:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://ctsan.github.io/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Modelling and Simulating a Pandemic</title>
+      <link>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</link>
+      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
+      <description>Disclaimer: This is a rough model. The author is not an epidemiologist. The model was built based on his anecdotal experience.
+Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device.
+   Population Density     Town Size       Connections Radius     Connectivity Chance       Infection Chance     Mean Days Sick       Can you get Reinfected?</description>
+    </item>
+    
+    <item>
+      <title>Steps taken for the creation of a virtual football betting game</title>
+      <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
+      <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
+      <description>-- I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
+Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
+    </item>
+    
+    <item>
+      <title>A Gambler, enlightened - A simple simulation of the Doubling Method</title>
+      <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
+      <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
+      <description>When I&amp;rsquo;m having conversations with people about gambling, I come across massive misinformation and misunderstanding, and should I attempt to explain, the normal person, understandably, struggles to understand in a casual conversation that probabilities can guarantee your loss in long term with numerous fallacies [3] complicating that attempt.
+The problem is exacerbated when we consider games that intentionally convolute the determining mechanism, making it harder to infer that you are deemed (again in the long run) to lose your money.</description>
+    </item>
+    
+    <item>
+      <title>Blind Hunter</title>
+      <link>http://ctsan.github.io/project/blind-hunter/</link>
+      <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/project/blind-hunter/</guid>
+      <description>Suppose you are a hunter that doesn&amp;rsquo;t have information about the distance from the prey. For instance a blind dog with very precise smelling which can be mapped to a distance from the potential prey. How can this dog locate and eventually reach its prey?
+The algorithms are not documented yet, but a simulation is provided. If you are interested contact me for more information.
+Demo simulation parameters:
+ \( V_{prey} \approx V_{predator} \) Prey changes direction with small probability Predator adopts the strategy we have assigned it (not explained here).</description>
+    </item>
+    
+  </channel>
+</rss>
