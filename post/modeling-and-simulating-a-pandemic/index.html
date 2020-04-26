@@ -52,7 +52,7 @@
 <meta itemprop="description" content="Exploring the Spread of a Disease">
 <meta itemprop="datePublished" content="2020-03-29T14:47:48&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-29T14:47:48&#43;08:00" />
-<meta itemprop="wordCount" content="396">
+<meta itemprop="wordCount" content="528">
 
 
 
@@ -125,8 +125,8 @@
             <a href="/categories/life/"> Life </a>
             <a href="/categories/simulation/"> Simulation </a>
             </div>
-          <span class="more-meta"> 396 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 528 words </span>
+          <span class="more-meta"> 3 mins read </span>
         
       </div>
     </header>
@@ -134,14 +134,26 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#model">Model</a>
+      <ul>
+        <li><a href="#personal-networks">Personal Networks</a></li>
+        <li><a href="#interactions">Interactions</a></li>
+        <li><a href="#disease-evolution-and-hospital-capacity">Disease Evolution and Hospital capacity</a></li>
+        <li><a href="#quarantines">Quarantines</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p><strong>Disclaimer: This is a rough model. The author is not an epidemiologist. The
+      <p><strong>Disclaimer: The author is NOT an epidemiologist or a health expert. The
 model was built based on his anecdotal experience.</strong></p>
-<p><strong>Warning:This is intended for large enough screens. You can&rsquo;t see the whole
-enviornment using your phone.</strong></p>
+<p><strong>Warning: It&rsquo;s recommended to use a large enough screen (for example a tablet
+or a desktop). Some information is omitted in smaller screens.</strong></p>
 <p>Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some
 parameters might lead to poor performance depending on your device.</p>
 <table>
@@ -182,26 +194,53 @@ parameters might lead to poor performance depending on your device.</p>
 <div id="graph"></div>
 <div id="inspecter"></div>
 <script src="/scripts/pandemia.js"></script>
+<h2 id="introduction">Introduction</h2>
 <p>In this blog post I attempt to model the spread and effects of a disease.
 This is a very timely topic with the emergence of COVID-19. Being able to simulate the disease is invaluable, particularly when combined with the simulation of mitigation approaches.</p>
-<p>This model is household-based, i.e. we have families living in the same building.
-Every person has a constant network (ego-network) of people they can potentially interact with. For example you
+<center>
+<img style="width:70%"src="/post-images/pandemic.png"/>
+</center>
+<h2 id="model">Model</h2>
+<h3 id="personal-networks">Personal Networks</h3>
+<p>Every person has a constant network (ego-network) of people they can potentially interact with. For example you
 can think of this network as all the people you have interacted with in the last 100 days (or some other
 time frame long enough so that the outcome of the disease have been determined). Denote the network of citizen
-$u$ as $N_u$.</p>
+$u$ as $N_u$.
+This model is household-based, i.e. we have families living in the same building (indicated with rectangles in the simulation above).
+Individuals in the same house are naturally in the network of each other.</p>
+<center>
+<img style="width:90%"src="/post-images/pandemic-interactions.png"/>
+</center>
+<h3 id="interactions">Interactions</h3>
 <p>After fixing $N_u$, we have a dynamic network of temporary interactions. For example the daily interactions of
 a person. Denote this as $N_u(t) = \{  v : v \in N_u, v \text{ interacted with u at time t} \}$. To decide
 if $u,v$ interacted with each other during, say, a day we consider a few parameters: If any of the two are sick with symptoms -
 the severity of the symptoms, the social distancing parameter of the individual
-which is based on a biased random walk. The random walk can be adjusted
+which is based on a biased random walk, and whether the two individuals live in
+the same building or not. The random walk can be adjusted
 depending on the governmental guidelines, i.e. whether the government is urging
 people to go out or stay at home (this is controlled by pressing &ldquo;O&rdquo; or &ldquo;I&rdquo;
-respectively).</p>
+respectively in the simulation environment).</p>
+<h3 id="disease-evolution-and-hospital-capacity">Disease Evolution and Hospital capacity</h3>
+<p>Once a person gets infected, their disease evolves according to a simple
+Markov Chain. Every person that gets infected starts with no symptoms.
+Every passing day it has a chance of transitioning to the state of having
+symptoms. Similarly the disease can progress to other stages.</p>
+<p>When an infected person reaches a critical condition it requires
+hospitalization. If there is capacity the person is admitted to the hospital.
+Otherwise they are not admitted, and their chance of passing away increases.</p>
+<center>
+<img style="width:70%"src="/post-images/pandemic-evolution.png"/>
+</center>
+<h3 id="quarantines">Quarantines</h3>
 <p>The user can click at two points succesively in order to place a quarantine
 (rectangular in shape). People within the quarantine can not interact with
 people outside. Possibly in a future version it will be explored if an automatic
 quarantine scheme can lead to good control of the spread - relatively to some
-penalty term that prevents the overuse of bigger quarantines.</p>
+penalty term that prevents the overuse of quarantines.</p>
+<center>
+<img style="width:50%"src="/post-images/pandemic-quarantines.png"/>
+</center>
 <!-- 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>

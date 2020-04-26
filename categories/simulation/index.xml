@@ -18,10 +18,9 @@
       <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
-      <description>Disclaimer: This is a rough model. The author is not an epidemiologist. The model was built based on his anecdotal experience.
-Warning:This is intended for large enough screens. You can&amp;rsquo;t see the whole enviornment using your phone.
-Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device.
-   Population Density     Town Size       Connections Radius     Connectivity Chance       Infection Chance     Mean Days Sick       Can you get Reinfected?</description>
+      <description>Disclaimer: The author is NOT an epidemiologist or a health expert. The model was built based on his anecdotal experience.
+Warning: It&amp;rsquo;s recommended to use a large enough screen (for example a tablet or a desktop). Some information is omitted in smaller screens.
+Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device.</description>
     </item>
     
     <item>
