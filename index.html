@@ -125,6 +125,18 @@
 	<a href="/tags/"><button class="mycoolbtn">Show me more Tags</button><a/>
 	</div>
 
+	<div id="warning-small-screen" style="display:none; background-color: #f4f404;  padding:5px">
+		This website is designed with larger screens in mind. You are still welcome
+		to use it but some things might not look or work nice.
+	</div>
+	<script>
+			const width19 = window.innerWidth || document.documentElement.clientWidth || 
+document.body.clientWidth;
+		if (width19<650) {
+		 document.getElementById("warning-small-screen").style.display = "block";
+		}
+	</script>
+
 	<section id="archive" class="archive" style="max-width:1000px">
 
     

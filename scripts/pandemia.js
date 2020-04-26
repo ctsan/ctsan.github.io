@@ -117,9 +117,16 @@ function setup() {
 		return newslider
 	}
 
-	console.log("test")
   if (setups==1) {
 		W = select("#tester").width
+		console.log(W)
+		if (W>=860) {
+			VIEW_HOUSE_COLS = 23
+		} else if (W>=800) {
+			VIEW_HOUSE_COLS = 22
+		} else {
+			VIEW_HOUSE_COLS = 22-ceil((800-W)/X_JUMP_HOUSE)
+		}
 
     myCanvas = createCanvas(W, H);
     myCanvas.parent("tester");
@@ -1082,14 +1089,23 @@ function draw() {
 	plot_contnr.draw()
 	if (clock%300<150) {
 		plot_socdist.draw()
-		social_distancing_box.draw()
+
+		if (W>770) {
+			social_distancing_box.draw()
+		}
+
 	} else {
+
 		plot_hospitalization.draw()
-		hospitalization_box.draw()
+		if (W>770) {
+			hospitalization_box.draw()
+		}
 	}
 
+	if (W>660) {
 	stats_basic_counters.text = "healthy:"+ people_status_st[0] + "  sick:" + people_status_st[1] +  "  immune:" +people_status_st[2] + "  deaths:" +people_status_st[3] 
 	stats_basic_counters.draw()
+	}
 
   push()
   fill(color(205,205,205, 200))
@@ -1104,7 +1120,7 @@ function draw() {
   if(building_mouseover) {
     let counter = 0
 
-		if (building_selected.family.length>0){
+		if (building_selected.family.length>0 && W>660){
 			text('Residents of Inspected House:'+ building_selected.id+ ':', x_starting, y_starting)
 			for (const person of building_selected.family) {
 				counter += 1
@@ -1118,6 +1134,8 @@ function draw() {
 	} else{
 		let decider = clock%150
 		if (decider<150){
+
+			if (W>660) {
 			text('Press O to urge people to go out',x_starting,y_starting)
 			text('Press I to urge people to stay at home',x_starting,y_starting+20)
 
@@ -1131,6 +1149,7 @@ function draw() {
 				fill("brown")
 			}
 			text('Currently People are Biased to '+people_bias, x_starting,y_starting+40)
+			}
 			text('Current Bias: '+population[0].social_distancing_bias, x_starting,y_starting+60)
 		} else if (decider<300){
 			text('Message B',x_starting,y_starting)
