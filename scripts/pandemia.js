@@ -117,8 +117,10 @@ function setup() {
 		return newslider
 	}
 
+	console.log("test")
   if (setups==1) {
 		W = select("#tester").width
+
     myCanvas = createCanvas(W, H);
     myCanvas.parent("tester");
 
