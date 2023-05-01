@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>metropolis-hastings on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/metropolis-hastings/</link>
+    <description>Recent content in metropolis-hastings on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/metropolis-hastings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>To Draw with Markov Chain Monte Carlo.</title>
+      <link>http://ctsan.github.io/post/mcmc/</link>
+      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/mcmc/</guid>
+      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
+    </item>
+    
+  </channel>
+</rss>

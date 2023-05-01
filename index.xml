@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
       <link>http://ctsan.github.io/research/</link>
@@ -30,12 +30,40 @@ Christos is currently researching scheduling problems in Networks, focusing on d
     </item>
     
     <item>
+      <title>To Draw with Markov Chain Monte Carlo.</title>
+      <link>http://ctsan.github.io/post/mcmc/</link>
+      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/mcmc/</guid>
+      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
+    </item>
+    
+    <item>
       <title>CheatsheetGPT</title>
       <link>http://ctsan.github.io/other/the-wall/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/other/the-wall/</guid>
       <description>I prompted GPT4 to help me create a cheatsheet for areas spanning AI, Computer Science, Finance, Operations Research, and Mathematics. Then, asked to grade the importance of each relationship for different people, and in some cases, to explain its answers. 🌐 Click me to see how it works. 🌐 Click to see the purpose. 🌐 Limitations &amp; Disclaimers, Future Work. Loading might take some time. Alpha Version. Last Update: 06/24/2023.</description>
+    </item>
+    
+    <item>
+      <title>A Fresh Random Walk Down Wall Street - Part A</title>
+      <link>http://ctsan.github.io/post/wolf-of-wall-street/</link>
+      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/wolf-of-wall-street/</guid>
+      <description>A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
+Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values.</description>
+    </item>
+    
+    <item>
+      <title>The diffusion of discovery</title>
+      <link>http://ctsan.github.io/post/scientific-process/</link>
+      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/scientific-process/</guid>
+      <description>How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk.</description>
     </item>
     
     <item>
@@ -62,7 +90,7 @@ Christos is currently researching scheduling problems in Networks, focusing on d
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/other/mathematical-tapestry/</guid>
-      <description>Toggle Dark Mode</description>
+      <description> Enable Dark Mode </description>
     </item>
     
     <item>

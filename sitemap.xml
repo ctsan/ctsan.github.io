@@ -23,15 +23,92 @@
   </url>
   
   <url>
-    <loc>http://ctsan.github.io/other/the-wall/</loc>
-    <lastmod>2023-04-04T15:43:48+08:00</lastmod>
+    <loc>http://ctsan.github.io/</loc>
+    <lastmod>2023-04-10T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ctsan.github.io/</loc>
+    <loc>http://ctsan.github.io/tags/greece/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/interactive-simulation/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/manhattan/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/categories/math/</loc>
     <lastmod>2023-04-10T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/mcmc/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/metropolis-hastings/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/post/</loc>
+    <lastmod>2023-04-10T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/categories/simulation/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/</loc>
+    <lastmod>2023-04-10T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/post/mcmc/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/usa/</loc>
+    <lastmod>2023-04-07T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/other/the-wall/</loc>
+    <lastmod>2023-04-04T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -72,8 +149,64 @@
   </url>
   
   <url>
-    <loc>http://ctsan.github.io/tags/</loc>
+    <loc>http://ctsan.github.io/post/wolf-of-wall-street/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/brownian-motion/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/diffusion/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/categories/finance/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/geometric-brownian-motion/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/jump-diffusion/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/categories/life/</loc>
     <lastmod>2023-04-10T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/tags/research/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ctsan.github.io/post/scientific-process/</loc>
+    <lastmod>2023-03-03T14:47:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -81,13 +214,6 @@
   <url>
     <loc>http://ctsan.github.io/tags/equation/</loc>
     <lastmod>2023-01-01T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://ctsan.github.io/categories/math/</loc>
-    <lastmod>2023-04-10T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -121,22 +247,8 @@
   </url>
   
   <url>
-    <loc>http://ctsan.github.io/categories/life/</loc>
-    <lastmod>2023-04-10T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://ctsan.github.io/tags/mental-models/</loc>
     <lastmod>2020-05-07T19:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://ctsan.github.io/post/</loc>
-    <lastmod>2023-04-10T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -149,21 +261,7 @@
   </url>
   
   <url>
-    <loc>http://ctsan.github.io/tags/interactive-simulation/</loc>
-    <lastmod>2020-03-29T14:47:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</loc>
-    <lastmod>2020-03-29T14:47:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://ctsan.github.io/categories/simulation/</loc>
     <lastmod>2020-03-29T14:47:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -374,13 +472,6 @@
   
   <url>
     <loc>http://ctsan.github.io/tags/voronoi/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://ctsan.github.io/tags/greece/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

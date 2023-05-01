@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>The diffusion of discovery - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="CT" /><meta name="description" content="How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk." /><meta name="keywords" content="Math, CS, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
+
+
+<link rel="canonical" href="http://ctsan.github.io/post/scientific-process/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="The diffusion of discovery" />
+<meta property="og:description" content="How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ctsan.github.io/post/scientific-process/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-03T14:47:48+08:00" />
+<meta property="article:modified_time" content="2023-03-03T14:47:48+08:00" />
+<meta itemprop="name" content="The diffusion of discovery">
+<meta itemprop="description" content="How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk."><meta itemprop="datePublished" content="2023-03-03T14:47:48+08:00" />
+<meta itemprop="dateModified" content="2023-03-03T14:47:48+08:00" />
+<meta itemprop="wordCount" content="948">
+<meta itemprop="keywords" content="interactive-simulation,research,diffusion,mcmc," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The diffusion of discovery"/>
+<meta name="twitter:description" content="How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Christos Tsanikidis</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Christos Tsanikidis</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <div class="header-content" style="display: flex; align-items: flex-start;">
+        <div class="post-thumbnail" style="margin-right: 20px; width: 120px; height: 120px; min-width: 120px;">
+          <img src="/post-images/diffusion-discoveries3.png" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div>
+          <h1 class="post-title" style="font-size: 34px;">The diffusion of discovery</h1>
+
+    
+          <div class="post-meta">
+            <span class="post-time"> 2023-03-03 </span>
+            <div class="post-category">
+                <a href="/categories/life/"> Life </a>
+                <a href="/categories/simulation/"> Simulation </a>
+                </div>
+              <span class="more-meta"> 948 words </span>
+              <span class="more-meta"> 5 mins read </span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+    
+    
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-diffusion-process">The diffusion process</a></li>
+    <li><a href="#interpretations">Interpretations</a></li>
+    <li><a href="#implications">Implications</a></li>
+    <li><a href="#extensions-for-more-realism">Extensions for more realism</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content large-initial">
+          <style>
+    .image-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .image-wrapper {
+        text-align: center;
+        padding: 0 30px;
+        width: 20%;
+    }
+    .image-wrapper img {
+        max-width: 20%;
+        height: auto;
+    }
+</style>
+<p>How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk. Some explorers are more adventurous than others, some follow the crowd, some learn from their mistakes, and some get lucky. As they explore, they gradually reveal the structure and size of the labyrinth, and reduce the fog of ignorance. This analogy allows us to model human discoveries as a stochastic process, and to quantify how fast and how far humans can diffuse in different scenarios. We can also use this model to derive some insights into the principles of scientific inquiry, such as the role of curiosity, collaboration, and diversity in fostering innovation and creativity. Of course, we do not claim that this model is perfectly accurate. It is primarily a toy model, a mental experiment, a way of thinking. But we hope that it can spark some interesting discussions and inspire similar models in the future.</p>
+<div class="image-container">
+    <div class="image-wrapper">
+        <img src="/post-images/diffusion/labyrinth1.png" alt="Alegory2">
+    </div>
+    <div class="image-wrapper">
+        <img src="/post-images/diffusion/labyrinth2.png" alt="Alegory3">
+    </div>
+</div>
+<h2 id="the-diffusion-process">The diffusion process</h2>
+<p>If you want to start from scratch, first, click the restart button. You can start by experimenting with the various controls.</p>
+<div id="canvas-container" style="width: 100%; height: 430px; overflow: hidden;"></div>
+<style>
+  button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+          .controls-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+<pre><code>    p, button, input[type=&quot;range&quot;] {
+        margin: 0;
+    }
+</code></pre>
+<p></style></p>
+<div class="controls-container">
+    <button id="restartButton">Restart</button>
+    <button id="toggleHeatmapButton">Toggle Heatmap</button>
+    <button id="toggleParticlesButton">Toggle Particles</button>
+</div>
+<div class="controls-container">
+<p>Escapism: <span id="maxControlVariableValue">0.0005</span></p>
+<input type="range" id="maxControlVariableSlider" min="0" max="0.001" step="0.0001" value="0.0005">
+<p>Researchers: <span id="numParticlesValue">100</span></p>
+<input type="range" id="numParticlesSlider" min="1" max="1000" step="1" value="100">
+<p>Obstacles: <span id="numObstaclesValue">20</span></p>
+<input type="range" id="numObstaclesSlider" min="1" max="40" step="1" value="20">
+</div>
+<script>
+let maxControlVariable = 0.0005;
+let numParticles = 100;
+let numObstacles = 20;
+let showParticles = true;
+
+
+function toggleParticles() {
+  showParticles = !showParticles;
+}
+
+class Particle {
+  constructor(x, y, controlVariable) {
+    this.pos = createVector(x, y);
+    this.empty_move = createVector(0.0001, 0.0001);
+    this.prevPos = this.pos.copy();
+    this.history = [];
+    this.controlVariable = controlVariable;
+    this.color = lerpColor(color(255, 165, 0), color(128, 0, 128), (maxControlVariable>0)?controlVariable / maxControlVariable:0.5);
+  }
+
+  update() {
+    this.prevPos = this.pos.copy();
+
+    // 2D random walk step
+    const stepSize = 3;
+    const angle = random(TWO_PI);
+    const proposal = p5.Vector.fromAngle(angle).mult(stepSize);
+    const direction = p5.Vector.sub(this.pos, createVector(width / 2, height / 2));
+    const acceptance = exp(direction.dot(proposal) / stepSize ** 2);
+    let step;
+    if (random() * this.controlVariable <= acceptance) {
+      step = proposal;
+    } else {
+      step = this.empty_move;
+    }
+    this.pos.add(step);
+
+    // Check for collisions and reflect
+    for (const obstacle of obstacles) {
+      if (obstacle.contains(this.pos)) {
+        this.pos = p5.Vector.sub(this.prevPos, step);
+        break;
+      }
+    }
+
+    this.history.push(this.pos.copy());
+    if (this.history.length > heatmapHistory) {
+      this.history.shift();
+    }
+  }
+
+    display() {
+    if (showParticles) {
+      const greyValue = lerpColor(color(0, 0, 0), color(128, 128, 128),
+     (maxControlVariable>0)?this.controlVariable / maxControlVariable:0.5);
+      stroke(greyValue);
+      line(this.prevPos.x, this.prevPos.y, this.pos.x, this.pos.y);
+    }
+  }
+}
+
+let particles = [];
+let obstacles = [];
+//const numParticles = 100;
+const diskRadius = 10;
+//const numObstacles = 50;
+const boundaryWidth = 5;
+let showHeatmap = true;
+const heatmapHistory = 200;
+const showVisited = false;
+//const maxControlVariable = 0.0005;
+let maxDistance = 0;
+
+function restart() {
+  particles = [];
+  obstacles = [];
+  maxDistance = 0;
+  //setupParticles();
+  //setupObstacles();
+
+for (let i = 0; i < numParticles; i++) {
+  const angle = random(TWO_PI);
+  const r = sqrt(random()) * diskRadius;
+  const x = width / 2 + r * cos(angle);
+  const y = height / 2 + r * sin(angle);
+  const controlVariable = random() * maxControlVariable;
+  particles.push(new Particle(x, y, controlVariable));
+}
+
+let lastRadius = 20;
+for (let i = 0; i < numObstacles; i++) {
+  //const radius = lastRadius + random(6, 9);
+
+const totalObstacles = numObstaclesSlider.value;
+const minInterdistance = 40;
+const maxInterdistance = 150; // You can change this value to control the maximum distance between obstacles
+let interdistanceFactor = map(totalObstacles, 1, 6, maxInterdistance, minInterdistance);
+if (totalObstacles>6 && totalObstacles<=20){
+   interdistanceFactor =  map(totalObstacles, 7, 20, minInterdistance, 10);
+}
+else if (totalObstacles>20) {
+   interdistanceFactor =  map(totalObstacles, 21, 40, 10, 6);
+}
+const radius = lastRadius + (i>0? random(interdistanceFactor, interdistanceFactor*1.1):0);
+
+  const startAngle = random(TWO_PI);
+  const endAngle = startAngle + random(PI, 0.9 * TWO_PI);
+  obstacles.push(
+    new ArcObstacle(
+      width / 2,
+      height / 2,
+      radius,
+      startAngle,
+      endAngle,
+      boundaryWidth
+    )
+  );
+  lastRadius = radius + boundaryWidth;
+}
+
+
+}
+function toggleHeatmap() {
+ showHeatmap = !showHeatmap;
+}
+
+
+// ArcObstacle lass
+class ArcObstacle {
+  constructor(x, y, radius, startAngle, endAngle, boundaryWidth) {
+     this.x = x;
+    this.y = y;
+    this.radius = radius;
+
+    this.startAngle = startAngle;
+    this.endAngle = endAngle;
+    console.log(radius,startAngle,endAngle)
+    this.boundaryWidth = boundaryWidth;
+    this.originalBoundaryWidth = boundaryWidth;
+    this.wiggleCounter = 0;
+  }
+  drawDebugLines(point) {
+  stroke(255, 0, 0);
+  line(this.x, this.y, this.x + this.radius * cos(this.startAngle), this.y + this.radius * sin(this.startAngle));
+  line(this.x, this.y, this.x + this.radius * cos(this.endAngle), this.y + this.radius * sin(this.endAngle));
+
+  stroke(0, 255, 0);
+  line(this.x, this.y, point.x, point.y);
+}
+
+  contains(point) {
+    const d = dist(this.x, this.y, point.x, point.y);
+    const angle = atan2(point.y - this.y, point.x - this.x);
+    const inAngleRange =
+      (angle > this.startAngle && angle < this.endAngle) ||
+      (angle + TWO_PI > this.startAngle && angle + TWO_PI < this.endAngle) || 
+       (angle + 2* TWO_PI > this.startAngle && angle + 2* TWO_PI < this.endAngle);
+    //console.log(this.radius,inAngleRange,angle)
+    return (
+      inAngleRange &&
+      d > this.radius - this.boundaryWidth / 2 &&
+      d < this.radius + this.boundaryWidth / 2
+    );
+  }
+  display() {
+    const isInFrontier = this.radius <= maxDistance;
+
+    if (isInFrontier) {
+      this.boundaryWidth = this.originalBoundaryWidth ;
+      //stroke(128); // Grey color
+      stroke(0)
+        //stroke(120, 120, 125, 255);
+    } else {
+      this.boundaryWidth = this.originalBoundaryWidth;
+      
+      //stroke(0, 191, 255,df); // Sea blue color
+      
+  const df = this.radius - maxDistance;
+  const opacity = map(df, 0, maxDistance+50, 255, 0);
+  stroke(0, 191, 255, opacity);
+    }
+
+    strokeWeight(this.boundaryWidth);
+    noFill();
+    arc(this.x, this.y, this.displayRadius * 2, this.displayRadius * 2, this.startAngle, this.endAngle);
+  }
+
+  animateWiggle() {
+    if (this.touched) {
+      this.wiggleCounter += 1;
+      const wiggleMagnitude = 0.5;
+      const wiggleSpeed = 1
+      this.displayRadius = this.radius + wiggleMagnitude * sin(frameCount * wiggleSpeed);
+      if (this.wiggleCounter>30 &&  sin(frameCount * wiggleSpeed)<0.01){
+        this.resetTouched()
+      }
+    } else {
+      this.displayRadius = this.radius;
+    }
+  }
+
+  resetTouched() {
+    this.wiggleCounter =0;
+    this.touched = false;
+  }
+
+}
+function setup() {
+  let canvasContainer = document.getElementById('canvas-container');
+  width = canvasContainer.offsetWidth;
+  height = canvasContainer.offsetHeight;
+  canvas = createCanvas(width,height);
+  canvas.parent('canvas-container');
+ restart();
+}
+
+function draw() {
+  background(255);
+
+  // Draw the frontier
+  let frontierColor = color(55, 180, 255, 51); // 20% opacity green
+  fill(frontierColor);
+  noStroke();
+  ellipse(width / 2, height / 2, maxDistance * 2, maxDistance * 2);
+
+
+  if (showHeatmap) {
+const heatmap = createImage(width, height);
+heatmap.loadPixels();
+for (const particle of particles) {
+for (const pos of particle.history) {
+const index = 4 * (int(pos.x) + int(pos.y) * width);
+if (index >= 0 && index < heatmap.pixels.length - 3) {
+heatmap.pixels[index] += 10;
+heatmap.pixels[index + 1] += 10;
+heatmap.pixels[index + 2] += 10;
+heatmap.pixels[index + 3] += 80;
+}
+}
+}
+heatmap.updatePixels();
+image(heatmap, 0, 0);
+    
+  }
+  
+  // Update and display particles
+  for (const particle of particles) {
+    particle.update();
+    particle.display();
+
+    // Update the maximum distance
+    const distance = dist(particle.pos.x, particle.pos.y, width / 2, height / 2);
+    if (distance > maxDistance) {
+      maxDistance = distance;
+    }
+  }
+
+  // Reset and animate obstacles
+  for (const obstacle of obstacles) {
+   // obstacle.resetTouched();
+  }
+
+  for (const particle of particles) {
+    for (const obstacle of obstacles) {
+      if (obstacle.contains(particle.pos)) {
+        obstacle.touched = true;
+        particle.pos = p5.Vector.sub(particle.prevPos, particle.empty_move);
+      //break;
+      }
+    }
+  }
+
+  // Display obstacles with wiggle animation
+  for (const obstacle of obstacles) {
+    obstacle.animateWiggle();
+    obstacle.display();
+  }
+  
+
+  if (showVisited) {
+    noStroke();
+    fill(0, 255, 0, 100);
+    for (const particle of particles) {
+      for (const pos of particle.history)
+    ellipse(pos.x, pos.y, 2, 2);
+  }
+}
+}
+setupEventListeners()
+
+function setupEventListeners() {
+  document.getElementById('restartButton').addEventListener('click', restart);
+  //document.getElementById('toggleTraceButton').addEventListener('click', toggleHeatmap);
+
+  const maxControlVariableSlider = document.getElementById('maxControlVariableSlider');
+  const numParticlesSlider = document.getElementById('numParticlesSlider');
+  console.log(numParticlesSlider)
+  const numObstaclesSlider = document.getElementById('numObstaclesSlider');
+  const maxControlVariableValue = document.getElementById('maxControlVariableValue');
+  const numParticlesValue = document.getElementById('numParticlesValue');
+  const numObstaclesValue = document.getElementById('numObstaclesValue');
+
+  document.getElementById('toggleParticlesButton').addEventListener('click', toggleParticles);
+  document.getElementById('toggleHeatmapButton').addEventListener('click', toggleHeatmap);
+
+  maxControlVariableSlider.addEventListener('input', (event) => {
+    maxControlVariable = parseFloat(event.target.value);
+    maxControlVariableValue.innerText = maxControlVariable.toFixed(4);
+    restart();
+  });
+
+  numParticlesSlider.addEventListener('input', (event) => {
+    console.log('hi')
+    numParticles = parseInt(event.target.value);
+    numParticlesValue.innerText = numParticles;
+    restart();
+  });
+
+  numObstaclesSlider.addEventListener('input', (event) => {
+    numObstacles = parseInt(event.target.value);
+    numObstaclesValue.innerText = numObstacles;
+    restart();
+  });
+}
+</script>
+<p>Most of the parameters are fairly self-explanatory. Escapism is the parameter that deserves some explanation. It characterizes the tendency to go &ldquo;outwards&rdquo;. These can be thought of as the researchers that take the &ldquo;straight logical path&rdquo; to the solution. It often works, but not always. The path to greatness is not always just a straight line.
+How about the opposite of an escapist? Someone who has $0$ escapism can be though of as someone who really does not leverage any structure into their research. They just hope to randomly come across the solution. Although it technically can happen, any random researcher is less likely to make it this way. In the above simulation, the parameter of Escapism still creates a range of researchers, with a maximum escapism based on the selection (the actual escapism corresponds to the shade of the particle).</p>
+<h2 id="interpretations">Interpretations</h2>
+<ul>
+<li>
+<p>This Labyrinth can represent either one domain of research, or research as a whole. It matches simple phenomena one would qualitatively expect: more researchers result in a higher rate of discoveries.</p>
+</li>
+<li>
+<p>If someone makes a discovery, there&rsquo;s often someone quite close to making the same discovery. This is often observed in scientific literature, where e.g. similar results are produced at the same time by multiple scientists.</p>
+</li>
+<li>
+<p>Someone might stray far away from the average, making a breakthrough discovery after a long time. The longer it takes for a discovery to happen, the more likely this someone will be far ahead from the others (intepreted as more novelty).</p>
+</li>
+<li>
+<p>After a big obstacle is overcome (the blue/grey arcs), there’s a lot of follow-up discovery that comes easily (but not always, depending on the next obstacle).</p>
+</li>
+<li>
+<p>Obstacles researchers face have varying difficulty. Smaller opening of the arc means bigger the difficulty to overcome.</p>
+</li>
+<li>
+<p>You might be at the frontier, but if you are working on the wrong problems or using the wrong approachs you will get stuck (far from the opening of the obstacle or heading the wrong way).</p>
+</li>
+</ul>
+<h2 id="implications">Implications</h2>
+<ul>
+<li>
+<p>This model implies that someone making a discovery does not mean that without them the discovery would have never been made. This someone&rsquo;s contribution lies in the reduction of the interdiscovery time. These implications are compatible with insights from books such as Outliers, Sapiens, and Fooled By Randomness. To state it in another way: a discovery is an accident waiting to happen.</p>
+</li>
+<li>
+<p>If we are merely &ldquo;particles&rdquo; performing a random walk, then what control do we have? How can we have any merit in our discoveries and any credit for them? Controlling the properties of this biased random walk to perform a more intelligent &ldquo;search&rdquo; can be critical for discovery. This gives in reality more agency to a human, allowing them to modify their degree of escapism and its fine characteristics when they think this is appropriate. E.g., if you are stuck for a long time around the same problem, it is wise to switch things up. Take less of a biased walk if you don&rsquo;t know any better.</p>
+</li>
+</ul>
+<h2 id="extensions-for-more-realism">Extensions for more realism</h2>
+<div style="display: flex; align-items: center; margin-top:0px">
+  <div style="flex: 1; margin: 1px; display:inline-block">
+    <img src="/post-images/diffusion/communities.png" style="width:70%;" alt="Alegory3">
+  </div>
+  <div style="flex: 2; margin: 1px">
+    <p>This model does not handle the fact that a discovery by one might bring related discoveries by others - it is only limited to the fact that a discovery by one will often lead to more follow-up discoveries by the same individual. This model can easily be modified to handle this however. Beyond escapism, we may add a parameter affecting the "follower" attribute of a researcher. The followers will try to catch up with the researcher, by performing a biased random walk towards the other researcher, sort of like a one-sided gravitational attractor. This can be implemented beautifully, by adding gravitational forces biasing the walk, with the "discoverers" having larger mass and therefore exerting greater force. The time it takes to catch up is then expected to be proportional to their distance and the obstacles in between.</p>
+  </div>
+</div>
+  <p>This model does not model collaboration. This can also be modeled as a group of particles having a stronger gravitational pull on each other than average.</p>
+<p>As mentioned in the implications, more realistically, humans perform an evolving random walk, whose biases are changing.</p>
+<p>An interesting question is if adding dimensions would increase realism. Note that higher dimensions are characterized by various counter-intuitive phenomena.</p>
+
+    </div>
+
+
+    
+<footer class="post-footer">
+
+
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/wolf-of-wall-street/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">A Fresh Random Walk Down Wall Street - Part A</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/hidden-simplicity-principle/">
+            <span class="next-text nav-default">The Hidden Simplicity Principle: Discovering the Underlying Reality</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+
+      </nav>
+
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tchristos.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      <div class="post-tags">
+          <a href="/tags/interactive-simulation/">interactive-simulation</a>
+          <a href="/tags/research/">research</a>
+          <a href="/tags/diffusion/">diffusion</a>
+          <a href="/tags/mcmc/">mcmc</a>
+          </div></footer>
+
+
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="/about" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+	
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023
+    
+    <span class="author">Christos Tsanikidis</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        packages: { '[+]': ['noerrors'] }
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      },
+      chtml: {
+        scale: 1.2
+      }
+    };
+
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111355141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
+
+
+
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
+</body>
+</html>
