@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Christos Tsanikidis - CS, Math, Life</title>
+    <title>Projects on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/project/</link>
-    <description>Recent content in Projects on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in Projects on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Mon, 19 Jun 2017 16:01:23 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/project/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 19 Jun 2017 16:01:23 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Athens mini-markets Voronoi</title>
       <link>http://ctsan.github.io/project/greek-mini-markets/</link>
@@ -19,23 +15,11 @@
       
       <guid>http://ctsan.github.io/project/greek-mini-markets/</guid>
       <description>The process followed was the following:
-  Download data containing the addresses of 1404 mini markets in athens.
-  Use google API to query the latitude and longitude of the addresses, given the information of the location (area and address).
-  Convert latitude and longitude to cartesian coordinates, assuming linearity with small error due to the restricted range.
-  Use google maps api to keep a white simplified map of Athens.</description>
-    </item>
-    
-    <item>
-      <title>QuTy - M/M/1 web simulation</title>
-      <link>http://ctsan.github.io/project/quty/</link>
-      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/project/quty/</guid>
-      <description>This is a web simulation of a M/M/1 queue and server for educational purposes. Axis/graph/queue are drawn with custom code. The system is stable.
-Check the web simulation
- Possible Extension   Allow the user to create a Directed acyclic graph of queues-servers with possible inspection of the graph of each queue.
-  Allow modification of parameters
-  </description>
+Download data containing the addresses of 1404 mini markets in athens.
+Use google API to query the latitude and longitude of the addresses, given the information of the location (area and address).
+Convert latitude and longitude to cartesian coordinates, assuming linearity with small error due to the restricted range.
+Use google maps api to keep a white simplified map of Athens.
+Create the voronoi diagram using the coordinates of the points.</description>
     </item>
     
     <item>
@@ -44,10 +28,10 @@ Check the web simulation
       <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
       
       <guid>http://ctsan.github.io/project/turkey-greece-range/</guid>
-      <description>It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal.
-Immediately the question that I was curious about was, what targets in Greece can be hit by Turkey now?
-Before I begin, I want to make clear that this experiment was created for fun and that I am not that pessimistic about the relations of the two countries.
-Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey.</description>
+      <description>It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal. I was instantly curious: what targets in Greece can be hit by Turkey now?
+This experiment is created for fun. The author is optimistic about the relations of the two countries.
+scroll down for the results to see the resulting images
+Problem Setting Hit Area Let $\mathcal{T}$ be the set of points that are in Turkey.</description>
     </item>
     
     <item>
@@ -69,7 +53,16 @@ The interaction we have each day with computers varies from application to appli
       <description>Suppose you are a hunter that doesn&amp;rsquo;t have information about the distance from the prey. For instance a blind dog with very precise smelling which can be mapped to a distance from the potential prey. How can this dog locate and eventually reach its prey?
 The algorithms are not documented yet, but a simulation is provided. If you are interested contact me for more information.
 Demo simulation parameters:
- \( V_{prey} \approx V_{predator} \) Prey changes direction with small probability Predator adopts the strategy we have assigned it (not explained here).</description>
+\( V_{prey} \approx V_{predator} \) Prey changes direction with small probability Predator adopts the strategy we have assigned it (not explained here).</description>
+    </item>
+    
+    <item>
+      <title>Black Scholes</title>
+      <link>http://ctsan.github.io/project/black-scholes/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/project/black-scholes/</guid>
+      <description> Demonstration </description>
     </item>
     
     <item>
@@ -90,8 +83,10 @@ This is the case for one variable, and thus one dimension. You can imagine that 
       <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
       
       <guid>http://ctsan.github.io/project/mice-make-art/</guid>
-      <description>Concept The concept is the following: Having N mice, deploy them randomly in a rectangular area. Each mouse targets exactly one other mouse. Every mouse is targeted by one mouse, forming a circle of references-targets.
-Phenomena   Each mouse \(A\) is confined in the rectangular area: since it targets a mouse \(B\) that is within the rectangular area, it moves in this direction. Mouse \(B\) itself targets a mouse \(C\) which for the same reason is in the rectangular area.</description>
+      <description>Concept The concept is the following: Drop $N$ mice randomly in a rectangular area. Each mouse targets exactly one other mouse forming a circle of targets.
+$$M_1 \rightarrow M_2 \rightarrow &amp;hellip; \rightarrow M_N \rightarrow M_1$$
+All mice have equal velocity. The simulation follows. After clicking on the simulation, press (i) to increase the number of mice, and press (d) to decrease it.
+Simulation Emerging Behaviors Each mouse \(M_i\) is confined in the rectangular area.</description>
     </item>
     
     <item>
@@ -103,7 +98,7 @@ Phenomena   Each mouse \(A\) is confined in the rectangular area: since it targe
       <description>This is an experimenting platform I&amp;rsquo;ve created for people who are learning regular expressions. Javascript Regular Expressions are used.
 The platform allows you to experiment by entering a regular expression, and then highlighting the matching parts. Match and replace is also available, with special regex replacing syntax available. You can either use the reload button or edit the text yourself in the platform.
 Experiment with the platform yourself
-Demonstration   </description>
+Demonstration </description>
     </item>
     
     <item>

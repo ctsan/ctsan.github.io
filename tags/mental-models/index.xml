@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mental-models on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/mental-models/</link>
+    <description>Recent content in mental-models on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Thu, 07 May 2020 19:00:00 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/mental-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Hidden Simplicity Principle: Discovering the Underlying Reality</title>
+      <link>http://ctsan.github.io/post/hidden-simplicity-principle/</link>
+      <pubDate>Thu, 07 May 2020 19:00:00 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/hidden-simplicity-principle/</guid>
+      <description>The Hidden Simplicity Principle posits that our limited perception of the world can result in complicated models of a simpler underlying reality. Many concepts, notions, or phenomena we encounter, analyze, and contemplate may be simplified manifestations of broader, more general ideas when presented in specific contexts. By recognizing this principle and striving for the simplest possible explanation, we can avoid overfitting and develop more accurate models of the world around us.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>visualization on Christos Tsanikidis - CS, Math, Life</title>
+    <title>visualization on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/tags/visualization/</link>
-    <description>Recent content in visualization on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in visualization on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 19 Feb 2016 16:01:23 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 19 Feb 2016 16:01:23 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Black Scholes</title>
+      <link>http://ctsan.github.io/project/black-scholes/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/project/black-scholes/</guid>
+      <description> Demonstration </description>
+    </item>
     
     <item>
       <title>Heat Equation PDE Simulation</title>

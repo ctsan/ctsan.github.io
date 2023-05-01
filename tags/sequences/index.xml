@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sequences on Christos Tsanikidis - CS, Math, Life</title>
+    <title>sequences on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/tags/sequences/</link>
-    <description>Recent content in sequences on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in sequences on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sun, 04 Feb 2018 17:50:48 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/tags/sequences/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Feb 2018 17:50:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/sequences/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Learning by Generalizing and Exploring</title>
+      <title>Effective Learning: Generalizing, Exploring, and Relating Concepts</title>
       <link>http://ctsan.github.io/post/learn-by-generalizing/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/post/learn-by-generalizing/</guid>
-      <description>When learning, the following principles can be very useful:
- generalizing what we learn, exploring the concept we learn, naming things.  Generalizing-Exploring helps us learn more than what we are actually taught while naming help us recognize-apply what we learn in random occurances in our lives [1]. When we learn a new practical technique, the steps required to start incorporating it in our lives are:
- understand the technique/advice, make it a habit (the hard part).</description>
+      <description>In the pursuit of personal growth, it&amp;rsquo;s essential to develop an effective learning strategy to navigate the vast world of information and new concepts. This blog post will focus on three key principles for mastering learning: generalizing, exploring, and relating concepts. By employing these techniques, you can not only absorb more information but also apply it in practical and meaningful ways.
+Generalizing, Exploring, and Relating Concepts Consider the following learning principles:</description>
+    </item>
+    
+    <item>
+      <title>Counting the number of elements in sequences through compression</title>
+      <link>http://ctsan.github.io/post/counting-insight/</link>
+      <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/counting-insight/</guid>
+      <description>Counting the elements in a sequence is a common problem in mathematics, computer science, and programming. Although in many cases this appears tricky, there&amp;rsquo;s a simple method to make the task straightforward, requiring only basic math skills.
+Examples Before Theory Let&amp;rsquo;s dive into a few examples before explaining the method precisely.
+Example 1: {5, 6, 7, &amp;hellip;, 100} First, find a function that maps integers (ideally starting from 0) to the elements above.</description>
     </item>
     
   </channel>

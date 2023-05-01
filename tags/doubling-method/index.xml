@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>doubling method on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/doubling-method/</link>
+    <description>Recent content in doubling method on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sat, 19 Aug 2017 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/doubling-method/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Enlightened Gambler: A Sobering Simulation of the Doubling Method</title>
+      <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
+      <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
+      <description>In conversations about gambling, I frequently encounter a dangerous cocktail of misinformation and misunderstanding. The average person, quite understandably, grapples with comprehending how probabilities can guarantee long-term losses. This challenge is further exacerbated by fallacies and complicated games that intentionally obscure the underlying truth: the house always wins.
+To illustrate this point, I&amp;rsquo;ve chosen to simulate the gambling process and present the average outcomes rather than diving into a potentially confusing sea of probabilities.</description>
+    </item>
+    
+  </channel>
+</rss>

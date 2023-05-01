@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>zero-sum game on Christos Tsanikidis - CS, Math, Life</title>
+    <title>zero-sum game on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/tags/zero-sum-game/</link>
-    <description>Recent content in zero-sum game on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in zero-sum game on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sun, 06 Nov 2016 16:01:23 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/tags/zero-sum-game/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 06 Nov 2016 16:01:23 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/zero-sum-game/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blind Hunter</title>
       <link>http://ctsan.github.io/project/blind-hunter/</link>
@@ -21,7 +17,7 @@
       <description>Suppose you are a hunter that doesn&amp;rsquo;t have information about the distance from the prey. For instance a blind dog with very precise smelling which can be mapped to a distance from the potential prey. How can this dog locate and eventually reach its prey?
 The algorithms are not documented yet, but a simulation is provided. If you are interested contact me for more information.
 Demo simulation parameters:
- \( V_{prey} \approx V_{predator} \) Prey changes direction with small probability Predator adopts the strategy we have assigned it (not explained here).</description>
+\( V_{prey} \approx V_{predator} \) Prey changes direction with small probability Predator adopts the strategy we have assigned it (not explained here).</description>
     </item>
     
   </channel>

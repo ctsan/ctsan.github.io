@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mathematical River - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="CT" /><meta name="description" content=" " /><meta name="keywords" content="Math, CS, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
+
+
+<link rel="canonical" href="http://ctsan.github.io/other/mathematical-river/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Mathematical River" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ctsan.github.io/other/mathematical-river/" /><meta property="article:section" content="other" />
+<meta property="article:published_time" content="2023-01-01T15:43:48+08:00" />
+<meta property="article:modified_time" content="2023-01-01T15:43:48+08:00" />
+<meta itemprop="name" content="Mathematical River">
+<meta itemprop="description" content=" "><meta itemprop="datePublished" content="2023-01-01T15:43:48+08:00" />
+<meta itemprop="dateModified" content="2023-01-01T15:43:48+08:00" />
+<meta itemprop="wordCount" content="0">
+<meta itemprop="keywords" content="math exploration,equation," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mathematical River"/>
+<meta name="twitter:description" content=" "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Christos Tsanikidis</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Christos Tsanikidis</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.css" integrity="sha384-mXD7x5S50Ko38scHSnD4egvoExgMPbrseZorkbE49evAfv9nNcbrXJ8LLNsDgh9d" crossorigin="anonymous">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/katex.min.js" integrity="sha384-j/ZricySXBnNMJy9meJCtyXTKMhIJ42heyr7oAdxTDBy/CYA9hzpMo+YTNV5C+1X" crossorigin="anonymous"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.6/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<div class="title-effect wrapper" data-title="Mathematical River"></div>
+<script>
+let equations = [
+"\\int \\sin(ax) \\cos(bx) dx = \\frac{1}{2(a^2 - b^2)}(\\sin(ax)\\sin(bx) - a\\cos(ax)\\cos(bx)) + C",
+    'e^{i\\pi} + 1 = 0',
+    'F_n = F_{n-1} + F_{n-2}',
+    'ax^2 + bx + c = 0',
+    'y = mx + b',
+    '\\nabla \\cdot \\textbf{E} = \\frac{\\rho}{\\epsilon_0}',
+    '\\nabla \\cdot \\textbf{B} = 0',
+    '\\nabla \\times \\textbf{E} = -\\frac{\\partial \\textbf{B}}{\\partial t}',
+    '\\nabla \\times \\textbf{B} = \\mu_0\\textbf{J} + \\mu_0\\epsilon_0\\frac{\\partial \\textbf{E}}{\\partial t}',
+    '\\textbf{F} = m\\textbf{a}',
+    'E = mc^2',
+    's = ut + \\frac{1}{2}at^2',
+    'v^2 = u^2 + 2as',
+    'P = \\frac{F}{A}',
+    '\\textbf{F} = G\\frac{m_1m_2}{r^2}',
+    'Q = mc\\Delta T',
+    '\\Delta S = \\int \\frac{dQ_{rev}}{T}',
+    '\\Delta G = \\Delta H - T\\Delta S',
+    'E = h\\nu',
+    '1 + \\frac{q^2}{(4\\pi\\epsilon_0)(hc)} = \\frac{1}{n^2}',
+    'PV = nRT',
+    '\\Gamma (n) = (n-1)!',
+    '\\oint_C \\textbf{F} \\cdot d\\textbf{r} = \\iint_S (\\nabla \\times \\textbf{F}) \\cdot d\\textbf{S}',
+    '\\int_a^b f(x) dx = F(b) - F(a)',
+    'e = \\lim_{n\\to\\infty} (1 + \\frac{1}{n})^n',
+    '\\sum_{n=1}^\\infty \\frac{1}{n^2} = \\frac{\\pi^2}{6}',
+    '\\lim_{n\\to\\infty} \\frac{n!}{n^n} = 0',
+    'i = \\sqrt{-1}',
+    '\\sin^2(x) + \\cos^2(x) = 1',
+    '\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}',
+    'e^{ix} = \\cos(x) + i\\sin(x)',
+    '\\int e^{ax} \\cos(bx) dx = \\frac{e^{ax}}{a^2 + b^2}(a\\cos(bx) - b\\sin(bx)) + C',
+    '\\int \\frac{1}{1 + x^2} dx = \\arctan(x) + C',
+    '\\int e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}\\operatorname{erf}(x) + C',
+    "f'(x) = \\lim_{h\\to 0} \\frac{f(x+h) - f(x)}{h}",
+    "\\int_{g(a)}^{g(b)} f(u) du",
+    "\\frac{d}{dx} (\\ln(x)) = \\frac{1}{x}",
+"\\int x^ne^x dx = x^ne^x - n\\int x^{n-1}e^x dx",
+"\\zeta(s) = \\sum_{n=1}^\\infty \\frac{1}{n^s}",
+"\\operatorname{sinc}(x) = \\frac{\\sin(x)}{x}",
+"\\delta(x) = \\begin{cases}+\\infty, & x = 0\\ 0, & x \\neq 0\\end{cases}",
+"H_n = \\sum_{k=1}^n \\frac{1}{k}",
+"T_n = \\frac{n(n+1)}{2}",
+"P(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}",
+"|z|^2 = z\\bar{z}",
+"\\oint_C \\frac{1}{z} dz = 2\\pi i",
+"f^{(n)}(x) = \\frac{n!}{2\\pi i}\\oint_C \\frac{f(z)}{(z-x)^{n+1}}dz",
+"\\frac{d}{dx}(\\sin^{-1}(x)) = \\frac{1}{\\sqrt{1-x^2}}",
+"\\int \\frac{1}{x^2 + a^2} dx = \\frac{1}{a}\\arctan(\\frac{x}{a}) + C",
+"\\nabla^2\\phi = \\nabla \\cdot (\\nabla \\phi)",
+"y'' + p(x)y' + q(x)y = 0",
+"\\frac{d}{dt}(\\frac{\\partial L}{\\partial \\dot{q}_i}) - \\frac{\\partial L}{\\partial q_i} = 0",
+"\\oint \\frac{P(x,y) dx + Q(x,y) dy}{R(x,y)} = 0",
+"\\frac{d}{dx}(x^n) = nx^{n-1}",
+"\\sum_{n=1}^\\infty \\frac{1}{n} = -\\gamma",
+"\\int \\sqrt{1 + x^2} dx = \\frac{1}{2}(x\\sqrt{1 + x^2} + \\ln(x + \\sqrt{1 + x^2})) + C",
+"\\int \\frac{1}{\\sqrt{x^2 + a^2}} dx = \\ln(x + \\sqrt{x^2 + a^2}) + C",
+"\\int \\frac{1}{\\sqrt{x^2 - a^2}} dx = \\ln(x + \\sqrt{x^2 - a^2}) + C",
+"\\int \\frac{1}{x^2 - a^2} dx = \\frac{1}{2a}\\ln\\left(\\frac{x - a}{x + a}\\right) + C",
+"\\int \\frac{x}{1 + x^2} dx = \\frac{1}{2}\\ln(1 + x^2) + C",
+"\\frac{dS}{dt} = \\mu S dt + \\sigma S dW_t",
+"C(S, t) = S N(d_1) - K e^{-r(T-t)} N(d_2)",
+"d_1 = \\frac{\\ln{\\frac{S}{K}} + (r + \\frac{\\sigma^2}{2})(T - t)}{\\sigma \\sqrt{T - t}}",
+"d_2 = d_1 - \\sigma \\sqrt{T - t}",
+"f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}",
+"F(x) = \\int_{-\\infty}^x f(t) dt",
+"\\Delta = \\frac{\\partial C}{\\partial S}",
+"\\Gamma = \\frac{\\partial^2 C}{\\partial S^2}",
+"V = \\frac{\\partial C}{\\partial \\sigma}",
+"\\Theta = \\frac{\\partial C}{\\partial t}",
+"\\rho = \\frac{\\partial C}{\\partial r}",
+"\\nu = \\frac{\\partial C}{\\partial q}",
+"r = \\frac{\\ln{\\frac{F}{K}}}{T}",
+"\\frac{dF}{dt} = (r - q) F dt + \\sigma F dW_t",
+"\\frac{dP}{dt} = (r - \\lambda) P dt + \\sigma P dW_t",
+"E \\left[ e^{-rT} \\right] = e^{-rT}",
+"E \\left[ W_T \\right] = 0",
+"E \\left[ W_T^2 \\right] = T",
+"E \\left[ S_T \\right] = S_0 e^{(r - \\frac{1}{2} \\sigma^2) T}",
+"E \\left[ S_T^2 \\right] = S_0^2 e^{2 r T}",
+"\\frac{dS}{dt} = \\mu S dt + \\sigma S dW_t",
+"C(S, t) = S N(d_1) - K e^{-r(T-t)} N(d_2)",
+"d_1 = \\frac{\\ln{\\frac{S}{K}} + (r + \\frac{\\sigma^2}{2})(T - t)}{\\sigma \\sqrt{T - t}}",
+"d_2 = d_1 - \\sigma \\sqrt{T - t}",
+"f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}",
+"F(x) = \\int_{-\\infty}^x f(t) dt",
+"\\Delta = \\frac{\\partial C}{\\partial S}",
+"\\Gamma = \\frac{\\partial^2 C}{\\partial S^2}",
+"V = \\frac{\\partial C}{\\partial \\sigma}",
+"\\Theta = \\frac{\\partial C}{\\partial t}",
+"\\rho = \\frac{\\partial C}{\\partial r}",
+"\\nu = \\frac{\\partial C}{\\partial q}",
+"r = \\frac{\\ln{\\frac{F}{K}}}{T}",
+"\\frac{dF}{dt} = (r - q) F dt + \\sigma F dW_t",
+"\\frac{dP}{dt} = (r - \\lambda) P dt + \\sigma P dW_t",
+"E \\left[ e^{-rT} \\right] = e^{-rT}",
+"E \\left[ W_T \\right] = 0",
+"E \\left[ W_T^2 \\right] = T",
+"E \\left[ S_T \\right] = S_0 e^{(r - \\frac{1}{2} \\sigma^2) T}",
+"E \\left[ S_T^2 \\right] = S_0^2 e^{2 r T}",
+"P(S, t) = K e^{-r(T-t)} N(-d_2) - S N(-d_1)",
+"E \\left[ e^{-rT} (K - S_T)^+ \\right] = P(S, t)",
+"\\frac{dY}{dt} = r Y dt + \\delta dW_t",
+"Y_t = Y_0 e^{(r - \\frac{1}{2} \\delta^2) t + \\delta W_t}",
+"\\frac{dV}{dt} = r V dt + \\alpha dW_t",
+"V_t = V_0 e^{(r - \\frac{1}{2} \\alpha^2) t + \\alpha W_t}",
+"E \\left[ e^{-rT} V_T \\right] = V_0",
+"E \\left[ e^{-rT} Y_T \\right] = Y_0",
+"\\frac{dR}{dt} = (\\mu - r) R dt + \\beta R dW_t",
+"R_t = R_0 e^{(\\mu - r - \\frac{1}{2} \\beta^2) t + \\beta W_t}",
+"E \\left[ e^{-rT} R_T \\right] = R_0",
+"\\sigma_P = \\sqrt{w_A^2 \\sigma_A^2 + w_B^2 \\sigma_B^2 + 2w_A w_B \\rho_{AB} \\sigma_A \\sigma_B}",
+"\\mu_P = w_A \\mu_A + w_B \\mu_B",
+"Var(R_P) = w_A^2 Var(R_A) + w_B^2 Var(R_B) + 2w_A w_B Cov(R_A, R_B)",
+"\\rho_{AB} = \\frac{Cov(R_A, R_B)}{\\sigma_A \\sigma_B}",
+"\\phi(\\alpha) = E \\left[ e^{i \\alpha \\ln{\\frac{S_T}{S_0}}} \\right]",
+"C(S, t) = S \\phi(\\alpha) - K e^{-r(T-t)} \\phi(\\alpha + 1)",
+"P(S, t) = K e^{-r(T-t)} \\phi(\\alpha - 1) - S \\phi(-\\alpha)",
+"\\phi(\\alpha) = e^{-\\alpha (\\mu - r - \\frac{1}{2} \\sigma^2) (T - t) - \\frac{1}{2} \\alpha^2 \\sigma^2 (T - t)}",
+"\\rho = \\frac{dW_t^A dW_t^B}{dt}",
+"\\frac{dS_A}{dt} = \\mu_A S_A dt + \\sigma_A S_A dW_t^A",
+"\\frac{dS_B}{dt} = \\mu_B S_B dt + \\sigma_B S_B dW_t^B",
+"\\mu_{AB} = \\mu_A - \\rho \\sigma_A \\sigma_B",
+"\\sigma_{AB} = \\sigma_A \\sigma_B \\sqrt{1 - \\rho^2}",
+"\\mu_{P} = \\mu_A - \\rho \\sigma_A \\sigma_B + \\frac{1}{2} \\sigma_{AB}^2",
+"P(|X - E[X]| \\geq t) \\leq 2e^{-\\frac{2t^2}{n}}",
+"P(|X - E[X]| \\geq t) \\leq 2e^{-\\frac{t^2}{2\\sigma^2 + \\frac{2t}{3}}}",
+"P(|X - E[X]| \\geq t) \\leq 2e^{-\\frac{nt^2}{2\\sigma^2 + 2tB}}",
+"P(X \\geq E[X] + t) \\leq e^{-\\frac{nt^2}{2\\sigma^2 + 2tB}}",
+"P(|X - E[X]| \\geq t) \\leq e^{-\\frac{nt^2}{2\\sigma^2}}",
+"P(|X - E[X]| \\geq t) \\leq 2e^{-\\frac{t^2}{\\sigma^2}}",
+"P(X - E[X] \\geq t) \\leq e^{-\\frac{t^2}{2\\sigma^2}}",
+"P(X \\geq E[X] + t) \\leq e^{-\\frac{t^2}{2(\\sigma^2 + Bt)}}",
+"P(|\\sum_{i=1}^n X_i - E[\\sum_{i=1}^n X_i]| \\geq t) \\leq 2e^{-\\frac{t^2}{2n\\sigma^2}}",
+"P(\\sum_{i=1}^n X_i \\geq E[\\sum_{i=1}^n X_i] + t) \\leq e^{-\\frac{t^2}{2n\\sigma^2}}",
+"P(A \\cap B) = P(A)P(B|A)",
+"P(A \\cup B) = P(A) + P(B) - P(A \\cap B)",
+"P(A|B) = \\frac{P(A \\cap B)}{P(B)}",
+"P(A) = \\sum_{i} P(A|B_i)P(B_i)",
+"\\text{Var}(X) = E[X^2] - (E[X])^2",
+"\\text{Cov}(X, Y) = E[XY] - E[X]E[Y]",
+"\\rho(X, Y) = \\frac{\\text{Cov}(X, Y)}{\\sqrt{\\text{Var}(X)\\text{Var}(Y)}}",
+"E[aX + bY] = aE[X] + bE[Y]",
+"\\text{Var}(aX + bY) = a^2\\text{Var}(X) + b^2\\text{Var}(Y) + 2ab\\text{Cov}(X, Y)",
+"P(X = x) = \\frac{e^{-\\lambda}\\lambda^x}{x!}",
+"P(X = x) = \\binom{n}{x}p^x(1-p)^{n-x}",
+"\\mu = np",
+"\\sigma^2 = np(1-p)",
+"P(X = x) = \\frac{\\Gamma(\\alpha + \\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}x^{\\alpha-1}(1-x)^{\\beta-1}",
+"P(X = x) = \\frac{e^{-(x-\\mu)^2/(2\\sigma^2)}}{\\sqrt{2\\pi\\sigma^2}}",
+"\\mathcal{L}(\\theta|X) = \\prod_{i=1}^n P(x_i|\\theta)",
+"\\ell(\\theta|X) = \\sum_{i=1}^n \\log P(x_i|\\theta)",
+"\\nabla \\ell(\\theta|X) = 0",
+"\\theta_{\\text{MLE}} = \\arg\\max_{\\theta} \\mathcal{L}(\\theta|X)",
+"\\theta_{\\text{MAP}} = \\arg\\max_{\\theta} P(\\theta|X)",
+"P(\\theta|X) = \\frac{P(X|\\theta)P(\\theta)}{P(X)}",
+"f_X(x) = \\frac{dF_X(x)}{dx}",
+"F_X(x) = \\int_{-\\infty}^x f_X(t) dt",
+"E[X] = \\int_{-\\infty}^{\\infty} xf_X(x) dx",
+"E[X^2] = \\int_{-\\infty}^{\\infty} x^2f_X(x) dx",
+"\\text{Var}(X) = \\int_{-\\infty}^{\\infty} (x - E[X])^2f_X(x) dx",
+"H(X) = -\\sum_{i} P(x_i)\\log_2 P(x_i)",
+"I(X; Y) = \\sum_{x \\in X} \\sum_{y \\in Y} P(x, y) \\log \\frac{P(x, y)}{P(x)P(y)}",
+"H(X|Y) = -\\sum_{x, y} P(x, y) \\log P(x|y)",
+"H(X, Y) = H(X) + H(Y|X)",
+"\\text{MSE}(\\hat{y}, y) = \\frac{1}{n} \\sum_{i=1}^n (\\hat{y}_i - y_i)^2",
+"\\text{MAE}(\\hat{y}, y) = \\frac{1}{n} \\sum_{i=1}^n |\\hat{y}_i - y_i|",
+"R^2 = 1 - \\frac{\\text{SS}_{res}}{\\text{SS}_{tot}}",
+"\\hat{y} = X\\beta",
+"\\beta = (X^TX)^{-1}X^Ty",
+"\\mathcal{L}(\\theta) = \\sum_{i=1}^n L(y_i, f(x_i; \\theta))",
+"\\nabla \\mathcal{L}(\\theta) = 0",
+"\\theta_{\\text{OLS}} = \\arg\\min_{\\theta} ||y - X\\theta||^2",
+"\\theta_{\\text{Lasso}} = \\arg\\min_{\\theta} ||y - X\\theta||^2 + \\lambda ||\\theta||_1",
+"\\theta_{\\text{Ridge}} = \\arg\\min_{\\theta} ||y - X\\theta||^2 + \\lambda ||\\theta||_2^2",
+"\\text{AUC} = \\frac{\\sum_{i=1}^n \\text{rank}(\\hat{y}_i)}{\\sum_{i=1}^n \\text{rank}(y_i)}",
+"\\text{Precision} = \\frac{\\text{TP}}{\\text{TP} + \\text{FP}}",
+"\\text{Recall} = \\frac{\\text{TP}}{\\text{TP} + \\text{FN}}",
+"\\text{F1} = 2 \\times \\frac{\\text{Precision} \\times \\text{Recall}}{\\text{Precision} + \\text{Recall}}",
+"P(y|x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}}",
+"\\theta_{\\text{MLE}} = \\arg\\max_{\\theta} \\sum_{i=1}^n \\left[ y_i \\log p(y_i|x_i) + (1 - y_i) \\log (1 - p(y_i|x_i)) \\right]",
+"\\hat{y} = \\text{sign}(w^T x + b)",
+"w_{\\text{SVM}} = \\arg\\min_{w, b} \\frac{1}{2} ||w||^2 + C \\sum_{i=1}^n \\xi_i",
+"\\mathcal{L}(\\theta) = -\\frac{1}{2} \\sum_{i=1}^n (y_i - f(x_i; \\theta))^2",
+"\\theta_{\\text{GD}} = \\theta - \\eta \\nabla \\mathcal{L}(\\theta)",
+"\\theta_{\\text{SGD}} = \\theta - \\eta \\nabla \\mathcal{L}(\\theta_i)",
+"\\theta_{\\text{ADAM}} = \\theta - \\eta \\frac{\\hat{m}_t}{\\sqrt{\\hat{v}_t} + \\epsilon}",
+"\\text{KLD}(P||Q) = \\sum_{i} P(x_i) \\log \\frac{P(x_i)}{Q(x_i)}",
+"\\text{NMI}(X, Y) = \\frac{I(X; Y)}{\\sqrt{H(X)H(Y)}}",
+"\\text{JSD}(P||Q) = \\frac{1}{2} \\text{KLD}(P||M) + \\frac{1}{2} \\text{KLD}(Q||M)",
+"\\text{JS}(P, Q) = \\sqrt{\\text{JSD}(P||Q)}",
+"\\text{Gini}(X) = 1 - \\sum_{i=1}^n p_i^2",
+"\\text{Entropy}(X) = -\\sum_{i=1}^n p_i \\log p_i",
+"\\text{Gain}(X, A) = \\text{Entropy}(X) - \\sum_{v \\in A} \\frac{|X_v|}{|X|} \\text{Entropy}(X_v)",
+"\\text{GainRatio}(X, A) = \\frac{\\text{Gain}(X, A)}{\\text{SplitInfo}(A)}",
+"\\text{GiniIndex}(A) = \\sum_{i=1}^k \\frac{n_i}{N} \\text{Gini}(D_i)",
+"\\mathcal{L}(\\theta) = \\frac{1}{2} \\sum_{i=1}^n (y_i - f(x_i; \\theta))^2 + \\frac{\\lambda}{2} ||\\theta||_2^2",
+"\\nabla \\mathcal{L}(\\theta) = X^T (X\\theta - y) + \\lambda \\theta",
+"\\mathcal{L}(\\theta) = \\frac{1}{2} \\sum_{i=1}^n (y_i - f(x_i; \\theta))^2 + \\lambda ||\\theta||_1",
+"\\mathcal{L}(\\theta) = -\\frac{1}{n} \\sum_{i=1}^n \\left[ y_i \\log(\\hat{y}_i) + (1 - y_i) \\log(1 - \\hat{y}_i) \\right]",
+"\\text{AIC} = 2k - 2\\log \\mathcal{L}(\\theta_{\\text{MLE}})",
+"\\text{Silhouette}(i) = \\frac{b(i) - a(i)}{\\max(a(i), b(i))}",
+"\\hat{y} = k \\sum_{i=1}^n a_i K(x_i, x)",
+"K(x, z) = \\phi(x)^T \\phi(z)",
+"\\phi(x) = \\begin{bmatrix} x_1^2 \\\\ \\sqrt{2}x_1x_2 \\\\ x_2^2 \\end{bmatrix}",
+"P(y|x, w) = \\frac{1}{1 + e^{-(w^T x)}}",
+"\\mathcal{L}(w) = -\\sum_{i=1}^n \\left[ y_i \\log(\\hat{y}_i) + (1 - y_i) \\log(1 - \\hat{y}_i) \\right] + \\frac{\\lambda}{2} ||w||_2^2",
+"\\nabla \\mathcal{L}(w) = -X^T(y - \\hat{y}) + \\lambda w",
+"\\text{ReLU}(x) = \\max(0, x)",
+"\\text{sigmoid}(x) = \\frac{1}{1 + e^{-x}}",
+"\\text{tanh}(x) = \\frac{e^x - e^{-x}}{e^x + e^{-x}}",
+"\\text{softmax}(x_i) = \\frac{e^{x_i}}{\\sum_{j=1}^n e^{x_j}}",
+"\\text{CrossEntropy}(y, \\hat{y}) = -\\sum_{i=1}^n y_i \\log \\hat{y}_i",
+"\\text{MomentumUpdate}(w, v) = w - \\eta \\nabla \\mathcal{L}(w) + \\alpha v",
+"\\text{NesterovUpdate}(w, v) = w - \\eta \\nabla \\mathcal{L}(w + \\alpha v) + \\alpha v",
+"\\mathcal{L}(w, b) = -\\sum_{i=1}^n \\left[ y_i \\log(\\hat{y}_i) + (1 - y_i) \\log(1 - \\hat{y}_i) \\right] + \\frac{\\lambda}{2} ||w||_2^2",
+"\\nabla_w \\mathcal{L}(w, b) = -X^T(y - \\hat{y}) + \\lambda w",
+"\\nabla_b \\mathcal{L}(w, b) = -\\sum_{i=1}^n (y_i - \\hat{y}_i)",
+"\\text{Precision}(k) = \\frac{\\text{TP}(k)}{\\text{TP}(k) + \\text{FP}(k)}",
+"\\text{Recall}(k) = \\frac{\\text{TP}(k)}{\\text{TP}(k) + \\text{FN}(k)}",
+"\\text{F1}(k) = 2 \\times \\frac{\\text{Precision}(k) \\times \\text{Recall}(k)}{\\text{Precision}(k) + \\text{Recall}(k)}",
+]
+
+  let renderedEquations = [];
+  let walkSpeed = 0.1;
+  let filters = [
+//    'blur(10px)',
+//    'blur(5px)',
+//    'blur(2px)',
+//    'blur(1px)',
+//    'blur(0.5px)',
+//    'drop-shadow(16px 16px 20px rgb(100,50,155))',
+//    'drop-shadow(16px 16px 20px rgb(100,100,155))',
+//    'drop-shadow(16px 16px 20px rgb(100,150,255))',
+    //'grayscale(50%)',
+ //   'blur(0.5px)',
+ //   'blur(1px)',
+ //   'blur(2px)',
+ //   'blur(5px)',
+    //'brightness(0.4)',
+    //'contrast(200%)',
+    //'hue-rotate(90deg)',
+    //'invert(75%)',
+    'opacity(100%)',
+    'opacity(75%)',
+    'opacity(50%)',
+    'opacity(25%)',
+    'opacity(0%)',
+    'opacity(25%)',
+    'opacity(50%)',
+    'opacity(75%)',
+    //'saturate(30%)',
+    //'sepia(60%)'
+  ];
+
+    function setup() {
+    let canvasContainer = document.getElementById('canvas-container');
+    let width = canvasContainer.offsetWidth;
+    let height = canvasContainer.offsetHeight;
+    let canvasContainerRect = canvasContainer.getBoundingClientRect();
+    let topDist = getCoords(canvasContainer).top
+    let leftDist = getCoords(canvasContainer).left 
+    let canvas = createCanvas(width, height);
+    canvas.parent('canvas-container');
+
+    for (let i = 0; i < equations.length; i++) {
+      let x, y, box;
+      do {
+        x = random(leftDist*0.9, leftDist + 4*width); // Update the range of random()
+        y = random(topDist, topDist + height);
+
+        let span = createSpan();
+        span.addClass('equation');
+        span.position(x, y);
+        katex.render(equations[i], span.elt,{
+    displayMode: true
+});
+        let randomFilter = random(filters);
+        span.style('filter', randomFilter);
+        box = span.elt.getBoundingClientRect();
+        span.remove();
+      } while (box.x+box.width < leftDist || box.x + box.width > leftDist + width *4 || box.y < topDist || box.y + box.height > topDist + height);
+
+      let span = createSpan();
+      span.addClass('equation');
+      span.position(box.x, box.y);
+      katex.render(equations[i], span.elt, {
+    displayMode: true
+});
+
+  box = span.elt.getBoundingClientRect();
+  console.log(box)
+
+ let randomFilterIndex = floor(random(filters.length));
+    let intervalGroup = i % 5; // Assign each equation to one of the 5 interval groups
+
+    function getRandomBlue() {
+  const randomBlue = Math.floor(Math.random() * 150)+100;
+  const randomGreen = Math.floor(Math.random() * (randomBlue/2));
+  const randomRed = Math.floor(Math.random() * (randomBlue/8));
+
+  return `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+}
+  const randomBlue = getRandomBlue();
+
+
+    span.style('filter', filters[randomFilterIndex]);
+    span.style('color', randomBlue);
+
+    drftvar = random(0.5, 1.5)
+    renderedEquations.push({
+      x: box.x,
+      y: box.y,
+      width: box.width,
+      height: box.height,
+      xVelocity: 0,
+  yVelocity: 0,
+      element: span,
+      filterIndex: randomFilterIndex,
+      intervalGroup: intervalGroup,
+      drift: drftvar, // Add a random drift value between 0.5 and 2
+      maxVelocity: drftvar, // Set a maximum velocity value
+    });
+
+    }
+
+  let minIntervalDuration = 2000; // Minimum interval duration in milliseconds
+  let maxIntervalDuration = 3000; // Maximum interval duration in milliseconds
+
+  for (let i = 0; i < 5; i++) {
+    let randomIntervalDuration = random(minIntervalDuration, maxIntervalDuration);
+    setInterval(() => changeFilter(i), randomIntervalDuration);
+  }
+
+  }
+
+function changeFilter(intervalGroup) {
+  for (let eq of renderedEquations) {
+    if (eq.intervalGroup === intervalGroup) {
+      eq.filterIndex = (eq.filterIndex + 1) % filters.length;
+      eq.element.style('filter', filters[eq.filterIndex]);
+    }
+  }
+}
+function getCoords(elem) {
+  let box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + window.pageYOffset,
+    right: box.right + window.pageXOffset,
+    bottom: box.bottom + window.pageYOffset,
+    left: box.left + window.pageXOffset
+  };
+}
+function draw() {
+  let canvasContainer = document.getElementById('canvas-container');
+  let width = canvasContainer.offsetWidth;
+  let height = canvasContainer.offsetHeight;
+  let canvasContainerRect = canvasContainer.getBoundingClientRect();
+  let topDist = getCoords(canvasContainer).top
+  let leftDist = getCoords(canvasContainer).left 
+
+  background(255);
+
+  let z=0;
+  for (let eq of renderedEquations) {
+    z+= 1;
+      //let dx = random(-walkSpeed, walkSpeed) + eq.drift;
+    //let dy = random(-walkSpeed, walkSpeed);
+
+    eq.xVelocity += random(-walkSpeed, walkSpeed);
+    eq.yVelocity += random(-walkSpeed, walkSpeed);
+
+  // Cap the velocities to the maximum value
+  eq.xVelocity = constrain(eq.xVelocity, -eq.maxVelocity, eq.maxVelocity);
+  eq.yVelocity = constrain(eq.yVelocity, -eq.maxVelocity, eq.maxVelocity);
+
+  // Add the drift and updated velocities to the position
+  eq.x += eq.xVelocity + eq.drift;
+  eq.y += eq.yVelocity;
+    // Check if the equation hits the top or bottom boundary
+  if (eq.y <= topDist || eq.y + eq.height >= topDist + height) {
+    // Reverse the yVelocity when hitting the boundary
+    eq.yVelocity = -eq.yVelocity;
+  }
+
+
+
+    //eq.x += dx;
+    //eq.y += dy;
+
+    if (eq.x > leftDist + width) {
+      // Hide the equation when it's out of the canvas
+      eq.element.hide();
+    } else {
+      // Show the equation when it's within the canvas
+      eq.element.show();
+    }
+
+    if (eq.x > leftDist + width * 4) {
+      // Reset the equation position when it reaches a certain position
+      eq.x = leftDist - eq.width;
+    }
+
+    eq.y = constrain(eq.y, topDist, topDist + height - eq.height);
+
+    let leftClip = max(leftDist - eq.x, 0);
+    let topClip = max(topDist - eq.y, 0);
+    let rightClip = max(eq.x + eq.width - (leftDist + width), 0);
+    let bottomClip = max(eq.y + eq.height - (topDist + height), 0);
+    let color = 'black'
+    eq.element.style(
+      "clip-path",
+      `inset(${topClip}px ${rightClip}px ${bottomClip}px ${leftClip}px)`
+    );
+    if (z==1) {
+      //console.log(eq,eq.width)
+      //eq.element.style('color','red')
+    }
+    eq.element.position(eq.x, eq.y);
+  }
+}
+</script>
+<div id="canvas-container" style="height:600px"></div>
+<style>
+      #canvas-container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+    .equation {
+      z-index: 1000; /* Set the z-index to a higher value */
+      transition: filter 2s ease-in-out;
+      color: blue;
+      display: inline-block;
+      overflow: hidden; /* optional: hide any content that overflows the fixed width */
+    }
+  </style>
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="/about" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+	
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023
+    
+    <span class="author">Christos Tsanikidis</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111355141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
+
+
+
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
+</body>
+</html>

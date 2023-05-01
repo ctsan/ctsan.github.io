@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Turkey to Greece missile range - Christos Tsanikidis - CS, Math, Life</title>
+  <title>Turkey to Greece missile range - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
@@ -14,23 +14,95 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
 <meta name="theme-color" content="#f8f5ec" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Christos Tsanikidis" /><meta name="description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal.
-Immediately the question that I was curious about was, what targets in Greece can be hit by Turkey now?
-Before I begin, I want to make clear that this experiment was created for fun and that I am not that pessimistic about the relations of the two countries.
-Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey." /><meta name="keywords" content="Math, CS, Life" />
+<meta name="author" content="CT" /><meta name="description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal. I was instantly curious: what targets in Greece can be hit by Turkey now?
+This experiment is created for fun. The author is optimistic about the relations of the two countries.
+scroll down for the results to see the resulting images
+Problem Setting Hit Area Let $\mathcal{T}$ be the set of points that are in Turkey." /><meta name="keywords" content="Math, CS, Life" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.69.2 with theme even" />
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
 
 
 <link rel="canonical" href="http://ctsan.github.io/project/turkey-greece-range/" />
@@ -41,36 +113,33 @@ Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey." /><me
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link href="/dist/even.b480bb55.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Turkey to Greece missile range" />
-<meta property="og:description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal.
-Immediately the question that I was curious about was, what targets in Greece can be hit by Turkey now?
-Before I begin, I want to make clear that this experiment was created for fun and that I am not that pessimistic about the relations of the two countries.
-Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey." />
+<meta property="og:description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal. I was instantly curious: what targets in Greece can be hit by Turkey now?
+This experiment is created for fun. The author is optimistic about the relations of the two countries.
+scroll down for the results to see the resulting images
+Problem Setting Hit Area Let $\mathcal{T}$ be the set of points that are in Turkey." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://ctsan.github.io/project/turkey-greece-range/" />
+<meta property="og:url" content="http://ctsan.github.io/project/turkey-greece-range/" /><meta property="article:section" content="project" />
 <meta property="article:published_time" content="2017-05-27T16:01:23+08:00" />
 <meta property="article:modified_time" content="2017-08-30T16:01:23+08:00" />
 <meta itemprop="name" content="Turkey to Greece missile range">
-<meta itemprop="description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal.
-Immediately the question that I was curious about was, what targets in Greece can be hit by Turkey now?
-Before I begin, I want to make clear that this experiment was created for fun and that I am not that pessimistic about the relations of the two countries.
-Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey.">
-<meta itemprop="datePublished" content="2017-05-27T16:01:23&#43;08:00" />
-<meta itemprop="dateModified" content="2017-08-30T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="398">
-
-
-
+<meta itemprop="description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal. I was instantly curious: what targets in Greece can be hit by Turkey now?
+This experiment is created for fun. The author is optimistic about the relations of the two countries.
+scroll down for the results to see the resulting images
+Problem Setting Hit Area Let $\mathcal{T}$ be the set of points that are in Turkey."><meta itemprop="datePublished" content="2017-05-27T16:01:23+08:00" />
+<meta itemprop="dateModified" content="2017-08-30T16:01:23+08:00" />
+<meta itemprop="wordCount" content="368">
 <meta itemprop="keywords" content="python,data gathering,turkey,greece," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Turkey to Greece missile range"/>
-<meta name="twitter:description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal.
-Immediately the question that I was curious about was, what targets in Greece can be hit by Turkey now?
-Before I begin, I want to make clear that this experiment was created for fun and that I am not that pessimistic about the relations of the two countries.
-Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey."/>
+<meta name="twitter:description" content="It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal. I was instantly curious: what targets in Greece can be hit by Turkey now?
+This experiment is created for fun. The author is optimistic about the relations of the two countries.
+scroll down for the results to see the resulting images
+Problem Setting Hit Area Let $\mathcal{T}$ be the set of points that are in Turkey."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -97,8 +166,10 @@ Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey."/>
   <ul class="mobile-menu-list">
     <a href="/">
         <li class="mobile-menu-item">Home</li>
-      </a><a href="/project/">
-        <li class="mobile-menu-item">Projects</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -115,7 +186,9 @@ Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey."/>
     <li class="menu-item">
         <a class="menu-item-link" href="/">Home</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/project/">Projects</a>
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
       </li>
@@ -129,47 +202,44 @@ Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey."/>
           <article class="post">
   <div class="post-content">
     <p>It was announced in Greek media that Turkey achieved a
-new maximum range with modern missiles in its disposal.</p>
-<p>Immediately the question that I was curious about was,
-what targets in Greece can be hit by Turkey now?</p>
-<p>Before I begin, I want to make clear that this experiment
-was created for fun and that I am not that pessimistic
+new maximum range with modern missiles in its disposal.
+I was instantly curious: what targets in Greece can be hit
+by Turkey now?</p>
+<p>This experiment is created for fun. The author is optimistic
 about the relations of the two countries.</p>
-<h1 id="problem">Problem</h1>
+<p><strong>scroll down for the results to see the resulting images</strong></p>
+<h1 id="problem-setting">Problem Setting</h1>
 <h2 id="hit-area">Hit Area</h2>
-<p>if \(\mathcal{T}\) the set of points that are in Turkey. \(\mathcal{G}\) the set
-of points in Greece. The range of the missile \(R\), then we need to find:</p>
-<p>$$\mathcal {Hit} = \{ x | y \in \mathcal{T}, x \in \mathcal G: dist(x,y) \leq R \}$$</p>
+<p>Let $\mathcal{T}$ be the set of points that are in Turkey. \(\mathcal{G}\) the set
+of points in Greece. The range of the missile \(R\), then we are looking for:</p>
+<p>$$\mathcal {Hit} = \{ x \in \mathcal G\ |\ y \in \mathcal{T}: ||x-y|| \leq R \}$$</p>
 <h2 id="accessibility-of-targets">Accessibility of Targets</h2>
-<p>It might be of interest how easily a target can be hit
-, that is, how many points in Turkey&rsquo;s territory can be used to hit that
-target.</p>
-<p>This can be described by the measure of the set of the points that can reach
-the target, non-normalized:</p>
-<p>$$\mathcal{Acc}(x) =||\{ y | y \in \mathcal{T}, dist(x,y) \leq R \}||$$</p>
+<p>It might be of interest to measure how easily a target can be hit, that is,
+how many points in Turkey&rsquo;s territory have access to the target.</p>
+<p>This can be computed by the area of the points that can reach
+the target:</p>
+<p>$$\mathcal{Acc}(x) =area\ \{ y\ |\ y \in \mathcal{T}, ||x-y|| \leq R \}
+$$</p>
 <h1 id="implementation">Implementation</h1>
-<p>There are many ways to implement this. With sophisticated
-solutions, you can find a very precise image of the targets
-that can be hit.</p>
-<p>For example, one could adopt computational geometry methods,
-and find nearly exact results with intersections of polygonal
-regions.</p>
-<p>To make things very simple, my implementation was very direct:
-taking random points in Turkey&rsquo;s territory using rejection.
-For any given random point \(A\) in Turkey, take random
-points \( \{x_i\} \) within the range of the missile: \( x_i \in \{ x | d(x,A) \leq range\}\).
-Keep the points that fall in Greek land \( \{x_i\} \cap \mathcal G \).</p>
-<p>This is not an efficient way but it&rsquo;s working for my purposes.
-Due to the fractal like topology of Greek and Turkey border,
-the problem becomes more demanding, but this immediate approach
-that works on a per group of pixels base doesn&rsquo;t get affected
-by that.</p>
-<p>Smarter methods could take advantage of the topology, or adopt
-better ways to sample the space. A better alternative would be
-to use <strong>markov chain monte carlo (MCMC)</strong> to sample the space.</p>
-<h1 id="results">Results</h1>
-<p>Two different pictures of two different ranges is shown. The
-second image also depicts the random points from which we started
+<p>There are many ways to implement this. Sophisticated
+solutions would yield a precise image of the targets
+that can be hit (computational geometry might be of use here).</p>
+<p>In this project we are looking for simple Monte Carlo solutions.
+Consider this very direct approach: take random points
+in Turkey&rsquo;s territory using rejection.
+For a random point in Turkey \(p_t\in \mathcal T\), take random
+points \( \{p_i\} \) within the range of the missile: \( p_i \in \{ p\ |\ ||p-p_t|| \leq R\}\).
+Keep the points that fall in Greek land \( \{p_i\} \cap \mathcal G \).</p>
+<p><strong>Limitations of approach</strong>. This approach would not be as efficient
+for extremely small areas.</p>
+<p><strong>Other Monte Carlo Methods</strong>. We don&rsquo;t use domain knowledge in this
+approach. Countries tend to be concentrated in certain areas as
+opposed to be sets of arbitrary points. Smarter sampling would
+take advantage of structure like this to uncover better sample
+efficiency. The interested reader is referred to MCMC methods.</p>
+<h1 id="final-image">Final Image</h1>
+<p>Two different pictures of two different ranges are shown. The
+second image depicts the random points from which we started
 in Turkey.</p>
 <p>The side effect of this implementation is that density also illustrates
 the accessibility of an area.</p>
@@ -197,13 +267,15 @@ the accessibility of an area.</p>
 </div>
 
 <div class="copyright">
+	
 
   
 
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2020,
+    2023
+    
     <span class="author">Christos Tsanikidis</span>
   </span>
 </div>
@@ -218,7 +290,34 @@ the accessibility of an area.</p>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        packages: { '[+]': ['noerrors'] }
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      },
+      chtml: {
+        scale: 1.2
+      }
+    };
+
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 
 <script type="application/javascript">
@@ -235,8 +334,195 @@ if (!doNotTrack) {
 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
 
 
 
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
 </body>
 </html>

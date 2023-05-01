@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>greece on Christos Tsanikidis - CS, Math, Life</title>
+    <title>greece on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/tags/greece/</link>
-    <description>Recent content in greece on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in greece on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sat, 27 May 2017 16:01:23 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/tags/greece/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 27 May 2017 16:01:23 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/greece/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Turkey to Greece missile range</title>
       <link>http://ctsan.github.io/project/turkey-greece-range/</link>
       <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
       
       <guid>http://ctsan.github.io/project/turkey-greece-range/</guid>
-      <description>It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal.
-Immediately the question that I was curious about was, what targets in Greece can be hit by Turkey now?
-Before I begin, I want to make clear that this experiment was created for fun and that I am not that pessimistic about the relations of the two countries.
-Problem Hit Area if \(\mathcal{T}\) the set of points that are in Turkey.</description>
+      <description>It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal. I was instantly curious: what targets in Greece can be hit by Turkey now?
+This experiment is created for fun. The author is optimistic about the relations of the two countries.
+scroll down for the results to see the resulting images
+Problem Setting Hit Area Let $\mathcal{T}$ be the set of points that are in Turkey.</description>
     </item>
     
   </channel>

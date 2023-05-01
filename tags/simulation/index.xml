@@ -1,46 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>simulation on Christos Tsanikidis - CS, Math, Life</title>
+    <title>simulation on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/tags/simulation/</link>
-    <description>Recent content in simulation on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in simulation on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sun, 29 Mar 2020 14:47:48 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 22 Dec 2017 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Modelling and Simulating a Pandemic</title>
-      <link>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</link>
-      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
-      <description>Disclaimer: The author is NOT an epidemiologist or a health expert. The model was built based on his anecdotal experience.
-Warning: It&amp;rsquo;s recommended to use a large enough screen (for example a tablet or a desktop). Some information is omitted in smaller screens.
-Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device.</description>
-    </item>
-    
-    <item>
-      <title>Steps taken for the creation of a virtual football betting game</title>
+      <title>How to make a profitable virtual football betting game</title>
       <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
-      <description>-- I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
+      <description>I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
 Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
     </item>
     
     <item>
-      <title>A Gambler, enlightened - A simple simulation of the Doubling Method</title>
+      <title>The Enlightened Gambler: A Sobering Simulation of the Doubling Method</title>
       <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
       <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
-      <description>When I&amp;rsquo;m having conversations with people about gambling, I come across massive misinformation and misunderstanding, and should I attempt to explain, the normal person, understandably, struggles to understand in a casual conversation that probabilities can guarantee your loss in long term with numerous fallacies [3] complicating that attempt.
-The problem is exacerbated when we consider games that intentionally convolute the determining mechanism, making it harder to infer that you are deemed (again in the long run) to lose your money.</description>
+      <description>In conversations about gambling, I frequently encounter a dangerous cocktail of misinformation and misunderstanding. The average person, quite understandably, grapples with comprehending how probabilities can guarantee long-term losses. This challenge is further exacerbated by fallacies and complicated games that intentionally obscure the underlying truth: the house always wins.
+To illustrate this point, I&amp;rsquo;ve chosen to simulate the gambling process and present the average outcomes rather than diving into a potentially confusing sea of probabilities.</description>
     </item>
     
     <item>
@@ -52,7 +37,7 @@ The problem is exacerbated when we consider games that intentionally convolute t
       <description>Suppose you are a hunter that doesn&amp;rsquo;t have information about the distance from the prey. For instance a blind dog with very precise smelling which can be mapped to a distance from the potential prey. How can this dog locate and eventually reach its prey?
 The algorithms are not documented yet, but a simulation is provided. If you are interested contact me for more information.
 Demo simulation parameters:
- \( V_{prey} \approx V_{predator} \) Prey changes direction with small probability Predator adopts the strategy we have assigned it (not explained here).</description>
+\( V_{prey} \approx V_{predator} \) Prey changes direction with small probability Predator adopts the strategy we have assigned it (not explained here).</description>
     </item>
     
   </channel>

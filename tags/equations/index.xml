@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>equations on Christos Tsanikidis - CS, Math, Life</title>
+    <title>equations on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/tags/equations/</link>
-    <description>Recent content in equations on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in equations on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sun, 13 Aug 2017 15:43:48 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/tags/equations/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 13 Aug 2017 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/equations/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Counting the number of elements in Sequences made simple</title>
+      <title>Counting the number of elements in sequences through compression</title>
       <link>http://ctsan.github.io/post/counting-insight/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/post/counting-insight/</guid>
-      <description>Counting the number of elements in a sequence of elements can often be confusing, and this is something that frequently comes up in mathematics, computer science or even programming (I won&amp;rsquo;t get deeper in the use cases in this post). Thankfully there is a simple method that I am using in such scenarios which makes these mini problems straightforward. Only basic mathematics are required.
-Examples First Let&amp;rsquo;s start in an unorthodox fashion, providing a few examples before the description.</description>
-    </item>
-    
-    <item>
-      <title>Hierarchies - Logarithmic counting for humans</title>
-      <link>http://ctsan.github.io/post/hierarchies/</link>
-      <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/post/hierarchies/</guid>
-      <description>Assumption: Rearrangement of objects for counting is possible.
-People are capable of processing and understanding a very specific range of patterns with ease. Likely a subset of those relevant to our past survivability. For instance we are unable to enumerate instantly small number of objects - for today&amp;rsquo;s requirements - and therefore we have to reduce the problem into maintanable chunks, appropriate for our capabilities. A way to reduce the problem is building hierarchies.</description>
+      <description>Counting the elements in a sequence is a common problem in mathematics, computer science, and programming. Although in many cases this appears tricky, there&amp;rsquo;s a simple method to make the task straightforward, requiring only basic math skills.
+Examples Before Theory Let&amp;rsquo;s dive into a few examples before explaining the method precisely.
+Example 1: {5, 6, 7, &amp;hellip;, 100} First, find a function that maps integers (ideally starting from 0) to the elements above.</description>
     </item>
     
   </channel>

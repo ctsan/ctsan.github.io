@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math cheatsheat on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/math-cheatsheat/</link>
+    <description>Recent content in math cheatsheat on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/math-cheatsheat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CheatsheetGPT</title>
+      <link>http://ctsan.github.io/other/the-wall/</link>
+      <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/other/the-wall/</guid>
+      <description>I prompted GPT4 to help me create a cheatsheet for areas spanning AI, Computer Science, Finance, Operations Research, and Mathematics. Then, asked to grade the importance of each relationship for different people, and in some cases, to explain its answers. 🌐 Click me to see how it works. 🌐 Click to see the purpose. 🌐 Limitations &amp; Disclaimers, Future Work. Loading might take some time. Alpha Version. Last Update: 06/24/2023.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interactive-simulation on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/interactive-simulation/</link>
+    <description>Recent content in interactive-simulation on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Sun, 29 Mar 2020 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/interactive-simulation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modelling and Simulating a Pandemic</title>
+      <link>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</link>
+      <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
+      <description>Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device. If you don&amp;rsquo;t understand what is happening, there is an explanation below the simulation environment.
+Warning: It&amp;rsquo;s recommended to use a large enough screen (for example a tablet or a desktop). Some information is omitted in smaller screens.
+Population Density Town Size Connections Radius Connectivity Chance Infection Chance Mean Days Sick Can you get Reinfected?</description>
+    </item>
+    
+  </channel>
+</rss>

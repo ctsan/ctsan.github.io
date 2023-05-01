@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Educational platform on Christos Tsanikidis - CS, Math, Life</title>
+    <title>Educational platform on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
     <link>http://ctsan.github.io/categories/educational-platform/</link>
-    <description>Recent content in Educational platform on Christos Tsanikidis - CS, Math, Life</description>
+    <description>Recent content in Educational platform on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sun, 09 Mar 2014 16:01:23 +0800</lastBuildDate>
-    
-	<atom:link href="http://ctsan.github.io/categories/educational-platform/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 09 Mar 2014 16:01:23 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/categories/educational-platform/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Regex Experimenting Platform</title>
       <link>http://ctsan.github.io/project/regex-experimenter/</link>
@@ -21,7 +17,7 @@
       <description>This is an experimenting platform I&amp;rsquo;ve created for people who are learning regular expressions. Javascript Regular Expressions are used.
 The platform allows you to experiment by entering a regular expression, and then highlighting the matching parts. Match and replace is also available, with special regex replacing syntax available. You can either use the reload button or edit the text yourself in the platform.
 Experiment with the platform yourself
-Demonstration   </description>
+Demonstration </description>
     </item>
     
   </channel>

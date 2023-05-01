@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Heat Equation PDE Simulation - Christos Tsanikidis - CS, Math, Life</title>
+  <title>Heat Equation PDE Simulation - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
@@ -14,13 +14,85 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
 <meta name="theme-color" content="#f8f5ec" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Christos Tsanikidis" /><meta name="description" content="Heat equation The heat equation is a partial differential equation, that is, it involves both derivatives of the time and of spatial variables.
+<meta name="author" content="CT" /><meta name="description" content="Heat equation The heat equation is a partial differential equation, that is, it involves both derivatives of the time and of spatial variables.
 $$\frac {\partial u} {\partial t} - \alpha \frac {\partial^2 u}{\partial x^2} = 0 $$
 Where the parameter \(\alpha\) determines how much conductive the material is.
 This is the case for one variable, and thus one dimension. You can imagine that as a long but very thin wire. Of course in reality there is no such thing as 1 Dimension material, but from physicists and mostly engineers we know that this can be approximated when the long side is much bigger than the radius of the wire." /><meta name="keywords" content="Math, CS, Life" />
@@ -30,7 +102,7 @@ This is the case for one variable, and thus one dimension. You can imagine that 
 
 
 
-<meta name="generator" content="Hugo 0.69.2 with theme even" />
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
 
 
 <link rel="canonical" href="http://ctsan.github.io/project/heat-equation/" />
@@ -41,7 +113,8 @@ This is the case for one variable, and thus one dimension. You can imagine that 
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link href="/dist/even.b480bb55.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,20 +124,16 @@ $$\frac {\partial u} {\partial t} - \alpha \frac {\partial^2 u}{\partial x^2} = 
 Where the parameter \(\alpha\) determines how much conductive the material is.
 This is the case for one variable, and thus one dimension. You can imagine that as a long but very thin wire. Of course in reality there is no such thing as 1 Dimension material, but from physicists and mostly engineers we know that this can be approximated when the long side is much bigger than the radius of the wire." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://ctsan.github.io/project/heat-equation/" />
+<meta property="og:url" content="http://ctsan.github.io/project/heat-equation/" /><meta property="article:section" content="project" />
 <meta property="article:published_time" content="2016-02-19T16:01:23+08:00" />
 <meta property="article:modified_time" content="2017-08-30T16:01:23+08:00" />
 <meta itemprop="name" content="Heat Equation PDE Simulation">
 <meta itemprop="description" content="Heat equation The heat equation is a partial differential equation, that is, it involves both derivatives of the time and of spatial variables.
 $$\frac {\partial u} {\partial t} - \alpha \frac {\partial^2 u}{\partial x^2} = 0 $$
 Where the parameter \(\alpha\) determines how much conductive the material is.
-This is the case for one variable, and thus one dimension. You can imagine that as a long but very thin wire. Of course in reality there is no such thing as 1 Dimension material, but from physicists and mostly engineers we know that this can be approximated when the long side is much bigger than the radius of the wire.">
-<meta itemprop="datePublished" content="2016-02-19T16:01:23&#43;08:00" />
-<meta itemprop="dateModified" content="2017-08-30T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="167">
-
-
-
+This is the case for one variable, and thus one dimension. You can imagine that as a long but very thin wire. Of course in reality there is no such thing as 1 Dimension material, but from physicists and mostly engineers we know that this can be approximated when the long side is much bigger than the radius of the wire."><meta itemprop="datePublished" content="2016-02-19T16:01:23+08:00" />
+<meta itemprop="dateModified" content="2017-08-30T16:01:23+08:00" />
+<meta itemprop="wordCount" content="166">
 <meta itemprop="keywords" content="heat equation,visualization,interactive app," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Heat Equation PDE Simulation"/>
 <meta name="twitter:description" content="Heat equation The heat equation is a partial differential equation, that is, it involves both derivatives of the time and of spatial variables.
@@ -97,8 +166,10 @@ This is the case for one variable, and thus one dimension. You can imagine that 
   <ul class="mobile-menu-list">
     <a href="/">
         <li class="mobile-menu-item">Home</li>
-      </a><a href="/project/">
-        <li class="mobile-menu-item">Projects</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -115,7 +186,9 @@ This is the case for one variable, and thus one dimension. You can imagine that 
     <li class="menu-item">
         <a class="menu-item-link" href="/">Home</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/project/">Projects</a>
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
       </li>
@@ -142,7 +215,108 @@ temperature, while the left boundary&rsquo;s temperature is defined by the user.
 <h1 id="numerical-method">Numerical Method</h1>
 <p>The typical finite difference method was used in order to perform the simulation. The
 parameter \(\alpha\) was selected appropriately for the illustration purposes.</p>
-<h1 id="web-simulation">Web Simulation</h1>
+<h1 id="simulation">Simulation</h1>
+<script type="text/javascript" src="/scripts/lib/paper-full.js"> </script>
+<script type="text/paperscript" canvas="canvas">
+	  var layer = project.activeLayer;
+	  var dt=0.05;
+	  var dx=5;
+
+
+		var myPath = new Path();
+		myPath.strokeColor = 'black';
+		myPath.add(new Point(0, view.size.height/2));
+		myPath.add(new Point(view.size.width, view.size.height/2));
+		myPath.strokeWidth = view.size.height/40;		
+
+		var time_adjustable=0;
+
+		var curve = new Path();
+		curve.strokeColor = '#ff0000';
+		curve.strokeWidth = 2;
+
+		var text = new PointText({
+		point: view.center,
+		justification: 'center',
+		fontSize: 30,
+		fillColor: 'black'
+		});
+		text.content="0s";
+		text.position=new Point(view.size.width/2,view.size.height/2+view.size.height/4);
+	
+
+		var rectangle = new Rectangle(new Point(0, 0), new Size(view.size.width/100+15, view.size.width/100+15));
+		var path = new Path.Rectangle(rectangle);
+		path.fillColor = '#AA5555';
+		path.strokeColor="red";
+		var path_selected=false;
+
+		path.onMouseDown = function(event) {
+			path_selected=true;
+			path.fillColor = '#FF5555';
+		}
+		
+		path.onMouseEnter = function(event) {
+			if (!path_selected)
+				path.fillColor = '#CC5555';
+		}
+		path.onMouseLeave = function(event) {
+			if (!path_selected)
+				path.fillColor = '#AA5555';
+		}
+	
+		function onMouseUp(event) {
+			path_selected=false;
+			path.fillColor = '#AA5555';
+
+		}
+		
+
+		function onMouseDrag(event) {
+			if (path_selected)
+			{
+				path.position.y=event.point.y;
+				curve.segments[0].point.y=event.point.y;
+			}
+			
+		}
+
+	   function onFrame(event) {
+			if (time_adjustable==0){
+				path.position=new Point (+10,view.size.height/2-0.8*view.size.height/2);
+				curve.removeSegments();
+				curve.add(path.position+new Point(-10,0));
+				
+				for (i=2; i*dx<view.size.width;i++){
+					curve.add(new Point ((i-1)*dx,view.size.height/2));
+				}
+				curve.add(new Point ((i-1)*dx,view.size.height/2+0.3*view.size.height/2));
+			}
+			lamda=500*0.02/(dx*dx);
+		   	text.content= (precision(0.02*time_adjustable,2))+'s';
+		   	time_adjustable++;
+		   	for (i=2; i*dx<view.size.width;i++){
+				curve.segments[i-1].point.y=curve.segments[i-1].point.y+lamda*(curve.segments[i].point.y-2*curve.segments[i-1].point.y+curve.segments[i-2].point.y);
+			}
+		   curve.segments[i-1].point.y=view.size.height/2+Math.cos(0.05*time_adjustable)*0.7*view.size.height/2;
+        }
+
+        function onResize(event) {
+			
+            layer.position = view.center;
+			myPath.strokeWidth = view.size.height/40;		
+			myPath.segments[1].point = new Point(view.size.width, view.size.height/2);
+			myPath.segments[0].point = new Point(0, view.size.height/2);
+			text.position=new Point(view.size.width/2,view.size.height/2+50);
+
+			time_adjustable=0;
+			//resetEverything();
+        }
+		function precision(number,precision){
+			return Math.floor(number*Math.pow(10,precision))/Math.pow(10,precision);
+		}
+</script>
+<p><canvas id="canvas" resize stats hidpi="off" width="800" height="506" ></canvas></p>
 <p><a href="http://users.ntua.gr/el12507/Animations_2/HeatEquation.html">Click here to experiment yourself</a></p>
 <h1 id="demonstration">Demonstration</h1>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -170,13 +344,15 @@ parameter \(\alpha\) was selected appropriately for the illustration purposes.</
 </div>
 
 <div class="copyright">
+	
 
   
 
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2020,
+    2023
+    
     <span class="author">Christos Tsanikidis</span>
   </span>
 </div>
@@ -191,29 +367,34 @@ parameter \(\alpha\) was selected appropriately for the illustration purposes.</
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
 
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
 
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
-        onload='renderMathInElement(document.body,{delimiters: [ {left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false} ]})'>
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        packages: { '[+]': ['noerrors'] }
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      },
+      chtml: {
+        scale: 1.2
+      }
+    };
 
-		</script>
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 
 <script type="application/javascript">
@@ -230,8 +411,195 @@ if (!doNotTrack) {
 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
 
 
 
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
 </body>
 </html>
