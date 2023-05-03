@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sat, 27 May 2017 16:01:23 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/greece/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/greece/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>To Draw with Markov Chain Monte Carlo.</title>
+      <link>http://ctsan.github.io/post/mcmc/</link>
+      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/mcmc/</guid>
+      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
+    </item>
+    
     <item>
       <title>Turkey to Greece missile range</title>
       <link>http://ctsan.github.io/project/turkey-greece-range/</link>

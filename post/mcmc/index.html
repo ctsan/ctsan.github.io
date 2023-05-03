@@ -14,6 +14,8 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<meta property="og:image" content="/post-images/dotted-manhattan.png"/>
+
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 
 <style>
@@ -124,7 +126,7 @@
 <meta itemprop="name" content="To Draw with Markov Chain Monte Carlo.">
 <meta itemprop="description" content="In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i."><meta itemprop="datePublished" content="2023-04-07T14:47:48+08:00" />
 <meta itemprop="dateModified" content="2023-04-07T14:47:48+08:00" />
-<meta itemprop="wordCount" content="550">
+<meta itemprop="wordCount" content="555">
 <meta itemprop="keywords" content="interactive-simulation,mcmc,greece,USA,Manhattan,metropolis-hastings," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="To Draw with Markov Chain Monte Carlo."/>
 <meta name="twitter:description" content="In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i."/>
@@ -204,7 +206,7 @@
                 <a href="/categories/math/"> Math </a>
                 <a href="/categories/simulation/"> Simulation </a>
                 </div>
-              <span class="more-meta"> 550 words </span>
+              <span class="more-meta"> 555 words </span>
               <span class="more-meta"> 3 mins read </span>
             
           </div>
@@ -296,12 +298,17 @@
 <label for="toggle-opacity" style="margin-left: 10px">Toggle Opacity</label>
 <input type="checkbox" id="toggle-opacity" />
 <div id="canvas-container" style="width:100%; height:600px"></div>
+<center>
+<button id="change-palette">Change Colors</button>
+<button id="darkModeButton" onclick="toggleDarkMode()">Enable Dark Mode</button>
+</center>
 <h2 id="challenges-and-details">Challenges and Details</h2>
 <h3 id="points-outside-the-support-of-the-distribution">Points outside the support of the distribution</h3>
 <p>In the above implementation, points outside the support of the distribution are assigned very low weight in $\phi$ (rather than $0$).
 Therefore points are engaging in essentially a random walk for sometime, until they stumble at a point within the support. There is positive but very low probability that they exit the support again. This has some benefits, for example, if the support consists of disjoint sets, then unless the step is sufficiently big, we will never be able to exit a particular subset of the support (therefore the Markov chain will be essentially trapped in a subset of all the states).</p>
 <p>If we start from a point outside the support, the Markov chain might take a while until it stumbles on a point in the support. This might be mitigated if we know roughly where the support is or if we can instead sample from a distribution with density proportional to the inverse of the distance from the support or some other approach along these lines. Notice that in particular in the case of Greece-Turkey nearby points, chains take quite a while until they end up in a point within the distribution. One could initiate the chains from a point within the support if such a point is known. Notice that the marginal distribution of the points in Turkey or the points in Greece are not uniform, even though the pairs of points are uniform.</p>
 <script>
+
 
 function resetPoints() {
     numPoints = parseInt(document.getElementById('num-points').value);
@@ -559,7 +566,13 @@ function draw() {
       p.current = newPos;
     }
 
-    stroke(0,0,0,isOpacityHalf ? 100 : 255);
+    let colorIndex = i % colorPalettes[currentPaletteIndex].length;
+    let hexColor = colorPalettes[currentPaletteIndex][colorIndex];
+    let rgbColor = hexToRgb(hexColor);
+    let colorWithOpacity = color(rgbColor.r, rgbColor.g, rgbColor.b, isOpacityHalf ? 100 : 255);
+    stroke(colorWithOpacity);
+
+  //  stroke(0,0,0,isOpacityHalf ? 100 : 255);
     strokeWeight(5);
     point(newPos.x, newPos.y);
   }
@@ -1066,6 +1079,123 @@ function toggleInvertedMode() {
 
 
 
+function toggleDarkMode() {
+  const darkModeButton = document.getElementById("darkModeButton");
+  if (darkModeButton){ 
+    const isInverted = document.body.classList.contains("inverted");
+
+    
+    document.body.classList.toggle("inverted");
+
+    
+    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  }
+}
+
+
+let currentPaletteIndex = 0;
+
+function changePalette() {
+  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+}
+function hexToRgb(hex) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
+  
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
+
+if (document.getElementById('change-palette')) {
+  document.getElementById('change-palette').addEventListener('click', changePalette);
+} 
+
+const colorPalettes = [
+    [ '#000000'],
+    [
+'#03045eff',
+'#023e8aff',
+'#0077b6ff',
+'#0096c7ff',
+'#00b4d8ff',
+'#389ab4ff',
+],
+        [
+      '#264653ff',
+      '#287271ff',
+      '#2a9d8fff',
+      '#8ab17dff',
+      '#c49251ff',
+      '#de7959ff',
+      '#d76f51ff',
+    ],
+    [
+      '#ff0a54ff',
+      '#ff477eff',
+      '#ff5c8aff',
+      '#ff7096ff',
+    ],
+    [
+      '#ffae03ff',
+      '#e67f0dff',
+      '#fe4e00ff',
+      '#e9190fff',
+      '#ff0f80ff',
+    ],
+        [
+      '#7400b8ff',
+      '#6930c3ff',
+      '#5e60ceff',
+      '#5390d9ff',
+      '#4ea8deff',
+      '#48bfe3ff',
+      '#56cfe1ff',
+    ],
+    [
+      '#f72585ff',
+      '#7209b7ff',
+      '#3a0ca3ff',
+      '#4361eeff',
+      '#4c99a0ff',
+    ],
+    [
+      '#355070ff',
+      '#6d597aff',
+      '#b56576ff',
+      '#e56b6fff',
+      '#eaac8bff',
+    ],
+    [
+      '#f72585ff',
+      '#b5179eff',
+      '#7209b7ff',
+      '#560badff',
+      '#480ca8ff',
+      '#3a0ca3ff',
+      '#3f37c9ff',
+      '#4361eeff',
+      '#4895efff',
+      '#4cc9f0ff',
+    ],
+    [
+      '#ca86cfff',
+      '#7353baff',
+      '#2f195fff',
+      '#0f1020ff',
+      '#9f73d5ff',
+    ],
+    [
+      '#61a0afff',
+      '#76a99cff',
+      '#c05c7bff',
+      '#c99997ff',
+      '#c5a461ff',
+    ],
+  ];
 </script>
 <style>
 .inverted {
