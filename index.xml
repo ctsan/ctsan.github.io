@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
       <link>http://ctsan.github.io/research/</link>
@@ -27,15 +27,6 @@ Christos Tsanikidis, Javad Ghaderi, On the Power of Randomization for Scheduling
       <guid>http://ctsan.github.io/about/</guid>
       <description>Christos Tsanikidis is a PhD candidate at Columbia University in the city of New York. He completed his Master&amp;rsquo;s at Columbia University. Before that he completed his Bachelor&amp;rsquo;s in Electrical and Computer Engineering at NTUA, majoring in Computer Science.
 Christos is currently researching scheduling problems in Networks, focusing on deriving novel online algorithms with performance guarantees. During his PhD he completed an internship at Microsoft, working on the optimization of Large Language Models (LLMs), in the Turing team, under Bing.</description>
-    </item>
-    
-    <item>
-      <title>To Draw with Markov Chain Monte Carlo.</title>
-      <link>http://ctsan.github.io/post/mcmc/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/post/mcmc/</guid>
-      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
     </item>
     
     <item>

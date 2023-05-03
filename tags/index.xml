@@ -7,61 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>greece</title>
-      <link>http://ctsan.github.io/tags/greece/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/greece/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>interactive-simulation</title>
-      <link>http://ctsan.github.io/tags/interactive-simulation/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/interactive-simulation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Manhattan</title>
-      <link>http://ctsan.github.io/tags/manhattan/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/manhattan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mcmc</title>
-      <link>http://ctsan.github.io/tags/mcmc/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/mcmc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>metropolis-hastings</title>
-      <link>http://ctsan.github.io/tags/metropolis-hastings/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/metropolis-hastings/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>USA</title>
-      <link>http://ctsan.github.io/tags/usa/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/usa/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>finance cheatsheat</title>
       <link>http://ctsan.github.io/tags/finance-cheatsheat/</link>
@@ -117,11 +63,29 @@
     </item>
     
     <item>
+      <title>interactive-simulation</title>
+      <link>http://ctsan.github.io/tags/interactive-simulation/</link>
+      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/interactive-simulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>jump-diffusion</title>
       <link>http://ctsan.github.io/tags/jump-diffusion/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       
       <guid>http://ctsan.github.io/tags/jump-diffusion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mcmc</title>
+      <link>http://ctsan.github.io/tags/mcmc/</link>
+      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/mcmc/</guid>
       <description></description>
     </item>
     
@@ -356,6 +320,15 @@
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
       
       <guid>http://ctsan.github.io/tags/voronoi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>greece</title>
+      <link>http://ctsan.github.io/tags/greece/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/tags/greece/</guid>
       <description></description>
     </item>
     

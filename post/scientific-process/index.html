@@ -14,6 +14,8 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<meta property="og:image" content="/post-images/diffusion-discoveries3.png"/>
+
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 
 <style>
@@ -124,7 +126,7 @@
 <meta itemprop="name" content="The diffusion of discovery">
 <meta itemprop="description" content="How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk."><meta itemprop="datePublished" content="2023-03-03T14:47:48+08:00" />
 <meta itemprop="dateModified" content="2023-03-03T14:47:48+08:00" />
-<meta itemprop="wordCount" content="948">
+<meta itemprop="wordCount" content="953">
 <meta itemprop="keywords" content="interactive-simulation,research,diffusion,mcmc," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The diffusion of discovery"/>
 <meta name="twitter:description" content="How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk."/>
@@ -204,7 +206,7 @@
                 <a href="/categories/life/"> Life </a>
                 <a href="/categories/simulation/"> Simulation </a>
                 </div>
-              <span class="more-meta"> 948 words </span>
+              <span class="more-meta"> 953 words </span>
               <span class="more-meta"> 5 mins read </span>
             
           </div>
@@ -296,6 +298,10 @@
 <p>Obstacles: <span id="numObstaclesValue">20</span></p>
 <input type="range" id="numObstaclesSlider" min="1" max="40" step="1" value="20">
 </div>
+<center>
+  <button id="change-palette">Change Colors</button>
+  <button id="darkModeButton" onclick="toggleDarkMode()">Enable Dark Mode</button>
+</center>
 <script>
 let maxControlVariable = 0.0005;
 let numParticles = 100;
@@ -308,7 +314,10 @@ function toggleParticles() {
 }
 
 class Particle {
+  static nextId = 0;
+
   constructor(x, y, controlVariable) {
+    this.id = Particle.nextId++;
     this.pos = createVector(x, y);
     this.empty_move = createVector(0.0001, 0.0001);
     this.prevPos = this.pos.copy();
@@ -349,12 +358,30 @@ class Particle {
   }
 
     display() {
-    if (showParticles) {
-      const greyValue = lerpColor(color(0, 0, 0), color(128, 128, 128),
+  if (showParticles) {
+
+    if (currentPaletteIndex==0){ 
+            const greyValue = lerpColor(color(0, 0, 0), color(128, 128, 128),
      (maxControlVariable>0)?this.controlVariable / maxControlVariable:0.5);
       stroke(greyValue);
       line(this.prevPos.x, this.prevPos.y, this.pos.x, this.pos.y);
     }
+    else{
+
+    let colorIndex = this.id % colorPalettes[currentPaletteIndex].length;
+    let hexColor = colorPalettes[currentPaletteIndex][colorIndex];
+    let rgbColor = hexToRgb(hexColor);
+    
+    if (rgbColor) {
+      let colorWithOpacity = color(rgbColor.r, rgbColor.g, rgbColor.b, 255);
+      stroke(colorWithOpacity);
+    } else {
+      console.error(`Invalid color: ${hexColor}`);
+    }
+    
+    line(this.prevPos.x, this.prevPos.y, this.pos.x, this.pos.y);
+    }
+  }
   }
 }
 
@@ -539,7 +566,6 @@ heatmap.pixels[index + 3] += 80;
 }
 heatmap.updatePixels();
 image(heatmap, 0, 0);
-    
   }
   
   // Update and display particles
@@ -921,6 +947,123 @@ function toggleInvertedMode() {
 
 
 
+function toggleDarkMode() {
+  const darkModeButton = document.getElementById("darkModeButton");
+  if (darkModeButton){ 
+    const isInverted = document.body.classList.contains("inverted");
+
+    
+    document.body.classList.toggle("inverted");
+
+    
+    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  }
+}
+
+
+let currentPaletteIndex = 0;
+
+function changePalette() {
+  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+}
+function hexToRgb(hex) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
+  
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
+
+if (document.getElementById('change-palette')) {
+  document.getElementById('change-palette').addEventListener('click', changePalette);
+} 
+
+const colorPalettes = [
+    [ '#000000'],
+    [
+'#03045eff',
+'#023e8aff',
+'#0077b6ff',
+'#0096c7ff',
+'#00b4d8ff',
+'#389ab4ff',
+],
+        [
+      '#264653ff',
+      '#287271ff',
+      '#2a9d8fff',
+      '#8ab17dff',
+      '#c49251ff',
+      '#de7959ff',
+      '#d76f51ff',
+    ],
+    [
+      '#ff0a54ff',
+      '#ff477eff',
+      '#ff5c8aff',
+      '#ff7096ff',
+    ],
+    [
+      '#ffae03ff',
+      '#e67f0dff',
+      '#fe4e00ff',
+      '#e9190fff',
+      '#ff0f80ff',
+    ],
+        [
+      '#7400b8ff',
+      '#6930c3ff',
+      '#5e60ceff',
+      '#5390d9ff',
+      '#4ea8deff',
+      '#48bfe3ff',
+      '#56cfe1ff',
+    ],
+    [
+      '#f72585ff',
+      '#7209b7ff',
+      '#3a0ca3ff',
+      '#4361eeff',
+      '#4c99a0ff',
+    ],
+    [
+      '#355070ff',
+      '#6d597aff',
+      '#b56576ff',
+      '#e56b6fff',
+      '#eaac8bff',
+    ],
+    [
+      '#f72585ff',
+      '#b5179eff',
+      '#7209b7ff',
+      '#560badff',
+      '#480ca8ff',
+      '#3a0ca3ff',
+      '#3f37c9ff',
+      '#4361eeff',
+      '#4895efff',
+      '#4cc9f0ff',
+    ],
+    [
+      '#ca86cfff',
+      '#7353baff',
+      '#2f195fff',
+      '#0f1020ff',
+      '#9f73d5ff',
+    ],
+    [
+      '#61a0afff',
+      '#76a99cff',
+      '#c05c7bff',
+      '#c99997ff',
+      '#c5a461ff',
+    ],
+  ];
 </script>
 <style>
 .inverted {

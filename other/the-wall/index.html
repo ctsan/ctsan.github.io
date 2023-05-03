@@ -14,6 +14,8 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<meta property="og:image" content="/post-images/solving-equations.png"/>
+
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 
 <style>
@@ -124,7 +126,7 @@
 <meta itemprop="name" content="CheatsheetGPT">
 <meta itemprop="description" content="I prompted GPT4 to help me create a cheatsheet for areas spanning AI, Computer Science, Finance, Operations Research, and Mathematics. Then, asked to grade the importance of each relationship for different people, and in some cases, to explain its answers. 🌐 Click me to see how it works. 🌐 Click to see the purpose. 🌐 Limitations & Disclaimers, Future Work. Loading might take some time. Alpha Version. Last Update: 06/24/2023."><meta itemprop="datePublished" content="2023-04-04T15:43:48+08:00" />
 <meta itemprop="dateModified" content="2023-04-04T15:43:48+08:00" />
-<meta itemprop="wordCount" content="3964">
+<meta itemprop="wordCount" content="3952">
 <meta itemprop="keywords" content="math cheatsheat,finance cheatsheat,machine learning cheatsheat," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CheatsheetGPT"/>
 <meta name="twitter:description" content="I prompted GPT4 to help me create a cheatsheet for areas spanning AI, Computer Science, Finance, Operations Research, and Mathematics. Then, asked to grade the importance of each relationship for different people, and in some cases, to explain its answers. 🌐 Click me to see how it works. 🌐 Click to see the purpose. 🌐 Limitations & Disclaimers, Future Work. Loading might take some time. Alpha Version. Last Update: 06/24/2023."/>
@@ -590,7 +592,7 @@ label.graders {
     color: white;
     border-color: #007bff;
 }
-[data-importance], [data-quant-grade], [data-ai-grade], [data-ds-grade] {
+[data-importance], [data-quant-grade], [data-ai-grade], [data-ds-grade], [data-exploration-mode] {
   position: relative !important;
 }
 
@@ -696,7 +698,7 @@ Loading might take some time. Alpha Version. Last Update: 06/24/2023.
 <label class="graders" for="ai-grade">Relevance to AI Researchers</label>
 <input class="graders" type="radio" name="option" id="ds-grade" onchange="updateStyling('data-ds-grade')">
 <label class="graders" for="ds-grade">Relevance to Data Science Interview</label>
-<input class="graders" type="radio" name="option" id="exploration-mode" onchange="updateStyling('data-exploration')">
+<input class="graders" type="radio" name="option" id="exploration-mode" onchange="updateStyling('data-exploration-mode')">
 <label class="graders" for="exploration-mode">Exploration Mode</label>
 <p>Grade Cutoff <span id="count"></span>:
 <input type="range" min="1" max="11" value="1" class="slider" id="cutoff-grade" oninput="updateStyling()"></p>
@@ -704,11 +706,7 @@ Loading might take some time. Alpha Version. Last Update: 06/24/2023.
 <button id="toggle-subcategories" onclick="toggleSubcategories()">Hide Subcategories</button>
 <button id="toggle-categories" onclick="toggleCategories()">Hide Categories</button>
 <button id="toggle-colors" onclick="toggleColors()">Add Colors</button>
-<p><button id="darkModeButton" onclick="toggleDarkMode()">Enable Dark Mode</button></p>
-<p><button id="settingsLink" onclick="settingsLink()">Advanced Settings</button>
-<button id="settingsLink" onclick="settingsLink()">Enable Google Scholar Links</button></p>
-<p><button id="settingsLink" onclick="settingsLink()">Enable Search Links</button></p>
-<p><button id="settingsLink" onclick="settingsLink()">Link to this</button></p>
+<p><button id="darkModeButton" onclick="toggleDarkModeAdv()">Enable Dark Mode</button></p>
 </div>
 <center>
 </center>
@@ -738,6 +736,16 @@ function setZenModeFromUrl() {
   const option = url.searchParams.get("option");
   const cutoff = url.searchParams.get("cutoff");
   if (option) {
+        // Find the radio button element corresponding to the option value
+    const radioButton = document.getElementById(option.replace("data-", ""));
+    console.log(radioButton)
+    
+    // Set the checked property of the radio button to true
+    if (radioButton) {
+      radioButton.checked = true;
+    }
+    
+    // Call the updateStyling() function
     updateStyling(option);
   }
   if (cutoff) {
@@ -748,7 +756,8 @@ function setZenModeFromUrl() {
   // Set the dark mode state
   const darkMode = url.searchParams.get("darkMode");
   if (darkMode === "true") {
-    setInvertedMode(true);
+    //setInvertedMode(true);
+    document.documentElement.classList.toggle("inverted");
     document.getElementById("darkModeButton").innerText = "Enable Light Mode";
   }
 
@@ -796,20 +805,20 @@ function toggleZen() {
   url.searchParams.set("zen", isZenMode ? "false" : "true");
   window.history.pushState({}, "", url);
 }
-  function toggleDarkMode() {
-  const darkModeButton = document.getElementById("darkModeButton");
-  const isInverted = document.body.classList.contains("inverted");
 
-  // Toggle the inverted mode
-  setInvertedMode(!isInverted);
+function toggleDarkModeAdv() {
+  const darkModeButton = document.getElementById("darkModeButton");
+
+  // Check if the body has the "inverted" class and toggle it
+  const isInverted = document.documentElement.classList.toggle("inverted");
 
   // Update the button text
-  darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  darkModeButton.innerText = isInverted ? "Enable Light Mode" : "Enable Dark Mode";
 
   const url = new URL(window.location.href);
-  url.searchParams.set("darkMode", !isInverted ? "true" : "false");
+  url.searchParams.set("darkMode", isInverted ? "true" : "false");
   window.history.pushState({}, "", url);
-  console.log(window,isInverted)
+  console.log(window, isInverted);
 }
 
 let isRandomWalkActive = false;
@@ -879,13 +888,11 @@ function explorationMode() {
 
   clearTimeout(explorationTimeout);
   const selectedOption = document.querySelector('input[type="radio"]:checked');
-  if (selectedOption.id != 'exploration-mode'){
+  if (!selectedOption ||  selectedOption.id != 'exploration-mode'){
     return
   }
 
-
-
-  const elements = document.querySelectorAll('[data-importance], [data-quant-grade], [data-ai-grade], [data-ds-grade]');
+  const elements = document.querySelectorAll('[data-importance], [data-quant-grade], [data-ai-grade], [data-ds-grade], [data-exploration-mode]');
   const blurValues = [0,0,0,1,2,4,6,8,10];
 
   elements.forEach(el => {
@@ -904,7 +911,7 @@ function explorationMode() {
 
   const animateBlur = (el, blurIndex) => {
     el.style.transition = 'filter 2s';
-    explorationTimeout = setTimeout(() => {
+    el.explorationTimeout = setTimeout(() => {
       blurIndex = updateBlur(el, blurIndex);
       animateBlur(el, blurIndex);
     }, 5000);
@@ -920,11 +927,19 @@ function explorationMode() {
 }
 
 
+function stopExplorationMode() {
+  const allElements = document.querySelectorAll('[data-importance], [data-quant-grade], [data-ai-grade], [data-ds-grade]');
+  allElements.forEach(el => {
+    el.style.filter = '';
+    el.style.display = '';
+    clearTimeout(el.explorationTimeout); // Clear the explorationTimeout for each element
+  });
+}
 
 function updateStyling(dataAttr) {
+  clearTimeout(explorationTimeout); // Clear the explorationTimeout when updating styling
   const cutoffGrade = parseInt(document.getElementById('cutoff-grade').value);
 
-  // Get the currently selected radio button if dataAttr is not provided
   if (!dataAttr) {
     const selectedOption = document.querySelector('input[type="radio"]:checked');
     if (selectedOption) {
@@ -933,13 +948,22 @@ function updateStyling(dataAttr) {
       return;
     }
   }
-  if (dataAttr === 'data-exploration') {
+  if (dataAttr === 'data-exploration-mode') {
     explorationMode();
+    // Update the URL with the selected option and cutoff grade
+    const url = new URL(window.location.href);
+    url.searchParams.set("option", dataAttr);
+    //url.searchParams.set("cutoff", cutoffGrade.value);
+    window.history.pushState({}, "", url);
     return;
+  } else {
+    stopExplorationMode()
   }
+  
+  // Reset all styles
 
   // Reset all styles
-  const allElements = document.querySelectorAll('[data-importance], [data-quant-grade], [data-ai-grade], [data-ds-grade]');
+  const allElements = document.querySelectorAll('[data-importance], [data-quant-grade], [data-ai-grade], [data-ds-grade], [data-exploration-mode]');
   allElements.forEach(el => {
     el.style.filter = '';
     el.style.display = '';
@@ -989,89 +1013,8 @@ function getRandomBlueishColor() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-  const colorPalettes = [
-    [
-'#03045eff',
-'#023e8aff',
-'#0077b6ff',
-'#0096c7ff',
-'#00b4d8ff',
-'#389ab4ff',
-],
-        [
-      '#264653ff',
-      '#287271ff',
-      '#2a9d8fff',
-      '#8ab17dff',
-      '#c49251ff',
-      '#de7959ff',
-      '#d76f51ff',
-    ],
-    [
-      '#ff0a54ff',
-      '#ff477eff',
-      '#ff5c8aff',
-      '#ff7096ff',
-    ],
-    [
-      '#ffae03ff',
-      '#e67f0dff',
-      '#fe4e00ff',
-      '#e9190fff',
-      '#ff0f80ff',
-    ],
-        [
-      '#7400b8ff',
-      '#6930c3ff',
-      '#5e60ceff',
-      '#5390d9ff',
-      '#4ea8deff',
-      '#48bfe3ff',
-      '#56cfe1ff',
-    ],
-    [
-      '#f72585ff',
-      '#7209b7ff',
-      '#3a0ca3ff',
-      '#4361eeff',
-      '#4c99a0ff',
-    ],
-    [
-      '#355070ff',
-      '#6d597aff',
-      '#b56576ff',
-      '#e56b6fff',
-      '#eaac8bff',
-    ],
-    [
-      '#f72585ff',
-      '#b5179eff',
-      '#7209b7ff',
-      '#560badff',
-      '#480ca8ff',
-      '#3a0ca3ff',
-      '#3f37c9ff',
-      '#4361eeff',
-      '#4895efff',
-      '#4cc9f0ff',
-    ],
-    [
-      '#ca86cfff',
-      '#7353baff',
-      '#2f195fff',
-      '#0f1020ff',
-      '#9f73d5ff',
-    ],
-    [
-      '#61a0afff',
-      '#76a99cff',
-      '#c05c7bff',
-      '#c99997ff',
-      '#c5a461ff',
-    ],
-  ];
 
-  let currentPaletteIndex = -1;
+  currentPaletteIndex = -1;
 
   function getRandomColorFromPalette(palette) {
     const colorIndex = Math.floor(Math.random() * palette.length);
@@ -12236,16 +12179,6 @@ Cholesky factorization: $A = LL^T$, where $A$ is a symmetric positive definite m
 </p>
 </span>
 </div>
-<div class="category-content" data-title="Linear Algebra">
-<div class="title-effect wrapper content-category" data-title="Linear Algebra"></div>
-<p>Principal components: $\lambda_i = \frac{\text{Var}(z_i)}{\text{Var}(x_i)}$,
-Eigenvalue decomposition: $A\vec{v} = \lambda \vec{v}$,
-Matrix inverse: $A^{-1}A = I$,
-Matrix determinant: $|A| = \sum_{i=1}^n (-1)^{i+j}a_{ij}M_{ij}$,
-Matrix trace: $\text{tr}(A) = \sum_{i=1}^n a_{ii}$,
-Matrix transpose: $A^T = (a_{ji})$,
-Singular value decomposition: $A = U\Sigma V^T$,</p>
-</div>
 <div class="category-content" data-title="Inequalities">
 <div class="title-effect wrapper content-category" data-title="Inequalities"></div>
 
@@ -12259,20 +12192,20 @@ Algebra and Analysis Inequalities
 
 <span class="extra-info" 
 data-tippy-content="The Triangle inequality is used to prove that the shortest path between two points in a metric space is a straight line. For example, consider points A, B, and C in a plane. To prove that the shortest path between A and C is the straight line AC, apply the triangle inequality: $||A-C|| \le ||A-B|| &#43; ||B-C||$. It shows that the straight line AC is shorter than or equal to any other path through an intermediate point B.</br>
- <strong>Publicity</strong> /10
+ <strong>Publicity</strong> 7/10
  <br/>
- <strong>Quant Grade</strong> /10: 
+ <strong>Quant Grade</strong> 5/10: 
  </br> 
- <strong>AI Grade</strong> /10: 
+ <strong>AI Grade</strong> 7/10: 6
  </br> 
  <strong>DS Interview. Grade</strong> /10: 
 </br> 
  <strong>Keywords.</strong> 
  " 
-    data-quant-grade=""
-    data-ai-grade=""
+    data-quant-grade="5"
+    data-ai-grade="7"
     data-ds-grade=""
-    data-importance="" 
+    data-importance="7" 
     data-keywords=""
     data-inner="
 Triangle inequality: $||x&#43;y|| \le ||x|| &#43; ||y||$
@@ -12284,20 +12217,20 @@ Triangle inequality: $||x+y|| \le ||x|| + ||y||$
 </span>
 <span class="extra-info" 
 data-tippy-content="The Cauchy-Schwarz inequality is used to prove the AM-GM inequality. Given $x_i \ge 0$ for $1 \le i \le n$, the Cauchy-Schwarz inequality can be applied with $x_i = \sqrt{x_i}$ and $y_i = \sqrt{\frac{1}{n}}$: $|\sum_{i=1}^n x_iy_i|^2 \le \sum_{i=1}^n x_i^2 \sum_{i=1}^n y_i^2$. This simplifies to the AM-GM inequality $\frac{x_1&#43;x_2&#43;\cdots&#43;x_n}{n} \ge \sqrt[n]{x_1x_2\cdots x_n}$.</br>
- <strong>Publicity</strong> /10
+ <strong>Publicity</strong> 7/10
  <br/>
- <strong>Quant Grade</strong> /10: 
+ <strong>Quant Grade</strong> 5/10: 
  </br> 
- <strong>AI Grade</strong> /10: 
+ <strong>AI Grade</strong> 7/10: 6
  </br> 
  <strong>DS Interview. Grade</strong> /10: 
 </br> 
  <strong>Keywords.</strong> 
  " 
-    data-quant-grade=""
-    data-ai-grade=""
+    data-quant-grade="5"
+    data-ai-grade="7"
     data-ds-grade=""
-    data-importance="" 
+    data-importance="7" 
     data-keywords=""
     data-inner="
 Cauchy-Schwarz: $|x^T y| \le ||x|| ||y||$
@@ -12309,20 +12242,20 @@ Cauchy-Schwarz: $|x^T y| \le ||x|| ||y||$
 </span>
 <span class="extra-info" 
 data-tippy-content="The Arithmetic-Geometric mean inequality states that the arithmetic mean of a set of non-negative numbers is always greater than or equal to the geometric mean. Some interesting implications include:&lt;br&gt;&lt;ul&gt;&lt;li&gt;Estimating the average of a set of positive numbers: Since the geometric mean is always less than or equal to the arithmetic mean, it provides a lower bound for the average: $\sqrt[n]{x_1x_2\cdots x_n} \le \frac{x_1 &#43; x_2 &#43; \cdots &#43; x_n}{n}$.&lt;/li&gt;&lt;li&gt;Proving the Cauchy-Schwarz inequality: $\left(\sum_{i=1}^n x_iy_i\right)^2 \le \left(\sum_{i=1}^n x_i^2\right)\left(\sum_{i=1}^n y_i^2\right)$ using AM-GM.&lt;/li&gt;&lt;li&gt;Optimizing mathematical expressions: For example, finding the minimum of $a^2 &#43; \frac{1}{a^2}$ for a positive number $a$. Using AM-GM, we have $\frac{a^2 &#43; \frac{1}{a^2}}{2} \ge \sqrt{a^2 \cdot \frac{1}{a^2}}$, which implies $a^2 &#43; \frac{1}{a^2} \ge 2$.&lt;/li&gt;&lt;li&gt;Providing an upper bound for the harmonic mean of a set of positive numbers: $\frac{n}{\frac{1}{x_1} &#43; \frac{1}{x_2} &#43; \cdots &#43; \frac{1}{x_n}} \le \sqrt[n]{x_1x_2\cdots x_n}$.&lt;/li&gt;&lt;/ul&gt;</br>
- <strong>Publicity</strong> /10
+ <strong>Publicity</strong> 7/10
  <br/>
- <strong>Quant Grade</strong> /10: 
+ <strong>Quant Grade</strong> 5/10: 
  </br> 
- <strong>AI Grade</strong> /10: 
+ <strong>AI Grade</strong> 7/10: 6
  </br> 
  <strong>DS Interview. Grade</strong> /10: 
 </br> 
  <strong>Keywords.</strong> 
  " 
-    data-quant-grade=""
-    data-ai-grade=""
+    data-quant-grade="5"
+    data-ai-grade="7"
     data-ds-grade=""
-    data-importance="" 
+    data-importance="7" 
     data-keywords=""
     data-inner="
 Arithmetic-Geometric mean: $\frac{x_1 &#43; x_2 &#43; \cdots &#43; x_n}{n} \ge \sqrt[n]{x_1x_2\cdots x_n}$
@@ -12334,20 +12267,20 @@ Arithmetic-Geometric mean: $\frac{x_1 + x_2 + \cdots + x_n}{n} \ge \sqrt[n]{x_1x
 </span>
 <span class="extra-info" 
 data-tippy-content="Jensen&#39;s inequality states that for a convex function $f$, the function evaluated at the average of a set of points is less than or equal to the average of the function evaluated at each point. Some interesting implications include:&lt;br&gt;&lt;ul&gt;&lt;li&gt;For any probability distribution, the expected value of the logarithm of a random variable is less than or equal to the logarithm of the expected value: $E(\log X) \le \log(E(X))$ (by applying Jensen&#39;s inequality to the logarithm function).&lt;/li&gt;&lt;li&gt;The geometric mean of a set of positive numbers is always less than or equal to the arithmetic mean: $\sqrt[n]{x_1x_2\cdots x_n} \le \frac{x_1 &#43; x_2 &#43; \cdots &#43; x_n}{n}$ (by applying Jensen&#39;s inequality to the logarithm function).&lt;/li&gt;&lt;li&gt;The exponential of the average of a set of numbers is less than or equal to the average of the exponential of each number: $e^{\frac{x_1 &#43; x_2 &#43; \cdots &#43; x_n}{n}} \le \frac{e^{x_1} &#43; e^{x_2} &#43; \cdots &#43; e^{x_n}}{n}$ (by applying Jensen&#39;s inequality to the exponential function).&lt;/li&gt;&lt;/ul&gt;</br>
- <strong>Publicity</strong> /10
+ <strong>Publicity</strong> 7/10
  <br/>
- <strong>Quant Grade</strong> /10: 
+ <strong>Quant Grade</strong> 5/10: 
  </br> 
- <strong>AI Grade</strong> /10: 
+ <strong>AI Grade</strong> 7/10: 6
  </br> 
  <strong>DS Interview. Grade</strong> /10: 
 </br> 
  <strong>Keywords.</strong> 
  " 
-    data-quant-grade=""
-    data-ai-grade=""
+    data-quant-grade="5"
+    data-ai-grade="7"
     data-ds-grade=""
-    data-importance="" 
+    data-importance="7" 
     data-keywords=""
     data-inner="
 Jensen&#39;s inequality: $f(\frac{\sum_{i=1}^n \alpha_ix_i}{\sum_{i=1}^n \alpha_i}) \le \frac{\sum_{i=1}^n \alpha_if(x_i)}{\sum_{i=1}^n \alpha_i}$
@@ -12359,20 +12292,20 @@ Jensen's inequality: $f(\frac{\sum_{i=1}^n \alpha_ix_i}{\sum_{i=1}^n \alpha_i}) 
 </span>
 <span class="extra-info" 
 data-tippy-content="Hölder&#39;s inequality can be used to prove the Cauchy-Schwarz inequality. Given vectors $x$ and $y$, let $p=2$ and $q=2$, and apply Hölder&#39;s inequality: $\sum_{i=1}^n |x_iy_i| \le \left(\sum_{i=1}^n |x_i|^p\right)^{\frac{1}{p}}\left(\sum_{i=1}^n |y_i|^q\right)^{\frac{1}{q}}$. This simplifies to the Cauchy-Schwarz inequality $|x^T y| \le ||x|| ||y||$.</br>
- <strong>Publicity</strong> /10
+ <strong>Publicity</strong> 7/10
  <br/>
- <strong>Quant Grade</strong> /10: 
+ <strong>Quant Grade</strong> 5/10: 
  </br> 
- <strong>AI Grade</strong> /10: 
+ <strong>AI Grade</strong> 7/10: 6
  </br> 
  <strong>DS Interview. Grade</strong> /10: 
 </br> 
  <strong>Keywords.</strong> 
  " 
-    data-quant-grade=""
-    data-ai-grade=""
+    data-quant-grade="5"
+    data-ai-grade="7"
     data-ds-grade=""
-    data-importance="" 
+    data-importance="7" 
     data-keywords=""
     data-inner="
 Hölder&#39;s inequality: $\sum_{i=1}^n |x_iy_i| \le \left(\sum_{i=1}^n |x_i|^p\right)^{\frac{1}{p}}\left(\sum_{i=1}^n |y_i|^q\right)^{\frac{1}{q}}$
@@ -12384,20 +12317,20 @@ Hölder's inequality: $\sum_{i=1}^n |x_iy_i| \le \left(\sum_{i=1}^n |x_i|^p\righ
 </span>
 <span class="extra-info" 
 data-tippy-content="Minkowski inequality is used to prove that the $L^p$ spaces are normed vector spaces. Given sequences $x$ and $y$ and $1 \le p &lt; \infty$, apply the Minkowski inequality: $\left(\sum_{i=1}^n |x_i &#43; y_i|^p\right)^{\frac{1}{p}} \le \left(\sum_{i=1}^n |x_i|^p\right)^{\frac{1}{p}} &#43; \left(\sum_{i=1}^n |y_i|^p\right)^{\frac{1}{p}}$. This shows that the $L^p$ norm satisfies the triangle inequality, a necessary condition for a normed vector space.</br>
- <strong>Publicity</strong> /10
+ <strong>Publicity</strong> 7/10
  <br/>
- <strong>Quant Grade</strong> /10: 
+ <strong>Quant Grade</strong> 5/10: 
  </br> 
- <strong>AI Grade</strong> /10: 
+ <strong>AI Grade</strong> 7/10: 6
  </br> 
  <strong>DS Interview. Grade</strong> /10: 
 </br> 
  <strong>Keywords.</strong> 
  " 
-    data-quant-grade=""
-    data-ai-grade=""
+    data-quant-grade="5"
+    data-ai-grade="7"
     data-ds-grade=""
-    data-importance="" 
+    data-importance="7" 
     data-keywords=""
     data-inner="
 Minkowski inequality: $\left(\sum_{i=1}^n |x_i &#43; y_i|^p\right)^{\frac{1}{p}} \le \left(\sum_{i=1}^n |x_i|^p\right)^{\frac{1}{p}} &#43; \left(\sum_{i=1}^n |y_i|^p\right)^{\frac{1}{p}}$
@@ -12409,20 +12342,20 @@ Minkowski inequality: $\left(\sum_{i=1}^n |x_i + y_i|^p\right)^{\frac{1}{p}} \le
 </span>
 <span class="extra-info" 
 data-tippy-content="Young&#39;s inequality can be used to prove Hölder&#39;s inequality. Given positive numbers $a$ and $b$, let $p&gt;1$ and $q&gt;1$ be conjugate exponents ($\frac{1}{p}&#43;\frac{1}{q}=1$). Apply Young&#39;s inequality: $ab \le \frac{a^p}{p} &#43; \frac{b^q}{q}$. This can be used as an intermediate step to prove Hölder&#39;s inequality. By applying Young&#39;s inequality to each term in the sum of the products of $x_i$ and $y_i$, we can show that $\sum_{i=1}^n |x_iy_i| \le \left(\sum_{i=1}^n |x_i|^p\right)^{\frac{1}{p}}\left(\sum_{i=1}^n |y_i|^q\right)^{\frac{1}{q}}$.</br>
- <strong>Publicity</strong> /10
+ <strong>Publicity</strong> 7/10
  <br/>
- <strong>Quant Grade</strong> /10: 
+ <strong>Quant Grade</strong> 5/10: 
  </br> 
- <strong>AI Grade</strong> /10: 
+ <strong>AI Grade</strong> 7/10: 6
  </br> 
  <strong>DS Interview. Grade</strong> /10: 
 </br> 
  <strong>Keywords.</strong> 
  " 
-    data-quant-grade=""
-    data-ai-grade=""
+    data-quant-grade="5"
+    data-ai-grade="7"
     data-ds-grade=""
-    data-importance="" 
+    data-importance="7" 
     data-keywords=""
     data-inner="
 Young&#39;s inequality: $ab \le \frac{a^p}{p} &#43; \frac{b^q}{q}$
@@ -12990,691 +12923,6 @@ Hardy-Littlewood-Sobolev: $\|u\|_{L^q(\Omega)} \le C \|\nabla u\|_{L^p(\Omega)}$
     >
     <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
 Hardy-Littlewood-Sobolev: $\|u\|_{L^q(\Omega)} \le C \|\nabla u\|_{L^p(\Omega)}$
-</p>
-</span>
-</div>
-<div class="category-content" data-title="Combinatorial Problems">
-<div class="title-effect wrapper content-category" data-title="Combinatorial Problems"></div>
-
-<p>
-<span class="subcategory">
-    Important Problems
-</span>
-</p>
-
-<span class="extra-info" 
-data-tippy-content="Find the shortest possible route that visits each city exactly once and returns to the origin city, subject to subtour elimination constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Traveling Salesman Problem (TSP): $\text{min} \sum_{i=1}^n \sum_{j=1, j \ne i}^n d_{ij}x_{ij}$, subject to $\sum_{i=1}^n x_{ij} = 1$, $\sum_{j=1}^n x_{ij} = 1$, and subtour elimination constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Traveling Salesman Problem (TSP): $\text{min} \sum_{i=1}^n \sum_{j=1, j \ne i}^n d_{ij}x_{ij}$, subject to $\sum_{i=1}^n x_{ij} = 1$, $\sum_{j=1}^n x_{ij} = 1$, and subtour elimination constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Find a tree that spans all vertices in a graph with minimum total edge weight, subject to connectivity constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Minimum Spanning Tree (MST): $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to $\sum_{(u, v) \in E} x_{uv} = n - 1$ and connectivity constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Minimum Spanning Tree (MST): $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to $\sum_{(u, v) \in E} x_{uv} = n - 1$ and connectivity constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Find the shortest path between two vertices in a graph, subject to flow conservation constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Shortest Path Problem: $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to flow conservation constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Shortest Path Problem: $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to flow conservation constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Find the maximum flow in a flow network from the source to the sink, subject to capacity and flow conservation constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Maximum Flow Problem: $\text{max} \sum_{(s, v) \in E} f_{sv}$, subject to $0 \le f_{uv} \le c_{uv}$ and flow conservation constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Maximum Flow Problem: $\text{max} \sum_{(s, v) \in E} f_{sv}$, subject to $0 \le f_{uv} \le c_{uv}$ and flow conservation constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Find the smallest cut that disconnects the source and sink in a flow network, subject to capacity constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Minimum Cut Problem: $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to capacity constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Minimum Cut Problem: $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to capacity constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of items with weights and values, find the subset of items that maximizes the total value without exceeding the weight capacity, subject to capacity constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Knapsack Problem: $\text{max} \sum_{i=1}^n v_i x_i$, subject to $\sum_{i=1}^n w_i x_i \le W$ and $x_i \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Knapsack Problem: $\text{max} \sum_{i=1}^n v_i x_i$, subject to $\sum_{i=1}^n w_i x_i \le W$ and $x_i \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Pack a set of items with different sizes into the smallest number of bins, each with a fixed capacity, subject to capacity constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Bin Packing Problem: $\text{min} \sum_{j=1}^n y_j$, subject to $\sum_{i=1}^n s_i x_{ij} \le B y_j$ and $x_{ij} \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Bin Packing Problem: $\text{min} \sum_{j=1}^n y_j$, subject to $\sum_{i=1}^n s_i x_{ij} \le B y_j$ and $x_{ij} \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Schedule a set of jobs with processing times and precedence constraints on machines to minimize the makespan, subject to machine capacity and precedence constraints.</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Job Shop Scheduling Problem: $\text{min} C_{\max}$, subject to machine capacity and precedence constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Job Shop Scheduling Problem: $\text{min} C_{\max}$, subject to machine capacity and precedence constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Partition a set of positive integers into two subsets such that the difference between the sum of the elements in the subsets is minimized. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Partition Problem: $\text{min} \sum_{i=1}^n a_i x_i - \sum_{i=1}^n a_i (1 - x_i)$, subject to $x_i \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Partition Problem: $\text{min} \sum_{i=1}^n a_i x_i - \sum_{i=1}^n a_i (1 - x_i)$, subject to $x_i \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Find a collection of vertex-disjoint cycles that covers all vertices in a graph, such that the total weight of the edges in the cycles is minimized. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Minimum Cycle Cover: $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to cycle cover constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Minimum Cycle Cover: $\text{min} \sum_{(u, v) \in E} w_{uv}x_{uv}$, subject to cycle cover constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of tasks and a set of processors, assign each task to a processor such that the total processing time is minimized, subject to precedence constraints. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Task Scheduling Problem: $\text{min} C_{\max}$, subject to precedence constraints
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Task Scheduling Problem: $\text{min} C_{\max}$, subject to precedence constraints
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given an undirected graph, find the smallest set of vertices that cover all edges. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Minimum Vertex Cover: $\text{min} \sum_{v \in V} x_v$, subject to $x_u &#43; x_v \ge 1$ for each $(u, v) \in E$, and $x_v \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Minimum Vertex Cover: $\text{min} \sum_{v \in V} x_v$, subject to $x_u + x_v \ge 1$ for each $(u, v) \in E$, and $x_v \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given an undirected graph, find the largest set of vertices such that no two vertices are adjacent. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Maximum Independent Set: $\text{max} \sum_{v \in V} x_v$, subject to $x_u &#43; x_v \le 1$ for each $(u, v) \in E$, and $x_v \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Maximum Independent Set: $\text{max} \sum_{v \in V} x_v$, subject to $x_u + x_v \le 1$ for each $(u, v) \in E$, and $x_v \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a weighted undirected graph, find the smallest set of vertices that connects all other vertices, and the total weight of the edges incident to the selected vertices is minimized. (Polynomial-time solvable)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Minimum Weighted Vertex Cover: $\text{min} \sum_{v \in V} w_v x_v$, subject to $x_u &#43; x_v \ge 1$ for each $(u, v) \in E$, and $x_v \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Minimum Weighted Vertex Cover: $\text{min} \sum_{v \in V} w_v x_v$, subject to $x_u + x_v \ge 1$ for each $(u, v) \in E$, and $x_v \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a boolean expression in conjunctive normal form, determine if there exists an assignment of truth values to the variables that satisfies the expression. (NP-complete)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Boolean Satisfiability Problem (SAT): Determine if there exists an assignment $x_i \in \{0, 1\}$ such that $\bigwedge_{j=1}^m (\bigvee_{i=1}^n l_{ij})$ is true
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Boolean Satisfiability Problem (SAT): Determine if there exists an assignment $x_i \in \{0, 1\}$ such that $\bigwedge_{j=1}^m (\bigvee_{i=1}^n l_{ij})$ is true
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given an undirected graph and an integer k, determine if there exists a subset of vertices of size k that dominates all other vertices. (NP-complete)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-k-Dominated Set: Determine if there exists a subset $S$ of $k$ vertices such that every vertex not in $S$ is adjacent to at least one vertex in $S$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-k-Dominated Set: Determine if there exists a subset $S$ of $k$ vertices such that every vertex not in $S$ is adjacent to at least one vertex in $S$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of integers, determine if there exists a subset of the integers that sums to zero. (NP-complete)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Subset Sum Problem: Determine if there exists a subset $S \subseteq \{a_1, a_2, \dots, a_n\}$ such that $\sum_{a_i \in S} a_i = 0$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Subset Sum Problem: Determine if there exists a subset $S \subseteq \{a_1, a_2, \dots, a_n\}$ such that $\sum_{a_i \in S} a_i = 0$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of tasks with precedence constraints and release times, schedule the tasks on a single machine to minimize the total completion time. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Single-Machine Scheduling with Precedence Constraints and Release Times: $\text{min} \sum_{i=1}^n C_i$, subject to precedence constraints and release times
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Single-Machine Scheduling with Precedence Constraints and Release Times: $\text{min} \sum_{i=1}^n C_i$, subject to precedence constraints and release times
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of items, each with a weight and a value, and a set of bins with limited capacities, find the optimal way to pack the items into the bins such that the total value of the packed items is maximized. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Bin Packing Problem: $\text{max} \sum_{i=1}^n v_i x_{ij}$, subject to $\sum_{i=1}^n w_i x_{ij} \le W_j$ for each bin $j$ and $x_{ij} \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Bin Packing Problem: $\text{max} \sum_{i=1}^n v_i x_{ij}$, subject to $\sum_{i=1}^n w_i x_{ij} \le W_j$ for each bin $j$ and $x_{ij} \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given an undirected graph, find the minimum number of colors required to color the vertices such that no two adjacent vertices have the same color. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Graph Coloring Problem: $\text{min} \{c: c \in \mathbb{N}, x_{vc} \in \{0, 1\}, \sum_{c=1}^k x_{vc} = 1 \}$ for each vertex $v$ and $x_{uc} &#43; x_{vc} \le 1$ for each adjacent vertices $u$ and $v$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Graph Coloring Problem: $\text{min} \{c: c \in \mathbb{N}, x_{vc} \in \{0, 1\}, \sum_{c=1}^k x_{vc} = 1 \}$ for each vertex $v$ and $x_{uc} + x_{vc} \le 1$ for each adjacent vertices $u$ and $v$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of strings, find the shortest string that contains each input string as a substring. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Shortest Common Supersequence: $\text{min} \{ |s| : s \in \Sigma^*, s_i \subseteq s \}$ for each input string $s_i$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Shortest Common Supersequence: $\text{min} \{ |s| : s \in \Sigma^*, s_i \subseteq s \}$ for each input string $s_i$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of cities and the distances between them, find the shortest path that visits each city exactly once and returns to the starting city. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Traveling Salesman Problem (TSP): $\text{min} \sum_{i=1}^n \sum_{j=1, j\neq i}^n d_{ij} x_{ij}$, subject to subtour elimination constraints and $x_{ij} \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Traveling Salesman Problem (TSP): $\text{min} \sum_{i=1}^n \sum_{j=1, j\neq i}^n d_{ij} x_{ij}$, subject to subtour elimination constraints and $x_{ij} \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given an undirected graph, find the largest subset of vertices that forms a clique, i.e., every pair of vertices in the subset is connected by an edge. (NP-complete)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Maximum Clique Problem: $\text{max} \sum_{i=1}^n x_i$, subject to $x_u &#43; x_v \le 1$ for each non-adjacent vertices $u$ and $v$, and $x_i \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Maximum Clique Problem: $\text{max} \sum_{i=1}^n x_i$, subject to $x_u + x_v \le 1$ for each non-adjacent vertices $u$ and $v$, and $x_i \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of items, each with a weight and a value, and a knapsack with a limited capacity, find the optimal way to pack the items into the knapsack such that the total value of the packed items is maximized. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Knapsack Problem: $\text{max} \sum_{i=1}^n v_i x_i$, subject to $\sum_{i=1}^n w_i x_i \le W$ and $x_i \in \{0, 1\}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Knapsack Problem: $\text{max} \sum_{i=1}^n v_i x_i$, subject to $\sum_{i=1}^n w_i x_i \le W$ and $x_i \in \{0, 1\}$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of tasks, each with a duration and a deadline, schedule the tasks on a single machine to minimize the total weighted tardiness. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Single-Machine Weighted Tardiness: $\text{min} \sum_{i=1}^n w_i T_i$, subject to $T_i = \max(0, C_i - d_i)$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Single-Machine Weighted Tardiness: $\text{min} \sum_{i=1}^n w_i T_i$, subject to $T_i = \max(0, C_i - d_i)$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given an undirected graph and an integer k, determine if there exists a subset of edges that forms a cycle with k edges. (NP-complete)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-k-Cycle Problem: Determine if there exists a cycle $C \subseteq E$ with $|C| = k$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-k-Cycle Problem: Determine if there exists a cycle $C \subseteq E$ with $|C| = k$
-</p>
-</span>
-<span class="extra-info" 
-data-tippy-content="Given a set of points in the Euclidean plane, find the smallest possible sum of pairwise distances between the points. (NP-hard)</br>
- <strong>Publicity</strong> /10
- <br/>
- <strong>Quant Grade</strong> /10: 
- </br> 
- <strong>AI Grade</strong> /10: 
- </br> 
- <strong>DS Interview. Grade</strong> /10: 
-</br> 
- <strong>Keywords.</strong> 
- " 
-    data-quant-grade=""
-    data-ai-grade=""
-    data-ds-grade=""
-    data-importance="" 
-    data-keywords=""
-    data-inner="
-Minimum Sum of Pairwise Distances: $\text{min} \sum_{i=1}^n \sum_{j=i&#43;1}^n d_{ij}$
-" 
-    >
-    <p><a href='#' target=”_blank” style="text-decoration:none"class="google-scholar-link">🌐</a>
-Minimum Sum of Pairwise Distances: $\text{min} \sum_{i=1}^n \sum_{j=i+1}^n d_{ij}$
 </p>
 </span>
 </div>
@@ -15262,59 +14510,6 @@ Nash equilibrium: $\text{Payoff}(\text{NE}) \ge \text{OPT}$,
 Nash equilibrium: $\text{Payoff}(\text{NE}) \ge \text{OPT}$,
 </p>
 </span>
-</div>
-<div class="category-content" data-title="Game Theory">
-<div class="title-effect wrapper content-category" data-title="Game Theory"></div>
-<p>Normal form game: $G = (N, (A_i), (u_i))$, where $N$ is the set of players, $A_i$ is the action set, and $u_i$ is the utility function,</p>
-<p>Repeated game payoff: $u_i^R = \frac{1}{T} \sum_{t=1}^T u_i^t$,</p>
-<p>Nash equilibrium: $u_i(s_i^<em>, s_{-i}^</em>) \geq u_i(s_i, s_{-i}^*), \forall s_i \in S_i, i \in N$,</p>
-<p>Mixed strategy: $\sigma_i(s_i) = P(S_i)$, where $\sigma_i(s_i)$ is the probability of playing strategy $s_i$,</p>
-<p>Pure Nash equilibrium: $(s_1^<em>, &hellip;, s_n^</em>)$ such that $s_i^* = BR_i(s_{-i}^*), \forall i \in N$,</p>
-<p>Weakly dominated strategy: $u_i(s_i, s_{-i}) \leq u_i(s_i&rsquo;, s_{-i}), \forall s_{-i} \in S_{-i}, i \in N$, and $u_i(s_i, s_{-i}) &lt; u_i(s_i&rsquo;, s_{-i})$ for some $s_{-i}$,</p>
-<p>Mixed Nash equilibrium: $(\sigma_1^<em>, &hellip;, \sigma_n^</em>)$ such that $\sigma_i^* = BR_i(\sigma_{-i}^*), \forall i \in N$,</p>
-<p>Payoff dominance: $u_i(s_i^<em>, s_{-i}^</em>) \geq u_i(s_i&rsquo;, s_{-i}&rsquo;), \forall i \in N, \forall (s_i&rsquo;, s_{-i}&rsquo;) \in S$,</p>
-<p>Dominant strategy: $u_i(s_i^*, s_{-i}) \geq u_i(s_i, s_{-i}), \forall s_i \in S_i, \forall s_{-i} \in S_{-i}, i \in N$,</p>
-<p>Best response: $BR_i(s_{-i}) = \arg\max_{s_i \in S_i} u_i(s_i, s_{-i})$,</p>
-<p>Prisoner&rsquo;s dilemma: A two-player game with a unique Nash equilibrium where both players choose a socially suboptimal action,</p>
-<p>Coordination game: A game where players benefit from choosing the same action,</p>
-<p>Battle of the sexes: A coordination game with two Nash equilibria in pure strategies and one in mixed strategies,</p>
-<p>Zero-sum game: $\sum_{i \in N} u_i(s) = 0, \forall s \in S$,</p>
-<p>Minimax theorem: $\max_{\sigma_1} \min_{\sigma_2} E[u_1(\sigma)] = \min_{\sigma_2} \max_{\sigma_1} E[u_1(\sigma)]$,</p>
-<p>Stackelberg competition: $q_1^* = \arg\max_{q_1} (P(q_1 + q_2^*(q_1)) - C_1(q_1))$,</p>
-<p>Cournot competition: $q_i^* = \arg\max_{q_i} \left[ (P(Q) - C_i(q_i)) \cdot q_i \right], \forall i \in N$,</p>
-<p>Bertrand competition: $p_i^* = \arg\max_{p_i} \left[ (p_i - C_i(q_i)) \cdot D_i(p) \right], \forall i \in N$,</p>
-<p>Extensive form game: A game represented by a game tree, which includes information sets, decisions, and payoffs,</p>
-<p>Subgame perfect equilibrium: A strategy profile $s^\star$ such that $s_{|H}^\star = \arg\max_{s_{|H}} u_i(s_{|H}, s_{-i}^\star), \forall i \in N, \forall H \subseteq \mathcal{H}$,</p>
-<p>Backward induction: A method for finding subgame perfect equilibria in finite extensive form games,</p>
-<p>Finitely repeated game: A repeated game with a known finite number of repetitions,</p>
-<p>Infinitely repeated game payoff: $u_i^{\infty} = (1 - \delta) \sum_{t=1}^\infty \delta^{t-1} u_i^t$,</p>
-<p>Folk theorem: In an infinitely repeated game, any feasible and individually rational payoff vector can be sustained as a Nash equilibrium,</p>
-<p>Discount factor: A factor that represents the value of future payoffs relative to current payoffs,</p>
-<p>Folk theorem: $u^* \in F$ if $u^<em><em>i \geq v_i$ and $\sum</em>{i \in N} (u^</em>_i - v_i) \leq \frac{1 - \delta}{\delta}$,</p>
-<p>Tit-for-tat strategy: $a_{i,t+1} = a_{-i,t}$, where $a_{i,t}$ is the action taken by player $i$ at time $t$,</p>
-<p>Trigger strategy: $a_{i,t+1} = \begin{cases} C &amp; \text{if } a_{-i,s} = C, \forall s \leq t\\ D &amp; \text{otherwise} \end{cases}$,</p>
-<p>Perfect Bayesian equilibrium: $(s^<em>, \mu^</em>)$ such that $s_i^* = \arg\max_{s_i} \sum_{\theta_i} \mu_i(\theta_i|h_i) u_i(s_i, s_{-i}^<em>, \theta_i)$ and $\mu_i^</em>(\theta_i|h_i) = \frac{P(\theta_i|h_i)}{\sum_{\theta_i} P(\theta_i|h_i)}$,</p>
-<p>Bayesian Nash equilibrium: $s_i^* = \arg\max_{s_i} E_{\theta_{-i} \sim \mu_{-i}}[u_i(s_i, s_{-i}^*(\theta_{-i}), \theta_i)]$,</p>
-<p>Myerson auction: $p_i = \max_{j \neq i} \left\{ r_j + \frac{r_j - v_j}{n-1} \right\}$,</p>
-<p>Social welfare maximization: $\max_{s \in S} \sum_{i \in N} u_i(s)$,</p>
-<p>Pareto optimality: $\nexists s&rsquo; \in S$ such that $u_i(s&rsquo;) \geq u_i(s), \forall i \in N$ and $u_i(s&rsquo;) &gt; u_i(s)$ for some $i \in N$,</p>
-<p>Expected utility: $E[u_i(s)] = \sum_{s \in S} u_i(s) \cdot p(s)$,</p>
-<p>Nash equilibrium condition: $u_i(s_i^<em>, s_{-i}^</em>) \ge u_i(s_i, s_{-i}^<em>)$ for all $s_i$ and $s_{-i}^</em>$,</p>
-<p>Mixed strategy Nash equilibrium condition: $E[u_i(\sigma_i^<em>, \sigma_{-i}^</em>)] = E[u_i(\sigma_i, \sigma_{-i}^<em>)]$ for all $\sigma_i$ and $\sigma_{-i}^</em>$,</p>
-<p>Minimax strategy: $\max_{s_i} \min_{s_{-i}} u_i(s_i, s_{-i})$,</p>
-<p>Maximin strategy: $\min_{s_{-i}} \max_{s_i} u_i(s_i, s_{-i})$,</p>
-<p>Payoff in a zero-sum game: $u_i(s_i, s_{-i}) = -u_{-i}(s_i, s_{-i})$,</p>
-<p>Cournot competition equilibrium: $q_i^* = \arg\max_{q_i} (P(q_i + \sum_{j \ne i} q_j) - c_i)q_i$,</p>
-<p>Bertrand competition equilibrium: $p_i^* = \arg\max_{p_i} (p_i - c_i)D(p_i, p_{-i})$,</p>
-<p>Stackelberg competition equilibrium: $q_i^* = \arg\max_{q_i} (P(q_i + q_j^*(q_i)) - c_i)q_i$,</p>
-<p>Discounted payoff: $\bar{u}<em>i(s) = \sum</em>{t=0}^\infty \delta^t u_i(s_t)$, where $\delta$ is the discount factor,</p>
-<p>Folk theorem condition: $\bar{u}<em>i \ge \max</em>{s_i} \min_{s_{-i}} u_i(s_i, s_{-i})$ for all $i$,</p>
-<p>Vickrey auction winner&rsquo;s payment: $p_{winner} = \max_{j \ne winner} b_j$,</p>
-<p>Revenue equivalence theorem: $E[R(\pi)] = E[R(\pi&rsquo;)]$ for any two mechanisms $\pi$ and $\pi&rsquo;$,</p>
-<p>Myerson auction allocation rule: $x_i(b_i) = 1$ if $b_i \ge b_{-i} + t(b_{-i})$,</p>
-<p>Myerson auction payment rule: $p_i = b_{-i} + t(b_{-i}) - t^{-1}(b_i - b_{-i})$,</p>
-<p>Arrow&rsquo;s impossibility theorem: $u_i(s_i, s_{-i}) \ne u_i(s_i&rsquo;, s_{-i})$ for some $s_i$ and $s_i&rsquo;$,</p>
-<p>Expected utility in Bayesian games: $E[u_i(\sigma_i(\theta_i), \sigma_{-i}(\theta_{-i}))] = \sum_{\theta \in \Theta} u_i(\sigma_i(\theta_i), \sigma_{-i}(\theta_{-i})) \cdot p(\theta)$,</p>
 </div>
 <div class="category-content" data-title="Network Science">
 <div class="title-effect wrapper content-category" data-title="Network Science"></div>
@@ -19663,6 +18858,123 @@ function toggleInvertedMode() {
 
 
 
+function toggleDarkMode() {
+  const darkModeButton = document.getElementById("darkModeButton");
+  if (darkModeButton){ 
+    const isInverted = document.body.classList.contains("inverted");
+
+    
+    document.body.classList.toggle("inverted");
+
+    
+    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  }
+}
+
+
+let currentPaletteIndex = 0;
+
+function changePalette() {
+  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+}
+function hexToRgb(hex) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
+  
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
+
+if (document.getElementById('change-palette')) {
+  document.getElementById('change-palette').addEventListener('click', changePalette);
+} 
+
+const colorPalettes = [
+    [ '#000000'],
+    [
+'#03045eff',
+'#023e8aff',
+'#0077b6ff',
+'#0096c7ff',
+'#00b4d8ff',
+'#389ab4ff',
+],
+        [
+      '#264653ff',
+      '#287271ff',
+      '#2a9d8fff',
+      '#8ab17dff',
+      '#c49251ff',
+      '#de7959ff',
+      '#d76f51ff',
+    ],
+    [
+      '#ff0a54ff',
+      '#ff477eff',
+      '#ff5c8aff',
+      '#ff7096ff',
+    ],
+    [
+      '#ffae03ff',
+      '#e67f0dff',
+      '#fe4e00ff',
+      '#e9190fff',
+      '#ff0f80ff',
+    ],
+        [
+      '#7400b8ff',
+      '#6930c3ff',
+      '#5e60ceff',
+      '#5390d9ff',
+      '#4ea8deff',
+      '#48bfe3ff',
+      '#56cfe1ff',
+    ],
+    [
+      '#f72585ff',
+      '#7209b7ff',
+      '#3a0ca3ff',
+      '#4361eeff',
+      '#4c99a0ff',
+    ],
+    [
+      '#355070ff',
+      '#6d597aff',
+      '#b56576ff',
+      '#e56b6fff',
+      '#eaac8bff',
+    ],
+    [
+      '#f72585ff',
+      '#b5179eff',
+      '#7209b7ff',
+      '#560badff',
+      '#480ca8ff',
+      '#3a0ca3ff',
+      '#3f37c9ff',
+      '#4361eeff',
+      '#4895efff',
+      '#4cc9f0ff',
+    ],
+    [
+      '#ca86cfff',
+      '#7353baff',
+      '#2f195fff',
+      '#0f1020ff',
+      '#9f73d5ff',
+    ],
+    [
+      '#61a0afff',
+      '#76a99cff',
+      '#c05c7bff',
+      '#c99997ff',
+      '#c5a461ff',
+    ],
+  ];
 </script>
 <style>
 .inverted {
