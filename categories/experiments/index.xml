@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Experiments on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/categories/experiments/</link>
-    <description>Recent content in Experiments on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Experiments on Christos Tsanikidis, PhD</title>
+    <link>/categories/experiments/</link>
+    <description>Recent content in Experiments on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/categories/experiments/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CheatsheetGPT</title>
-      <link>http://ctsan.github.io/other/the-wall/</link>
-      <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/other/the-wall/</guid>
-      <description>I prompted GPT4 to help me create a cheatsheet for areas spanning AI, Computer Science, Finance, Operations Research, and Mathematics. Then, asked to grade the importance of each relationship for different people, and in some cases, to explain its answers. 🌐 Click me to see how it works. 🌐 Click to see the purpose. 🌐 Limitations &amp; Disclaimers, Future Work. Loading might take some time. Alpha Version. Last Update: 06/24/2023.</description>
-    </item>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Mon, 23 Nov 2015 16:01:23 +0800</lastBuildDate><atom:link href="/categories/experiments/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Mice Make Art!</title>
-      <link>http://ctsan.github.io/project/mice-make-art/</link>
+      <link>/project/mice-make-art/</link>
       <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/mice-make-art/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/project/mice-make-art/</guid>
-      <description>Concept The concept is the following: Drop $N$ mice randomly in a rectangular area. Each mouse targets exactly one other mouse forming a circle of targets.
-$$M_1 \rightarrow M_2 \rightarrow &amp;hellip; \rightarrow M_N \rightarrow M_1$$
-All mice have equal velocity. The simulation follows. After clicking on the simulation, press (i) to increase the number of mice, and press (d) to decrease it.
-Simulation Emerging Behaviors Each mouse \(M_i\) is confined in the rectangular area.</description>
     </item>
     
   </channel>

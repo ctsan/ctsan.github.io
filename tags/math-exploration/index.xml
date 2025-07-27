@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>math exploration on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/math-exploration/</link>
-    <description>Recent content in math exploration on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Math Exploration on Christos Tsanikidis, PhD</title>
+    <link>/tags/math-exploration/</link>
+    <description>Recent content in Math Exploration on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sun, 01 Jan 2023 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/math-exploration/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 15:43:48 +0800</lastBuildDate><atom:link href="/tags/math-exploration/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Mathematical Parade</title>
-      <link>http://ctsan.github.io/other/mathematical-market/</link>
+      <link>/other/mathematical-market/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-market/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/other/mathematical-market/</guid>
-      <description> </description>
     </item>
     
     <item>
       <title>Mathematical River</title>
-      <link>http://ctsan.github.io/other/mathematical-river/</link>
+      <link>/other/mathematical-river/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-river/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/other/mathematical-river/</guid>
-      <description> </description>
     </item>
     
     <item>
       <title>Mathematical Tapestry</title>
-      <link>http://ctsan.github.io/other/mathematical-tapestry/</link>
+      <link>/other/mathematical-tapestry/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-tapestry/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/other/mathematical-tapestry/</guid>
-      <description> Enable Dark Mode </description>
     </item>
     
   </channel>

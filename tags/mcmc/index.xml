@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mcmc on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/mcmc/</link>
-    <description>Recent content in mcmc on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Mcmc on Christos Tsanikidis, PhD</title>
+    <link>/tags/mcmc/</link>
+    <description>Recent content in Mcmc on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/mcmc/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="/tags/mcmc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Shorting Bubbles [A Trading Game]</title>
+      <link>/posts/trading-bubbles/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/trading-bubbles/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>To Draw with Markov Chain Monte Carlo.</title>
-      <link>http://ctsan.github.io/post/mcmc/</link>
+      <link>/posts/mcmc/</link>
       <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/mcmc/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/mcmc/</guid>
-      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
     </item>
     
     <item>
       <title>The diffusion of discovery</title>
-      <link>http://ctsan.github.io/post/scientific-process/</link>
-      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <link>/posts/the-diffusion-of-discovery/</link>
+      <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/the-diffusion-of-discovery/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/scientific-process/</guid>
-      <description>How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk.</description>
     </item>
     
   </channel>

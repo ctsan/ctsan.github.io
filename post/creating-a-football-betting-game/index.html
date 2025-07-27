@@ -1,256 +1,795 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=49373&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>How to make a profitable virtual football betting game - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
 
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  
+  <title>How to make a profitable virtual football betting game &middot; Christos Tsanikidis</title>
+    <meta name="title" content="How to make a profitable virtual football betting game &middot; Christos Tsanikidis">
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  
+  
+  <meta name="keywords" content="simulation,betting,odds,poisson,probability,">
+  
+  
+  <link rel="canonical" href="//localhost:49373/post/creating-a-football-betting-game/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.5c1f183abbd81c1e3325f920a27cbb9ba254b48fb31ea3618517bff4770f91f0ae423c9e8292ba4cf2bd80c63fd0d2da86c482956da99c3c0e48b5a3911df364.css"
+    integrity="sha512-XB8YOrvYHB4zJfkgony7m6JUtI&#43;zHqNhhRe/9HcPkfCuQjyegpK6TPK9gMY/0NLahsSClW2pnDwOSLWjkR3zZA==">
 
-<meta property="og:image" content="/post-images/soccersimulator-0.png"/>
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.a187118b41a60744310065c567365de85730c8495301d0ebae41810cc6f7a47432b1de7d4f3b11338959f1ac50c266be6b4b73acf6bf770016eb59b602cc1aa0.js"
+      integrity="sha512-oYcRi0GmB0QxAGXFZzZd6FcwyElTAdDrrkGBDMb3pHQysd59TzsRM4lZ8axQwma&#43;a0tzrPa/dwAW61m2AswaoA=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
 
-<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
 
-<style>
-  .enumeration {
-    background-color: #e6f2ff;
-    border-radius: 5px;
-    padding: 20px;
-    font-size:18px;
-    margin: 20px 0;
- margin-top: 5px;  
-  margin-bottom: 5px;  
-    font-family: 'EB Garamond', serif;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-  }
+  
+  
+  
+  
+  
+  
 
-  .enumeration ol {
-    counter-reset: step-counter;
-    list-style: none;
-    padding-left: 1.5em;
-  }
+  
+  <meta property="og:url" content="//localhost:49373/post/creating-a-football-betting-game/">
+  <meta property="og:site_name" content="Christos Tsanikidis">
+  <meta property="og:title" content="How to make a profitable virtual football betting game">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2017-12-22T15:43:48+08:00">
+    <meta property="article:modified_time" content="2017-12-22T15:43:48+08:00">
+    <meta property="article:tag" content="Simulation">
+    <meta property="article:tag" content="Betting">
+    <meta property="article:tag" content="Odds">
+    <meta property="article:tag" content="Poisson">
+    <meta property="article:tag" content="Probability">
 
-  .enumeration li {
-    counter-increment: step-counter;
-    position: relative;
-    margin-bottom: 20px;
-  }
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to make a profitable virtual football betting game">
 
-  .enumeration li::before {
-    content: counter(step-counter);
-    font-weight: bold;
-    position: absolute;
-    left: -1.0em;
-    top: -0.5em;
-    font-size: 24px;
-    font-style: italic;
-
-  }
-
-  .enumeration::before,
-  .enumeration::after {
-    content: '';
-    display: block;
-    height: 10px;
-    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
-    margin: -20px -20px 0 -20px;
-  }
-
-  .enumeration::after {
-    margin: 0 -20px -20px -20px;
-  }
-</style>
-
-<style>
-
-  .large-initial::first-letter {
-    font-family: 'EB Garamond', serif;
-    font-size: 3em;
-    float: left;
-    margin-top: 0;
-    margin-right: 0.1em;
-    line-height: 0.9;
-    color: #1a237e;
-  }
-  .note {
-  background-color: #e6f2ff;
-  border-radius: 10px;
-  padding: 10px 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-  font-size: 0.95em;
-  }
-</style>
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="CT" /><meta name="description" content="I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
-Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game." /><meta name="keywords" content="Math, CS, Life" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.111.3 with theme even" />
-
-
-<link rel="canonical" href="http://ctsan.github.io/post/creating-a-football-betting-game/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "How to make a profitable virtual football betting game",
+    "headline": "How to make a profitable virtual football betting game",
+    
+    
+    "inLanguage": "en",
+    "url" : "\/\/localhost:49373\/post\/creating-a-football-betting-game\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Christos Tsanikidis, PhD"
+    },
+    "copyrightYear": "2017",
+    "dateCreated": "2017-12-22T15:43:48\u002b08:00",
+    "datePublished": "2017-12-22T15:43:48\u002b08:00",
+    
+    "dateModified": "2017-12-22T15:43:48\u002b08:00",
+    
+    "keywords": ["simulation","betting","odds","poisson","probability"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1257"
+  }]
+  </script>
 
 
-<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+  
+  
+    <meta name="author" content="Christos Tsanikidis, PhD">
+  
+  
+    
+      
+        
+          <link href="https://github.com/ctsan" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://scholar.google.com/citations?hl=en&amp;user=a7gGMSQAAAAJ" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://linkedin.com/in/ctsanikidis" rel="me">
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
 
 
-<meta property="og:title" content="How to make a profitable virtual football betting game" />
-<meta property="og:description" content="I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
-Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://ctsan.github.io/post/creating-a-football-betting-game/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-12-22T15:43:48+08:00" />
-<meta property="article:modified_time" content="2017-12-22T15:43:48+08:00" />
-<meta itemprop="name" content="How to make a profitable virtual football betting game">
-<meta itemprop="description" content="I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
-Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game."><meta itemprop="datePublished" content="2017-12-22T15:43:48+08:00" />
-<meta itemprop="dateModified" content="2017-12-22T15:43:48+08:00" />
-<meta itemprop="wordCount" content="1259">
-<meta itemprop="keywords" content="simulation,betting,odds,poisson,probability," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to make a profitable virtual football betting game"/>
-<meta name="twitter:description" content="I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
-Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game."/>
 
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
 
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ]
+        });
+      });
+    </script>
 
 </head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Christos Tsanikidis</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/other/">
-        <li class="mobile-menu-item">Experiments</li>
-      </a><a href="/research/">
-        <li class="mobile-menu-item">Research</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Christos Tsanikidis</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/other/">Experiments</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/research/">Research</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
     
-    <header class="post-header">
-      <div class="header-content" style="display: flex; align-items: flex-start;">
-        <div class="post-thumbnail" style="margin-right: 20px; width: 120px; height: 120px; min-width: 120px;">
-          <img src="/post-images/soccersimulator-0.png" style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-        <div>
-          <h1 class="post-title" style="font-size: 34px;">How to make a profitable virtual football betting game</h1>
+    
+      <div class="min-h-[148px]"></div>
+<div
+  class="fixed inset-x-0 min-h-[130px] opacity-65 pl-[24px] pr-[24px] bg-gradient-to-b from-neutral from-60% dark:from-neutral-800 to-transparent mix-blend-normal z-80"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px] z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative max-w-[64rem] ml-auto mr-auto">
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          Christos Tsanikidis
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/post/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Posts">
+    Blog
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/research/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Research">
+    Research
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="About">
+    About
+  </p>
+</a>
+
+
+
+      
+    
 
     
-          <div class="post-meta">
-            <span class="post-time"> 2017-12-22 </span>
-            <div class="post-category">
-                <a href="/categories/life/"> Life </a>
-                <a href="/categories/simulation/"> Simulation </a>
-                <a href="/categories/math/"> Math </a>
-                </div>
-              <span class="more-meta"> 1259 words </span>
-              <span class="more-meta"> 6 mins read </span>
+
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
             
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
           </div>
-        </div>
+          <div class="items-center justify-center hidden dark:flex">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+          </div>
+        </button>
       </div>
-    </header>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
     
 
     
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
     
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#low-level-simulator">Low Level simulator</a></li>
-    <li><a href="#high-level-simulator">High Level simulator</a></li>
-  </ul>
-</nav>
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        <div class="flex items-center justify-center dark:hidden">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/post/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Posts">
+      Blog
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/research/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Research">
+      Research
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="About">
+      About
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
   </div>
 </div>
-    <div class="post-content large-initial">
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.78ad5090e7c0c2533bac9dd23bdb1f723f834e5c3626627bd31017cc139ce0651b529877862129cee49e380ab2fdcd8baef28ae3e086bc54957fdaa7758775b2.js"
+  integrity="sha512-eK1QkOfAwlM7rJ3SO9sfcj&#43;DTlw2JmJ70xAXzBOc4GUbUph3hiEpzuSeOAqy/c2LrvKK4&#43;CGvFSVf9qndYd1sg=="
+  data-target-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        How to make a profitable virtual football betting game
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2017-12-22T15:43:48&#43;08:00">22 December 2017</time><span class="px-2 text-primary-500">&middot;</span><span>1257 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+          
+          
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="Christos Tsanikidis, PhD"
+        src="/img/blowfish_logo_hu_e74a130226122ae3.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Christos Tsanikidis, PhD
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">A little bit about you</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/ctsan"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://scholar.google.com/citations?hl=en&amp;user=a7gGMSQAAAAJ"
+          target="_blank"
+          aria-label="Google"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://linkedin.com/in/ctsanikidis"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+        
+
+        
+
+        
+          <div class="mb-5"></div>
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
           <!--<div id="tester"></div>
 <script src="/scripts/football.js"></script>-->
 <p>I have already dedicated a previous post on the simulation of
-<a href="/post/2017-08-19-gambling-demystified/">the doubling method</a>.
+<a
+  href="/post/2017-08-19-gambling-demystified/">the doubling method</a>.
 In this post I will walk you through steps that can be taken
 for the creation of a virtual betting game. In particular we
 will examine a football betting game, similar to one
 currently found in the market.</p>
-<h1 id="design-decisions">Design decisions</h1>
+
+<h1 class="relative group">Design decisions 
+    <div id="design-decisions" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#design-decisions" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
 <p>Initially, before we develop the simulation, we can discuss
 two different possible methods to create such a game.</p>
 <p>Simulating a football game can be complicated depending on the
 method you adopt. But implementation complexity aside, design
 decisions can have a direct impact on the tractability of analysis of
 expected profits.</p>
-<h2 id="low-level-simulator">Low Level simulator</h2>
+
+<h2 class="relative group">Low Level simulator 
+    <div id="low-level-simulator" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#low-level-simulator" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
 <p>A low level method would simulate each football player
 of both teams as an independent agent, acting using local
 information in a realistic way.</p>
@@ -258,7 +797,16 @@ information in a realistic way.</p>
 be far more interesting for clients, is much harder to
 first develop, and subsequently analyze, resulting in less
 control on the results.</p>
-<h2 id="high-level-simulator">High Level simulator</h2>
+
+<h2 class="relative group">High Level simulator 
+    <div id="high-level-simulator" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#high-level-simulator" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
 <p>A high level approach can circumvent the aforementioned
 difficulties under a carefully designed model. In that
 method we do not simulate football players or the general
@@ -266,7 +814,16 @@ mechanics of the game; instead, we simply generate a high
 level description of the game accompanied by a rich pool
 of graphics/videos to create the illusion of a &ldquo;running&rdquo; game.</p>
 <p>In what follows, we adopt this method.</p>
-<h1 id="outline-of-the-implementation">Outline of the implementation</h1>
+
+<h1 class="relative group">Outline of the implementation 
+    <div id="outline-of-the-implementation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#outline-of-the-implementation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 <style>
   .enumeration {
@@ -326,75 +883,104 @@ of graphics/videos to create the illusion of a &ldquo;running&rdquo; game.</p>
     <li>If the previous trial was successful, play a random scoring video for the corresponding team. Otherwise, play a random goal-missing video.</li>
   </ol>
 </div>
-<h1 id="decision-variables">Decision variables</h1>
+
+<h1 class="relative group">Decision variables 
+    <div id="decision-variables" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#decision-variables" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
 <p>The betting company gets to decide variables
 $w _A,t,w _B$, $T$ (or $\lambda$) and the four goal/miss
 probabilities in order to ascertain profits.</p>
 <p>The employees of the company could then compute
 the expected profits with simulation (Monte Carlo methods) or even
 better through analytical calculations (if possible).</p>
-<h1 id="analysis">Analysis</h1>
+
+<h1 class="relative group">Analysis 
+    <div id="analysis" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#analysis" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
 <p>First of all we need to determine the probability
 of winning, drawing or loosing for team $A$. This
 is given by the following events</p>
-<p>$$\mathbb P[Goals_A&gt;Goals_B] = \sum _{k=1} ^{\infty} \sum _{j=0} ^{k-1} \mathbb P[Goals_A=k,Goals_B = j]$$</p>
-<p>$$\mathbb P[Goals_A=Goals_B] = \sum _{k=0} ^{\infty} \mathbb P[Goals_A=k,Goals_B=k]$$</p>
-<p>and the third case is symmetrical to the first. Next, we need to evaluate the probability
+$$\mathbb P[Goals_A>Goals_B] = \sum _{k=1} ^{\infty} \sum _{j=0} ^{k-1} \mathbb P[Goals_A=k,Goals_B = j]$$$$\mathbb P[Goals_A=Goals_B] = \sum _{k=0} ^{\infty} \mathbb P[Goals_A=k,Goals_B=k]$$<p>and the third case is symmetrical to the first. Next, we need to evaluate the probability
 of a specific number of goals for each team, jointly:</p>
-<p>$$\mathbb P[Goals_A=i,Goals_B=j]$$</p>
-<p>Those two events are of course not independent. There is an underlying variable, that of
+$$\mathbb P[Goals_A=i,Goals_B=j]$$<p>Those two events are of course not independent. There is an underlying variable, that of
 the number of highlights of the game $H$, that affects the outcome and knowing its
 value can simplify our work. We can therefore marginalize over the possible values of $H$</p>
-<p>$$\mathbb P[Goals_A=i,Goals_B=j]=\sum _{k=i+j}^{\infty} \mathbb P[H=k] \cdot \frac {k!} {i! j! (k-i-j)!} \cdot
-{p _ {wA}^i p _ {wB} ^j (p _{mA} + p _{mB})^{k-i-j} }$$</p>
-<p>Where the probability mass function of the multinomial distribution was used for three events:
+$$\mathbb P[Goals_A=i,Goals_B=j]=\sum _{k=i+j}^{\infty} \mathbb P[H=k] \cdot \frac {k!} {i! j! (k-i-j)!} \cdot
+{p _ {wA}^i p _ {wB} ^j (p _{mA} + p _{mB})^{k-i-j} }$$<p>Where the probability mass function of the multinomial distribution was used for three events:
 goal for the first team, goal for the second, and miss for either.</p>
 <p>Finally we need to compute the probability for $k$ highlights. This can be
 computed by the fact that the number of highlights until time $t$ follows
 the Poisson distribution with parameter $\lambda t$ [2], therefore
-$$\mathbb P[H=k] = \frac {(\lambda \cdot 90\ min)^k e^{- \lambda \cdot 90\ min}} {k!}$$</p>
-<p>Where &ldquo;$90\ min$&rdquo; is the duration of a football game. The parameter $\lambda$
+</p>
+$$\mathbb P[H=k] = \frac {(\lambda \cdot 90\ min)^k e^{- \lambda \cdot 90\ min}} {k!}$$<p>Where &ldquo;$90\ min$&rdquo; is the duration of a football game. The parameter $\lambda$
 can be set through the equation $\lambda \cdot 90 \min = s$ if we expect an average of
 $s$ highlights per game. The term &ldquo;highlight&rdquo; is subjective in any case, and it is
 more precisely defined combined with goal-probabilities. Consequently we can define
 any expected number of events, and that decision will be meaningful or not depending on the
 subsequent definition of the goal-probabilities.</p>
 <p>For simplification we set $s=10 \Rightarrow \lambda = \frac {1} {9\ min}  $.</p>
-<p>$$\mathbb P[H=k] = \frac {10^k e^{- 10}} {k!}$$</p>
-<p>Now let&rsquo;s assume that team $A$ is better and has probability $p_{ga}=0.2$.
+$$\mathbb P[H=k] = \frac {10^k e^{- 10}} {k!}$$<p>Now let&rsquo;s assume that team $A$ is better and has probability $p_{ga}=0.2$.
 $B$ is slightly behind with a probability $p _{gb}=0.15$ when
 playing with $A$. Although the missing-probabilities are not important
 for the result, they do affect the Quality of Experience (QoE) [3]. A sensible
 option would be to set the probabilities proportional to the goal probabilities
 of the corresponding team. Thus they can be found using the following equations:</p>
-<p>$$ \frac {p _{ga}} {p _{gb}} = \frac {p _{ma}} {p _{mb}} = \frac {1} {0.75}$$
-$$ p _{ga} + p _{gb} + p _{ma} + p _{mb} = 1$$</p>
-<p>In this post it suffices to say: $$ p _{ma} + p _{mb} = 1-0.35 = 0.65$$</p>
-<p>resulting in the following:</p>
-<p>$$\mathbb P[Goals_A=i,Goals_B=j]=\sum _{k=i+j}^{\infty} \frac {10^k e^{- 10}} {k!}
-\cdot \frac {k!} {i! j! (k-i-j)!} \cdot {0.2^i 0.15 ^j 0.65^{k-i-j} }$$</p>
-<p>furthermore we can ignore terms after a certain $k$, for instance $k=100$
+$$ \frac {p _{ga}} {p _{gb}} = \frac {p _{ma}} {p _{mb}} = \frac {1} {0.75}$$<p>
+</p>
+$$ p _{ga} + p _{gb} + p _{ma} + p _{mb} = 1$$<p>In this post it suffices to say: </p>
+$$ p _{ma} + p _{mb} = 1-0.35 = 0.65$$<p>resulting in the following:</p>
+$$\mathbb P[Goals_A=i,Goals_B=j]=\sum _{k=i+j}^{\infty} \frac {10^k e^{- 10}} {k!}
+\cdot \frac {k!} {i! j! (k-i-j)!} \cdot {0.2^i 0.15 ^j 0.65^{k-i-j} }$$<p>furthermore we can ignore terms after a certain $k$, for instance $k=100$
 since the probability for that many highlights is negligible. Of course we could
 do the same for the infinite sum of $\mathbb P[Goals_A&gt;Goals_B]$.</p>
 <p>By truncating the series we can calculate the probabilities of the various
 game outcomes using a computer program easily and with good precision.</p>
-<h1 id="expected-profit">Expected profit</h1>
+
+<h1 class="relative group">Expected profit 
+    <div id="expected-profit" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#expected-profit" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
 <p>So far we haven&rsquo;t talked about the betting odds. What we need is a positive
 expected profit for the betting company or negative for the client for every
 possible action of the client. If the client predicts that team $A$ will
 win, their expected winnings (per currency unit) will be:</p>
-<p>$$\mathbb E[predict_A]= (w_A-1) \mathbb P[Goal_A&gt;Goal_B] - (1-\mathbb P[Goal_A&gt;Goal_B])$$
+$$\mathbb E[predict_A]= (w_A-1) \mathbb P[Goal_A>Goal_B] - (1-\mathbb P[Goal_A>Goal_B])$$<p>
 or simplified: $\mathbb E[predict_A]= w_A \mathbb P[Goal_A&gt;Goal_B] - 1$</p>
 <p>If the client predicts a draw their expected profit will be:</p>
-<p>$$ \mathbb E[predict _{draw}]= (t-1) \mathbb P[Goal _A=Goal _B] - (1-\mathbb P[Goal _A=Goal _B])$$</p>
-<p>or simplified: $\mathbb E[predict_{draw}]= t \mathbb P[Goal_A=Goal_B] - 1$</p>
+$$ \mathbb E[predict _{draw}]= (t-1) \mathbb P[Goal _A=Goal _B] - (1-\mathbb P[Goal _A=Goal _B])$$<p>or simplified: $\mathbb E[predict_{draw}]= t \mathbb P[Goal_A=Goal_B] - 1$</p>
 <p>similarly: $\mathbb E[predict_B]= w_B \mathbb P[Goal_A&lt;Goal_B] - 1$</p>
 <p>Given that, the Betting company would have to set those odds so that the
 expected values will be negative but in a reasonable range. Additionally
 setting all the expected profits equal will make, in principle, every
 option equally enticing preventing imbalance in the number of bets
 in each option.</p>
-<h1 id="example">Example</h1>
+
+<h1 class="relative group">Example 
+    <div id="example" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#example" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
 <p>I implement the analysis in Mathematica where we can skip the direct
 implementation of some parts since the language does that for you.
 The following function in Mathematica will compute the probability of team A
@@ -402,8 +988,7 @@ winning, a tie, or team B winning.</p>
 <img src="/post-images/football-code-chunk.png"/>
 <p>I truncate after 20 terms but this should depend on the mean number of events
 (or highlights). For example I get:</p>
-<p>$$computeProbability[10, 0.2, 0.15]=\{0.492633, 0.215924, 0.289809\}$$</p>
-<p>Changing $termsTrunc$ to $30$ results in very slightly modified probabilities,
+$$computeProbability[10, 0.2, 0.15]=\\{0.492633, 0.215924, 0.289809\\}$$<p>Changing $termsTrunc$ to $30$ results in very slightly modified probabilities,
 $\{0.493562, 0.216138, 0.290255\}$</p>
 <p>Now If we decide to target a specific expected loss for the players, say $0.25$
 currency units per 1 currency unit bet, we would choose roughly the following
@@ -412,452 +997,233 @@ $1.5$ for win of team A, $2.6$ for win of team B, $3.5$ for a tie. How
 high or low this target loss is another topic that deserves a seperate
 study.</p>
 <center><img src="/post-images/football-expected-profit.png"/></center>
-<h1 id="references--links">References &amp; Links</h1>
+
+<h1 class="relative group">References &amp; Links 
+    <div id="references--links" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#references--links" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
 <ol>
-<li><a href="https://en.wikipedia.org/wiki/Multinomial_distribution">Multinomial Distribution</a></li>
-<li><a href="http://www.math.uchicago.edu/~may/VIGRE/VIGRE2010/REUPapers/Mcquighan.pdf">Simulating the Poisson Process, PATRICK MCQUIGHAN</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Quality_of_experience">Quality of Experience</a></li>
+<li><a
+  href="https://en.wikipedia.org/wiki/Multinomial_distribution"
+    target="_blank"
+  >Multinomial Distribution</a></li>
+<li><a
+  href="http://www.math.uchicago.edu/~may/VIGRE/VIGRE2010/REUPapers/Mcquighan.pdf"
+    target="_blank"
+  >Simulating the Poisson Process, PATRICK MCQUIGHAN</a></li>
+<li><a
+  href="https://en.wikipedia.org/wiki/Quality_of_experience"
+    target="_blank"
+  >Quality of Experience</a></li>
 </ol>
 
-    </div>
+          
+          
+          
+        </div>
 
+        
 
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_post/creating-a-football-betting-game.md"
+          data-oid-likes="likes_post/creating-a-football-betting-game.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
     
-<footer class="post-footer">
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/post/functional-approach-for-solving-equations/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >A functional approach for solving equations</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2017-12-05T15:43:48&#43;08:00">5 December 2017</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/post/learn-by-generalizing/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Effective Learning: Generalizing, Exploring, and Relating Concepts</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2018-02-04T17:50:48&#43;08:00">4 February 2018</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
 
 
       
-      <nav class="post-nav">
-        <a class="prev" href="/post/learn-by-generalizing/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Effective Learning: Generalizing, Exploring, and Relating Concepts</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/functional-approach-for-solving-equations/">
-            <span class="next-text nav-default">A functional approach for solving equations</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-
-      </nav>
-
-    <div id="disqus_thread"></div>
-<script>
-    
-
-    
-
-    (function() { 
-    var d = document, s = d.createElement('script');
-    s.src = 'https://tchristos.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-      <div class="post-tags">
-          <a href="/tags/simulation/">simulation</a>
-          <a href="/tags/betting/">betting</a>
-          <a href="/tags/odds/">odds</a>
-          <a href="/tags/poisson/">poisson</a>
-          <a href="/tags/probability/">probability</a>
-          </div></footer>
-
-
+    </footer>
   </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Christos Tsanikidis, PhD
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="//localhost:49373/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
         </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
         
 
-  
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
 
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="/about" class="iconfont icon-email" title="email"></a>
-      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
-  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-	
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2017 - 
-    2023
-    
-    <span class="author">Christos Tsanikidis</span>
   </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
 </div>
 
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
     </div>
-  </div>
+  </body>
   
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex: {
-        tags: 'ams',
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$']],
-        processEscapes: true,
-        packages: { '[+]': ['noerrors'] }
-      },
-      options: {
-        ignoreHtmlClass: 'tex2jax_ignore',
-        processHtmlClass: 'tex2jax_process'
-      },
-      loader: {
-        load: ['[tex]/noerrors']
-      },
-      chtml: {
-        scale: 1.2
-      }
-    };
-
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-111355141-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const titleEffectElements = document.querySelectorAll('.title-effect');
-
-  titleEffectElements.forEach((element) => {
-    const title = element.getAttribute('data-title');
-    const headerStyle = element.getAttribute('data-header-style') || 'h2';
-
-    const archiveTitle = document.createElement('div');
-    archiveTitle.classList.add('archive-title', 'tag');
-
-    if (title) {
-      const lineLeft = createSvgElement();
-      const lineRight = createSvgElement();
-
-      const titleElement = document.createElement(headerStyle);
-      titleElement.classList.add('archive-name');
-      titleElement.textContent = title;
-
-      archiveTitle.appendChild(lineLeft);
-      archiveTitle.appendChild(titleElement);
-      archiveTitle.appendChild(lineRight);
-    } else {
-      const fullLine = createSvgElement();
-      fullLine.style.flexGrow = "2";
-      archiveTitle.appendChild(fullLine);
-    }
-
-    element.appendChild(archiveTitle);
-  });
-
-
-  function createSvgElement() {
-    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgElement.classList.add('line');
-    svgElement.setAttribute('viewBox', '0 0 200 30');
-    svgElement.setAttribute('preserveAspectRatio', 'none');
-
-    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
-    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
-    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
-
-    svgElement.appendChild(wave1);
-    svgElement.appendChild(wave2);
-    svgElement.appendChild(wave3);
-
-    return svgElement;
-  }
-
-  function createPathElement(className, pathData) {
-    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    pathElement.setAttribute('class', className);
-    pathElement.setAttribute('d', pathData);
-    return pathElement;
-  }
-  gsap.to('.wave1', {
-  duration: 4,
-  attr: {
-    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
-  },
-  repeat: -1,
-  yoyo: true,
-  ease: 'none',
-});
-
-gsap.to('.wave2', {
-  duration: 5,
-  attr: {
-    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
-  },
-  repeat: -1,
-  yoyo: true,
-  ease: 'sine.inOut',
-  delay: 1,
-});
-
-gsap.to('.wave3', {
-  duration: 6,
-  attr: {
-    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
-  },
-  repeat: -1,
-  yoyo: true,
-  ease: 'none',
-  delay: 2,
-});
-});
-
-
-const body = document.documentElement;
-
-
-
-
-
-
-function setInvertedMode(value) {
-  if (value) {
-    body.classList.add('inverted');
-  } else {
-    body.classList.remove('inverted');
-  }
-}
-
-function toggleInvertedMode() {
-  const inverted = body.classList.contains('inverted');
-  setInvertedMode(!inverted);
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-function toggleDarkMode() {
-  const darkModeButton = document.getElementById("darkModeButton");
-  if (darkModeButton){ 
-    const isInverted = document.body.classList.contains("inverted");
-
-    
-    document.body.classList.toggle("inverted");
-
-    
-    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
-  }
-}
-
-
-let currentPaletteIndex = 0;
-
-function changePalette() {
-  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
-}
-function hexToRgb(hex) {
-  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
-  
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : null;
-}
-
-if (document.getElementById('change-palette')) {
-  document.getElementById('change-palette').addEventListener('click', changePalette);
-} 
-
-const colorPalettes = [
-    [ '#000000'],
-    [
-'#03045eff',
-'#023e8aff',
-'#0077b6ff',
-'#0096c7ff',
-'#00b4d8ff',
-'#389ab4ff',
-],
-        [
-      '#264653ff',
-      '#287271ff',
-      '#2a9d8fff',
-      '#8ab17dff',
-      '#c49251ff',
-      '#de7959ff',
-      '#d76f51ff',
-    ],
-    [
-      '#ff0a54ff',
-      '#ff477eff',
-      '#ff5c8aff',
-      '#ff7096ff',
-    ],
-    [
-      '#ffae03ff',
-      '#e67f0dff',
-      '#fe4e00ff',
-      '#e9190fff',
-      '#ff0f80ff',
-    ],
-        [
-      '#7400b8ff',
-      '#6930c3ff',
-      '#5e60ceff',
-      '#5390d9ff',
-      '#4ea8deff',
-      '#48bfe3ff',
-      '#56cfe1ff',
-    ],
-    [
-      '#f72585ff',
-      '#7209b7ff',
-      '#3a0ca3ff',
-      '#4361eeff',
-      '#4c99a0ff',
-    ],
-    [
-      '#355070ff',
-      '#6d597aff',
-      '#b56576ff',
-      '#e56b6fff',
-      '#eaac8bff',
-    ],
-    [
-      '#f72585ff',
-      '#b5179eff',
-      '#7209b7ff',
-      '#560badff',
-      '#480ca8ff',
-      '#3a0ca3ff',
-      '#3f37c9ff',
-      '#4361eeff',
-      '#4895efff',
-      '#4cc9f0ff',
-    ],
-    [
-      '#ca86cfff',
-      '#7353baff',
-      '#2f195fff',
-      '#0f1020ff',
-      '#9f73d5ff',
-    ],
-    [
-      '#61a0afff',
-      '#76a99cff',
-      '#c05c7bff',
-      '#c99997ff',
-      '#c5a461ff',
-    ],
-  ];
-</script>
-<style>
-.inverted {
-  filter: invert(100%);
-  background-color: rgb(15,15,15);
-}
-.inverted img {
-  filter: invert(100%);
-}
-.inverted .checkboxes-container {
-  background-color: rgba(255, 217, 182, 0.9);
-}
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-.title-effect {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: auto;
-}
-
-.archive-title {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  align-items: center;
-  text-align: center;
-}
-.line {
-  flex-grow: 1;
-  height: 30px;
-  margin: 0 8px;
-}
-.wave {
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.wave1 {
-  animation-name: animateWave1;
-  animation-duration: 4s;
-  stroke: rgba(0, 0, 255, 0.8);
-  stroke-width: 2;
-  fill: none;
-}
-.wave2 {
-  animation-name: animateWave2;
-  animation-duration: 5s;
-  animation-delay: 1s;
-  stroke: rgba(0, 128, 255, 0.8);
-  stroke-width: 2;
-  fill: none;
-}
-.wave3 {
-  animation-name: animateWave3;
-  animation-duration: 6s;
-  animation-delay: 2s;
-  stroke: rgba(0, 255, 255, 0.8);
-  stroke-width: 2;
-  fill: none;
-}
-</style>
-</body>
 </html>

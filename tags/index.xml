@@ -1,533 +1,564 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/</link>
-    <description>Recent content in Tags on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Tags on Christos Tsanikidis, PhD</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
-      <title>greece</title>
-      <link>http://ctsan.github.io/tags/greece/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/greece/</guid>
+      <title>Greece</title>
+      <link>/tags/greece/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/greece/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>interactive-simulation</title>
-      <link>http://ctsan.github.io/tags/interactive-simulation/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/interactive-simulation/</guid>
+      <title>Interactive-Simulation</title>
+      <link>/tags/interactive-simulation/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/interactive-simulation/</guid>
       <description></description>
+      
     </item>
     
     <item>
       <title>Manhattan</title>
-      <link>http://ctsan.github.io/tags/manhattan/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/manhattan/</guid>
+      <link>/tags/manhattan/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/manhattan/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>mcmc</title>
-      <link>http://ctsan.github.io/tags/mcmc/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/mcmc/</guid>
+      <title>Mcmc</title>
+      <link>/tags/mcmc/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/mcmc/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>metropolis-hastings</title>
-      <link>http://ctsan.github.io/tags/metropolis-hastings/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/metropolis-hastings/</guid>
+      <title>Metropolis-Hastings</title>
+      <link>/tags/metropolis-hastings/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/metropolis-hastings/</guid>
       <description></description>
+      
     </item>
     
     <item>
       <title>USA</title>
-      <link>http://ctsan.github.io/tags/usa/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/usa/</guid>
+      <link>/tags/usa/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/usa/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>finance cheatsheat</title>
-      <link>http://ctsan.github.io/tags/finance-cheatsheat/</link>
-      <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/finance-cheatsheat/</guid>
+      <title>Diffusion</title>
+      <link>/tags/diffusion/</link>
+      <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/diffusion/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>machine learning cheatsheat</title>
-      <link>http://ctsan.github.io/tags/machine-learning-cheatsheat/</link>
-      <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/machine-learning-cheatsheat/</guid>
+      <title>Research</title>
+      <link>/tags/research/</link>
+      <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/research/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>math cheatsheat</title>
-      <link>http://ctsan.github.io/tags/math-cheatsheat/</link>
-      <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/math-cheatsheat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>brownian-motion</title>
-      <link>http://ctsan.github.io/tags/brownian-motion/</link>
+      <title>Brownian-Motion</title>
+      <link>/tags/brownian-motion/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/brownian-motion/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/brownian-motion/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>diffusion</title>
-      <link>http://ctsan.github.io/tags/diffusion/</link>
+      <title>Geometric-Brownian-Motion</title>
+      <link>/tags/geometric-brownian-motion/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/diffusion/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/geometric-brownian-motion/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>geometric-brownian-motion</title>
-      <link>http://ctsan.github.io/tags/geometric-brownian-motion/</link>
+      <title>Jump-Diffusion</title>
+      <link>/tags/jump-diffusion/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/geometric-brownian-motion/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/jump-diffusion/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>jump-diffusion</title>
-      <link>http://ctsan.github.io/tags/jump-diffusion/</link>
-      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/jump-diffusion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>research</title>
-      <link>http://ctsan.github.io/tags/research/</link>
-      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>equation</title>
-      <link>http://ctsan.github.io/tags/equation/</link>
+      <title>Equation</title>
+      <link>/tags/equation/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/equation/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/equation/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>math exploration</title>
-      <link>http://ctsan.github.io/tags/math-exploration/</link>
+      <title>Math Exploration</title>
+      <link>/tags/math-exploration/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/math-exploration/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/math-exploration/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>mental-models</title>
-      <link>http://ctsan.github.io/tags/mental-models/</link>
+      <title>Mental-Models</title>
+      <link>/tags/mental-models/</link>
       <pubDate>Thu, 07 May 2020 19:00:00 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/mental-models/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/mental-models/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>exploring</title>
-      <link>http://ctsan.github.io/tags/exploring/</link>
+      <title>Exploring</title>
+      <link>/tags/exploring/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/exploring/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/exploring/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>generalizing</title>
-      <link>http://ctsan.github.io/tags/generalizing/</link>
+      <title>Generalizing</title>
+      <link>/tags/generalizing/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/generalizing/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/generalizing/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>learning</title>
-      <link>http://ctsan.github.io/tags/learning/</link>
+      <title>Learning</title>
+      <link>/tags/learning/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/learning/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/learning/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>relating concepts</title>
-      <link>http://ctsan.github.io/tags/relating-concepts/</link>
+      <title>Relating Concepts</title>
+      <link>/tags/relating-concepts/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/relating-concepts/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/relating-concepts/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>sequences</title>
-      <link>http://ctsan.github.io/tags/sequences/</link>
+      <title>Sequences</title>
+      <link>/tags/sequences/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/sequences/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/sequences/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>betting</title>
-      <link>http://ctsan.github.io/tags/betting/</link>
+      <title>Betting</title>
+      <link>/tags/betting/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/betting/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/betting/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>odds</title>
-      <link>http://ctsan.github.io/tags/odds/</link>
+      <title>Odds</title>
+      <link>/tags/odds/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/odds/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/odds/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>poisson</title>
-      <link>http://ctsan.github.io/tags/poisson/</link>
+      <title>Poisson</title>
+      <link>/tags/poisson/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/poisson/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/poisson/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>probability</title>
-      <link>http://ctsan.github.io/tags/probability/</link>
+      <title>Probability</title>
+      <link>/tags/probability/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/probability/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/probability/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>simulation</title>
-      <link>http://ctsan.github.io/tags/simulation/</link>
+      <title>Simulation</title>
+      <link>/tags/simulation/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/simulation/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/simulation/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>mathematical insights</title>
-      <link>http://ctsan.github.io/tags/mathematical-insights/</link>
+      <title>Mathematical Insights</title>
+      <link>/tags/mathematical-insights/</link>
       <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/mathematical-insights/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/mathematical-insights/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>casino</title>
-      <link>http://ctsan.github.io/tags/casino/</link>
+      <title>Casino</title>
+      <link>/tags/casino/</link>
       <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/casino/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/casino/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>doubling method</title>
-      <link>http://ctsan.github.io/tags/doubling-method/</link>
+      <title>Doubling Method</title>
+      <link>/tags/doubling-method/</link>
       <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/doubling-method/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/doubling-method/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>gambling</title>
-      <link>http://ctsan.github.io/tags/gambling/</link>
+      <title>Gambling</title>
+      <link>/tags/gambling/</link>
       <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/gambling/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/gambling/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>martingale</title>
-      <link>http://ctsan.github.io/tags/martingale/</link>
+      <title>Martingale</title>
+      <link>/tags/martingale/</link>
       <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/martingale/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/martingale/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>equations</title>
-      <link>http://ctsan.github.io/tags/equations/</link>
+      <title>Equations</title>
+      <link>/tags/equations/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/equations/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/equations/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>mathematics</title>
-      <link>http://ctsan.github.io/tags/mathematics/</link>
+      <title>Mathematics</title>
+      <link>/tags/mathematics/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/mathematics/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/mathematics/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>sets</title>
-      <link>http://ctsan.github.io/tags/sets/</link>
+      <title>Sets</title>
+      <link>/tags/sets/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/sets/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/sets/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>street-math</title>
-      <link>http://ctsan.github.io/tags/street-math/</link>
+      <title>Street-Math</title>
+      <link>/tags/street-math/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/street-math/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/street-math/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>data gathering</title>
-      <link>http://ctsan.github.io/tags/data-gathering/</link>
+      <title>Data Gathering</title>
+      <link>/tags/data-gathering/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/data-gathering/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/data-gathering/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>python</title>
-      <link>http://ctsan.github.io/tags/python/</link>
+      <title>Python</title>
+      <link>/tags/python/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/python/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/python/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>voronoi</title>
-      <link>http://ctsan.github.io/tags/voronoi/</link>
+      <title>Voronoi</title>
+      <link>/tags/voronoi/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/voronoi/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/voronoi/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>turkey</title>
-      <link>http://ctsan.github.io/tags/turkey/</link>
+      <title>Turkey</title>
+      <link>/tags/turkey/</link>
       <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/turkey/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/turkey/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>hci</title>
-      <link>http://ctsan.github.io/tags/hci/</link>
+      <title>Hci</title>
+      <link>/tags/hci/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/hci/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/hci/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>library</title>
-      <link>http://ctsan.github.io/tags/library/</link>
+      <title>Library</title>
+      <link>/tags/library/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/library/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/library/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>terminal</title>
-      <link>http://ctsan.github.io/tags/terminal/</link>
+      <title>Terminal</title>
+      <link>/tags/terminal/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/terminal/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/terminal/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>game theory</title>
-      <link>http://ctsan.github.io/tags/game-theory/</link>
+      <title>Game Theory</title>
+      <link>/tags/game-theory/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/game-theory/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/game-theory/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>pursuit-evasion</title>
-      <link>http://ctsan.github.io/tags/pursuit-evasion/</link>
+      <title>Pursuit-Evasion</title>
+      <link>/tags/pursuit-evasion/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/pursuit-evasion/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/pursuit-evasion/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>zero-sum game</title>
-      <link>http://ctsan.github.io/tags/zero-sum-game/</link>
+      <title>Zero-Sum Game</title>
+      <link>/tags/zero-sum-game/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/zero-sum-game/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/zero-sum-game/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>heat equation</title>
-      <link>http://ctsan.github.io/tags/heat-equation/</link>
+      <title>Heat Equation</title>
+      <link>/tags/heat-equation/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/heat-equation/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/heat-equation/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>interactive app</title>
-      <link>http://ctsan.github.io/tags/interactive-app/</link>
+      <title>Interactive App</title>
+      <link>/tags/interactive-app/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/interactive-app/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/interactive-app/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>visualization</title>
-      <link>http://ctsan.github.io/tags/visualization/</link>
+      <title>Visualization</title>
+      <link>/tags/visualization/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/visualization/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/visualization/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>human-limits</title>
-      <link>http://ctsan.github.io/tags/human-limits/</link>
+      <title>Human-Limits</title>
+      <link>/tags/human-limits/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/human-limits/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/human-limits/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>logarithms</title>
-      <link>http://ctsan.github.io/tags/logarithms/</link>
+      <title>Logarithms</title>
+      <link>/tags/logarithms/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/logarithms/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/logarithms/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>scalability</title>
-      <link>http://ctsan.github.io/tags/scalability/</link>
+      <title>Scalability</title>
+      <link>/tags/scalability/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/scalability/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/scalability/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>thought-experiment</title>
-      <link>http://ctsan.github.io/tags/thought-experiment/</link>
+      <title>Thought-Experiment</title>
+      <link>/tags/thought-experiment/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/thought-experiment/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/thought-experiment/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>pursuit</title>
-      <link>http://ctsan.github.io/tags/pursuit/</link>
+      <title>Pursuit</title>
+      <link>/tags/pursuit/</link>
       <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/pursuit/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/pursuit/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>regular expressions</title>
-      <link>http://ctsan.github.io/tags/regular-expressions/</link>
+      <title>Regular Expressions</title>
+      <link>/tags/regular-expressions/</link>
       <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/regular-expressions/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/regular-expressions/</guid>
       <description></description>
+      
     </item>
     
     <item>
       <title>Games</title>
-      <link>http://ctsan.github.io/tags/games/</link>
+      <link>/tags/games/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/games/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/games/</guid>
       <description></description>
+      
     </item>
     
     <item>
-      <title>Pimp my Peon</title>
-      <link>http://ctsan.github.io/tags/pimp-my-peon/</link>
+      <title>Pimp My Peon</title>
+      <link>/tags/pimp-my-peon/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/pimp-my-peon/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/pimp-my-peon/</guid>
       <description></description>
+      
     </item>
     
     <item>
       <title>Warcraft 3</title>
-      <link>http://ctsan.github.io/tags/warcraft-3/</link>
+      <link>/tags/warcraft-3/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
-      
-      <guid>http://ctsan.github.io/tags/warcraft-3/</guid>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/tags/warcraft-3/</guid>
       <description></description>
+      
     </item>
     
   </channel>

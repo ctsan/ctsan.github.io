@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>poisson on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/poisson/</link>
-    <description>Recent content in poisson on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Poisson on Christos Tsanikidis, PhD</title>
+    <link>/tags/poisson/</link>
+    <description>Recent content in Poisson on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 22 Dec 2017 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/poisson/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Fri, 22 Dec 2017 15:43:48 +0800</lastBuildDate><atom:link href="/tags/poisson/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>How to make a profitable virtual football betting game</title>
-      <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
+      <link>/posts/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/creating-a-football-betting-game/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
-      <description>I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
-Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
     </item>
     
   </channel>

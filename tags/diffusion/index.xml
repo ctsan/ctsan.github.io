@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>diffusion on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/diffusion/</link>
-    <description>Recent content in diffusion on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Diffusion on Christos Tsanikidis, PhD</title>
+    <link>/tags/diffusion/</link>
+    <description>Recent content in Diffusion on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 03 Mar 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/diffusion/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Fri, 03 Mar 2023 23:47:48 +0800</lastBuildDate><atom:link href="/tags/diffusion/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>The diffusion of discovery</title>
-      <link>http://ctsan.github.io/post/scientific-process/</link>
-      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <link>/posts/the-diffusion-of-discovery/</link>
+      <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/the-diffusion-of-discovery/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/scientific-process/</guid>
-      <description>How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk.</description>
     </item>
     
   </channel>

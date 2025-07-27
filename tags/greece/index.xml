@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>greece on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/greece/</link>
-    <description>Recent content in greece on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Greece on Christos Tsanikidis, PhD</title>
+    <link>/tags/greece/</link>
+    <description>Recent content in Greece on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/greece/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="/tags/greece/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Shorting Bubbles [A Trading Game]</title>
+      <link>/posts/trading-bubbles/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/trading-bubbles/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>To Draw with Markov Chain Monte Carlo.</title>
-      <link>http://ctsan.github.io/post/mcmc/</link>
+      <link>/posts/mcmc/</link>
       <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/mcmc/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/mcmc/</guid>
-      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
     </item>
     
     <item>
       <title>Turkey to Greece missile range</title>
-      <link>http://ctsan.github.io/project/turkey-greece-range/</link>
+      <link>/project/turkey-greece-range/</link>
       <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/turkey-greece-range/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/project/turkey-greece-range/</guid>
-      <description>It was announced in Greek media that Turkey achieved a new maximum range with modern missiles in its disposal. I was instantly curious: what targets in Greece can be hit by Turkey now?
-This experiment is created for fun. The author is optimistic about the relations of the two countries.
-scroll down for the results to see the resulting images
-Problem Setting Hit Area Let $\mathcal{T}$ be the set of points that are in Turkey.</description>
     </item>
     
   </channel>

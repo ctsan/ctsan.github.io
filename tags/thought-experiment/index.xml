@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>thought-experiment on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/thought-experiment/</link>
-    <description>Recent content in thought-experiment on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Thought-Experiment on Christos Tsanikidis, PhD</title>
+    <link>/tags/thought-experiment/</link>
+    <description>Recent content in Thought-Experiment on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sat, 02 Jan 2016 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/thought-experiment/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sat, 02 Jan 2016 15:43:48 +0800</lastBuildDate><atom:link href="/tags/thought-experiment/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Exploring Logarithmic Counting: A Thought Experiment on Human Capabilities</title>
-      <link>http://ctsan.github.io/post/hierarchies/</link>
+      <link>/posts/hierarchies/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/hierarchies/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/hierarchies/</guid>
-      <description>This essay considers the problem of counting a large number of objects by a human. While counting large quantities of objects may not be an everyday necessity (unless you are a poker player), it is an intriguing thought experiment to explore how we can design approaches around human limitations. Logarithmic counting offer a lens through which we can examine our cognitive abilities and devise methods that cater to our strengths and weaknesses.</description>
     </item>
     
   </channel>

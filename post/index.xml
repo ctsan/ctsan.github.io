@@ -1,119 +1,134 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/post/</link>
-    <description>Recent content in Posts on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Posts on Christos Tsanikidis</title>
+    <link>//localhost:49373/post/</link>
+    <description>Recent content in Posts on Christos Tsanikidis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sat, 26 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="//localhost:49373/post/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
-      <title>To Draw with Markov Chain Monte Carlo.</title>
-      <link>http://ctsan.github.io/post/mcmc/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      <title>Trading Bubbles (A Trading Game)</title>
+      <link>//localhost:49373/post/trading-bubbles/</link>
+      <pubDate>Sat, 26 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/trading-bubbles/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/mcmc/</guid>
-      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
     </item>
     
     <item>
-      <title>A Fresh Random Walk Down Wall Street - Part A</title>
-      <link>http://ctsan.github.io/post/wolf-of-wall-street/</link>
-      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <title>To Draw with Markov Chain Monte Carlo.</title>
+      <link>//localhost:49373/post/mcmc/</link>
+      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/mcmc/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/wolf-of-wall-street/</guid>
-      <description>A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
-Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values.</description>
+    </item>
+    
+    <item>
+      <title>Modeling Stock Prices</title>
+      <link>//localhost:49373/post/wolf-of-wall-street/</link>
+      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/wolf-of-wall-street/</guid>
+      <description></description>
+      
     </item>
     
     <item>
       <title>The diffusion of discovery</title>
-      <link>http://ctsan.github.io/post/scientific-process/</link>
+      <link>//localhost:49373/post/scientific-process/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/scientific-process/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/scientific-process/</guid>
-      <description>How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk.</description>
     </item>
     
     <item>
       <title>The Hidden Simplicity Principle: Discovering the Underlying Reality</title>
-      <link>http://ctsan.github.io/post/hidden-simplicity-principle/</link>
+      <link>//localhost:49373/post/hidden-simplicity-principle/</link>
       <pubDate>Thu, 07 May 2020 19:00:00 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/hidden-simplicity-principle/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/hidden-simplicity-principle/</guid>
-      <description>The Hidden Simplicity Principle posits that our limited perception of the world can result in complicated models of a simpler underlying reality. Many concepts, notions, or phenomena we encounter, analyze, and contemplate may be simplified manifestations of broader, more general ideas when presented in specific contexts. By recognizing this principle and striving for the simplest possible explanation, we can avoid overfitting and develop more accurate models of the world around us.</description>
     </item>
     
     <item>
       <title>Modelling and Simulating a Pandemic</title>
-      <link>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</link>
+      <link>//localhost:49373/post/modeling-and-simulating-a-pandemic/</link>
       <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/modeling-and-simulating-a-pandemic/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
-      <description>Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device. If you don&amp;rsquo;t understand what is happening, there is an explanation below the simulation environment.
-Warning: It&amp;rsquo;s recommended to use a large enough screen (for example a tablet or a desktop). Some information is omitted in smaller screens.
-Population Density Town Size Connections Radius Connectivity Chance Infection Chance Mean Days Sick Can you get Reinfected?</description>
     </item>
     
     <item>
       <title>Effective Learning: Generalizing, Exploring, and Relating Concepts</title>
-      <link>http://ctsan.github.io/post/learn-by-generalizing/</link>
+      <link>//localhost:49373/post/learn-by-generalizing/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/learn-by-generalizing/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/learn-by-generalizing/</guid>
-      <description>In the pursuit of personal growth, it&amp;rsquo;s essential to develop an effective learning strategy to navigate the vast world of information and new concepts. This blog post will focus on three key principles for mastering learning: generalizing, exploring, and relating concepts. By employing these techniques, you can not only absorb more information but also apply it in practical and meaningful ways.
-Generalizing, Exploring, and Relating Concepts Consider the following learning principles:</description>
     </item>
     
     <item>
       <title>How to make a profitable virtual football betting game</title>
-      <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
+      <link>//localhost:49373/post/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/creating-a-football-betting-game/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
-      <description>I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
-Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
     </item>
     
     <item>
       <title>A functional approach for solving equations</title>
-      <link>http://ctsan.github.io/post/functional-approach-for-solving-equations/</link>
+      <link>//localhost:49373/post/functional-approach-for-solving-equations/</link>
       <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/functional-approach-for-solving-equations/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/functional-approach-for-solving-equations/</guid>
-      <description>Solving or interpreting equations is a fundamental topic, usually taught in young ages, when students are not very eager to capture the essence of the equations or do not know some more advanced concepts that can reinforce their understanding of them.
-When students are presented with an equation $x+4=13$, usually they are asked about the value of $x$. As a student I was shown a number of manipulations that I had to learn in isolation, making the task cumbersome initially but then mechanic.</description>
     </item>
     
     <item>
       <title>The Enlightened Gambler: A Sobering Simulation of the Doubling Method</title>
-      <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
+      <link>//localhost:49373/post/gambler-enlightened-doubling-method/</link>
       <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/gambler-enlightened-doubling-method/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
-      <description>In conversations about gambling, I frequently encounter a dangerous cocktail of misinformation and misunderstanding. The average person, quite understandably, grapples with comprehending how probabilities can guarantee long-term losses. This challenge is further exacerbated by fallacies and complicated games that intentionally obscure the underlying truth: the house always wins.
-To illustrate this point, I&amp;rsquo;ve chosen to simulate the gambling process and present the average outcomes rather than diving into a potentially confusing sea of probabilities.</description>
     </item>
     
     <item>
       <title>Counting the number of elements in sequences through compression</title>
-      <link>http://ctsan.github.io/post/counting-insight/</link>
+      <link>//localhost:49373/post/counting-insight/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/counting-insight/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/counting-insight/</guid>
-      <description>Counting the elements in a sequence is a common problem in mathematics, computer science, and programming. Although in many cases this appears tricky, there&amp;rsquo;s a simple method to make the task straightforward, requiring only basic math skills.
-Examples Before Theory Let&amp;rsquo;s dive into a few examples before explaining the method precisely.
-Example 1: {5, 6, 7, &amp;hellip;, 100} First, find a function that maps integers (ideally starting from 0) to the elements above.</description>
     </item>
     
     <item>
       <title>Exploring Logarithmic Counting: A Thought Experiment on Human Capabilities</title>
-      <link>http://ctsan.github.io/post/hierarchies/</link>
+      <link>//localhost:49373/post/hierarchies/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:49373/post/hierarchies/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/hierarchies/</guid>
-      <description>This essay considers the problem of counting a large number of objects by a human. While counting large quantities of objects may not be an everyday necessity (unless you are a poker player), it is an intriguing thought experiment to explore how we can design approaches around human limitations. Logarithmic counting offer a lens through which we can examine our cognitive abilities and devise methods that cater to our strengths and weaknesses.</description>
     </item>
     
   </channel>

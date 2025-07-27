@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mathematics on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/mathematics/</link>
-    <description>Recent content in mathematics on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Mathematics on Christos Tsanikidis, PhD</title>
+    <link>/tags/mathematics/</link>
+    <description>Recent content in Mathematics on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Sun, 13 Aug 2017 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 13 Aug 2017 15:43:48 +0800</lastBuildDate><atom:link href="/tags/mathematics/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Counting the number of elements in sequences through compression</title>
-      <link>http://ctsan.github.io/post/counting-insight/</link>
+      <link>/posts/counting-insight/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/counting-insight/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/counting-insight/</guid>
-      <description>Counting the elements in a sequence is a common problem in mathematics, computer science, and programming. Although in many cases this appears tricky, there&amp;rsquo;s a simple method to make the task straightforward, requiring only basic math skills.
-Examples Before Theory Let&amp;rsquo;s dive into a few examples before explaining the method precisely.
-Example 1: {5, 6, 7, &amp;hellip;, 100} First, find a function that maps integers (ideally starting from 0) to the elements above.</description>
     </item>
     
   </channel>

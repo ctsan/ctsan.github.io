@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>brownian-motion on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/tags/brownian-motion/</link>
-    <description>Recent content in brownian-motion on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Brownian-Motion on Christos Tsanikidis, PhD</title>
+    <link>/tags/brownian-motion/</link>
+    <description>Recent content in Brownian-Motion on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 03 Mar 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/brownian-motion/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Fri, 03 Mar 2023 14:47:48 +0800</lastBuildDate><atom:link href="/tags/brownian-motion/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
-      <title>A Fresh Random Walk Down Wall Street - Part A</title>
-      <link>http://ctsan.github.io/post/wolf-of-wall-street/</link>
+      <title>Modeling Stock Prices</title>
+      <link>/posts/modeling-stock-prices/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/modeling-stock-prices/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/wolf-of-wall-street/</guid>
-      <description>A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
-Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values.</description>
     </item>
     
   </channel>

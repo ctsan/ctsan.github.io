@@ -1,70 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Simulation on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
-    <link>http://ctsan.github.io/categories/simulation/</link>
-    <description>Recent content in Simulation on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <title>Simulation on Christos Tsanikidis, PhD</title>
+    <link>/categories/simulation/</link>
+    <description>Recent content in Simulation on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Christos Tsanikidis</copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/categories/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="/categories/simulation/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
-      <title>To Draw with Markov Chain Monte Carlo.</title>
-      <link>http://ctsan.github.io/post/mcmc/</link>
-      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      <title>Shorting Bubbles [A Trading Game]</title>
+      <link>/posts/trading-bubbles/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/trading-bubbles/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/mcmc/</guid>
-      <description>In this post we will explore Markov Chain Monte Carlo Methods (MCMC), and specifically Metropolis-Hastings. MCMC Methods allow us to sample from a distribution, if all we know is $\phi(x)=c\times f(x)$, where $f(x)$ is the density at point $x$ of the distribution we wish to sample from, and $c$ is any fixed constant. This allows us to sample from the distribution without knowing the normalization term of the distribution. Recall that all density functions technically need to integrate to $1$, i.</description>
     </item>
     
     <item>
-      <title>A Fresh Random Walk Down Wall Street - Part A</title>
-      <link>http://ctsan.github.io/post/wolf-of-wall-street/</link>
-      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <title>To Draw with Markov Chain Monte Carlo.</title>
+      <link>/posts/mcmc/</link>
+      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/mcmc/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/wolf-of-wall-street/</guid>
-      <description>A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
-Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values.</description>
     </item>
     
     <item>
       <title>The diffusion of discovery</title>
-      <link>http://ctsan.github.io/post/scientific-process/</link>
-      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <link>/posts/the-diffusion-of-discovery/</link>
+      <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/the-diffusion-of-discovery/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/scientific-process/</guid>
-      <description>How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk.</description>
+    </item>
+    
+    <item>
+      <title>Modeling Stock Prices</title>
+      <link>/posts/modeling-stock-prices/</link>
+      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/modeling-stock-prices/</guid>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Modelling and Simulating a Pandemic</title>
-      <link>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</link>
+      <link>/posts/modeling-and-simulating-a-pandemic/</link>
       <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/modeling-and-simulating-a-pandemic/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/modeling-and-simulating-a-pandemic/</guid>
-      <description>Adjust the Parameters below to explore the spread of the disease under different scenarios. Bear in Mind that some parameters might lead to poor performance depending on your device. If you don&amp;rsquo;t understand what is happening, there is an explanation below the simulation environment.
-Warning: It&amp;rsquo;s recommended to use a large enough screen (for example a tablet or a desktop). Some information is omitted in smaller screens.
-Population Density Town Size Connections Radius Connectivity Chance Infection Chance Mean Days Sick Can you get Reinfected?</description>
     </item>
     
     <item>
       <title>How to make a profitable virtual football betting game</title>
-      <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
+      <link>/posts/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/creating-a-football-betting-game/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
-      <description>I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
-Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
     </item>
     
     <item>
       <title>The Enlightened Gambler: A Sobering Simulation of the Doubling Method</title>
-      <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
+      <link>/posts/gambler-enlightened-doubling-method/</link>
       <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/gambler-enlightened-doubling-method/</guid>
+      <description></description>
       
-      <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
-      <description>In conversations about gambling, I frequently encounter a dangerous cocktail of misinformation and misunderstanding. The average person, quite understandably, grapples with comprehending how probabilities can guarantee long-term losses. This challenge is further exacerbated by fallacies and complicated games that intentionally obscure the underlying truth: the house always wins.
-To illustrate this point, I&amp;rsquo;ve chosen to simulate the gambling process and present the average outcomes rather than diving into a potentially confusing sea of probabilities.</description>
     </item>
     
   </channel>
