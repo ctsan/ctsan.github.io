@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Effective Learning: Generalizing, Exploring, and Relating Concepts - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta property="og:image" content="/post-images/learn-by-generalizing-0.png"/>
+
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="CT" /><meta name="description" content="In the pursuit of personal growth, it&amp;rsquo;s essential to develop an effective learning strategy to navigate the vast world of information and new concepts. This blog post will focus on three key principles for mastering learning: generalizing, exploring, and relating concepts. By employing these techniques, you can not only absorb more information but also apply it in practical and meaningful ways.
+Generalizing, Exploring, and Relating Concepts Consider the following learning principles:" /><meta name="keywords" content="Math, CS, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
+
+
+<link rel="canonical" href="http://ctsan.github.io/post/learn-by-generalizing/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Effective Learning: Generalizing, Exploring, and Relating Concepts" />
+<meta property="og:description" content="In the pursuit of personal growth, it&rsquo;s essential to develop an effective learning strategy to navigate the vast world of information and new concepts. This blog post will focus on three key principles for mastering learning: generalizing, exploring, and relating concepts. By employing these techniques, you can not only absorb more information but also apply it in practical and meaningful ways.
+Generalizing, Exploring, and Relating Concepts Consider the following learning principles:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ctsan.github.io/post/learn-by-generalizing/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-02-04T17:50:48+08:00" />
+<meta property="article:modified_time" content="2018-02-04T17:50:48+08:00" />
+<meta itemprop="name" content="Effective Learning: Generalizing, Exploring, and Relating Concepts">
+<meta itemprop="description" content="In the pursuit of personal growth, it&rsquo;s essential to develop an effective learning strategy to navigate the vast world of information and new concepts. This blog post will focus on three key principles for mastering learning: generalizing, exploring, and relating concepts. By employing these techniques, you can not only absorb more information but also apply it in practical and meaningful ways.
+Generalizing, Exploring, and Relating Concepts Consider the following learning principles:"><meta itemprop="datePublished" content="2018-02-04T17:50:48+08:00" />
+<meta itemprop="dateModified" content="2018-02-04T17:50:48+08:00" />
+<meta itemprop="wordCount" content="1023">
+<meta itemprop="keywords" content="learning,generalizing,exploring,relating concepts,sequences," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Effective Learning: Generalizing, Exploring, and Relating Concepts"/>
+<meta name="twitter:description" content="In the pursuit of personal growth, it&rsquo;s essential to develop an effective learning strategy to navigate the vast world of information and new concepts. This blog post will focus on three key principles for mastering learning: generalizing, exploring, and relating concepts. By employing these techniques, you can not only absorb more information but also apply it in practical and meaningful ways.
+Generalizing, Exploring, and Relating Concepts Consider the following learning principles:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Christos Tsanikidis</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Christos Tsanikidis</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <div class="header-content" style="display: flex; align-items: flex-start;">
+        <div class="post-thumbnail" style="margin-right: 20px; width: 120px; height: 120px; min-width: 120px;">
+          <img src="/post-images/learn-by-generalizing-0.png" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div>
+          <h1 class="post-title" style="font-size: 34px;">Effective Learning: Generalizing, Exploring, and Relating Concepts</h1>
+
+    
+          <div class="post-meta">
+            <span class="post-time"> 2018-02-04 </span>
+            <div class="post-category">
+                <a href="/categories/life/"> Life </a>
+                <a href="/categories/math/"> Math </a>
+                </div>
+              <span class="more-meta"> 1023 words </span>
+              <span class="more-meta"> 5 mins read </span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+    
+    
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#generalizing-exploring-and-relating-concepts">Generalizing, Exploring, and Relating Concepts</a></li>
+    <li><a href="#an-example-of-generalization">An Example of Generalization</a>
+      <ul>
+        <li><a href="#generalizing">Generalizing</a></li>
+        <li><a href="#exploring">Exploring</a></li>
+      </ul>
+    </li>
+    <li><a href="#relating-concepts">Relating Concepts</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content large-initial">
+          <p>In the pursuit of personal growth, it&rsquo;s essential to develop an effective learning strategy to navigate the vast world of information and new concepts. This blog post will focus on three key principles for mastering learning: generalizing, exploring, and relating concepts. By employing these techniques, you can not only absorb more information but also apply it in practical and meaningful ways.</p>
+<h2 id="generalizing-exploring-and-relating-concepts">Generalizing, Exploring, and Relating Concepts</h2>
+<p>Consider the following learning principles:</p>
+<ol>
+<li>Generalizing what we learn,</li>
+<li>Exploring the concepts we learn,</li>
+<li>Naming things.</li>
+</ol>
+<p>Generalizing and exploring allow us to learn beyond what we are directly taught, while naming helps us recognize and apply our learnings to random occurrences in our lives [1]. When we encounter a new practical technique, we need to:</p>
+<ol>
+<li>Understand the technique or advice,</li>
+<li>Make it a habit (the challenging part).</li>
+</ol>
+<p>This post will present an approach to learning, and it&rsquo;s up to you to adopt it if you believe in its validity.</p>
+<h2 id="an-example-of-generalization">An Example of Generalization</h2>
+<p>Let&rsquo;s examine a mathematical example. A friend recently asked me to compute the sum:</p>
+<p>$$ J = \frac {1}{1 \times 2} + \frac {1}{2 \times 3} + \frac {1}{3 \times 4} + &hellip; $$</p>
+<p>To compute this infinite sum, we can rewrite it as:</p>
+<p>$$ \sum_{n=1}^{\infty} \frac {1}{n (n+1)} $$</p>
+<p>The solution can be found by noticing that:</p>
+<p>$$ \frac {1}{n(n+1)} \equiv \frac {A} {n} + \frac {B}{n+1} $$</p>
+<p>Where $A=1, B=-1$, and thus we have:</p>
+<p>$$ J =\sum_{n=1}^{\infty} \left(\frac {1} {n} + \frac {-1}{n+1}\right) $$</p>
+<p>One could see that terms cancel with the next term in the sequence, and we are left with: $J=1$. [2]</p>
+<h3 id="generalizing">Generalizing</h3>
+<p>To generalize this idea, we must identify the precise structure that allowed us to perform the trick or combination of tricks. In this case, we used two major tricks: decomposition and cancellation. Let&rsquo;s start by generalizing the <strong>cancellation part</strong>. We can agree that if $a_n = \frac {1} {n}$, then:</p>
+<p>$$ J =\sum _{n=1}^{\infty} \left( a _n - a _{n+1} \right) $$</p>
+<p>We can observe that this could work similarly if we had:</p>
+<p>$$ J_1 = \sum _{\text{consecutive integers}}(a _n - a _{n+1}) $$</p>
+<p>Or for some integer $i$, we could have [2]:</p>
+<p>$$ J _2= \sum _{\text{consecutive integers}}(a _n - a _{n+i}) $$</p>
+<p>Where instead of the cancellation happening with the next term, it would happen after $i$ terms.</p>
+<p>Can we further generalize this? Let&rsquo;s consider the intermediate general case:</p>
+<p>$$ J _3= \sum _{\text{consecutive integers}}( c_0 a_n - c_1 a _{n+i} - c_2 a _{n+i+j}) $$</p>
+<p>Where $(i, j)$ are positive integers. One instance of those general series could be:</p>
+<p>$$ J _3&rsquo;= \sum _{\text{consecutive integers}}( a _n - 9 a _{n+2} + 3 a _{n+5}) $$</p>
+<p>Where $(i=2, j=3)$. Of course, this particular series might not have the cancellation property that we aspire to. To find out under which constraints there will be a cancellation (if there will be a cancellation at all), consider the following figure, where each row represents one term of the series, starting from $(i=1)$ and ending in a finite row-term $(i=k+i+j)$:</p>
+<center>
+<img style="width:45%" src="/post-images/generalizing/pattern.png"/>
+</center>
+<p>We can see that after a certain row, if there are sufficiently many rows, $a(1+i+j)$ appears in each column only once. The same is true for $a(k+i+j)$ and all the intermediary terms. Therefore, those terms will have a coefficient of $(c_0+c_1+c_2)$ in the final sum, and for them to be zero, we simply require that $c_0+c_1+c_2 = 0$.</p>
+<p>If that&rsquo;s true, then the dark-grey area in the figure will cancel out! As an interesting exercise, you could try to find other fractions with a similar cancellation property.</p>
+<h3 id="exploring">Exploring</h3>
+<p>After writing that sum in this form, one could observe that the product of consecutive integers is &ldquo;visually&rdquo; similar to the left-hand side of:</p>
+<p>$$ \frac {n(n+1)}{2} = \sum_{k=1}^{n} k $$</p>
+<p>But they are not quite the same. That&rsquo;s not a major problem, though, since we can simply rewrite this as:</p>
+<p>$$ n(n+1) = 2 \sum _{k=1}^{n} k \Rightarrow \frac {1}{ n(n+1) } = 0.5 \frac {1 } {\sum _{k=1}^{n} k} $$</p>
+<p>Using this derived result in the original series, we get:</p>
+<p>$$ J = \sum_{n=1}^{\infty} \frac {1}{n (n+1)} = 0.5 \sum _{n=1}^{\infty} \frac 1 {\sum _{k=1}^{n} k} $$</p>
+<p>By exploring this path, we (1) have fun, (2) become more familiar with manipulating series, and (3) capture the relationship between this special-looking series and the initial sum $J$. Even considering the existence of a correspondence between $J$ and the unusual inverse sum might help us, depending on whether that formula has a structure that emerges in many cases.</p>
+<p>Of course, we are humans, and unfortunately, this practice will not scale very well if abused. It is important to explore within your field of interest or around critical concepts to avoid getting lost. For instance, let&rsquo;s say that your field of interest is Graph Theory. In that case, you would want to attempt to correlate the initial series with a graph-theoretic result. For instance, the formula $$\frac {n(n-1)}{2}$$ describes the number of edges, $|E_n|$, in a complete graph $K_n$ with $n$-nodes. Thus:</p>
+<p>$$ \frac 1 {n(n+1)} = \frac {0.5} {|E_{n}|} $$</p>
+<p>This relationship may lead to a potential link with Graph Theory concepts or problems. Even though this example might not necessarily produce significant results, the exploration process itself will expand your knowledge and understanding of the domain.</p>
+<h2 id="relating-concepts">Relating Concepts</h2>
+<p>When we learn about new concepts, it is important to relate them to what we already know. Connecting new concepts to existing knowledge strengthens our understanding and enables us to use them in practical applications.</p>
+<p>For instance, let&rsquo;s say you&rsquo;re learning about Markov Chains. By relating it to your prior understanding of probability theory and statistics, you can establish a strong foundation for your learning. This way, you will have a better grasp of the new concept and recognize potential applications in your field of interest.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>By generalizing, exploring, and relating concepts, you can maximize your learning and boost your ability to apply new knowledge effectively. As you learn, actively seek out connections and patterns, and don&rsquo;t be afraid to explore. This approach will help you develop a more profound understanding and navigate the vast world of information with ease.</p>
+
+    </div>
+
+
+    
+<footer class="post-footer">
+
+
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/modeling-and-simulating-a-pandemic/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Modelling and Simulating a Pandemic</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/creating-a-football-betting-game/">
+            <span class="next-text nav-default">How to make a profitable virtual football betting game</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+
+      </nav>
+
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tchristos.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      <div class="post-tags">
+          <a href="/tags/learning/">learning</a>
+          <a href="/tags/generalizing/">generalizing</a>
+          <a href="/tags/exploring/">exploring</a>
+          <a href="/tags/relating-concepts/">relating concepts</a>
+          <a href="/tags/sequences/">sequences</a>
+          </div></footer>
+
+
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="/about" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+	
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023
+    
+    <span class="author">Christos Tsanikidis</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        packages: { '[+]': ['noerrors'] }
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      },
+      chtml: {
+        scale: 1.2
+      }
+    };
+
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111355141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
+
+
+
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+function toggleDarkMode() {
+  const darkModeButton = document.getElementById("darkModeButton");
+  if (darkModeButton){ 
+    const isInverted = document.body.classList.contains("inverted");
+
+    
+    document.body.classList.toggle("inverted");
+
+    
+    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  }
+}
+
+
+let currentPaletteIndex = 0;
+
+function changePalette() {
+  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+}
+function hexToRgb(hex) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
+  
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
+
+if (document.getElementById('change-palette')) {
+  document.getElementById('change-palette').addEventListener('click', changePalette);
+} 
+
+const colorPalettes = [
+    [ '#000000'],
+    [
+'#03045eff',
+'#023e8aff',
+'#0077b6ff',
+'#0096c7ff',
+'#00b4d8ff',
+'#389ab4ff',
+],
+        [
+      '#264653ff',
+      '#287271ff',
+      '#2a9d8fff',
+      '#8ab17dff',
+      '#c49251ff',
+      '#de7959ff',
+      '#d76f51ff',
+    ],
+    [
+      '#ff0a54ff',
+      '#ff477eff',
+      '#ff5c8aff',
+      '#ff7096ff',
+    ],
+    [
+      '#ffae03ff',
+      '#e67f0dff',
+      '#fe4e00ff',
+      '#e9190fff',
+      '#ff0f80ff',
+    ],
+        [
+      '#7400b8ff',
+      '#6930c3ff',
+      '#5e60ceff',
+      '#5390d9ff',
+      '#4ea8deff',
+      '#48bfe3ff',
+      '#56cfe1ff',
+    ],
+    [
+      '#f72585ff',
+      '#7209b7ff',
+      '#3a0ca3ff',
+      '#4361eeff',
+      '#4c99a0ff',
+    ],
+    [
+      '#355070ff',
+      '#6d597aff',
+      '#b56576ff',
+      '#e56b6fff',
+      '#eaac8bff',
+    ],
+    [
+      '#f72585ff',
+      '#b5179eff',
+      '#7209b7ff',
+      '#560badff',
+      '#480ca8ff',
+      '#3a0ca3ff',
+      '#3f37c9ff',
+      '#4361eeff',
+      '#4895efff',
+      '#4cc9f0ff',
+    ],
+    [
+      '#ca86cfff',
+      '#7353baff',
+      '#2f195fff',
+      '#0f1020ff',
+      '#9f73d5ff',
+    ],
+    [
+      '#61a0afff',
+      '#76a99cff',
+      '#c05c7bff',
+      '#c99997ff',
+      '#c5a461ff',
+    ],
+  ];
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
+</body>
+</html>

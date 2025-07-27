@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>A Fresh Random Walk Down Wall Street - Part A - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta property="og:image" content="/post-images/wolf-of-wallstreet.png"/>
+
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="CT" /><meta name="description" content="A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
+Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values." /><meta name="keywords" content="Math, CS, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
+
+
+<link rel="canonical" href="http://ctsan.github.io/post/wolf-of-wall-street/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="A Fresh Random Walk Down Wall Street - Part A" />
+<meta property="og:description" content="A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
+Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ctsan.github.io/post/wolf-of-wall-street/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-03T14:47:48+08:00" />
+<meta property="article:modified_time" content="2023-03-03T14:47:48+08:00" />
+<meta itemprop="name" content="A Fresh Random Walk Down Wall Street - Part A">
+<meta itemprop="description" content="A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
+Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values."><meta itemprop="datePublished" content="2023-03-03T14:47:48+08:00" />
+<meta itemprop="dateModified" content="2023-03-03T14:47:48+08:00" />
+<meta itemprop="wordCount" content="435">
+<meta itemprop="keywords" content="interactive-simulation,brownian-motion,geometric-brownian-motion,jump-diffusion," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Fresh Random Walk Down Wall Street - Part A"/>
+<meta name="twitter:description" content="A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.
+Arithmetic Brownian Motion The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Christos Tsanikidis</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Christos Tsanikidis</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <div class="header-content" style="display: flex; align-items: flex-start;">
+        <div class="post-thumbnail" style="margin-right: 20px; width: 120px; height: 120px; min-width: 120px;">
+          <img src="/post-images/wolf-of-wallstreet.png" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div>
+          <h1 class="post-title" style="font-size: 34px;">A Fresh Random Walk Down Wall Street - Part A</h1>
+
+    
+          <div class="post-meta">
+            <span class="post-time"> 2023-03-03 </span>
+            <div class="post-category">
+                <a href="/categories/finance/"> Finance </a>
+                <a href="/categories/math/"> Math </a>
+                <a href="/categories/simulation/"> Simulation </a>
+                </div>
+              <span class="more-meta"> 435 words </span>
+              <span class="more-meta"> 3 mins read </span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+    
+    
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#arithmetic-brownian-motion">Arithmetic Brownian Motion</a></li>
+    <li><a href="#geometric-brownian-motion">Geometric Brownian Motion</a></li>
+    <li><a href="#jump-diffusion-and-other-models">Jump Diffusion and Other Models</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content large-initial">
+          <p>A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion. There are two common styles of brownian motions: the arithmetic Brownian motion (ABM), and the geometric brownian motion (GBM). Let’s talk about ABM First.</p>
+<h2 id="arithmetic-brownian-motion">Arithmetic Brownian Motion</h2>
+<p>The most basic brownian motion is the Wiener process $Z(t)$ with $Z(0)=0$ and $Z(t)\sim \mathcal N(0,1)$. This is the analogue of the discrete unbiased random walk in continuous time and values. Based on this basic ABM, we can define variants that have some drift $\mu$ (tendency to go up) and some volatility $\sigma$ (degree of randomness or wiggleness). A Security&rsquo;s price $S$ following such modified ABM is described by the stochastic differential equation (SDE):</p>
+<p>$$ dS = \mu dt + \sigma dZ\quad (ABM)$$</p>
+<p>SDEs such as the above, do not follow the regular calculus quite exactly, that is, we need to take care when applying certain standard rules in regular differential equations. In the above, $dZ$ indicates an infinitesimal change of this process, which has the property that $\mathbb E[dZ]=0,\mathbb V[dZ]=dt$. Pay care in the last equality: $\mathbb V[dZ]=\mathbb E[(dZ)^2]=dt$. Typically infinitesimals squared are neglected, but here on the contrary, due to the nature of the brownian motion they have singificant variability that they need to be preserved.</p>
+<p>Let&rsquo;s look at our first few ABM. Use the following controls to interact with the simulation.      <br>
+<button id="restartButton">Restart</button>
+<button id="increaseButton">Increase Paths</button>
+<button id="decreaseButton">Decrease Paths</button>
+<button id="toggleOpacityButton">Toggle Opacity</button>
+<button id="increaseDriftButton">Increase Drift</button>
+<button id="reduceDriftButton">Reduce Drift</button></p>
+<div id="canvas-container" style="width: 100%; height: 330px; overflow: hidden;"></div>
+After you have experimented with the above, let's make some additional observations.
+<button id="toggleAverageButton">Toggle Average Path</button>
+<button id="toggleTerminalButton">Toggle Terminal Distribution</button>
+<div>
+    <label for="drift">Drift:</label>
+    <select id="drift" onchange="changeDrift()">
+        <option value="constant">Constant</option>
+        <option value="sinusoidal">Sinusoidal</option>
+        <option value="sinusoidal_sign">Sinusoidal Sign</option>
+    </select>
+</div>
+<div>
+    <label for="volatility">Volatility:</label>
+    <select id="volatility" onchange="changeVolatility()">
+        <option value="constant">Constant</option>
+        <option value="sinusoidal">Sinusoidal</option>
+        <option value="sinusoidal_sign">Sinusoidal Sign</option>
+    </select>
+</div>
+<script>
+    function changeDrift() {
+let driftSelector = document.getElementById('drift');
+driftType = driftSelector.value;
+    initializePaths();
+        console.log(driftType)
+}
+
+function changeVolatility() {
+let volatilitySelector = document.getElementById('volatility');
+volatilityType = volatilitySelector.value;
+    initializePaths();
+        console.log(volatilityType)
+}
+
+
+
+function calculateDrift(time) {
+    let currentDrift = drift;
+    switch (driftType) {
+    case 'constant':
+    currentDrift = drift;
+    break;
+    case 'sinusoidal':
+    currentDrift = 0.25*Math.sin(0.05*time) + drift;
+    break;
+    case 'sinusoidal_sign':
+    currentDrift = 0.25*Math.sign(Math.sin(0.05*time)) + drift;
+    break;
+    }
+    return currentDrift;
+}
+
+function calculateVolatility(time) {
+    let currentVolatility = volatility;
+    switch (volatilityType) {
+    case 'constant':
+    currentVolatility = volatility;
+    break;
+    case 'sinusoidal':
+    currentVolatility = volatility * 0.6 * Math.sin(0.05*time) + volatility;
+    break;
+    case 'sinusoidal_sign':
+    currentVolatility = volatility * 0.6 * Math.sign(Math.sin(0.05*time)) + volatility;
+    break;
+    }
+    return currentVolatility;
+}
+
+            let canvas;
+            let width, height;
+            let delta = 1;
+            let paths = [];
+let show_quartiles = true;
+
+            let pathHeight;
+            let points = 1;
+            let initprice = 0;
+            let prices = [];
+            let numPaths = 20; // Change this to control the number of paths
+            let showAveragePath = false;
+            let showTerminalDistribution = false;
+            let drift = 0.0;
+            let volatility = 1.2;
+            let opacityToggle = 100;
+            colors = ['black'];
+            let driftType = 'constant';
+            let volatilityType = 'constant';
+
+            function setup() {
+                let canvasContainer = document.getElementById('canvas-container');
+                width = canvasContainer.offsetWidth;
+                height = canvasContainer.offsetHeight;
+                canvas = createCanvas(width, height);
+                canvas.parent('canvas-container');
+
+                pathHeight = height / 2;
+                initializePaths();
+            }
+
+            function draw() {
+                background(255);
+                updatePaths();
+            }
+
+  function initializePaths() {
+
+    paths = [];
+    prices = [];
+    points = 1;
+    let startY = height / 2;
+    for (let j = 0; j < numPaths; j++) {
+        let path = [];
+        paths.push(path);
+        prices.push([initprice]);
+        for (let i = 1; i <= points; i++) {
+            let point = new p5.Vector(delta * i, startY);
+            path.push(point);
+        }
+    }
+    if (showAveragePath) {
+        paths.push([]); // Initialize the average path
+        let averagePoint = new p5.Vector(delta * points, height / 2);
+        paths[numPaths].push(averagePoint);
+    }
+}
+function drawQuartiles(time) {
+    let sigma_values = [1, 2, 3, 4];
+    let opacity = 0.1;
+
+    for (let sigma of sigma_values) {
+        let upperBound = [];
+        let lowerBound = [];
+
+        let aggregateDrift = 0;
+        let cumulativeVolatility = 0;
+
+
+        for (let i = 0; i <= time; i++) {
+            let x = delta * i;
+            aggregateDrift += calculateDrift(i);
+            //aggregateVolatility += calculateVolatility(i);
+            cumulativeVolatility += calculateVolatility(i);
+            let averageVolatility = cumulativeVolatility / (i + 1);
+
+            let upperY = height / 2 - (aggregateDrift + sigma * averageVolatility * Math.sqrt(i) - initprice);
+            let lowerY = height / 2 - (aggregateDrift - sigma * averageVolatility * Math.sqrt(i) - initprice);
+            upperBound.push(new p5.Vector(x, upperY));
+            lowerBound.push(new p5.Vector(x, lowerY));
+        }
+
+        let currentColor = color(0, 0, 255);
+        currentColor.setAlpha(opacity * 255);
+        fill(currentColor);
+        noStroke();
+
+        beginShape();
+        for (let i = 0; i < upperBound.length; i++) {
+            vertex(upperBound[i].x, upperBound[i].y);
+        }
+        for (let i = lowerBound.length - 1; i >= 0; i--) {
+            vertex(lowerBound[i].x, lowerBound[i].y);
+        }
+        endShape(CLOSE);
+    }
+}
+
+function updatePaths() {
+  if (points < (width - 40) / delta) {
+        points += 1;
+        let averagePrices = 0;
+
+        for (let j = 0; j < numPaths; j++) {
+            let currentDrift = calculateDrift(points);
+            let currentVolatility = calculateVolatility(points);
+
+            prices[j].push(prices[j][prices[j].length - 1] + randn_bm() * currentVolatility + currentDrift);
+            let point = new p5.Vector(delta * points, height / 2 - (prices[j][prices[j].length - 1] - initprice));
+            paths[j].push(point);
+            averagePrices += prices[j][prices[j].length - 1];
+        }
+        averagePrices /= numPaths;
+
+        if (showAveragePath) {
+            let averagePoint = new p5.Vector(delta * points, height / 2 - (averagePrices - initprice));
+            paths[numPaths].push(averagePoint);
+        }
+    }
+
+    // if (points < (width-40)/ delta) {
+    //     points += 1;
+    //     let averagePrices = 0;
+    //     for (let j = 0; j < numPaths; j++) {
+    //         prices[j].push(prices[j][prices[j].length - 1] + randn_bm() + drift);
+    //         let point = new p5.Vector(delta * points, height / 2 - (prices[j][prices[j].length - 1] - initprice));
+    //         paths[j].push(point);
+    //         averagePrices += prices[j][prices[j].length - 1];
+    //     }
+    //     averagePrices /= numPaths;
+
+    //     if (showAveragePath) {
+    //         let averagePoint = new p5.Vector(delta * points, height / 2 - (averagePrices - initprice));
+    //         paths[numPaths].push(averagePoint);
+    //     }
+
+    // }
+
+    for (let j = 0; j < (showAveragePath ? numPaths + 1 : numPaths); j++) {
+        if (showAveragePath && j === numPaths) {
+            stroke('red');
+            strokeWeight(2);
+        } else {
+            let currentColor = color(colors[j % colors.length]);
+            currentColor.setAlpha(opacityToggle);
+            stroke(currentColor);
+            strokeWeight(1);
+        }
+        noFill();
+        beginShape();
+        for (let i = 0; i < paths[j].length; i++) {
+            vertex(paths[j][i].x, paths[j][i].y);
+        }
+        endShape();
+    }
+
+    if (showTerminalDistribution) {
+        let aggregateDrift = 0;
+        let cumulativeVolatility = 0;
+        
+        for (let i = 1; i <= points; i++) {
+            aggregateDrift += calculateDrift(i);
+            cumulativeVolatility += calculateVolatility(i);
+        }
+        
+        let mean = aggregateDrift;
+        let stdDev = cumulativeVolatility / (points + 1) * Math.sqrt(points);
+        for (let i = -width; i < width; i++) {
+            let x = i;
+            let y = 30*(normalPDF(x, mean, stdDev))/(normalPDF(mean, mean, stdDev));
+            stroke('blue');
+            if (y<0.01) { continue}
+            line(points*delta+2,-x+height/2, 2+points*delta+y,-x+height/2);
+        }
+    }
+    // if (showTerminalDistribution) {
+    //     let mean = drift * points;
+    //     console.log(mean)
+    //     let stdDev = Math.sqrt(points);
+    //     for (let i = -width; i < width; i++) {
+    //         let x = i;
+    //         let y = 30*(normalPDF(x, mean, stdDev))/(normalPDF(mean, mean, stdDev));
+    //         stroke('blue');
+    //         if (y<0.01) { continue}
+    //         line(points*delta+2,-x+height/2, 2+points*delta+y,-x+height/2);
+    //     }
+    // }
+
+        if (show_quartiles) {
+            drawQuartiles(points);
+        }
+}
+
+function normalPDF(x, mean, stdDev) {
+    let exponent = -Math.pow(x - mean, 2) / (2 * Math.pow(stdDev, 2));
+    let normalization = 1 / (stdDev * Math.sqrt(2 * Math.PI));
+    return normalization * Math.exp(exponent);
+}
+            function randn_bm() {
+                let u = 0, v = 0;
+                while (u === 0) u = Math.random(); //Converting [0,1) to ( 0,1)
+              while (v === 0) v = Math.random();
+              return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+            }
+
+               function windowResized() {
+            resizeCanvas(window.innerWidth, window.innerHeight);
+            initializePaths();
+        }
+
+        // Event listeners for the buttons
+        document.getElementById("increaseButton").addEventListener("click", function () {
+            numPaths=numPaths+5;
+            initializePaths();
+        });
+        document.getElementById("restartButton").addEventListener("click", function () {
+            initializePaths();
+        });
+
+        document.getElementById("decreaseButton").addEventListener("click", function () {
+            if (numPaths > 0) {
+                numPaths=max(1,numPaths-5);
+                initializePaths();
+            }
+        });
+
+document.getElementById("toggleOpacityButton").addEventListener("click", function () {
+    opacityToggle = opacityToggle === 40 ? 100 : 40;
+});
+
+document.getElementById("increaseDriftButton").addEventListener("click", function () {
+    drift += 0.01;
+    console.log(drift)
+    initializePaths();
+});
+document.getElementById("reduceDriftButton").addEventListener("click", function () {
+    drift -= 0.01;
+    console.log(drift)
+    initializePaths();
+});
+
+document.getElementById("toggleAverageButton").addEventListener("click", function () {
+    showAveragePath = !showAveragePath;
+    initializePaths();
+});
+
+document.getElementById("toggleTerminalButton").addEventListener("click", function () {
+    showTerminalDistribution = !showTerminalDistribution;
+    initializePaths();
+    //resetSimulation();
+});
+
+</script>
+<div id="input1"></div>
+<div id="tester"></div>
+<p>ABM, is not appropriate for modeling stocks. For example the price might evolve to negative values. This, along with other issues motivates the introduction of GBM.</p>
+<h2 id="geometric-brownian-motion">Geometric Brownian Motion</h2>
+<p>The Geometric Brownian Motion is a stochastic process where the diffusion is proportional to the current price of the process (that is, the security). For example we do not expect a stock at a stock price of 1000 USD, to move in absolute terms as much as a stock at a stock price of 1 USD. Instead, the moves should be in percentage terms. Click the simulation below to observe the evolution of numerous geometric brownian motions. The terminal distribution in this case becomes a lognormal and the price never becomes 0.</p>
+<p>$$ \frac{dS}{S}= \mu dt + \sigma dZ\quad (GBM)$$</p>
+<div id="canvas-container-2" style="width: 100%; height: 330px; overflow: hidden;"></div>
+<h2 id="jump-diffusion-and-other-models">Jump Diffusion and Other Models</h2>
+<p>There are numerous other models that one can adopt for stock prices. Stay tuned for the simulation of more models, including Jump Diffusion and Local Volatility models.</p>
+<script>
+
+function normalCDF(x) {
+    return (1.0 + erf(x / Math.sqrt(2))) / 2;
+}
+
+function erf(x) {
+    let sign = (x >= 0) ? 1 : -1;
+    x = Math.abs(x);
+
+    let a1 = 0.254829592;
+    let a2 = -0.284496736;
+    let a3 = 1.421413741;
+    let a4 = -1.453152027;
+    let a5 = 1.061405429;
+    let p = 0.3275911;
+
+    let t = 1.0 / (1.0 + p * x);
+    let y = 1.0 - ((((a5 * t + a4) * t) + a3) * t + a2) * t * Math.exp(-x * x);
+
+    return sign * y; // Corrected: Multiply sign with the result
+}
+
+function randn_bm() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random(); //Converting [0,1) to ( 0,1)
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+}
+
+function logNormalPDF(x, mean, stdDev) {
+    let exponent = -Math.pow(Math.log(x) - mean, 2) / (2 * Math.pow(stdDev, 2));
+    let normalization = 1 / (x * stdDev * Math.sqrt(2 * Math.PI));
+    return normalization * Math.exp(exponent);
+}
+function normalPDF(x, mean, stdDev) {
+    let exponent = -Math.pow(x - mean, 2) / (2 * Math.pow(stdDev, 2));
+    let normalization = 1 / (stdDev * Math.sqrt(2 * Math.PI));
+    return normalization * Math.exp(exponent);
+}
+
+const sketch = (p,canvasParent,process) => {
+
+class PauseButton {
+  constructor(x, y, size) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.active = false;
+  }
+
+  display() {
+    p.fill(200);
+    p.rect(this.x, this.y, this.size, this.size);
+    p.fill(0);
+    p.textSize(14);
+    p.text("||", this.x + this.size / 2 - 5, this.y + this.size / 2 + 5);
+  }
+
+  contains(px, py) {
+    return (px >= this.x && px <= this.x + this.size && py >= this.y && py <= this.y + this.size);
+  }
+}
+
+    let paused = true;
+    let canvas, overlay, simulation, K_strike=100;
+    let volatility = 0.30;
+    let width, height, delta = 1.5;
+    let paths = [], pathHeight, points = 1, initprice = 100, prices = [], numPaths = 300;
+    let showAveragePath = false, showTerminalDistribution = true, drift = 0.000, opacityToggle = 50;
+    let coloringMode = 2;
+    let colors = ['black'];
+    let timeScaleFactor;
+
+    let pauseButton;
+    let strikeControl;
+    let pathCache; 
+    p.setup = () => {
+        setupCanvas();
+        pathCache = p.createGraphics(width, height); // Initialize the pathCache graphics object
+        terminalCache = p.createGraphics(width, height); // Initialize the pathCache graphics object
+        initializePaths();
+        createOverlay();
+        timeScaleFactor = 1 / (width - 40); // Scale factor for one year (assuming 252 trading days per year)
+                // Initialize the pause button and strike control
+        pauseButton = new PauseButton(10, 10, 20);
+
+    };
+
+
+    p.mouseClicked = () => {
+        // Check if the user clicked the pause button
+        if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
+            togglePause();
+        }
+    };
+    p.draw = () => {
+    p.background(255);
+    if (!paused) {
+        updatePaths();
+    } else {
+        drawOverlay();
+    }
+
+    //pauseButton.display();
+    };
+
+    function setupCanvas() {
+        let canvasContainer = document.getElementById(canvasParent);
+        width = canvasContainer.offsetWidth;
+        height = canvasContainer.offsetHeight;
+        canvas = p.createCanvas(width, height);
+        canvas.parent(canvasParent);
+        pathHeight = height / 2;
+    }
+
+    function createOverlay() {
+        overlay = p.createGraphics(width, height);
+        overlay.fill(255, 255, 255, 127);
+        overlay.rect(0, 0, width, height);
+        overlay.textSize(32);
+        overlay.textAlign(p.CENTER, p.CENTER);
+        overlay.fill(0);
+        overlay.text("Simulation Paused. Click to Resume", width / 2, height / 2);
+    }
+
+    function togglePause() {
+        paused = !paused;
+        if (!paused) {
+            p.loop();
+        } else {
+            p.noLoop();
+            drawOverlay();
+        }
+    }
+
+function drawOverlay() {
+    p.image(pathCache, 0, 0); // Display the cached image when paused
+    p.image(terminalCache, 0, 0); // Display the cached image when paused
+    p.image(overlay, 0, 0); // Display the overlay
+}
+
+     function initializePaths() {
+        pathCache.clear();
+        paths = [];
+        prices = [];
+        points = 1;
+        let startY = height / 2;
+        for (let j = 0; j < numPaths; j++) {
+            let path = [];
+            paths.push(path);
+            prices.push([initprice]);
+            for (let i = 1; i <= points; i++) {
+                let point = new p5.Vector(delta * i, startY);
+                path.push(point);
+            }
+        }
+        if (showAveragePath) {
+            paths.push([]); // Initialize the average path
+            let averagePoint = new p5.Vector(delta * points, height / 2);
+            paths[numPaths].push(averagePoint);
+        }
+    }
+
+    function updatePaths() {
+        if (points < (width - 40) / delta) {
+            updatePoints();
+            drawShapes(pathCache); // Draw shapes to the pathCache graphics object
+            p.image(pathCache, 0, 0); // Display the cached image
+        } else {
+            p.image(pathCache, 0, 0); // Display the cached image when paths are no longer being updated
+        }
+
+        if (showTerminalDistribution) {
+            drawTerminalDistribution();
+            p.image(terminalCache,0,0)
+        }
+    }
+
+function updatePoints() {
+    let volatilitySquared = Math.pow(volatility, 2);
+    let currentDelta = delta * timeScaleFactor;
+    let sqrtDelta = Math.sqrt(currentDelta);
+    if (points < (width - 40) / delta) {
+        points += 1;
+        let averagePrices = 0;
+        for (let j = 0; j < numPaths; j++) {
+            // Geometric Brownian motion update
+
+        if (process === "ABM") {
+          // Arithmetic Brownian Motion update
+          prices[j].push(prices[j][prices[j].length - 1] + drift * currentDelta + volatility * randn_bm() * sqrtDelta);
+        } else if (process === "GBM_jump_diffusion") {
+          // Geometric Brownian Motion with Jump Diffusion update
+          let jump = Math.random() < 0.005 ? (Math.random()-0.5) * 0.3 : 0;
+          prices[j].push(prices[j][prices[j].length - 1] * Math.exp((drift - 0.5 * volatilitySquared) * currentDelta + volatility * randn_bm() * sqrtDelta + jump));
+        } else {
+          // Geometric Brownian Motion update (default)
+          prices[j].push(prices[j][prices[j].length - 1] * Math.exp((drift - 0.5 * volatilitySquared) * currentDelta + volatility * randn_bm() * sqrtDelta));
+        }
+
+            let point = new p5.Vector(delta * points, height / 2 - (prices[j][prices[j].length - 1] - initprice));
+            paths[j].push(point);
+            averagePrices += prices[j][prices[j].length - 1];
+        }
+        averagePrices /= numPaths;
+
+        if (showAveragePath) {
+            let averagePoint = new p5.Vector(delta * points, height / 2 - (averagePrices - initprice));
+            paths[numPaths].push(averagePoint);
+        }
+    }
+}
+
+function drawShapes(targetGraphics,how_many) {
+    if (how_many==='all') { 
+        targetGraphics.clear()
+    }
+    targetGraphics.push();
+    targetGraphics.background(255, 255, 255, 0);
+
+    let redColor = p.color('red');
+    let greenColor = p.color('green');
+    let blueColor = p.color('blue');
+    let rel;
+
+    //let coloringMode = 2; // Set the coloring mode here: 1, 2, or 3
+
+    let K = K_strike;
+    //console.log(K)
+    let r = 0.01;
+
+    for (let j = 0; j < (showAveragePath ? numPaths + 1 : numPaths); j++) {
+        if (how_many==="all") { 
+            rel = 1
+        }
+        else {
+            rel = paths[j].length-1
+        }
+        for (let i = rel; i < paths[j].length; i++) {
+            targetGraphics.beginShape();
+            targetGraphics.strokeWeight(1);
+
+            if (showAveragePath && j === numPaths) {
+                targetGraphics.stroke(redColor);
+            } else {
+                let price = prices[j][i];
+                let remainingTime = 1 - (delta * i * timeScaleFactor); // Calculate the remaining time to expiry
+
+                let interpolatedColor;
+                interpolatedColor = p.color('black');
+                interpolatedColor.setAlpha(opacityToggle); // Set opacity for the interpolated color
+
+                targetGraphics.stroke(interpolatedColor);
+            }
+
+            targetGraphics.vertex(paths[j][i - 1].x, paths[j][i - 1].y);
+            targetGraphics.vertex(paths[j][i].x, paths[j][i].y);
+            targetGraphics.endShape();
+        }
+    }
+    targetGraphics.pop();
+}
+
+//function drawTerminalDistribution() {
+//    let mean = Math.log(initprice) + (drift - 0.5 * Math.pow(0.01, 2)) * points * delta* timeScaleFactor;
+//    let stdDev = volatility* Math.sqrt(points * delta * timeScaleFactor);
+//    let scale = 1; // Adjust this scale factor for better visualization
+//
+//    for (let i = -initprice * scale + 1; i < width; i += 1) {
+//        let x = i / scale;
+//        let price = initprice + x;
+//        let y = 30 * scale * logNormalPDF(price, mean, stdDev) / logNormalPDF(Math.exp(mean), mean, stdDev);
+//        p.stroke('blue');
+//        if (y < 0.13) { continue }
+//
+// p.line(points * delta + 2, height / 2 - x, points * delta + 2 + y, height / 2 - x);
+//}
+//}
+
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+function drawTerminalDistribution() {
+terminalCache.clear()
+  let scale = 1; // Adjust this scale factor for better visualization
+
+  for (let i = -initprice * scale + 1; i < width; i += 1) {
+    let x = i / scale;
+    let price = initprice + x;
+    let y;
+
+    switch (process) {
+      case "ABM":
+        let meanABM = initprice + (drift * points * delta * timeScaleFactor);
+        let stdDevABM = volatility * Math.sqrt(points * delta * timeScaleFactor);
+        y = 30 * scale * normalPDF(price, meanABM, stdDevABM) / normalPDF(meanABM, meanABM, stdDevABM);
+        break;
+      case "GBM_jump_diffusion":
+        let maxJumps = 10; // You can increase this number to account for more jumps
+        y = 0;
+        let lambda = 0.5;
+        let jumpMean = -1;
+        let jumpStdDev = 0.0;
+
+        for (let jumps = 0; jumps <= maxJumps; jumps++) {
+          let jumpProb = Math.exp(-lambda * points * delta * timeScaleFactor) * Math.pow(lambda * points * delta * timeScaleFactor, jumps) / factorial(jumps);
+          let jumpEffect = Math.exp(jumps * (jumpMean + 0.5 * Math.pow(jumpStdDev, 2)));
+          let meanGBMJD = Math.log(initprice * jumpEffect) + (drift - 0.5 * Math.pow(volatility, 2)) * points * delta * timeScaleFactor;
+          let stdDevGBMJD = Math.sqrt(Math.pow(volatility, 2) * points * delta * timeScaleFactor + jumps * Math.pow(jumpStdDev, 2));
+          y += jumpProb * (30 * scale * logNormalPDF(price, meanGBMJD, stdDevGBMJD) / logNormalPDF(Math.exp(meanGBMJD), meanGBMJD, stdDevGBMJD));
+        }
+        break;
+      default: // GBM
+        let meanGBM = Math.log(initprice) + (drift - 0.5 * Math.pow(volatility, 2)) * points * delta * timeScaleFactor;
+        let stdDevGBM = volatility * Math.sqrt(points * delta * timeScaleFactor);
+        y = 30 * scale * logNormalPDF(price, meanGBM, stdDevGBM) / logNormalPDF(Math.exp(meanGBM), meanGBM, stdDevGBM);
+    }
+
+    terminalCache.stroke('blue');
+    if (y < 0.05) { continue }
+
+    terminalCache.line(points * delta + 2, height / 2 - x, points * delta + 2 + y, height / 2 - x);
+  }
+}
+
+
+
+};
+new p5((p)=> sketch(p,'canvas-container-2', 'GBM'));
+new p5((p)=> sketch(p,'canvas-container-3','GBM_jump_diffusion'));
+
+
+</script>
+
+    </div>
+
+
+    
+<footer class="post-footer">
+
+
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/mcmc/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">To Draw with Markov Chain Monte Carlo.</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/scientific-process/">
+            <span class="next-text nav-default">The diffusion of discovery</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+
+      </nav>
+
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tchristos.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      <div class="post-tags">
+          <a href="/tags/interactive-simulation/">interactive-simulation</a>
+          <a href="/tags/brownian-motion/">brownian-motion</a>
+          <a href="/tags/geometric-brownian-motion/">geometric-brownian-motion</a>
+          <a href="/tags/jump-diffusion/">jump-diffusion</a>
+          </div></footer>
+
+
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="/about" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+	
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023
+    
+    <span class="author">Christos Tsanikidis</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        packages: { '[+]': ['noerrors'] }
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      },
+      chtml: {
+        scale: 1.2
+      }
+    };
+
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111355141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
+
+
+
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+function toggleDarkMode() {
+  const darkModeButton = document.getElementById("darkModeButton");
+  if (darkModeButton){ 
+    const isInverted = document.body.classList.contains("inverted");
+
+    
+    document.body.classList.toggle("inverted");
+
+    
+    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  }
+}
+
+
+let currentPaletteIndex = 0;
+
+function changePalette() {
+  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+}
+function hexToRgb(hex) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
+  
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
+
+if (document.getElementById('change-palette')) {
+  document.getElementById('change-palette').addEventListener('click', changePalette);
+} 
+
+const colorPalettes = [
+    [ '#000000'],
+    [
+'#03045eff',
+'#023e8aff',
+'#0077b6ff',
+'#0096c7ff',
+'#00b4d8ff',
+'#389ab4ff',
+],
+        [
+      '#264653ff',
+      '#287271ff',
+      '#2a9d8fff',
+      '#8ab17dff',
+      '#c49251ff',
+      '#de7959ff',
+      '#d76f51ff',
+    ],
+    [
+      '#ff0a54ff',
+      '#ff477eff',
+      '#ff5c8aff',
+      '#ff7096ff',
+    ],
+    [
+      '#ffae03ff',
+      '#e67f0dff',
+      '#fe4e00ff',
+      '#e9190fff',
+      '#ff0f80ff',
+    ],
+        [
+      '#7400b8ff',
+      '#6930c3ff',
+      '#5e60ceff',
+      '#5390d9ff',
+      '#4ea8deff',
+      '#48bfe3ff',
+      '#56cfe1ff',
+    ],
+    [
+      '#f72585ff',
+      '#7209b7ff',
+      '#3a0ca3ff',
+      '#4361eeff',
+      '#4c99a0ff',
+    ],
+    [
+      '#355070ff',
+      '#6d597aff',
+      '#b56576ff',
+      '#e56b6fff',
+      '#eaac8bff',
+    ],
+    [
+      '#f72585ff',
+      '#b5179eff',
+      '#7209b7ff',
+      '#560badff',
+      '#480ca8ff',
+      '#3a0ca3ff',
+      '#3f37c9ff',
+      '#4361eeff',
+      '#4895efff',
+      '#4cc9f0ff',
+    ],
+    [
+      '#ca86cfff',
+      '#7353baff',
+      '#2f195fff',
+      '#0f1020ff',
+      '#9f73d5ff',
+    ],
+    [
+      '#61a0afff',
+      '#76a99cff',
+      '#c05c7bff',
+      '#c99997ff',
+      '#c5a461ff',
+    ],
+  ];
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
+</body>
+</html>

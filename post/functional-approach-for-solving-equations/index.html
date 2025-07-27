@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>A functional approach for solving equations - Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta property="og:image" content="/post-images/solving-equations.png"/>
+
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="CT" /><meta name="description" content="Solving or interpreting equations is a fundamental topic, usually taught in young ages, when students are not very eager to capture the essence of the equations or do not know some more advanced concepts that can reinforce their understanding of them.
+When students are presented with an equation $x&#43;4=13$, usually they are asked about the value of $x$. As a student I was shown a number of manipulations that I had to learn in isolation, making the task cumbersome initially but then mechanic." /><meta name="keywords" content="Math, CS, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
+
+
+<link rel="canonical" href="http://ctsan.github.io/post/functional-approach-for-solving-equations/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="A functional approach for solving equations" />
+<meta property="og:description" content="Solving or interpreting equations is a fundamental topic, usually taught in young ages, when students are not very eager to capture the essence of the equations or do not know some more advanced concepts that can reinforce their understanding of them.
+When students are presented with an equation $x&#43;4=13$, usually they are asked about the value of $x$. As a student I was shown a number of manipulations that I had to learn in isolation, making the task cumbersome initially but then mechanic." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ctsan.github.io/post/functional-approach-for-solving-equations/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-05T15:43:48+08:00" />
+<meta property="article:modified_time" content="2017-12-05T15:43:48+08:00" />
+<meta itemprop="name" content="A functional approach for solving equations">
+<meta itemprop="description" content="Solving or interpreting equations is a fundamental topic, usually taught in young ages, when students are not very eager to capture the essence of the equations or do not know some more advanced concepts that can reinforce their understanding of them.
+When students are presented with an equation $x&#43;4=13$, usually they are asked about the value of $x$. As a student I was shown a number of manipulations that I had to learn in isolation, making the task cumbersome initially but then mechanic."><meta itemprop="datePublished" content="2017-12-05T15:43:48+08:00" />
+<meta itemprop="dateModified" content="2017-12-05T15:43:48+08:00" />
+<meta itemprop="wordCount" content="937">
+<meta itemprop="keywords" content="mathematical insights," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A functional approach for solving equations"/>
+<meta name="twitter:description" content="Solving or interpreting equations is a fundamental topic, usually taught in young ages, when students are not very eager to capture the essence of the equations or do not know some more advanced concepts that can reinforce their understanding of them.
+When students are presented with an equation $x&#43;4=13$, usually they are asked about the value of $x$. As a student I was shown a number of manipulations that I had to learn in isolation, making the task cumbersome initially but then mechanic."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Christos Tsanikidis</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Christos Tsanikidis</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <div class="header-content" style="display: flex; align-items: flex-start;">
+        <div class="post-thumbnail" style="margin-right: 20px; width: 120px; height: 120px; min-width: 120px;">
+          <img src="/post-images/solving-equations.png" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <div>
+          <h1 class="post-title" style="font-size: 34px;">A functional approach for solving equations</h1>
+
+    
+          <div class="post-meta">
+            <span class="post-time"> 2017-12-05 </span>
+            <div class="post-category">
+                <a href="/categories/math/"> Math </a>
+                </div>
+              <span class="more-meta"> 937 words </span>
+              <span class="more-meta"> 5 mins read </span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+    
+    
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#inverse-of-a-function">Inverse of a function</a></li>
+    <li><a href="#equation-in-terms-of-inverse-functions">Equation in terms of Inverse functions.</a></li>
+    <li><a href="#composability">Composability</a></li>
+    <li><a href="#not-every-function-has-an-inverse">Not every function has an inverse</a></li>
+    <li><a href="#not-every-function-takes-every-value">Not every function takes every value</a></li>
+    <li><a href="#not-every-function-can-be-decomposed-nicely">Not every function can be decomposed nicely</a></li>
+    <li><a href="#not-every-decomposition-is-obvious">Not every decomposition is obvious</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content large-initial">
+          <p>Solving or interpreting equations is a fundamental topic, usually taught in young ages, when
+students are not very eager to capture the essence of the equations or do not know some more
+advanced concepts that can reinforce their understanding of them.</p>
+<p>When students are presented with an equation $x+4=13$, usually they are asked
+about the value of $x$. As a student I was shown a number of manipulations that
+I had to learn in isolation, making the task cumbersome initially but then mechanic.
+Equations though have an underlying symmetry that allows you to infer most properties by intuition only.</p>
+<p>In this post we explore equations and we will develop a different but useful
+perspective on the subject.</p>
+<h1 id="an-initial-clarification-about-two-types-of-equation">An initial clarification about &ldquo;two types of equation&rdquo;</h1>
+<p>There are two cases which its critical to distinguish before we proceed</p>
+<p>$$ \exists x \in \mathcal{D}: x+4=13$$
+$$ \forall x \in \mathcal{D}: x+4=13 \Leftrightarrow x+4 \equiv 13$$</p>
+<p>The first one corresponds to problems of the form &ldquo;find $x$&rdquo;.
+The question is: what is the value that satisfies the equation, that makes the
+two parts indeed equal.</p>
+<p>The second, usually is a statement which helps you to reason about the set $\mathcal{D}$
+or other parameters that accompany the equivalence.</p>
+<p>In this post we will only discuss the first case.</p>
+<h1 id="describing-the-conventional-solution-of-an-example">Describing the conventional solution of an example</h1>
+<p>When you are given an equation, $9x+10=91$, you are told that the left side has
+the same value as the right side.</p>
+<p>Since those two parts have the same value, modifying them in the same
+way will maintain the equality. The fact that you don&rsquo;t know the particular
+value of $x$ yet, is irrelevant.</p>
+<p>Now, let&rsquo;s try to describe the steps involved in solving the equation.</p>
+<p>First we will subtract $10$ from each side. This is allowed since subtracting a
+number from two values that are equal, creates two new values that are also equal.</p>
+<p>That step was useful since the two new values still contain $x$,
+but they are also simpler from the initial values.</p>
+<p>Then, we have $9x=81$. Since we need to isolate x, by dividing the two equal
+values ($9x$ and $81$) by the same number $9$, we end up with two new
+values, for which we have the information of being equal.</p>
+<p>Thus $ x=9 $.</p>
+<h1 id="a-function-oriented-approach">A function-oriented approach</h1>
+<p>Essentially what we have done before is applying transformations. In
+mathematics, we have a name for deterministic (same input same output)
+transformations.  We call them functions. The need for a same-input, same-output
+mechanism asserts that since the left and the right part of the equation were initially
+the same (same input), after applying the function we will end up with equal values
+(same output), resulting recursively in a new equation.</p>
+<p>Suppose we have a function $f(x)=x-10$ at our disposal. This function performs a
+transformation. It takes a number and it reduces it by 10. Also consider another
+function $g(x)=x/9$. These two functions are one-to-one, they have the property that
+$f(x)=f(y) \Rightarrow x=y$.</p>
+<p>Returning to our initial problem, we apply the two functions one by one:</p>
+<p>$9x+10=91 \Rightarrow f(9x+10) = f(91) \Rightarrow 9x+10-10=91-10 \Rightarrow
+9x = 81$.</p>
+<p>Repeating the same method:</p>
+<p>$9x=81 \Rightarrow g(9x)=g(81) \Rightarrow \frac {9x} {9} = \frac {81} {9}
+\Rightarrow x = \frac {81}{9}$</p>
+<h2 id="inverse-of-a-function">Inverse of a function</h2>
+<p>In mathematics the inverse of a function $f_1$ is a function $f_2 \equiv f_1^{-1}$ so that
+$f_1(f_2(x)) = x$. For instance the inverse of $f_1(x) = x/2$ is $f_2(x)=2x$
+since $f_1(f_2(x)) = f_1(2x) = \frac {2x}{2} = x$.</p>
+<p>Inverse functions &ldquo;cancel&rdquo; the effect of the original function.</p>
+<h2 id="equation-in-terms-of-inverse-functions">Equation in terms of Inverse functions.</h2>
+<p>In the equation $9x+10=91$, if we define $f(x)=9x+10$, then we essentially have
+to solve the equation $f(x)=91$, or to simply find the inverse of $f,\ f^{-1}$
+and apply it to both sides:</p>
+<p>$$f(x)=91 \Rightarrow f^{-1}(f(x))=f^{-1}(91) \Rightarrow x = f^{-1}(91)$$</p>
+<h2 id="composability">Composability</h2>
+<p>The fact that we can solve the equation the way we do (through a number of
+transformations) means that the function is decomposable into a few non-trivial
+functions.</p>
+<p>Indeed, in the case of $f(x)=9x+10$, we can decompose the function in two
+functions: $f_1(x)=9x$, $f_2(x)=x+10$: $f(x)=f_2(f_1(x))$</p>
+<p>Thus we can simply find the inverse function of $f_2$ and then the inverse
+of $f_1$.</p>
+<p>This process is like unwrapping a gift. First your friend wraps it into
+multiple layers, and then you will have to unwrap it, one layer at a time, in
+reverse order to recover it.</p>
+<h2 id="not-every-function-has-an-inverse">Not every function has an inverse</h2>
+<p>$f(x)=x^2$ doesn&rsquo;t have a regular inverse. But we can partition the set of $x$ in which
+we are interested so that the individual sets give us invertible functions. For example
+if we are interested for solutions in $\mathbb R$, partition that space to $(-\infty,0], (0,\infty)$.
+In these intervals the function $x^2$ has inverses.</p>
+<h2 id="not-every-function-takes-every-value">Not every function takes every value</h2>
+<p>if you have the equation $f(x)=35$, $f$ doesn&rsquo;t always take the value $35$. That
+means that the equation doesn&rsquo;t have a solution; there is no $x$ that leads to
+that value.</p>
+<h2 id="not-every-function-can-be-decomposed-nicely">Not every function can be decomposed nicely</h2>
+<p>If our function is $f(x)=e^x + lnx$, and we need to solve the equation $f(x)=e$,
+Can you find an obvious decomposition? There is no one. That means that we have to perform
+the task of inversion in one step instead of decomposing. Turns out the inverse
+of this function is not even expressed in terms of common functions.</p>
+<h2 id="not-every-decomposition-is-obvious">Not every decomposition is obvious</h2>
+<p>If the equation in question is:
+$x^2+2x+3=0$</p>
+<p>$f(x)=x^2+2x+3 = x^2 + 2x +1 + 2 = (x+1)^2+2 =f_3(f_2(f_1(x)))$</p>
+<p>Where</p>
+<p>$f_1(x)=x+1$,$f_2(x)=x^2$, $f_3(x)=x+2$.</p>
+<h1 id="extension-to-inequalities">Extension to Inequalities</h1>
+<p>This process extends naturally to inequalities, and we might explore this issue in the future.</p>
+
+    </div>
+
+
+    
+<footer class="post-footer">
+
+
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/creating-a-football-betting-game/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">How to make a profitable virtual football betting game</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/gambler-enlightened-doubling-method/">
+            <span class="next-text nav-default">The Enlightened Gambler: A Sobering Simulation of the Doubling Method</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+
+      </nav>
+
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tchristos.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      <div class="post-tags">
+          <a href="/tags/mathematical-insights/">mathematical insights</a>
+          </div></footer>
+
+
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="/about" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+	
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023
+    
+    <span class="author">Christos Tsanikidis</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        packages: { '[+]': ['noerrors'] }
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      },
+      chtml: {
+        scale: 1.2
+      }
+    };
+
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111355141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
+
+
+
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+function toggleDarkMode() {
+  const darkModeButton = document.getElementById("darkModeButton");
+  if (darkModeButton){ 
+    const isInverted = document.body.classList.contains("inverted");
+
+    
+    document.body.classList.toggle("inverted");
+
+    
+    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  }
+}
+
+
+let currentPaletteIndex = 0;
+
+function changePalette() {
+  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+}
+function hexToRgb(hex) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
+  
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
+
+if (document.getElementById('change-palette')) {
+  document.getElementById('change-palette').addEventListener('click', changePalette);
+} 
+
+const colorPalettes = [
+    [ '#000000'],
+    [
+'#03045eff',
+'#023e8aff',
+'#0077b6ff',
+'#0096c7ff',
+'#00b4d8ff',
+'#389ab4ff',
+],
+        [
+      '#264653ff',
+      '#287271ff',
+      '#2a9d8fff',
+      '#8ab17dff',
+      '#c49251ff',
+      '#de7959ff',
+      '#d76f51ff',
+    ],
+    [
+      '#ff0a54ff',
+      '#ff477eff',
+      '#ff5c8aff',
+      '#ff7096ff',
+    ],
+    [
+      '#ffae03ff',
+      '#e67f0dff',
+      '#fe4e00ff',
+      '#e9190fff',
+      '#ff0f80ff',
+    ],
+        [
+      '#7400b8ff',
+      '#6930c3ff',
+      '#5e60ceff',
+      '#5390d9ff',
+      '#4ea8deff',
+      '#48bfe3ff',
+      '#56cfe1ff',
+    ],
+    [
+      '#f72585ff',
+      '#7209b7ff',
+      '#3a0ca3ff',
+      '#4361eeff',
+      '#4c99a0ff',
+    ],
+    [
+      '#355070ff',
+      '#6d597aff',
+      '#b56576ff',
+      '#e56b6fff',
+      '#eaac8bff',
+    ],
+    [
+      '#f72585ff',
+      '#b5179eff',
+      '#7209b7ff',
+      '#560badff',
+      '#480ca8ff',
+      '#3a0ca3ff',
+      '#3f37c9ff',
+      '#4361eeff',
+      '#4895efff',
+      '#4cc9f0ff',
+    ],
+    [
+      '#ca86cfff',
+      '#7353baff',
+      '#2f195fff',
+      '#0f1020ff',
+      '#9f73d5ff',
+    ],
+    [
+      '#61a0afff',
+      '#76a99cff',
+      '#c05c7bff',
+      '#c99997ff',
+      '#c5a461ff',
+    ],
+  ];
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
+</body>
+</html>

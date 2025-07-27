@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pimp my Peon on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/pimp-my-peon/</link>
+    <description>Recent content in Pimp my Peon on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Wed, 10 Jun 2009 16:01:23 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/pimp-my-peon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Warcraft 3 Mod - Pimp my Peon</title>
+      <link>http://ctsan.github.io/project/warcraft-game/</link>
+      <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/project/warcraft-game/</guid>
+      <description>Pimp my Peon was the first contact I had with programming at the age of 15-16 and very influential to the later developed interests. Alternatively you might consider it as an early indication of an innate fascination for the art of &amp;ldquo;creation&amp;rdquo; using technology.
+It is documented here for historical reasons.
+It was a mod for Warcraft 3, like the famous Dota 1, which had begun as an open source project and was then &amp;ldquo;forked&amp;rdquo; by young me.</description>
+    </item>
+    
+  </channel>
+</rss>

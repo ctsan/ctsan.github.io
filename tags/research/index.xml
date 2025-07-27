@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>research on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/research/</link>
+    <description>Recent content in research on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Fri, 03 Mar 2023 14:47:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The diffusion of discovery</title>
+      <link>http://ctsan.github.io/post/scientific-process/</link>
+      <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/scientific-process/</guid>
+      <description>How do humans make discoveries? How do they venture into the unknown and push the frontiers of knowledge? In this article, we offer a new perspective on human discoveries, based on a simple but powerful analogy: humans are like particles diffusing out of a labyrinth. Imagine that each human is an explorer who tries to find an exit from a maze-like environment, where every turn is a gamble and every step is a risk.</description>
+    </item>
+    
+  </channel>
+</rss>

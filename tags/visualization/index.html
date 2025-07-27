@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>visualization · Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta property="og:image" content="/post-images/"/>
+
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
+<style>
+  .enumeration {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size:18px;
+    margin: 20px 0;
+ margin-top: 5px;  
+  margin-bottom: 5px;  
+    font-family: 'EB Garamond', serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .enumeration ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+  .enumeration li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .enumeration li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    position: absolute;
+    left: -1.0em;
+    top: -0.5em;
+    font-size: 24px;
+    font-style: italic;
+
+  }
+
+  .enumeration::before,
+  .enumeration::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: radial-gradient(ellipse at center, #e6f2ff 75%, transparent 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .enumeration::after {
+    margin: 0 -20px -20px -20px;
+  }
+</style>
+
+<style>
+
+  .large-initial::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    float: left;
+    margin-top: 0;
+    margin-right: 0.1em;
+    line-height: 0.9;
+    color: #1a237e;
+  }
+  .note {
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.95em;
+  }
+</style>
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="CT" /><meta name="description" content="The Personal Website of Christos Tsanikidis." /><meta name="keywords" content="Math, CS, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.111.3 with theme even" />
+
+
+<link rel="canonical" href="http://ctsan.github.io/tags/visualization/" />
+  <link href="http://ctsan.github.io/tags/visualization/index.xml" rel="alternate" type="application/rss+xml" title="Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance" />
+  <link href="http://ctsan.github.io/tags/visualization/index.xml" rel="feed" type="application/rss+xml" title="Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2f08314fd277653e17e256bfef7573103760d8d6ac61dfed6bb131aa40563765.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="visualization" />
+<meta property="og:description" content="The Personal Website of Christos Tsanikidis." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://ctsan.github.io/tags/visualization/" />
+<meta itemprop="name" content="visualization">
+<meta itemprop="description" content="The Personal Website of Christos Tsanikidis."><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="visualization"/>
+<meta name="twitter:description" content="The Personal Website of Christos Tsanikidis."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Christos Tsanikidis</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/other/">
+        <li class="mobile-menu-item">Experiments</li>
+      </a><a href="/research/">
+        <li class="mobile-menu-item">Research</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Christos Tsanikidis</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/other/">Experiments</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research/">Research</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <section id="archive" class="archive" style="max-width:1000px">
+  <div class="archive-title tag">
+        <svg class="line" viewBox="0 0 300 30" preserveAspectRatio="none">
+          <path class="wave wave1" d="M0,15 Q25,0 50,15 T100,15 T200,15 T300,15" stroke="blue" stroke-width="2" fill="none" />
+          <path class="wave wave2" d="M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10" stroke="blue" stroke-width="2" fill="none" />
+          <path class="wave wave3" d="M0,20 Q50,5 100,20 T200,20 T300,20" stroke="blue" stroke-width="2" fill="none" />
+      </svg>
+        <h2 class="archive-name">visualization</h2>
+        <svg class="line" viewBox="0 0 300 30" preserveAspectRatio="none">
+          <path class="wave wave1" d="M0,15 Q25,0 50,15 T100,15 T200,15 T300,15" stroke="blue" stroke-width="2" fill="none" />
+          <path class="wave wave2" d="M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10" stroke="blue" stroke-width="2" fill="none" />
+          <path class="wave wave3" d="M0,20 Q50,5 100,20 T200,20 T300,20" stroke="blue" stroke-width="2" fill="none" />
+      </svg>
+      </div>
+
+  <div class="archive-post">
+    <a href="/project/heat-equation/" class="archive-post-link" style="text-decoration: none; display: inline-block; width: 100%;">
+      <div class="thumbnail-container">
+      <img src="/post-images//images/heat-thumbnail.png" class="thumbnail" />
+      
+      </div>
+      <div class="archive-post-content" style="display:inline-block; height:130px; vertical-align: top; width: 80%; margin-left: 10px;">
+      <div class="archive-post-title" style="height:130px; vertical-align: bottom;">
+       
+       <span style="font-size:18px">Heat Equation PDE Simulation</span> 
+        <br/>
+        <span class="more-meta"> 1 min read ✤ 02-19-2016</span>
+        <div class="post-category">
+          On:
+          <span>Numerical methods •</span>
+          </div>
+      </div>
+      </div>
+    </a>
+    </div><div class="archive-post">
+    <a href="/project/black-scholes/" class="archive-post-link" style="text-decoration: none; display: inline-block; width: 100%;">
+      <div class="thumbnail-container">
+      <img src="/post-images//images/heat-thumbnail.png" class="thumbnail" />
+      
+      </div>
+      <div class="archive-post-content" style="display:inline-block; height:130px; vertical-align: top; width: 80%; margin-left: 10px;">
+      <div class="archive-post-title" style="height:130px; vertical-align: bottom;">
+       
+       <span style="font-size:18px">Black Scholes</span> 
+        <br/>
+        <span class="more-meta"> 1 min read ✤ 02-19-2016</span>
+        <div class="post-category">
+          On:
+          <span>Numerical methods •</span>
+          </div>
+      </div>
+      </div>
+    </a>
+    </div>
+</section>
+
+<nav class="pagination">
+  
+  
+</nav>
+
+
+<script>
+  let archivePosts = Array.from(document.querySelectorAll('.archive-post'));
+  let postsWithTrailers = archivePosts.filter((post) => post.querySelector('.trailer'));
+  let currentIndex = 0;
+  let isHovered = false;
+  
+  function playTrailer(index) {
+    postsWithTrailers.forEach((post, idx) => {
+    let thumbnail = post.querySelector('.thumbnail');
+    let trailer = post.querySelector('.trailer');
+    if (thumbnail && trailer) {
+      if (idx === index && !isHovered) {
+      thumbnail.style.opacity = '0';
+      trailer.style.opacity = '1';
+      } else {
+      thumbnail.style.opacity = '1';
+      trailer.style.opacity = '0';
+      }
+    }
+    });
+  }
+  
+  function startSlideshow() {
+    playTrailer(currentIndex);
+    currentIndex = (currentIndex + 1) % postsWithTrailers.length;
+    setTimeout(startSlideshow, 4000);
+  }
+  
+  archivePosts.forEach((post) => {
+    let thumbnail = post.querySelector('.thumbnail');
+    let trailer = post.querySelector('.trailer');
+  
+    post.addEventListener('mouseenter', () => {
+    isHovered = true;
+    if (trailer) {
+      thumbnail.style.opacity = '0';
+      trailer.style.opacity = '1';
+    }
+    });
+  
+    post.addEventListener('mouseleave', () => {
+    isHovered = false;
+    if (trailer) {
+      thumbnail.style.opacity = '1';
+      trailer.style.opacity = '0';
+    }
+    });
+  });
+  
+  startSlideshow();
+  </script>
+
+<style>
+  .thumbnail-container {
+    position: relative;
+    display: inline-block;
+    height: 110px;
+    width: 110px;
+    overflow: hidden;
+  }
+  
+  .thumbnail, .trailer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    transition: opacity 0.3s, filter 0.3s;
+    border: 0px solid #ccc;
+  }
+  
+  .trailer {
+    opacity: 0;
+  }
+  
+  .archive-post {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .archive-post:hover .thumbnail {
+    opacity: 1;
+    filter: brightness(0.5);
+  }
+  
+  .archive-post:hover .trailer {
+    opacity: 1;
+  }
+
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 15px;
+}
+.wave {
+  animation-iteration-count: infinite;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+
+@keyframes animateWave1 {
+  0% {
+    transform: translateX(0%) scaleX(1);
+  }
+  50% {
+    transform: translateX(-25%) scaleX(1.5);
+  }
+  100% {
+    transform: translateX(0%) scaleX(1);
+  }
+}
+
+@keyframes animateWave2 {
+  0% {
+    transform: translateX(0%) scaleX(1);
+  }
+  50% {
+    transform: translateX(-15%) scaleX(1.5);
+  }
+  100% {
+    transform: translateX(0%) scaleX(1);
+  }
+}
+
+@keyframes animateWave3 {
+  0% {
+    transform: translateX(0%) scaleX(1);
+  }
+  50% {
+    transform: translateX(-10%) scaleX(1.5);
+  }
+  100% {
+    transform: translateX(0%) scaleX(1);
+  }
+}
+
+.archive-name {
+  margin: 0;
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+  </style>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="/about" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+  <a href="http://ctsan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+	
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023
+    
+    <span class="author">Christos Tsanikidis</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.1c70606d1b733282f06230615f5561b5894924b6f9930ba2ab99cf1254f75a1a.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111355141-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEffectElements = document.querySelectorAll('.title-effect');
+
+  titleEffectElements.forEach((element) => {
+    const title = element.getAttribute('data-title');
+    const headerStyle = element.getAttribute('data-header-style') || 'h2';
+
+    const archiveTitle = document.createElement('div');
+    archiveTitle.classList.add('archive-title', 'tag');
+
+    if (title) {
+      const lineLeft = createSvgElement();
+      const lineRight = createSvgElement();
+
+      const titleElement = document.createElement(headerStyle);
+      titleElement.classList.add('archive-name');
+      titleElement.textContent = title;
+
+      archiveTitle.appendChild(lineLeft);
+      archiveTitle.appendChild(titleElement);
+      archiveTitle.appendChild(lineRight);
+    } else {
+      const fullLine = createSvgElement();
+      fullLine.style.flexGrow = "2";
+      archiveTitle.appendChild(fullLine);
+    }
+
+    element.appendChild(archiveTitle);
+  });
+
+
+  function createSvgElement() {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgElement.classList.add('line');
+    svgElement.setAttribute('viewBox', '0 0 200 30');
+    svgElement.setAttribute('preserveAspectRatio', 'none');
+
+    const wave1 = createPathElement('wave wave1', 'M0,15 Q25,0 50,15 T100,15 T200,15 T300,15');
+    const wave2 = createPathElement('wave wave2', 'M0,10 Q15,25 30,10 T60,10 T120,10 T180,10 T240,10 T300,10');
+    const wave3 = createPathElement('wave wave3', 'M0,20 Q50,5 100,20 T200,20 T300,20');
+
+    svgElement.appendChild(wave1);
+    svgElement.appendChild(wave2);
+    svgElement.appendChild(wave3);
+
+    return svgElement;
+  }
+
+  function createPathElement(className, pathData) {
+    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathElement.setAttribute('class', className);
+    pathElement.setAttribute('d', pathData);
+    return pathElement;
+  }
+  gsap.to('.wave1', {
+  duration: 4,
+  attr: {
+    d: 'M0,15 Q25,30 50,15 T100,15 T200,15 T300,15',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+});
+
+gsap.to('.wave2', {
+  duration: 5,
+  attr: {
+    d: 'M0,10 Q15,-5 30,10 T60,10 T120,10 T180,10 T240,10 T300,10',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1,
+});
+
+gsap.to('.wave3', {
+  duration: 6,
+  attr: {
+    d: 'M0,20 Q50,35 100,20 T200,20 T300,20',
+  },
+  repeat: -1,
+  yoyo: true,
+  ease: 'none',
+  delay: 2,
+});
+});
+
+
+const body = document.documentElement;
+
+
+
+
+
+
+function setInvertedMode(value) {
+  if (value) {
+    body.classList.add('inverted');
+  } else {
+    body.classList.remove('inverted');
+  }
+}
+
+function toggleInvertedMode() {
+  const inverted = body.classList.contains('inverted');
+  setInvertedMode(!inverted);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+function toggleDarkMode() {
+  const darkModeButton = document.getElementById("darkModeButton");
+  if (darkModeButton){ 
+    const isInverted = document.body.classList.contains("inverted");
+
+    
+    document.body.classList.toggle("inverted");
+
+    
+    darkModeButton.innerText = isInverted ? "Enable Dark Mode" : "Enable Light Mode";
+  }
+}
+
+
+let currentPaletteIndex = 0;
+
+function changePalette() {
+  currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+}
+function hexToRgb(hex) {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i.exec(hex);
+  
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
+
+if (document.getElementById('change-palette')) {
+  document.getElementById('change-palette').addEventListener('click', changePalette);
+} 
+
+const colorPalettes = [
+    [ '#000000'],
+    [
+'#03045eff',
+'#023e8aff',
+'#0077b6ff',
+'#0096c7ff',
+'#00b4d8ff',
+'#389ab4ff',
+],
+        [
+      '#264653ff',
+      '#287271ff',
+      '#2a9d8fff',
+      '#8ab17dff',
+      '#c49251ff',
+      '#de7959ff',
+      '#d76f51ff',
+    ],
+    [
+      '#ff0a54ff',
+      '#ff477eff',
+      '#ff5c8aff',
+      '#ff7096ff',
+    ],
+    [
+      '#ffae03ff',
+      '#e67f0dff',
+      '#fe4e00ff',
+      '#e9190fff',
+      '#ff0f80ff',
+    ],
+        [
+      '#7400b8ff',
+      '#6930c3ff',
+      '#5e60ceff',
+      '#5390d9ff',
+      '#4ea8deff',
+      '#48bfe3ff',
+      '#56cfe1ff',
+    ],
+    [
+      '#f72585ff',
+      '#7209b7ff',
+      '#3a0ca3ff',
+      '#4361eeff',
+      '#4c99a0ff',
+    ],
+    [
+      '#355070ff',
+      '#6d597aff',
+      '#b56576ff',
+      '#e56b6fff',
+      '#eaac8bff',
+    ],
+    [
+      '#f72585ff',
+      '#b5179eff',
+      '#7209b7ff',
+      '#560badff',
+      '#480ca8ff',
+      '#3a0ca3ff',
+      '#3f37c9ff',
+      '#4361eeff',
+      '#4895efff',
+      '#4cc9f0ff',
+    ],
+    [
+      '#ca86cfff',
+      '#7353baff',
+      '#2f195fff',
+      '#0f1020ff',
+      '#9f73d5ff',
+    ],
+    [
+      '#61a0afff',
+      '#76a99cff',
+      '#c05c7bff',
+      '#c99997ff',
+      '#c5a461ff',
+    ],
+  ];
+</script>
+<style>
+.inverted {
+  filter: invert(100%);
+  background-color: rgb(15,15,15);
+}
+.inverted img {
+  filter: invert(100%);
+}
+.inverted .checkboxes-container {
+  background-color: rgba(255, 217, 182, 0.9);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title-effect {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+
+.archive-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.line {
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 8px;
+}
+.wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wave1 {
+  animation-name: animateWave1;
+  animation-duration: 4s;
+  stroke: rgba(0, 0, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave2 {
+  animation-name: animateWave2;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  stroke: rgba(0, 128, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+.wave3 {
+  animation-name: animateWave3;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  stroke: rgba(0, 255, 255, 0.8);
+  stroke-width: 2;
+  fill: none;
+}
+</style>
+</body>
+</html>

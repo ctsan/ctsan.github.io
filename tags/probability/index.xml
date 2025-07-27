@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>probability on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</title>
+    <link>http://ctsan.github.io/tags/probability/</link>
+    <description>Recent content in probability on Christos Tsanikidis - Machine Learning, Mathematics, Computer Science, Finance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christos Tsanikidis</copyright>
+    <lastBuildDate>Fri, 22 Dec 2017 15:43:48 +0800</lastBuildDate><atom:link href="http://ctsan.github.io/tags/probability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make a profitable virtual football betting game</title>
+      <link>http://ctsan.github.io/post/creating-a-football-betting-game/</link>
+      <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/creating-a-football-betting-game/</guid>
+      <description>I have already dedicated a previous post on the simulation of the doubling method. In this post I will walk you through steps that can be taken for the creation of a virtual betting game. In particular we will examine a football betting game, similar to one currently found in the market.
+Design decisions Initially, before we develop the simulation, we can discuss two different possible methods to create such a game.</description>
+    </item>
+    
+    <item>
+      <title>The Enlightened Gambler: A Sobering Simulation of the Doubling Method</title>
+      <link>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</link>
+      <pubDate>Sat, 19 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://ctsan.github.io/post/gambler-enlightened-doubling-method/</guid>
+      <description>In conversations about gambling, I frequently encounter a dangerous cocktail of misinformation and misunderstanding. The average person, quite understandably, grapples with comprehending how probabilities can guarantee long-term losses. This challenge is further exacerbated by fallacies and complicated games that intentionally obscure the underlying truth: the house always wins.
+To illustrate this point, I&amp;rsquo;ve chosen to simulate the gambling process and present the average outcomes rather than diving into a potentially confusing sea of probabilities.</description>
+    </item>
+    
+  </channel>
+</rss>
