@@ -2,281 +2,291 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Christos Tsanikidis, PhD</title>
-    <link>/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Research</title>
-      <link>/research/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      <link>//localhost:1313/research/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/research/</guid>
+      <guid>//localhost:1313/research/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/about/</guid>
+      <guid>//localhost:1313/about/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Era of minimal writing</title>
-      <link>/posts/the-era-of-minimal-writing/</link>
+      <link>//localhost:1313/posts/the-era-of-minimal-writing-2/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/the-era-of-minimal-writing/</guid>
+      <guid>//localhost:1313/posts/the-era-of-minimal-writing-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Era of minimal writing</title>
+      <link>//localhost:1313/posts/the-era-of-minimal-writing/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>//localhost:1313/posts/the-era-of-minimal-writing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Shorting bubbles [a trading game]</title>
-      <link>/posts/trading-bubbles/</link>
+      <link>//localhost:1313/posts/trading-bubbles/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/trading-bubbles/</guid>
+      <guid>//localhost:1313/posts/trading-bubbles/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Drawing with Markov chain Monte Carlo</title>
-      <link>/posts/mcmc/</link>
+      <link>//localhost:1313/posts/mcmc/</link>
       <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/mcmc/</guid>
+      <guid>//localhost:1313/posts/mcmc/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>CheatsheetGPT</title>
-      <link>/other/the-wall/</link>
+      <link>//localhost:1313/other/the-wall/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/the-wall/</guid>
+      <guid>//localhost:1313/other/the-wall/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>The diffusion of discovery</title>
-      <link>/posts/the-diffusion-of-discovery/</link>
+      <link>//localhost:1313/posts/the-diffusion-of-discovery/</link>
       <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/the-diffusion-of-discovery/</guid>
+      <guid>//localhost:1313/posts/the-diffusion-of-discovery/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Modeling stock prices with stochastic processes</title>
-      <link>/posts/modeling-stock-prices/</link>
+      <link>//localhost:1313/posts/modeling-stock-prices/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/modeling-stock-prices/</guid>
+      <guid>//localhost:1313/posts/modeling-stock-prices/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Parade</title>
-      <link>/other/mathematical-market/</link>
+      <link>//localhost:1313/other/mathematical-market/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-market/</guid>
+      <guid>//localhost:1313/other/mathematical-market/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical River</title>
-      <link>/other/mathematical-river/</link>
+      <link>//localhost:1313/other/mathematical-river/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-river/</guid>
+      <guid>//localhost:1313/other/mathematical-river/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Tapestry</title>
-      <link>/other/mathematical-tapestry/</link>
+      <link>//localhost:1313/other/mathematical-tapestry/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-tapestry/</guid>
+      <guid>//localhost:1313/other/mathematical-tapestry/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Latent simplicity in observable phenomena</title>
-      <link>/posts/hidden-simplicity-principle/</link>
+      <link>//localhost:1313/posts/hidden-simplicity-principle/</link>
       <pubDate>Thu, 07 May 2020 19:00:00 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/hidden-simplicity-principle/</guid>
+      <guid>//localhost:1313/posts/hidden-simplicity-principle/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Modeling and simulating pandemic spread</title>
-      <link>/posts/modeling-and-simulating-a-pandemic/</link>
+      <link>//localhost:1313/posts/modeling-and-simulating-a-pandemic/</link>
       <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/modeling-and-simulating-a-pandemic/</guid>
+      <guid>//localhost:1313/posts/modeling-and-simulating-a-pandemic/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Learning through generalization and exploration</title>
-      <link>/posts/learn-by-generalizing/</link>
+      <link>//localhost:1313/posts/learn-by-generalizing/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/learn-by-generalizing/</guid>
+      <guid>//localhost:1313/posts/learn-by-generalizing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Creating a profitable football betting game</title>
-      <link>/posts/creating-a-football-betting-game/</link>
+      <link>//localhost:1313/posts/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/creating-a-football-betting-game/</guid>
+      <guid>//localhost:1313/posts/creating-a-football-betting-game/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Functional approach for solving equations</title>
-      <link>/posts/functional-approach-for-solving-equations/</link>
+      <link>//localhost:1313/posts/functional-approach-for-solving-equations/</link>
       <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/functional-approach-for-solving-equations/</guid>
+      <guid>//localhost:1313/posts/functional-approach-for-solving-equations/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Counting sequences through compression</title>
-      <link>/posts/counting-insight/</link>
+      <link>//localhost:1313/posts/counting-insight/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/counting-insight/</guid>
+      <guid>//localhost:1313/posts/counting-insight/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Athens mini-markets Voronoi</title>
-      <link>/project/greek-mini-markets/</link>
+      <link>//localhost:1313/project/greek-mini-markets/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/greek-mini-markets/</guid>
+      <guid>//localhost:1313/project/greek-mini-markets/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Turkey to Greece missile range</title>
-      <link>/project/turkey-greece-range/</link>
+      <link>//localhost:1313/project/turkey-greece-range/</link>
       <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/turkey-greece-range/</guid>
+      <guid>//localhost:1313/project/turkey-greece-range/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Unified Terminal Experience, BACU</title>
-      <link>/project/bacu/</link>
+      <link>//localhost:1313/project/bacu/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/bacu/</guid>
+      <guid>//localhost:1313/project/bacu/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Blind Hunter</title>
-      <link>/project/blind-hunter/</link>
+      <link>//localhost:1313/project/blind-hunter/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/blind-hunter/</guid>
+      <guid>//localhost:1313/project/blind-hunter/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Black Scholes</title>
-      <link>/project/black-scholes/</link>
+      <link>//localhost:1313/project/black-scholes/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/black-scholes/</guid>
+      <guid>//localhost:1313/project/black-scholes/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Heat Equation PDE Simulation</title>
-      <link>/project/heat-equation/</link>
+      <link>//localhost:1313/project/heat-equation/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/heat-equation/</guid>
+      <guid>//localhost:1313/project/heat-equation/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Logarithmic counting</title>
-      <link>/posts/hierarchies/</link>
+      <link>//localhost:1313/posts/hierarchies/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/hierarchies/</guid>
+      <guid>//localhost:1313/posts/hierarchies/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mice Make Art!</title>
-      <link>/project/mice-make-art/</link>
+      <link>//localhost:1313/project/mice-make-art/</link>
       <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/mice-make-art/</guid>
+      <guid>//localhost:1313/project/mice-make-art/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Regex Experimenting Platform</title>
-      <link>/project/regex-experimenter/</link>
+      <link>//localhost:1313/project/regex-experimenter/</link>
       <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/regex-experimenter/</guid>
+      <guid>//localhost:1313/project/regex-experimenter/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Warcraft 3 Mod - Pimp my Peon</title>
-      <link>/project/warcraft-game/</link>
+      <link>//localhost:1313/project/warcraft-game/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/warcraft-game/</guid>
+      <guid>//localhost:1313/project/warcraft-game/</guid>
       <description></description>
       
     </item>
