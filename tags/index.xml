@@ -2,591 +2,591 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Christos Tsanikidis, PhD</title>
-    <link>/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>AI</title>
-      <link>/tags/ai/</link>
+      <link>//localhost:1313/tags/ai/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/ai/</guid>
+      <guid>//localhost:1313/tags/ai/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Communication</title>
-      <link>/tags/communication/</link>
+      <link>//localhost:1313/tags/communication/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/communication/</guid>
+      <guid>//localhost:1313/tags/communication/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Information Theory</title>
-      <link>/tags/information-theory/</link>
+      <link>//localhost:1313/tags/information-theory/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/information-theory/</guid>
+      <guid>//localhost:1313/tags/information-theory/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Writing</title>
-      <link>/tags/writing/</link>
+      <link>//localhost:1313/tags/writing/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/writing/</guid>
+      <guid>//localhost:1313/tags/writing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Greece</title>
-      <link>/tags/greece/</link>
+      <link>//localhost:1313/tags/greece/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/greece/</guid>
+      <guid>//localhost:1313/tags/greece/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Interactive-Simulation</title>
-      <link>/tags/interactive-simulation/</link>
+      <link>//localhost:1313/tags/interactive-simulation/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/interactive-simulation/</guid>
+      <guid>//localhost:1313/tags/interactive-simulation/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Manhattan</title>
-      <link>/tags/manhattan/</link>
+      <link>//localhost:1313/tags/manhattan/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/manhattan/</guid>
+      <guid>//localhost:1313/tags/manhattan/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mcmc</title>
-      <link>/tags/mcmc/</link>
+      <link>//localhost:1313/tags/mcmc/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/mcmc/</guid>
+      <guid>//localhost:1313/tags/mcmc/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Metropolis-Hastings</title>
-      <link>/tags/metropolis-hastings/</link>
+      <link>//localhost:1313/tags/metropolis-hastings/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/metropolis-hastings/</guid>
+      <guid>//localhost:1313/tags/metropolis-hastings/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>USA</title>
-      <link>/tags/usa/</link>
+      <link>//localhost:1313/tags/usa/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/usa/</guid>
+      <guid>//localhost:1313/tags/usa/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Finance Cheatsheat</title>
-      <link>/tags/finance-cheatsheat/</link>
+      <link>//localhost:1313/tags/finance-cheatsheat/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/finance-cheatsheat/</guid>
+      <guid>//localhost:1313/tags/finance-cheatsheat/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Machine Learning Cheatsheat</title>
-      <link>/tags/machine-learning-cheatsheat/</link>
+      <link>//localhost:1313/tags/machine-learning-cheatsheat/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/machine-learning-cheatsheat/</guid>
+      <guid>//localhost:1313/tags/machine-learning-cheatsheat/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Math Cheatsheat</title>
-      <link>/tags/math-cheatsheat/</link>
+      <link>//localhost:1313/tags/math-cheatsheat/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/math-cheatsheat/</guid>
+      <guid>//localhost:1313/tags/math-cheatsheat/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Diffusion</title>
-      <link>/tags/diffusion/</link>
+      <link>//localhost:1313/tags/diffusion/</link>
       <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/diffusion/</guid>
+      <guid>//localhost:1313/tags/diffusion/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Research</title>
-      <link>/tags/research/</link>
+      <link>//localhost:1313/tags/research/</link>
       <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/research/</guid>
+      <guid>//localhost:1313/tags/research/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Brownian-Motion</title>
-      <link>/tags/brownian-motion/</link>
+      <link>//localhost:1313/tags/brownian-motion/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/brownian-motion/</guid>
+      <guid>//localhost:1313/tags/brownian-motion/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Geometric-Brownian-Motion</title>
-      <link>/tags/geometric-brownian-motion/</link>
+      <link>//localhost:1313/tags/geometric-brownian-motion/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/geometric-brownian-motion/</guid>
+      <guid>//localhost:1313/tags/geometric-brownian-motion/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Jump-Diffusion</title>
-      <link>/tags/jump-diffusion/</link>
+      <link>//localhost:1313/tags/jump-diffusion/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/jump-diffusion/</guid>
+      <guid>//localhost:1313/tags/jump-diffusion/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Equation</title>
-      <link>/tags/equation/</link>
+      <link>//localhost:1313/tags/equation/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/equation/</guid>
+      <guid>//localhost:1313/tags/equation/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Math Exploration</title>
-      <link>/tags/math-exploration/</link>
+      <link>//localhost:1313/tags/math-exploration/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/math-exploration/</guid>
+      <guid>//localhost:1313/tags/math-exploration/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mental-Models</title>
-      <link>/tags/mental-models/</link>
+      <link>//localhost:1313/tags/mental-models/</link>
       <pubDate>Thu, 07 May 2020 19:00:00 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/mental-models/</guid>
+      <guid>//localhost:1313/tags/mental-models/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Exploring</title>
-      <link>/tags/exploring/</link>
+      <link>//localhost:1313/tags/exploring/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/exploring/</guid>
+      <guid>//localhost:1313/tags/exploring/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Generalizing</title>
-      <link>/tags/generalizing/</link>
+      <link>//localhost:1313/tags/generalizing/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/generalizing/</guid>
+      <guid>//localhost:1313/tags/generalizing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Learning</title>
-      <link>/tags/learning/</link>
+      <link>//localhost:1313/tags/learning/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/learning/</guid>
+      <guid>//localhost:1313/tags/learning/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Relating Concepts</title>
-      <link>/tags/relating-concepts/</link>
+      <link>//localhost:1313/tags/relating-concepts/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/relating-concepts/</guid>
+      <guid>//localhost:1313/tags/relating-concepts/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Sequences</title>
-      <link>/tags/sequences/</link>
+      <link>//localhost:1313/tags/sequences/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/sequences/</guid>
+      <guid>//localhost:1313/tags/sequences/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Betting</title>
-      <link>/tags/betting/</link>
+      <link>//localhost:1313/tags/betting/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/betting/</guid>
+      <guid>//localhost:1313/tags/betting/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Odds</title>
-      <link>/tags/odds/</link>
+      <link>//localhost:1313/tags/odds/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/odds/</guid>
+      <guid>//localhost:1313/tags/odds/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Poisson</title>
-      <link>/tags/poisson/</link>
+      <link>//localhost:1313/tags/poisson/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/poisson/</guid>
+      <guid>//localhost:1313/tags/poisson/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Probability</title>
-      <link>/tags/probability/</link>
+      <link>//localhost:1313/tags/probability/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/probability/</guid>
+      <guid>//localhost:1313/tags/probability/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Simulation</title>
-      <link>/tags/simulation/</link>
+      <link>//localhost:1313/tags/simulation/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/simulation/</guid>
+      <guid>//localhost:1313/tags/simulation/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Insights</title>
-      <link>/tags/mathematical-insights/</link>
+      <link>//localhost:1313/tags/mathematical-insights/</link>
       <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/mathematical-insights/</guid>
+      <guid>//localhost:1313/tags/mathematical-insights/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Equations</title>
-      <link>/tags/equations/</link>
+      <link>//localhost:1313/tags/equations/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/equations/</guid>
+      <guid>//localhost:1313/tags/equations/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematics</title>
-      <link>/tags/mathematics/</link>
+      <link>//localhost:1313/tags/mathematics/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/mathematics/</guid>
+      <guid>//localhost:1313/tags/mathematics/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Sets</title>
-      <link>/tags/sets/</link>
+      <link>//localhost:1313/tags/sets/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/sets/</guid>
+      <guid>//localhost:1313/tags/sets/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Street-Math</title>
-      <link>/tags/street-math/</link>
+      <link>//localhost:1313/tags/street-math/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/street-math/</guid>
+      <guid>//localhost:1313/tags/street-math/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Data Gathering</title>
-      <link>/tags/data-gathering/</link>
+      <link>//localhost:1313/tags/data-gathering/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/data-gathering/</guid>
+      <guid>//localhost:1313/tags/data-gathering/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Python</title>
-      <link>/tags/python/</link>
+      <link>//localhost:1313/tags/python/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/python/</guid>
+      <guid>//localhost:1313/tags/python/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Voronoi</title>
-      <link>/tags/voronoi/</link>
+      <link>//localhost:1313/tags/voronoi/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/voronoi/</guid>
+      <guid>//localhost:1313/tags/voronoi/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Turkey</title>
-      <link>/tags/turkey/</link>
+      <link>//localhost:1313/tags/turkey/</link>
       <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/turkey/</guid>
+      <guid>//localhost:1313/tags/turkey/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Hci</title>
-      <link>/tags/hci/</link>
+      <link>//localhost:1313/tags/hci/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/hci/</guid>
+      <guid>//localhost:1313/tags/hci/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Library</title>
-      <link>/tags/library/</link>
+      <link>//localhost:1313/tags/library/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/library/</guid>
+      <guid>//localhost:1313/tags/library/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Terminal</title>
-      <link>/tags/terminal/</link>
+      <link>//localhost:1313/tags/terminal/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/terminal/</guid>
+      <guid>//localhost:1313/tags/terminal/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Game Theory</title>
-      <link>/tags/game-theory/</link>
+      <link>//localhost:1313/tags/game-theory/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/game-theory/</guid>
+      <guid>//localhost:1313/tags/game-theory/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Pursuit-Evasion</title>
-      <link>/tags/pursuit-evasion/</link>
+      <link>//localhost:1313/tags/pursuit-evasion/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/pursuit-evasion/</guid>
+      <guid>//localhost:1313/tags/pursuit-evasion/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Zero-Sum Game</title>
-      <link>/tags/zero-sum-game/</link>
+      <link>//localhost:1313/tags/zero-sum-game/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/zero-sum-game/</guid>
+      <guid>//localhost:1313/tags/zero-sum-game/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Heat Equation</title>
-      <link>/tags/heat-equation/</link>
+      <link>//localhost:1313/tags/heat-equation/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/heat-equation/</guid>
+      <guid>//localhost:1313/tags/heat-equation/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Interactive App</title>
-      <link>/tags/interactive-app/</link>
+      <link>//localhost:1313/tags/interactive-app/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/interactive-app/</guid>
+      <guid>//localhost:1313/tags/interactive-app/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Visualization</title>
-      <link>/tags/visualization/</link>
+      <link>//localhost:1313/tags/visualization/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/visualization/</guid>
+      <guid>//localhost:1313/tags/visualization/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Human-Limits</title>
-      <link>/tags/human-limits/</link>
+      <link>//localhost:1313/tags/human-limits/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/human-limits/</guid>
+      <guid>//localhost:1313/tags/human-limits/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Logarithms</title>
-      <link>/tags/logarithms/</link>
+      <link>//localhost:1313/tags/logarithms/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/logarithms/</guid>
+      <guid>//localhost:1313/tags/logarithms/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Scalability</title>
-      <link>/tags/scalability/</link>
+      <link>//localhost:1313/tags/scalability/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/scalability/</guid>
+      <guid>//localhost:1313/tags/scalability/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Thought-Experiment</title>
-      <link>/tags/thought-experiment/</link>
+      <link>//localhost:1313/tags/thought-experiment/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/thought-experiment/</guid>
+      <guid>//localhost:1313/tags/thought-experiment/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Pursuit</title>
-      <link>/tags/pursuit/</link>
+      <link>//localhost:1313/tags/pursuit/</link>
       <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/pursuit/</guid>
+      <guid>//localhost:1313/tags/pursuit/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Regular Expressions</title>
-      <link>/tags/regular-expressions/</link>
+      <link>//localhost:1313/tags/regular-expressions/</link>
       <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/regular-expressions/</guid>
+      <guid>//localhost:1313/tags/regular-expressions/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Games</title>
-      <link>/tags/games/</link>
+      <link>//localhost:1313/tags/games/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/games/</guid>
+      <guid>//localhost:1313/tags/games/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Pimp My Peon</title>
-      <link>/tags/pimp-my-peon/</link>
+      <link>//localhost:1313/tags/pimp-my-peon/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/pimp-my-peon/</guid>
+      <guid>//localhost:1313/tags/pimp-my-peon/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Warcraft 3</title>
-      <link>/tags/warcraft-3/</link>
+      <link>//localhost:1313/tags/warcraft-3/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/tags/warcraft-3/</guid>
+      <guid>//localhost:1313/tags/warcraft-3/</guid>
       <description></description>
       
     </item>

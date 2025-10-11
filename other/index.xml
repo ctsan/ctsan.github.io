@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Others on Christos Tsanikidis, PhD</title>
-    <link>/other/</link>
+    <link>//localhost:1313/other/</link>
     <description>Recent content in Others on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="/other/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="//localhost:1313/other/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>CheatsheetGPT</title>
-      <link>/other/the-wall/</link>
+      <link>//localhost:1313/other/the-wall/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/the-wall/</guid>
+      <guid>//localhost:1313/other/the-wall/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Parade</title>
-      <link>/other/mathematical-market/</link>
+      <link>//localhost:1313/other/mathematical-market/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-market/</guid>
+      <guid>//localhost:1313/other/mathematical-market/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical River</title>
-      <link>/other/mathematical-river/</link>
+      <link>//localhost:1313/other/mathematical-river/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-river/</guid>
+      <guid>//localhost:1313/other/mathematical-river/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Tapestry</title>
-      <link>/other/mathematical-tapestry/</link>
+      <link>//localhost:1313/other/mathematical-tapestry/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-tapestry/</guid>
+      <guid>//localhost:1313/other/mathematical-tapestry/</guid>
       <description></description>
       
     </item>

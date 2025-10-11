@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Regular Expressions on Christos Tsanikidis, PhD</title>
-    <link>/tags/regular-expressions/</link>
+    <link>//localhost:1313/tags/regular-expressions/</link>
     <description>Recent content in Regular Expressions on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sun, 09 Mar 2014 16:01:23 +0800</lastBuildDate><atom:link href="/tags/regular-expressions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Mar 2014 16:01:23 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/regular-expressions/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Regex Experimenting Platform</title>
-      <link>/project/regex-experimenter/</link>
+      <link>//localhost:1313/project/regex-experimenter/</link>
       <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/project/regex-experimenter/</guid>
+      <guid>//localhost:1313/project/regex-experimenter/</guid>
       <description></description>
       
     </item>

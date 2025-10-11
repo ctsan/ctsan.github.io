@@ -2,131 +2,131 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Christos Tsanikidis, PhD</title>
-    <link>/categories/</link>
+    <link>//localhost:1313/categories/</link>
     <description>Recent content in Categories on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Life</title>
-      <link>/categories/life/</link>
+      <link>//localhost:1313/categories/life/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/life/</guid>
+      <guid>//localhost:1313/categories/life/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Math</title>
-      <link>/categories/math/</link>
+      <link>//localhost:1313/categories/math/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/math/</guid>
+      <guid>//localhost:1313/categories/math/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Simulation</title>
-      <link>/categories/simulation/</link>
+      <link>//localhost:1313/categories/simulation/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/simulation/</guid>
+      <guid>//localhost:1313/categories/simulation/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Experiments</title>
-      <link>/categories/experiments/</link>
+      <link>//localhost:1313/categories/experiments/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/experiments/</guid>
+      <guid>//localhost:1313/categories/experiments/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Finance</title>
-      <link>/categories/finance/</link>
+      <link>//localhost:1313/categories/finance/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/finance/</guid>
+      <guid>//localhost:1313/categories/finance/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Data Visualization</title>
-      <link>/categories/data-visualization/</link>
+      <link>//localhost:1313/categories/data-visualization/</link>
       <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/data-visualization/</guid>
+      <guid>//localhost:1313/categories/data-visualization/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Proof-of-Concept</title>
-      <link>/categories/proof-of-concept/</link>
+      <link>//localhost:1313/categories/proof-of-concept/</link>
       <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/proof-of-concept/</guid>
+      <guid>//localhost:1313/categories/proof-of-concept/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Differential Game Theory</title>
-      <link>/categories/differential-game-theory/</link>
+      <link>//localhost:1313/categories/differential-game-theory/</link>
       <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/differential-game-theory/</guid>
+      <guid>//localhost:1313/categories/differential-game-theory/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Numerical Methods</title>
-      <link>/categories/numerical-methods/</link>
+      <link>//localhost:1313/categories/numerical-methods/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/numerical-methods/</guid>
+      <guid>//localhost:1313/categories/numerical-methods/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Art</title>
-      <link>/categories/art/</link>
+      <link>//localhost:1313/categories/art/</link>
       <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/art/</guid>
+      <guid>//localhost:1313/categories/art/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Educational Platform</title>
-      <link>/categories/educational-platform/</link>
+      <link>//localhost:1313/categories/educational-platform/</link>
       <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/educational-platform/</guid>
+      <guid>//localhost:1313/categories/educational-platform/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Game</title>
-      <link>/categories/game/</link>
+      <link>//localhost:1313/categories/game/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/categories/game/</guid>
+      <guid>//localhost:1313/categories/game/</guid>
       <description></description>
       
     </item>

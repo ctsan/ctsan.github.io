@@ -3,187 +3,187 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>/research/</loc>
+    <loc>//localhost:1313/research/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/about/</loc>
+    <loc>//localhost:1313/about/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/the-era-of-minimal-writing/</loc>
+    <loc>//localhost:1313/posts/the-era-of-minimal-writing/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/</loc>
+    <loc>//localhost:1313/posts/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/trading-bubbles/</loc>
+    <loc>//localhost:1313/posts/trading-bubbles/</loc>
     <lastmod>2025-07-27T14:47:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/mcmc/</loc>
+    <loc>//localhost:1313/posts/mcmc/</loc>
     <lastmod>2023-04-07T14:47:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/other/the-wall/</loc>
+    <loc>//localhost:1313/other/the-wall/</loc>
     <lastmod>2023-04-04T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/other/</loc>
+    <loc>//localhost:1313/other/</loc>
     <lastmod>2023-04-04T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/the-diffusion-of-discovery/</loc>
+    <loc>//localhost:1313/posts/the-diffusion-of-discovery/</loc>
     <lastmod>2023-03-03T23:47:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/modeling-stock-prices/</loc>
+    <loc>//localhost:1313/posts/modeling-stock-prices/</loc>
     <lastmod>2023-03-03T14:47:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/other/mathematical-market/</loc>
+    <loc>//localhost:1313/other/mathematical-market/</loc>
     <lastmod>2023-01-01T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/other/mathematical-river/</loc>
+    <loc>//localhost:1313/other/mathematical-river/</loc>
     <lastmod>2023-01-01T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/other/mathematical-tapestry/</loc>
+    <loc>//localhost:1313/other/mathematical-tapestry/</loc>
     <lastmod>2023-01-01T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/hidden-simplicity-principle/</loc>
+    <loc>//localhost:1313/posts/hidden-simplicity-principle/</loc>
     <lastmod>2025-07-27T19:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/modeling-and-simulating-a-pandemic/</loc>
+    <loc>//localhost:1313/posts/modeling-and-simulating-a-pandemic/</loc>
     <lastmod>2020-03-29T14:47:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/learn-by-generalizing/</loc>
+    <loc>//localhost:1313/posts/learn-by-generalizing/</loc>
     <lastmod>2018-02-04T17:50:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/creating-a-football-betting-game/</loc>
+    <loc>//localhost:1313/posts/creating-a-football-betting-game/</loc>
     <lastmod>2017-12-22T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/functional-approach-for-solving-equations/</loc>
+    <loc>//localhost:1313/posts/functional-approach-for-solving-equations/</loc>
     <lastmod>2017-12-05T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/counting-insight/</loc>
+    <loc>//localhost:1313/posts/counting-insight/</loc>
     <lastmod>2023-04-06T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/greek-mini-markets/</loc>
+    <loc>//localhost:1313/project/greek-mini-markets/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/</loc>
+    <loc>//localhost:1313/project/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/turkey-greece-range/</loc>
+    <loc>//localhost:1313/project/turkey-greece-range/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/bacu/</loc>
+    <loc>//localhost:1313/project/bacu/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/blind-hunter/</loc>
+    <loc>//localhost:1313/project/blind-hunter/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/black-scholes/</loc>
+    <loc>//localhost:1313/project/black-scholes/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/heat-equation/</loc>
+    <loc>//localhost:1313/project/heat-equation/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/posts/hierarchies/</loc>
+    <loc>//localhost:1313/posts/hierarchies/</loc>
     <lastmod>2023-04-10T15:43:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/mice-make-art/</loc>
+    <loc>//localhost:1313/project/mice-make-art/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/regex-experimenter/</loc>
+    <loc>//localhost:1313/project/regex-experimenter/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/project/warcraft-game/</loc>
+    <loc>//localhost:1313/project/warcraft-game/</loc>
     <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

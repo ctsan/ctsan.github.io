@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jump-Diffusion on Christos Tsanikidis, PhD</title>
-    <link>/tags/jump-diffusion/</link>
+    <link>//localhost:1313/tags/jump-diffusion/</link>
     <description>Recent content in Jump-Diffusion on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Fri, 03 Mar 2023 14:47:48 +0800</lastBuildDate><atom:link href="/tags/jump-diffusion/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Mar 2023 14:47:48 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/jump-diffusion/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Modeling stock prices with stochastic processes</title>
-      <link>/posts/modeling-stock-prices/</link>
+      <link>//localhost:1313/posts/modeling-stock-prices/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/modeling-stock-prices/</guid>
+      <guid>//localhost:1313/posts/modeling-stock-prices/</guid>
       <description></description>
       
     </item>

@@ -2,121 +2,121 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Math on Christos Tsanikidis, PhD</title>
-    <link>/categories/math/</link>
+    <link>//localhost:1313/categories/math/</link>
     <description>Recent content in Math on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="//localhost:1313/categories/math/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Shorting bubbles [a trading game]</title>
-      <link>/posts/trading-bubbles/</link>
+      <link>//localhost:1313/posts/trading-bubbles/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/trading-bubbles/</guid>
+      <guid>//localhost:1313/posts/trading-bubbles/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Drawing with Markov chain Monte Carlo</title>
-      <link>/posts/mcmc/</link>
+      <link>//localhost:1313/posts/mcmc/</link>
       <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/mcmc/</guid>
+      <guid>//localhost:1313/posts/mcmc/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Modeling stock prices with stochastic processes</title>
-      <link>/posts/modeling-stock-prices/</link>
+      <link>//localhost:1313/posts/modeling-stock-prices/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/modeling-stock-prices/</guid>
+      <guid>//localhost:1313/posts/modeling-stock-prices/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Parade</title>
-      <link>/other/mathematical-market/</link>
+      <link>//localhost:1313/other/mathematical-market/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-market/</guid>
+      <guid>//localhost:1313/other/mathematical-market/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical River</title>
-      <link>/other/mathematical-river/</link>
+      <link>//localhost:1313/other/mathematical-river/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-river/</guid>
+      <guid>//localhost:1313/other/mathematical-river/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Tapestry</title>
-      <link>/other/mathematical-tapestry/</link>
+      <link>//localhost:1313/other/mathematical-tapestry/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/other/mathematical-tapestry/</guid>
+      <guid>//localhost:1313/other/mathematical-tapestry/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Learning through generalization and exploration</title>
-      <link>/posts/learn-by-generalizing/</link>
+      <link>//localhost:1313/posts/learn-by-generalizing/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/learn-by-generalizing/</guid>
+      <guid>//localhost:1313/posts/learn-by-generalizing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Creating a profitable football betting game</title>
-      <link>/posts/creating-a-football-betting-game/</link>
+      <link>//localhost:1313/posts/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/creating-a-football-betting-game/</guid>
+      <guid>//localhost:1313/posts/creating-a-football-betting-game/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Functional approach for solving equations</title>
-      <link>/posts/functional-approach-for-solving-equations/</link>
+      <link>//localhost:1313/posts/functional-approach-for-solving-equations/</link>
       <pubDate>Tue, 05 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/functional-approach-for-solving-equations/</guid>
+      <guid>//localhost:1313/posts/functional-approach-for-solving-equations/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Counting sequences through compression</title>
-      <link>/posts/counting-insight/</link>
+      <link>//localhost:1313/posts/counting-insight/</link>
       <pubDate>Sun, 13 Aug 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/counting-insight/</guid>
+      <guid>//localhost:1313/posts/counting-insight/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Logarithmic counting</title>
-      <link>/posts/hierarchies/</link>
+      <link>//localhost:1313/posts/hierarchies/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/posts/hierarchies/</guid>
+      <guid>//localhost:1313/posts/hierarchies/</guid>
       <description></description>
       
     </item>
