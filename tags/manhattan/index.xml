@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Manhattan on Christos Tsanikidis, PhD</title>
+    <link>/tags/manhattan/</link>
+    <description>Recent content in Manhattan on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="/tags/manhattan/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Shorting bubbles [a trading game]</title>
+      <link>/posts/trading-bubbles/</link>
+      <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/trading-bubbles/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Drawing with Markov chain Monte Carlo</title>
+      <link>/posts/mcmc/</link>
+      <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/mcmc/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

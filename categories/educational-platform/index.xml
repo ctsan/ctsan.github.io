@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Educational Platform on Christos Tsanikidis, PhD</title>
+    <link>/categories/educational-platform/</link>
+    <description>Recent content in Educational Platform on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 09 Mar 2014 16:01:23 +0800</lastBuildDate><atom:link href="/categories/educational-platform/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Regex Experimenting Platform</title>
+      <link>/project/regex-experimenter/</link>
+      <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/regex-experimenter/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

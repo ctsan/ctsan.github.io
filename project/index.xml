@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Christos Tsanikidis, PhD</title>
+    <link>/project/</link>
+    <description>Recent content in Projects on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Mon, 19 Jun 2017 16:01:23 +0800</lastBuildDate><atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Athens mini-markets Voronoi</title>
+      <link>/project/greek-mini-markets/</link>
+      <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/greek-mini-markets/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Turkey to Greece missile range</title>
+      <link>/project/turkey-greece-range/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/turkey-greece-range/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Unified Terminal Experience, BACU</title>
+      <link>/project/bacu/</link>
+      <pubDate>Fri, 10 Feb 2017 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/bacu/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Blind Hunter</title>
+      <link>/project/blind-hunter/</link>
+      <pubDate>Sun, 06 Nov 2016 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/blind-hunter/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Black Scholes</title>
+      <link>/project/black-scholes/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/black-scholes/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Heat Equation PDE Simulation</title>
+      <link>/project/heat-equation/</link>
+      <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/heat-equation/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mice Make Art!</title>
+      <link>/project/mice-make-art/</link>
+      <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/mice-make-art/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Regex Experimenting Platform</title>
+      <link>/project/regex-experimenter/</link>
+      <pubDate>Sun, 09 Mar 2014 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/regex-experimenter/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Warcraft 3 Mod - Pimp my Peon</title>
+      <link>/project/warcraft-game/</link>
+      <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/warcraft-game/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

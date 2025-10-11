@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Christos Tsanikidis, PhD</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Mon, 19 Jun 2017 16:01:23 +0800</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Athens mini-markets Voronoi</title>
+      <link>/project/greek-mini-markets/</link>
+      <pubDate>Mon, 19 Jun 2017 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/greek-mini-markets/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Turkey to Greece missile range</title>
+      <link>/project/turkey-greece-range/</link>
+      <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/turkey-greece-range/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

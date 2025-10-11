@@ -1,0 +1,2070 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title>Modeling stock prices with stochastic processes &middot; Christos Tsanikidis, PhD</title>
+    <meta name="title" content="Modeling stock prices with stochastic processes &middot; Christos Tsanikidis, PhD">
+
+  
+  
+  <meta name="keywords" content="interactive-simulation,brownian-motion,geometric-brownian-motion,jump-diffusion,">
+  
+  
+  <link rel="canonical" href="/posts/modeling-stock-prices/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.5a424e9a428f11ef021560ef33d6a9f777045c931a565f183de5aac4a23a20bb8235337d7c63492578d2dc46187f65a43b64ae99ba9cc0f6eb184f21229235f7.css"
+    integrity="sha512-WkJOmkKPEe8CFWDvM9ap93cEXJMaVl8YPeWqxKI6ILuCNTN9fGNJJXjS3EYYf2WkO2SumbqcwPbrGE8hIpI19w==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.a187118b41a60744310065c567365de85730c8495301d0ebae41810cc6f7a47432b1de7d4f3b11338959f1ac50c266be6b4b73acf6bf770016eb59b602cc1aa0.js"
+      integrity="sha512-oYcRi0GmB0QxAGXFZzZd6FcwyElTAdDrrkGBDMb3pHQysd59TzsRM4lZ8axQwma&#43;a0tzrPa/dwAW61m2AswaoA=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="/posts/modeling-stock-prices/">
+  <meta property="og:site_name" content="Christos Tsanikidis, PhD">
+  <meta property="og:title" content="Modeling stock prices with stochastic processes">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-03T14:47:48+08:00">
+    <meta property="article:modified_time" content="2023-03-03T14:47:48+08:00">
+    <meta property="article:tag" content="Interactive-Simulation">
+    <meta property="article:tag" content="Brownian-Motion">
+    <meta property="article:tag" content="Geometric-Brownian-Motion">
+    <meta property="article:tag" content="Jump-Diffusion">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Modeling stock prices with stochastic processes">
+
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Modeling stock prices with stochastic processes",
+    "headline": "Modeling stock prices with stochastic processes",
+    
+    
+    "inLanguage": "en",
+    "url" : "\/posts\/modeling-stock-prices\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Christos Tsanikidis, PhD"
+    },
+    "copyrightYear": "2023",
+    "dateCreated": "2023-03-03T14:47:48\u002b08:00",
+    "datePublished": "2023-03-03T14:47:48\u002b08:00",
+    
+    "dateModified": "2023-03-03T14:47:48\u002b08:00",
+    
+    "keywords": ["interactive-simulation","brownian-motion","geometric-brownian-motion","jump-diffusion"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "212"
+  }]
+  </script>
+
+
+
+  
+  
+    <meta name="author" content="Christos Tsanikidis, PhD">
+  
+  
+    
+      
+        
+          <link href="https://github.com/ctsan" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://scholar.google.com/citations?hl=en&amp;user=a7gGMSQAAAAJ" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://linkedin.com/in/ctsanikidis" rel="me">
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    
+
+<script defer src="/js/auto-zen-mode.min.ced820a1513973a60afcaa778b2f8283a21b7052bf9d0796babd5381129e3b97.js" integrity="sha256-ztggoVE5c6YK/Kp3iy&#43;Cg6IbcFK/nQeWur1TgRKeO5c="></script>
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ]
+        });
+      });
+    </script>
+
+
+<script>
+  (function() {
+    let attempts = 0;
+    const maxAttempts = 50; 
+    const interval = setInterval(() => {
+      
+      const btn = document.getElementById('zen-mode-button')
+                 || document.querySelector('.zen-toggle button')
+                 || document.querySelector('[data-title-i18n-disable="Enable zen mode"]');
+      if (btn) {
+        
+        if (!document.body.classList.contains('zen-mode')) {
+          btn.click();
+        }
+        clearInterval(interval);
+      } else if (++attempts >= maxAttempts) {
+        
+        clearInterval(interval);
+      }
+    }, 100);
+  })();
+</script>
+
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div
+  class="fixed inset-x-0 min-h-[130px] opacity-65 pl-[24px] pr-[24px] bg-gradient-to-b from-neutral from-60% dark:from-neutral-800 to-transparent mix-blend-normal z-80"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px] z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative max-w-[64rem] ml-auto mr-auto">
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only">Christos Tsanikidis, PhD</span>
+          
+            <img
+              src="/img/logoloss.png"
+              width="512"
+              height="512"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="Christos Tsanikidis, PhD">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          Christos Tsanikidis, PhD
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/research/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Research">
+    Research
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="About">
+    About
+  </p>
+</a>
+
+
+
+      
+    
+
+    
+
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        <div class="flex items-center justify-center dark:hidden">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/research/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Research">
+      Research
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="About">
+      About
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.78ad5090e7c0c2533bac9dd23bdb1f723f834e5c3626627bd31017cc139ce0651b529877862129cee49e380ab2fdcd8baef28ae3e086bc54957fdaa7758775b2.js"
+  integrity="sha512-eK1QkOfAwlM7rJ3SO9sfcj&#43;DTlw2JmJ70xAXzBOc4GUbUph3hiEpzuSeOAqy/c2LrvKK4&#43;CGvFSVf9qndYd1sg=="
+  data-target-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+ 
+
+
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >Christos Tsanikidis, PhD</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/posts/modeling-stock-prices/"
+      >Modeling stock prices with stochastic processes</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Modeling stock prices with stochastic processes
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-03-03T14:47:48&#43;08:00">3 March 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+
+<script
+  type="text/javascript"
+  src="/js/zen-mode.min.2a0a1375509c03daf41c53a9831aa2d560895b7a2528c3eb3b56e7b11a135c7529e49727162a053b6193be8340270a8342f42c69f3d7e262ae54bc248eaac8f5.js"
+  integrity="sha512-KgoTdVCcA9r0HFOpgxqi1WCJW3olKMPrO1bnsRoTXHUp5JcnFioFO2GTvoNAJwqDQvQsafPX4mKuVLwkjqrI9Q=="></script>
+
+<span class="mb-[2px]">
+  <span
+    id="zen-mode-button"
+    class="text-lg hover:text-primary-500"
+    title="Enable zen mode"
+    data-title-i18n-disable="Enable zen mode"
+    data-title-i18n-enable="Disable zen mode">
+    <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg>
+  </span>
+
+</span>
+  </span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+
+        
+
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<style>
+/* Mobile-friendly button styling */
+.simulation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+    justify-content: center;
+}
+
+.simulation-controls button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 2px solid #007acc;
+    background-color: #007acc;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.simulation-controls button:hover {
+    background-color: #005fa3;
+    border-color: #005fa3;
+}
+
+.simulation-controls button:active {
+    transform: translateY(1px);
+}
+
+.simulation-selectors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+    justify-content: center;
+}
+
+.simulation-selectors > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.simulation-selectors label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.simulation-selectors select {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 140px;
+}
+
+/* Canvas container responsive styling */
+#canvas-container, #canvas-container-2 {
+    width: 100%;
+    height: 330px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .simulation-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .simulation-controls button {
+        min-width: 200px;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    .simulation-selectors {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .simulation-selectors select {
+        min-width: 200px;
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+    
+    #canvas-container, #canvas-container-2 {
+        height: 280px;
+        margin: 10px 0;
+    }
+}
+</style>
+<p>A common model for the evolution of the price of a financial security, such as a stock, is that it follows a brownian motion.</p>
+
+<h2 class="relative group">Arithmetic Brownian Motion 
+    <div id="arithmetic-brownian-motion" class="anchor"></div>
+    
+</h2>
+$$ dS = \mu dt + \sigma dZ\quad (ABM)$$<p>Let&rsquo;s look at our first few ABM. Use the following controls to interact with the simulation.</p>
+<div class="simulation-controls">
+    <button id="restartButton">Restart</button>
+    <button id="increaseButton">Increase Paths</button>
+    <button id="decreaseButton">Decrease Paths</button>
+    <button id="toggleOpacityButton">Toggle Opacity</button>
+    <button id="increaseDriftButton">Increase Drift</button>
+    <button id="reduceDriftButton">Reduce Drift</button>
+</div>
+<div id="canvas-container"></div>
+<p>After you have experimented with the above, let&rsquo;s make some additional observations.</p>
+<div class="simulation-controls">
+    <button id="toggleAverageButton">Toggle Average Path</button>
+    <button id="toggleTerminalButton">Toggle Terminal Distribution</button>
+</div>
+<div class="simulation-selectors">
+    <div>
+        <label for="drift">Drift:</label>
+        <select id="drift" onchange="changeDrift()">
+            <option value="constant">Constant</option>
+            <option value="sinusoidal">Sinusoidal</option>
+            <option value="sinusoidal_sign">Sinusoidal Sign</option>
+        </select>
+    </div>
+    <div>
+        <label for="volatility">Volatility:</label>
+        <select id="volatility" onchange="changeVolatility()">
+            <option value="constant">Constant</option>
+            <option value="sinusoidal">Sinusoidal</option>
+            <option value="sinusoidal_sign">Sinusoidal Sign</option>
+        </select>
+    </div>
+</div>
+<script>
+    function changeDrift() {
+let driftSelector = document.getElementById('drift');
+driftType = driftSelector.value;
+    initializePaths();
+        console.log(driftType)
+}
+
+function changeVolatility() {
+let volatilitySelector = document.getElementById('volatility');
+volatilityType = volatilitySelector.value;
+    initializePaths();
+        console.log(volatilityType)
+}
+
+
+
+function calculateDrift(time) {
+    let currentDrift = drift;
+    switch (driftType) {
+    case 'constant':
+    currentDrift = drift;
+    break;
+    case 'sinusoidal':
+    currentDrift = 0.25*Math.sin(0.05*time) + drift;
+    break;
+    case 'sinusoidal_sign':
+    currentDrift = 0.25*Math.sign(Math.sin(0.05*time)) + drift;
+    break;
+    }
+    return currentDrift;
+}
+
+function calculateVolatility(time) {
+    let currentVolatility = volatility;
+    switch (volatilityType) {
+    case 'constant':
+    currentVolatility = volatility;
+    break;
+    case 'sinusoidal':
+    currentVolatility = volatility * 0.6 * Math.sin(0.05*time) + volatility;
+    break;
+    case 'sinusoidal_sign':
+    currentVolatility = volatility * 0.6 * Math.sign(Math.sin(0.05*time)) + volatility;
+    break;
+    }
+    return currentVolatility;
+}
+
+            let canvas;
+            let width, height;
+            let delta = 1;
+            let paths = [];
+let show_quartiles = true;
+
+            let pathHeight;
+            let points = 1;
+            let initprice = 0;
+            let prices = [];
+            let numPaths = 20; // Change this to control the number of paths
+            let showAveragePath = false;
+            let showTerminalDistribution = false;
+            let drift = 0.0;
+            let volatility = 1.2;
+            let opacityToggle = 100;
+            colors = ['black'];
+            let driftType = 'constant';
+            let volatilityType = 'constant';
+
+            function setup() {
+                let canvasContainer = document.getElementById('canvas-container');
+                width = canvasContainer.offsetWidth;
+                height = Math.max(canvasContainer.offsetHeight, 250); // Ensure minimum height
+                canvas = createCanvas(width, height);
+                canvas.parent('canvas-container');
+
+                // Adjust delta based on screen size for better mobile experience
+                if (width < 600) {
+                    delta = 0.8; // Smaller delta for mobile screens
+                } else {
+                    delta = 1; // Default delta for larger screens
+                }
+
+                pathHeight = height / 2;
+                initializePaths();
+            }
+
+            function draw() {
+                background(255);
+                updatePaths();
+            }
+
+  function initializePaths() {
+
+    paths = [];
+    prices = [];
+    points = 1;
+    let startY = height / 2;
+    for (let j = 0; j < numPaths; j++) {
+        let path = [];
+        paths.push(path);
+        prices.push([initprice]);
+        for (let i = 1; i <= points; i++) {
+            let point = new p5.Vector(delta * i, startY);
+            path.push(point);
+        }
+    }
+    if (showAveragePath) {
+        paths.push([]); // Initialize the average path
+        let averagePoint = new p5.Vector(delta * points, height / 2);
+        paths[numPaths].push(averagePoint);
+    }
+}
+function drawQuartiles(time) {
+    let sigma_values = [1, 2, 3, 4];
+    let opacity = 0.1;
+
+    for (let sigma of sigma_values) {
+        let upperBound = [];
+        let lowerBound = [];
+
+        let aggregateDrift = 0;
+        let cumulativeVolatility = 0;
+
+
+        for (let i = 0; i <= time; i++) {
+            let x = delta * i;
+            aggregateDrift += calculateDrift(i);
+            //aggregateVolatility += calculateVolatility(i);
+            cumulativeVolatility += calculateVolatility(i);
+            let averageVolatility = cumulativeVolatility / (i + 1);
+
+            let upperY = height / 2 - (aggregateDrift + sigma * averageVolatility * Math.sqrt(i) - initprice);
+            let lowerY = height / 2 - (aggregateDrift - sigma * averageVolatility * Math.sqrt(i) - initprice);
+            upperBound.push(new p5.Vector(x, upperY));
+            lowerBound.push(new p5.Vector(x, lowerY));
+        }
+
+        let currentColor = color(0, 0, 255);
+        currentColor.setAlpha(opacity * 255);
+        fill(currentColor);
+        noStroke();
+
+        beginShape();
+        for (let i = 0; i < upperBound.length; i++) {
+            vertex(upperBound[i].x, upperBound[i].y);
+        }
+        for (let i = lowerBound.length - 1; i >= 0; i--) {
+            vertex(lowerBound[i].x, lowerBound[i].y);
+        }
+        endShape(CLOSE);
+    }
+}
+
+function updatePaths() {
+  if (points < (width - 40) / delta) {
+        points += 1;
+        let averagePrices = 0;
+
+        for (let j = 0; j < numPaths; j++) {
+            let currentDrift = calculateDrift(points);
+            let currentVolatility = calculateVolatility(points);
+
+            prices[j].push(prices[j][prices[j].length - 1] + randn_bm() * currentVolatility + currentDrift);
+            let point = new p5.Vector(delta * points, height / 2 - (prices[j][prices[j].length - 1] - initprice));
+            paths[j].push(point);
+            averagePrices += prices[j][prices[j].length - 1];
+        }
+        averagePrices /= numPaths;
+
+        if (showAveragePath) {
+            let averagePoint = new p5.Vector(delta * points, height / 2 - (averagePrices - initprice));
+            paths[numPaths].push(averagePoint);
+        }
+    }
+
+    // if (points < (width-40)/ delta) {
+    //     points += 1;
+    //     let averagePrices = 0;
+    //     for (let j = 0; j < numPaths; j++) {
+    //         prices[j].push(prices[j][prices[j].length - 1] + randn_bm() + drift);
+    //         let point = new p5.Vector(delta * points, height / 2 - (prices[j][prices[j].length - 1] - initprice));
+    //         paths[j].push(point);
+    //         averagePrices += prices[j][prices[j].length - 1];
+    //     }
+    //     averagePrices /= numPaths;
+
+    //     if (showAveragePath) {
+    //         let averagePoint = new p5.Vector(delta * points, height / 2 - (averagePrices - initprice));
+    //         paths[numPaths].push(averagePoint);
+    //     }
+
+    // }
+
+    for (let j = 0; j < (showAveragePath ? numPaths + 1 : numPaths); j++) {
+        if (showAveragePath && j === numPaths) {
+            stroke('red');
+            strokeWeight(2);
+        } else {
+            let currentColor = color(colors[j % colors.length]);
+            currentColor.setAlpha(opacityToggle);
+            stroke(currentColor);
+            strokeWeight(1);
+        }
+        noFill();
+        beginShape();
+        for (let i = 0; i < paths[j].length; i++) {
+            vertex(paths[j][i].x, paths[j][i].y);
+        }
+        endShape();
+    }
+
+    if (showTerminalDistribution) {
+        let aggregateDrift = 0;
+        let cumulativeVolatility = 0;
+        
+        for (let i = 1; i <= points; i++) {
+            aggregateDrift += calculateDrift(i);
+            cumulativeVolatility += calculateVolatility(i);
+        }
+        
+        let mean = aggregateDrift;
+        let stdDev = cumulativeVolatility / (points + 1) * Math.sqrt(points);
+        for (let i = -width; i < width; i++) {
+            let x = i;
+            let y = 30*(normalPDF(x, mean, stdDev))/(normalPDF(mean, mean, stdDev));
+            stroke('blue');
+            if (y<0.01) { continue}
+            line(points*delta+2,-x+height/2, 2+points*delta+y,-x+height/2);
+        }
+    }
+    // if (showTerminalDistribution) {
+    //     let mean = drift * points;
+    //     console.log(mean)
+    //     let stdDev = Math.sqrt(points);
+    //     for (let i = -width; i < width; i++) {
+    //         let x = i;
+    //         let y = 30*(normalPDF(x, mean, stdDev))/(normalPDF(mean, mean, stdDev));
+    //         stroke('blue');
+    //         if (y<0.01) { continue}
+    //         line(points*delta+2,-x+height/2, 2+points*delta+y,-x+height/2);
+    //     }
+    // }
+
+        if (show_quartiles) {
+            drawQuartiles(points);
+        }
+}
+
+function normalPDF(x, mean, stdDev) {
+    let exponent = -Math.pow(x - mean, 2) / (2 * Math.pow(stdDev, 2));
+    let normalization = 1 / (stdDev * Math.sqrt(2 * Math.PI));
+    return normalization * Math.exp(exponent);
+}
+            function randn_bm() {
+                let u = 0, v = 0;
+                while (u === 0) u = Math.random(); //Converting [0,1) to ( 0,1)
+              while (v === 0) v = Math.random();
+              return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+            }
+
+               function windowResized() {
+            let canvasContainer = document.getElementById('canvas-container');
+            if (canvasContainer) {
+                width = canvasContainer.offsetWidth;
+                height = Math.max(canvasContainer.offsetHeight, 250);
+                resizeCanvas(width, height);
+                
+                // Adjust delta based on screen size
+                if (width < 600) {
+                    delta = 0.8; // Smaller delta for mobile screens
+                } else {
+                    delta = 1; // Default delta for larger screens
+                }
+                
+                pathHeight = height / 2;
+                initializePaths();
+            }
+        }
+
+        // Event listeners for the buttons
+        document.getElementById("increaseButton").addEventListener("click", function () {
+            numPaths=numPaths+5;
+            initializePaths();
+        });
+        document.getElementById("restartButton").addEventListener("click", function () {
+            initializePaths();
+        });
+
+        document.getElementById("decreaseButton").addEventListener("click", function () {
+            if (numPaths > 0) {
+                numPaths=max(1,numPaths-5);
+                initializePaths();
+            }
+        });
+
+document.getElementById("toggleOpacityButton").addEventListener("click", function () {
+    opacityToggle = opacityToggle === 40 ? 100 : 40;
+});
+
+document.getElementById("increaseDriftButton").addEventListener("click", function () {
+    drift += 0.01;
+    console.log(drift)
+    initializePaths();
+});
+document.getElementById("reduceDriftButton").addEventListener("click", function () {
+    drift -= 0.01;
+    console.log(drift)
+    initializePaths();
+});
+
+document.getElementById("toggleAverageButton").addEventListener("click", function () {
+    showAveragePath = !showAveragePath;
+    initializePaths();
+});
+
+document.getElementById("toggleTerminalButton").addEventListener("click", function () {
+    showTerminalDistribution = !showTerminalDistribution;
+    initializePaths();
+    //resetSimulation();
+});
+
+</script>
+<div id="input1"></div>
+<div id="tester"></div>
+<p>ABM, is not appropriate for modeling stocks. For example the price might evolve to negative values. This, along with other issues motivates the introduction of GBM.</p>
+
+<h2 class="relative group">Geometric Brownian Motion 
+    <div id="geometric-brownian-motion" class="anchor"></div>
+    
+</h2>
+<p>The Geometric Brownian Motion is a stochastic process where the diffusion is proportional to the current price of the process (that is, the security). Moves are in percentage terms. Click to observe the evolution of geometric brownian motions. The terminal distribution in this case becomes a lognormal and the price never becomes 0.</p>
+$$ \frac{dS}{S}= \mu dt + \sigma dZ\quad (GBM)$$<div id="canvas-container-2"></div>
+
+<h2 class="relative group">Jump Diffusion and Other Models 
+    <div id="jump-diffusion-and-other-models" class="anchor"></div>
+    
+</h2>
+<p>There are numerous other models that one can adopt for stock prices. Stay tuned for the simulation of more models, including Jump Diffusion and Local Volatility models.</p>
+<script>
+
+function normalCDF(x) {
+    return (1.0 + erf(x / Math.sqrt(2))) / 2;
+}
+
+function erf(x) {
+    let sign = (x >= 0) ? 1 : -1;
+    x = Math.abs(x);
+
+    let a1 = 0.254829592;
+    let a2 = -0.284496736;
+    let a3 = 1.421413741;
+    let a4 = -1.453152027;
+    let a5 = 1.061405429;
+    let p = 0.3275911;
+
+    let t = 1.0 / (1.0 + p * x);
+    let y = 1.0 - ((((a5 * t + a4) * t) + a3) * t + a2) * t * Math.exp(-x * x);
+
+    return sign * y; // Corrected: Multiply sign with the result
+}
+
+function randn_bm() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random(); //Converting [0,1) to ( 0,1)
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+}
+
+function logNormalPDF(x, mean, stdDev) {
+    let exponent = -Math.pow(Math.log(x) - mean, 2) / (2 * Math.pow(stdDev, 2));
+    let normalization = 1 / (x * stdDev * Math.sqrt(2 * Math.PI));
+    return normalization * Math.exp(exponent);
+}
+function normalPDF(x, mean, stdDev) {
+    let exponent = -Math.pow(x - mean, 2) / (2 * Math.pow(stdDev, 2));
+    let normalization = 1 / (stdDev * Math.sqrt(2 * Math.PI));
+    return normalization * Math.exp(exponent);
+}
+
+const sketch = (p,canvasParent,process) => {
+
+class PauseButton {
+  constructor(x, y, size) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.active = false;
+  }
+
+  display() {
+    p.fill(200);
+    p.rect(this.x, this.y, this.size, this.size);
+    p.fill(0);
+    p.textSize(14);
+    p.text("||", this.x + this.size / 2 - 5, this.y + this.size / 2 + 5);
+  }
+
+  contains(px, py) {
+    return (px >= this.x && px <= this.x + this.size && py >= this.y && py <= this.y + this.size);
+  }
+}
+
+    let paused = true;
+    let canvas, overlay, simulation, K_strike=100;
+    let volatility = 0.30;
+    let width, height, delta = 1.5;
+    let paths = [], pathHeight, points = 1, initprice = 100, prices = [], numPaths = 300;
+    let showAveragePath = false, showTerminalDistribution = true, drift = 0.000, opacityToggle = 50;
+    let coloringMode = 2;
+    let colors = ['black'];
+    let timeScaleFactor;
+
+    let pauseButton;
+    let strikeControl;
+    let pathCache; 
+    p.setup = () => {
+        setupCanvas();
+        pathCache = p.createGraphics(width, height); // Initialize the pathCache graphics object
+        terminalCache = p.createGraphics(width, height); // Initialize the pathCache graphics object
+        initializePaths();
+        createOverlay();
+        timeScaleFactor = 1 / (width - 40); // Scale factor for one year (assuming 252 trading days per year)
+                // Initialize the pause button and strike control
+        pauseButton = new PauseButton(10, 10, 20);
+    };
+    
+    // Add window resize handling for the GBM sketch
+    p.windowResized = () => {
+        let canvasContainer = document.getElementById(canvasParent);
+        if (canvasContainer) {
+            width = canvasContainer.offsetWidth;
+            height = Math.max(canvasContainer.offsetHeight, 250);
+            p.resizeCanvas(width, height);
+            
+            // Adjust delta based on screen size
+            if (width < 600) {
+                delta = 1.0; // Smaller delta for mobile screens
+            } else {
+                delta = 1.5; // Default delta for larger screens
+            }
+            
+            pathHeight = height / 2;
+            pathCache = p.createGraphics(width, height);
+            terminalCache = p.createGraphics(width, height);
+            timeScaleFactor = 1 / (width - 40);
+            initializePaths();
+            createOverlay();
+        }
+    };
+
+
+    p.mouseClicked = () => {
+        // Check if the user clicked the pause button
+        if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
+            togglePause();
+        }
+    };
+    p.draw = () => {
+    p.background(255);
+    if (!paused) {
+        updatePaths();
+    } else {
+        drawOverlay();
+    }
+
+    //pauseButton.display();
+    };
+
+    function setupCanvas() {
+        let canvasContainer = document.getElementById(canvasParent);
+        width = canvasContainer.offsetWidth;
+        height = Math.max(canvasContainer.offsetHeight, 250); // Ensure minimum height
+        canvas = p.createCanvas(width, height);
+        canvas.parent(canvasParent);
+        
+        // Adjust delta based on screen size for better mobile experience
+        if (width < 600) {
+            delta = 1.0; // Smaller delta for mobile screens
+        } else {
+            delta = 1.5; // Default delta for larger screens
+        }
+        
+        pathHeight = height / 2;
+    }
+
+    function createOverlay() {
+        overlay = p.createGraphics(width, height);
+        overlay.fill(255, 255, 255, 127);
+        overlay.rect(0, 0, width, height);
+        overlay.textSize(32);
+        overlay.textAlign(p.CENTER, p.CENTER);
+        overlay.fill(0);
+        overlay.text("Simulation Paused. Click to Resume", width / 2, height / 2);
+    }
+
+    function togglePause() {
+        paused = !paused;
+        if (!paused) {
+            p.loop();
+        } else {
+            p.noLoop();
+            drawOverlay();
+        }
+    }
+
+function drawOverlay() {
+    p.image(pathCache, 0, 0); // Display the cached image when paused
+    p.image(terminalCache, 0, 0); // Display the cached image when paused
+    p.image(overlay, 0, 0); // Display the overlay
+}
+
+     function initializePaths() {
+        pathCache.clear();
+        paths = [];
+        prices = [];
+        points = 1;
+        let startY = height / 2;
+        for (let j = 0; j < numPaths; j++) {
+            let path = [];
+            paths.push(path);
+            prices.push([initprice]);
+            for (let i = 1; i <= points; i++) {
+                let point = new p5.Vector(delta * i, startY);
+                path.push(point);
+            }
+        }
+        if (showAveragePath) {
+            paths.push([]); // Initialize the average path
+            let averagePoint = new p5.Vector(delta * points, height / 2);
+            paths[numPaths].push(averagePoint);
+        }
+    }
+
+    function updatePaths() {
+        if (points < (width - 40) / delta) {
+            updatePoints();
+            drawShapes(pathCache); // Draw shapes to the pathCache graphics object
+            p.image(pathCache, 0, 0); // Display the cached image
+        } else {
+            p.image(pathCache, 0, 0); // Display the cached image when paths are no longer being updated
+        }
+
+        if (showTerminalDistribution) {
+            drawTerminalDistribution();
+            p.image(terminalCache,0,0)
+        }
+    }
+
+function updatePoints() {
+    let volatilitySquared = Math.pow(volatility, 2);
+    let currentDelta = delta * timeScaleFactor;
+    let sqrtDelta = Math.sqrt(currentDelta);
+    if (points < (width - 40) / delta) {
+        points += 1;
+        let averagePrices = 0;
+        for (let j = 0; j < numPaths; j++) {
+            // Geometric Brownian motion update
+
+        if (process === "ABM") {
+          // Arithmetic Brownian Motion update
+          prices[j].push(prices[j][prices[j].length - 1] + drift * currentDelta + volatility * randn_bm() * sqrtDelta);
+        } else if (process === "GBM_jump_diffusion") {
+          // Geometric Brownian Motion with Jump Diffusion update
+          let jump = Math.random() < 0.005 ? (Math.random()-0.5) * 0.3 : 0;
+          prices[j].push(prices[j][prices[j].length - 1] * Math.exp((drift - 0.5 * volatilitySquared) * currentDelta + volatility * randn_bm() * sqrtDelta + jump));
+        } else {
+          // Geometric Brownian Motion update (default)
+          prices[j].push(prices[j][prices[j].length - 1] * Math.exp((drift - 0.5 * volatilitySquared) * currentDelta + volatility * randn_bm() * sqrtDelta));
+        }
+
+            let point = new p5.Vector(delta * points, height / 2 - (prices[j][prices[j].length - 1] - initprice));
+            paths[j].push(point);
+            averagePrices += prices[j][prices[j].length - 1];
+        }
+        averagePrices /= numPaths;
+
+        if (showAveragePath) {
+            let averagePoint = new p5.Vector(delta * points, height / 2 - (averagePrices - initprice));
+            paths[numPaths].push(averagePoint);
+        }
+    }
+}
+
+function drawShapes(targetGraphics,how_many) {
+    if (how_many==='all') { 
+        targetGraphics.clear()
+    }
+    targetGraphics.push();
+    targetGraphics.background(255, 255, 255, 0);
+
+    let redColor = p.color('red');
+    let greenColor = p.color('green');
+    let blueColor = p.color('blue');
+    let rel;
+
+    //let coloringMode = 2; // Set the coloring mode here: 1, 2, or 3
+
+    let K = K_strike;
+    //console.log(K)
+    let r = 0.01;
+
+    for (let j = 0; j < (showAveragePath ? numPaths + 1 : numPaths); j++) {
+        if (how_many==="all") { 
+            rel = 1
+        }
+        else {
+            rel = paths[j].length-1
+        }
+        for (let i = rel; i < paths[j].length; i++) {
+            targetGraphics.beginShape();
+            targetGraphics.strokeWeight(1);
+
+            if (showAveragePath && j === numPaths) {
+                targetGraphics.stroke(redColor);
+            } else {
+                let price = prices[j][i];
+                let remainingTime = 1 - (delta * i * timeScaleFactor); // Calculate the remaining time to expiry
+
+                let interpolatedColor;
+                interpolatedColor = p.color('black');
+                interpolatedColor.setAlpha(opacityToggle); // Set opacity for the interpolated color
+
+                targetGraphics.stroke(interpolatedColor);
+            }
+
+            targetGraphics.vertex(paths[j][i - 1].x, paths[j][i - 1].y);
+            targetGraphics.vertex(paths[j][i].x, paths[j][i].y);
+            targetGraphics.endShape();
+        }
+    }
+    targetGraphics.pop();
+}
+
+//function drawTerminalDistribution() {
+//    let mean = Math.log(initprice) + (drift - 0.5 * Math.pow(0.01, 2)) * points * delta* timeScaleFactor;
+//    let stdDev = volatility* Math.sqrt(points * delta * timeScaleFactor);
+//    let scale = 1; // Adjust this scale factor for better visualization
+//
+//    for (let i = -initprice * scale + 1; i < width; i += 1) {
+//        let x = i / scale;
+//        let price = initprice + x;
+//        let y = 30 * scale * logNormalPDF(price, mean, stdDev) / logNormalPDF(Math.exp(mean), mean, stdDev);
+//        p.stroke('blue');
+//        if (y < 0.13) { continue }
+//
+// p.line(points * delta + 2, height / 2 - x, points * delta + 2 + y, height / 2 - x);
+//}
+//}
+
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+function drawTerminalDistribution() {
+terminalCache.clear()
+  let scale = 1; // Adjust this scale factor for better visualization
+
+  for (let i = -initprice * scale + 1; i < width; i += 1) {
+    let x = i / scale;
+    let price = initprice + x;
+    let y;
+
+    switch (process) {
+      case "ABM":
+        let meanABM = initprice + (drift * points * delta * timeScaleFactor);
+        let stdDevABM = volatility * Math.sqrt(points * delta * timeScaleFactor);
+        y = 30 * scale * normalPDF(price, meanABM, stdDevABM) / normalPDF(meanABM, meanABM, stdDevABM);
+        break;
+      case "GBM_jump_diffusion":
+        let maxJumps = 10; // You can increase this number to account for more jumps
+        y = 0;
+        let lambda = 0.5;
+        let jumpMean = -1;
+        let jumpStdDev = 0.0;
+
+        for (let jumps = 0; jumps <= maxJumps; jumps++) {
+          let jumpProb = Math.exp(-lambda * points * delta * timeScaleFactor) * Math.pow(lambda * points * delta * timeScaleFactor, jumps) / factorial(jumps);
+          let jumpEffect = Math.exp(jumps * (jumpMean + 0.5 * Math.pow(jumpStdDev, 2)));
+          let meanGBMJD = Math.log(initprice * jumpEffect) + (drift - 0.5 * Math.pow(volatility, 2)) * points * delta * timeScaleFactor;
+          let stdDevGBMJD = Math.sqrt(Math.pow(volatility, 2) * points * delta * timeScaleFactor + jumps * Math.pow(jumpStdDev, 2));
+          y += jumpProb * (30 * scale * logNormalPDF(price, meanGBMJD, stdDevGBMJD) / logNormalPDF(Math.exp(meanGBMJD), meanGBMJD, stdDevGBMJD));
+        }
+        break;
+      default: // GBM
+        let meanGBM = Math.log(initprice) + (drift - 0.5 * Math.pow(volatility, 2)) * points * delta * timeScaleFactor;
+        let stdDevGBM = volatility * Math.sqrt(points * delta * timeScaleFactor);
+        y = 30 * scale * logNormalPDF(price, meanGBM, stdDevGBM) / logNormalPDF(Math.exp(meanGBM), meanGBM, stdDevGBM);
+    }
+
+    terminalCache.stroke('blue');
+    if (y < 0.05) { continue }
+
+    terminalCache.line(points * delta + 2, height / 2 - x, points * delta + 2 + y, height / 2 - x);
+  }
+}
+
+
+
+};
+new p5((p)=> sketch(p,'canvas-container-2', 'GBM'));
+new p5((p)=> sketch(p,'canvas-container-3','GBM_jump_diffusion'));
+
+
+</script>
+
+          
+          
+          
+        </div>
+
+        
+
+        
+
+        
+
+        
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+  <a href="/posts/modeling-and-simulating-a-pandemic/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/modeling-and-simulating-a-pandemic/">
+          Modeling and simulating pandemic spread
+        </div>
+      
+
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2020-03-29T14:47:48&#43;08:00">29 March 2020</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+    </div>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
+
+      
+        
+
+  <a href="/posts/creating-a-football-betting-game/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/creating-a-football-betting-game/">
+          Creating a profitable football betting game
+        </div>
+      
+
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2017-12-22T15:43:48&#43;08:00">22 December 2017</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+    </div>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
+
+      
+        
+
+  <a href="/other/mathematical-market/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/other/mathematical-market/">
+          Mathematical Parade
+        </div>
+      
+
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-01-01T15:43:48&#43;08:00">1 January 2023</time>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+    </div>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
+
+      
+    </section>
+  
+
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts/modeling-stock-prices.md"
+          data-oid-likes="likes_posts/modeling-stock-prices.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/hidden-simplicity-principle/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Latent simplicity in observable phenomena</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2020-05-07T19:00:00&#43;08:00">7 May 2020</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/the-diffusion-of-discovery/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >The diffusion of discovery</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-03-03T23:47:48&#43;08:00">3 March 2023</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Christos Tsanikidis, PhD
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

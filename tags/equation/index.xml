@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Equation on Christos Tsanikidis, PhD</title>
+    <link>/tags/equation/</link>
+    <description>Recent content in Equation on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 15:43:48 +0800</lastBuildDate><atom:link href="/tags/equation/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mathematical Parade</title>
+      <link>/other/mathematical-market/</link>
+      <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-market/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mathematical River</title>
+      <link>/other/mathematical-river/</link>
+      <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-river/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mathematical Tapestry</title>
+      <link>/other/mathematical-tapestry/</link>
+      <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-tapestry/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

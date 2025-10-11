@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mental-Models on Christos Tsanikidis, PhD</title>
+    <link>/tags/mental-models/</link>
+    <description>Recent content in Mental-Models on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Thu, 07 May 2020 19:00:00 +0800</lastBuildDate><atom:link href="/tags/mental-models/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Latent simplicity in observable phenomena</title>
+      <link>/posts/hidden-simplicity-principle/</link>
+      <pubDate>Thu, 07 May 2020 19:00:00 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/posts/hidden-simplicity-principle/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

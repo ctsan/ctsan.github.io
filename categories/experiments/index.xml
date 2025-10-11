@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experiments on Christos Tsanikidis, PhD</title>
+    <link>/categories/experiments/</link>
+    <description>Recent content in Experiments on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Tue, 04 Apr 2023 15:43:48 +0800</lastBuildDate><atom:link href="/categories/experiments/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CheatsheetGPT</title>
+      <link>/other/the-wall/</link>
+      <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/the-wall/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mice Make Art!</title>
+      <link>/project/mice-make-art/</link>
+      <pubDate>Mon, 23 Nov 2015 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/mice-make-art/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

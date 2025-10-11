@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pimp My Peon on Christos Tsanikidis, PhD</title>
+    <link>/tags/pimp-my-peon/</link>
+    <description>Recent content in Pimp My Peon on Christos Tsanikidis, PhD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
+    <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
+    <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
+    <lastBuildDate>Wed, 10 Jun 2009 16:01:23 +0800</lastBuildDate><atom:link href="/tags/pimp-my-peon/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Warcraft 3 Mod - Pimp my Peon</title>
+      <link>/project/warcraft-game/</link>
+      <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/project/warcraft-game/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

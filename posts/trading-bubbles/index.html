@@ -1,0 +1,2698 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title>Shorting bubbles [a trading game] &middot; Christos Tsanikidis, PhD</title>
+    <meta name="title" content="Shorting bubbles [a trading game] &middot; Christos Tsanikidis, PhD">
+
+  
+  
+  <meta name="keywords" content="interactive-simulation,mcmc,greece,USA,Manhattan,metropolis-hastings,">
+  
+  
+  <link rel="canonical" href="/posts/trading-bubbles/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.5a424e9a428f11ef021560ef33d6a9f777045c931a565f183de5aac4a23a20bb8235337d7c63492578d2dc46187f65a43b64ae99ba9cc0f6eb184f21229235f7.css"
+    integrity="sha512-WkJOmkKPEe8CFWDvM9ap93cEXJMaVl8YPeWqxKI6ILuCNTN9fGNJJXjS3EYYf2WkO2SumbqcwPbrGE8hIpI19w==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.a187118b41a60744310065c567365de85730c8495301d0ebae41810cc6f7a47432b1de7d4f3b11338959f1ac50c266be6b4b73acf6bf770016eb59b602cc1aa0.js"
+      integrity="sha512-oYcRi0GmB0QxAGXFZzZd6FcwyElTAdDrrkGBDMb3pHQysd59TzsRM4lZ8axQwma&#43;a0tzrPa/dwAW61m2AswaoA=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="/posts/trading-bubbles/">
+  <meta property="og:site_name" content="Christos Tsanikidis, PhD">
+  <meta property="og:title" content="Shorting bubbles [a trading game]">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-27T14:47:48+08:00">
+    <meta property="article:modified_time" content="2025-07-27T14:47:48+08:00">
+    <meta property="article:tag" content="Interactive-Simulation">
+    <meta property="article:tag" content="Mcmc">
+    <meta property="article:tag" content="Greece">
+    <meta property="article:tag" content="USA">
+    <meta property="article:tag" content="Manhattan">
+    <meta property="article:tag" content="Metropolis-Hastings">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Shorting bubbles [a trading game]">
+
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Shorting bubbles [a trading game]",
+    "headline": "Shorting bubbles [a trading game]",
+    
+    
+    "inLanguage": "en",
+    "url" : "\/posts\/trading-bubbles\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Christos Tsanikidis, PhD"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-07-27T14:47:48\u002b08:00",
+    "datePublished": "2025-07-27T14:47:48\u002b08:00",
+    
+    "dateModified": "2025-07-27T14:47:48\u002b08:00",
+    
+    "keywords": ["interactive-simulation","mcmc","greece","USA","Manhattan","metropolis-hastings"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "260"
+  }]
+  </script>
+
+
+
+  
+  
+    <meta name="author" content="Christos Tsanikidis, PhD">
+  
+  
+    
+      
+        
+          <link href="https://github.com/ctsan" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://scholar.google.com/citations?hl=en&amp;user=a7gGMSQAAAAJ" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://linkedin.com/in/ctsanikidis" rel="me">
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    
+
+<script defer src="/js/auto-zen-mode.min.ced820a1513973a60afcaa778b2f8283a21b7052bf9d0796babd5381129e3b97.js" integrity="sha256-ztggoVE5c6YK/Kp3iy&#43;Cg6IbcFK/nQeWur1TgRKeO5c="></script>
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ]
+        });
+      });
+    </script>
+
+
+<script>
+  (function() {
+    let attempts = 0;
+    const maxAttempts = 50; 
+    const interval = setInterval(() => {
+      
+      const btn = document.getElementById('zen-mode-button')
+                 || document.querySelector('.zen-toggle button')
+                 || document.querySelector('[data-title-i18n-disable="Enable zen mode"]');
+      if (btn) {
+        
+        if (!document.body.classList.contains('zen-mode')) {
+          btn.click();
+        }
+        clearInterval(interval);
+      } else if (++attempts >= maxAttempts) {
+        
+        clearInterval(interval);
+      }
+    }, 100);
+  })();
+</script>
+
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div
+  class="fixed inset-x-0 min-h-[130px] opacity-65 pl-[24px] pr-[24px] bg-gradient-to-b from-neutral from-60% dark:from-neutral-800 to-transparent mix-blend-normal z-80"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px] z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative max-w-[64rem] ml-auto mr-auto">
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only">Christos Tsanikidis, PhD</span>
+          
+            <img
+              src="/img/logoloss.png"
+              width="512"
+              height="512"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="Christos Tsanikidis, PhD">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          Christos Tsanikidis, PhD
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/research/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Research">
+    Research
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="About">
+    About
+  </p>
+</a>
+
+
+
+      
+    
+
+    
+
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        <div class="flex items-center justify-center dark:hidden">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/research/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Research">
+      Research
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="About">
+      About
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.78ad5090e7c0c2533bac9dd23bdb1f723f834e5c3626627bd31017cc139ce0651b529877862129cee49e380ab2fdcd8baef28ae3e086bc54957fdaa7758775b2.js"
+  integrity="sha512-eK1QkOfAwlM7rJ3SO9sfcj&#43;DTlw2JmJ70xAXzBOc4GUbUph3hiEpzuSeOAqy/c2LrvKK4&#43;CGvFSVf9qndYd1sg=="
+  data-target-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+ 
+
+
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >Christos Tsanikidis, PhD</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/posts/trading-bubbles/"
+      >Shorting bubbles [a trading game]</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Shorting bubbles [a trading game]
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-07-27T14:47:48&#43;08:00">27 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+
+<script
+  type="text/javascript"
+  src="/js/zen-mode.min.2a0a1375509c03daf41c53a9831aa2d560895b7a2528c3eb3b56e7b11a135c7529e49727162a053b6193be8340270a8342f42c69f3d7e262ae54bc248eaac8f5.js"
+  integrity="sha512-KgoTdVCcA9r0HFOpgxqi1WCJW3olKMPrO1bnsRoTXHUp5JcnFioFO2GTvoNAJwqDQvQsafPX4mKuVLwkjqrI9Q=="></script>
+
+<span class="mb-[2px]">
+  <span
+    id="zen-mode-button"
+    class="text-lg hover:text-primary-500"
+    title="Enable zen mode"
+    data-title-i18n-disable="Enable zen mode"
+    data-title-i18n-enable="Disable zen mode">
+    <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg>
+  </span>
+
+</span>
+  </span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+
+        
+
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          <p>A trading game where you bet on particle-bubble collisions. Click bubbles once to go <strong>Long</strong> (bet on hit), twice for <strong>Short</strong> (bet against), three times to clear. Market prices shown inside bubbles—profit when you spot mispricing.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+<style>
+#mainCanvasContainer {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3px;
+}
+/* Round the corners of the main canvas */
+#mainCanvasContainer canvas {
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+}
+/* Round the corners of the history plot container */
+#historyPlotContainer {
+    margin: 0 auto 15px;
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3px;
+}
+/* Round the corners of the history canvas itself */
+#historyPlotContainer canvas {
+  border-radius: 10px;
+  display: block;
+}
+    .buttonc {
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 8px;
+        border: none;
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        color: white;
+        box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+        transition: all 0.3s ease;
+        margin: 2px;
+        position: relative;
+        overflow: hidden;
+    }
+    .buttonc::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+    .buttonc:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+    .buttonc:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    }
+    .buttonc:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+    }
+    .buttonc:disabled {
+        background: linear-gradient(135deg, #cccccc 0%, #bbbbbb 100%);
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+    }
+    #restartButton {
+        background: linear-gradient(135deg, #f44336 0%, #da190b 100%);
+        box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+    }
+    #restartButton:hover {
+        box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+    }
+    #startButton {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        font-size: 15px;
+        padding: 10px 20px;
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    }
+    #controls {
+        text-align: center;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    /* Styling for selection areas */
+    .selection-area {
+        margin-bottom: 8px;
+        padding: 10px 12px;
+        border: none;
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    .selection-area strong {
+        color: #495057;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 6px;
+    }
+    #modeSelection button {
+        background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    }
+    #modeSelection button:hover {
+        box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+    }
+    #difficultySelection button {
+        background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+    }
+    #difficultySelection button:hover {
+        box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+    }
+    .selection-area button.selected {
+        font-weight: bold;
+        box-shadow: inset 0 3px 8px rgba(0,0,0,0.3), 0 0 0 3px rgba(255,255,255,0.5);
+        transform: scale(1.05);
+    }
+    #modeSelection button.selected {
+        background: linear-gradient(135deg, #0d47a1 0%, #1565C0 100%);
+    }
+    #difficultySelection button.selected {
+        background: linear-gradient(135deg, #ef6c00 0%, #e65100 100%);
+    }
+    #info, #simStatus {
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        min-height: 20px;
+        color: #1a1a1a;
+        text-shadow: none;
+        padding: 10px 16px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        border: 2px solid #e0e0e0;
+    }
+    #info {
+        background: #ffffff;
+        border: 3px solid #667eea;
+        color: #1a1a1a;
+        font-weight: 800;
+        font-size: 17px;
+        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+    }
+    #instructionsText {
+        margin-bottom: 15px;
+        color: #2c3e50;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-shadow: 0 1px 2px rgba(255,255,255,0.9);
+    }
+    #betInfo {
+        margin-top: 10px;
+        padding: 15px;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+        font-size: 14px;
+        line-height: 1.6;
+        min-height: 80px;
+        text-align: left;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    #betInfo p {
+        margin: 4px 0;
+    }
+    #betInfo b {
+        color: #667eea;
+    }
+    .button-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    #scoreDisplay {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        min-height: 25px;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .selection-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch; /* This will make the boxes have the same height */
+        flex-wrap: wrap;
+    }
+    .instructions-section {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #007bff;
+    }
+    .example-bubble {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-color: #e9ecef;
+        border: 2px solid #6c757d;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 10px;
+        vertical-align: middle;
+    }
+    .example-bubble-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 11px;
+        font-weight: bold;
+        color: #333;
+    }
+    .mode-description {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .mode-card {
+        padding: 12px;
+        background-color: white;
+        border-radius: 6px;
+        border: 1px solid #dee2e6;
+    }
+    .mode-card h4 {
+        margin: 0 0 8px 0;
+        color: #495057;
+        font-size: 14px;
+    }
+    .mode-card p {
+        margin: 0;
+        font-size: 12px;
+        color: #6c757d;
+        line-height: 1.4;
+    }
+</style>
+</head>
+<body>
+<div class="selection-container">
+    <div id="difficultySelection" class="selection-area">
+        <strong>Difficulty:</strong>
+        <button class="buttonc" id="diffEasy" data-difficulty="EASY">Easy</button>
+        <button class="buttonc"  id="diffMedium" data-difficulty="MEDIUM">Medium</button>
+        <button class="buttonc"  id="diffHard" data-difficulty="HARD">Hard</button>
+    </div>
+    <div id="modeSelection" class="selection-area">
+        <strong>Mode:</strong>
+        <button class="buttonc"  id="modeBarrier" data-mode="BARRIER">Barriers</button>
+        <button class="buttonc"  id="modeDigital" data-mode="DIGITAL">Digitals</button>
+        <button class="buttonc"  id="modeKnockIn" data-mode="KNOCK_IN">Knock-Ins</button>
+        <button class="buttonc"  id="modeRandom" data-mode="RANDOM">Random</button>
+    </div>
+</div>
+<main id="mainCanvasContainer">
+</main>
+<div class="button-container">
+    <button class="buttonc"  id="startButton" style="display: none;">Start Round</button>
+    <button class="buttonc"  id="restartButton">Restart Game</button>
+</div>
+<div id="historyPlotContainer">
+</div>
+<div id="controls">
+<div id="info">Round: 1/10 | Total Profit: 0</div>
+<div id="simStatus">Select difficulty and game mode to begin.</div>
+<p id="instructionsText">Click bubbles to trade: 1× = Long (Green), 2× = Short (Red), 3× = Clear (Grey). Market price = % shown inside.</p>
+<div id="betInfo" style="display: none;">Select your bets...</div>
+<div id="scoreDisplay">Score: N/A</div>
+</div>
+<hr/>
+<h2 id="mechanisms">Interaction Mechanisms</h2>
+<p>Three derivative structures are implemented:</p>
+<p><strong>Barriers</strong>: Knockout options. Observe particle behavior near domain boundaries versus central regions.</p>
+<p><strong>Digitals</strong>: Binary options dependent on terminal particle positions. Note the relationship between obstacle size and hit probability.</p>
+<p><strong>Knock-Ins</strong>: Path-dependent activation. Watch how particle trajectories create correlation between spatially proximate obstacles.</p>
+<p>Run each mode to observe how geometric configuration affects pricing accuracy.</p>
+<h2>Market Structure Parallels</h2>
+<p>After experimenting with the simulation, several market phenomena become apparent:</p>
+<p><strong>Information Asymmetry</strong>: The difficulty parameter controls pricing noise, analogous to varying information quality across market participants.</p>
+<p><strong>Spatial Correlation</strong>: Observe clustering effects in knock-in mode - similar to sector rotation in equity markets or yield curve movements in fixed income.</p>
+<p><strong>Path Dependence</strong>: Barrier and knock-in mechanisms mirror exotic derivatives where payout depends on the asset&rsquo;s trajectory, not just terminal value.</p>
+<p><strong>Relative Value</strong>: Compare pricing across spatially similar obstacles. Systematic deviations suggest arbitrage opportunities.</p>
+<p>The mathematical framework underlying both particle interactions and financial derivatives pricing exhibits identical structural properties: stochastic processes, boundary conditions, and payoff functions determined by path-dependent events.</p>
+<script>
+    // --- Game Configuration ---
+    let CANVAS_WIDTH = 600; // Will be updated to container width
+    const MAIN_CANVAS_HEIGHT = 400;
+    const HISTORY_CANVAS_HEIGHT = 150;
+    const BASE_MIN_RADIUS = 15; const BASE_MAX_RADIUS = 30;
+    const DIGITAL_RADIUS_MIN_FACTOR = 1.2; const DIGITAL_RADIUS_MAX_FACTOR = 1.3;
+    const KNOCKIN_RADIUS_MIN_FACTOR = 0.8; const KNOCKIN_RADIUS_MAX_FACTOR = 0.9;
+    const NUM_PARTICLES = 100;
+    const SIMULATION_STEPS = 750;
+    const PARTICLE_STEP_SIZE = 15;
+    const MAX_ROUNDS = 10;
+    const TRAIL_LENGTH = 50;
+    const TRANSACTION_COST_PERCENT = 0.01;
+    const PRICE_NOISE_LEVELS = { EASY: 0.1, MEDIUM: 0.05, HARD: 0.02 };
+    let PRICE_NOISE_PERCENT = PRICE_NOISE_LEVELS.EASY; // Default difficulty
+    const LIVE_PNL_UPDATE_INTERVAL = 10; // Update live PNL every X steps
+
+    const TEXT_PADDING = 5; const TEXT_SIZE_INSIDE = 11; const TEXT_SIZE_OUTSIDE = 10;
+    const PROFIT_SCALING_FACTOR = 100;
+    const SHAKE_INTENSITY = 2; const SHAKE_DURATION_FRAMES = 10;
+    const HIT_EFFECT_DURATION = 15; const HIT_EFFECT_MAX_RADIUS_FACTOR = 1.5;
+    const RAINBOW_SPEED_FACTOR = 2; const HIT_TEXT_SPACING = 3;
+
+    // --- Game Modes & Difficulty ---
+    const MODE_BARRIER = 'BARRIER'; const MODE_DIGITAL = 'DIGITAL';
+    const MODE_KNOCK_IN = 'KNOCK_IN'; const MODE_RANDOM = 'RANDOM';
+    const ALL_MODES = [MODE_BARRIER, MODE_DIGITAL, MODE_KNOCK_IN];
+    const DIFFICULTIES = ['EASY', 'MEDIUM', 'HARD'];
+
+    // --- Shared Game State Variables ---
+    let circles = []; let particles = []; let currentRound = 1;
+    let totalScaledProfit = 0; // Final cumulative profit after each round
+    let profitAtRoundStart = 0; // Stores totalScaledProfit at the beginning of a round for live calc
+    let gameState = 'MODE_SELECTION';
+    let simulationStepCount = 0; let currentGameMode = null;
+    let currentDifficulty = 'EASY';
+    let startButton, restartButton, infoDisplay, simStatusDisplay, betInfoDisplay, scoreDisplay;
+    let modeButtons = {}; let difficultyButtons = {};
+    let normalizedCostPerContract = TRANSACTION_COST_PERCENT;
+    let gameMaxPossibleProfit = 0; let gameMaxPossibleLoss = 0;
+    // History Data: Stores points in time { round, step, profit }
+    let historyData = { pnlPoints: [{ round: 0, step: 0, profit: 0 }] };
+
+    // --- Circle States ---
+    const STATE_NONE = 0; const STATE_BUY = 1; const STATE_SELL = 2;
+
+    // --- Global Helper Functions ---
+    function calculateScorePercentGlobal(currentProfit, maxProfit, minLoss) { /* ... no changes ... */
+          let scorePercent = 0; let range = maxProfit - minLoss;
+          if (range > 0) { scorePercent = ((currentProfit - minLoss) / range) * 100; scorePercent = Math.min(100, Math.max(0, scorePercent)); }
+          else if (currentProfit >= maxProfit) { scorePercent = 100; } else { scorePercent = 0; }
+          return scorePercent;
+    }
+      function updateInfoDisplayGlobal() { /* ... no changes ... */
+          if(!infoDisplay) return;
+          if (gameState === 'GAME_OVER') { infoDisplay.html(`Game Over! | Final Profit: ${totalScaledProfit}`); }
+          else if (gameState !== 'MODE_SELECTION') { infoDisplay.html(`Round: ${currentRound}/${MAX_ROUNDS} | Total Profit: ${totalScaledProfit}`); }
+          else { infoDisplay.html('Select Mode & Difficulty'); }
+      }
+
+
+    // --- Global Restart Function ---
+    window.restartGame = (selectedMode = null) => { /* ... no changes ... */
+        console.log("Global restart triggered. Selected Mode:", selectedMode);
+        currentRound = 1; totalScaledProfit = 0; gameMaxPossibleProfit = 0; gameMaxPossibleLoss = 0; profitAtRoundStart = 0;
+        historyData = { pnlPoints: [{ round: 0, step: 0, profit: 0 }] }; // Reset PNL points
+        // If selectedMode is null, keep the current mode (for "Restart Game" button)
+        if (selectedMode !== null) {
+            currentGameMode = selectedMode;
+        }
+        gameState = 'MODE_SELECTION';
+
+        if(scoreDisplay) scoreDisplay.html('Score: N/A');
+        if(startButton) startButton.hide();
+        if(betInfoDisplay) betInfoDisplay.hide();
+        if(simStatusDisplay) simStatusDisplay.html(currentGameMode ? `Mode: ${currentGameMode}, Difficulty: ${currentDifficulty}. Restarting...` : `Difficulty: ${currentDifficulty}. Select Mode.`);
+        updateInfoDisplayGlobal();
+
+        if(modeButtons) { Object.entries(modeButtons).forEach(([key, button]) => { if (button) { button.removeClass('selected'); if (key === currentGameMode) button.addClass('selected'); } }); }
+        if(difficultyButtons) { Object.entries(difficultyButtons).forEach(([key, button]) => { if (button) { button.removeClass('selected'); if (key === currentDifficulty) button.addClass('selected'); } }); }
+
+        if (mainP5 && mainP5.clear) { mainP5.clear(); mainP5.background(105); }
+        if (historyP5 && historyP5.redraw) { historyP5.redraw(); } else { console.error("historyP5 instance or redraw not found during restart!"); }
+        if (mainP5 && mainP5.restartGameInternal) { mainP5.restartGameInternal(false); }
+
+        if (currentGameMode && mainP5) { console.log("Mode selected during restart, changing to START_ROUND"); mainP5.changeGameState('START_ROUND'); }
+    };
+
+    // --- Global Difficulty Change Function ---
+    window.changeDifficulty = (newDifficulty) => { /* ... no changes ... */
+        if (DIFFICULTIES.includes(newDifficulty)) {
+            console.log("Changing difficulty to:", newDifficulty);
+            currentDifficulty = newDifficulty;
+            PRICE_NOISE_PERCENT = PRICE_NOISE_LEVELS[currentDifficulty];
+            console.log("PRICE_NOISE_PERCENT set to:", PRICE_NOISE_PERCENT);
+            window.restartGame(currentGameMode);
+        } else { console.warn("Invalid difficulty selected:", newDifficulty); }
+    };
+
+
+    // =============================================
+    // === Main Simulation Sketch (Instance Mode) ===
+    // =============================================
+    const mainSketch = (p) => {
+
+        p.setup = () => {
+            // Get container width and make canvas responsive
+            const container = document.getElementById('mainCanvasContainer');
+            CANVAS_WIDTH = container ? Math.min(container.offsetWidth - 10, 900) : 600;
+            let canvas = p.createCanvas(CANVAS_WIDTH, MAIN_CANVAS_HEIGHT);
+            canvas.parent('mainCanvasContainer');
+            p.colorMode(p.HSB, 360, 100, 100, 1);
+
+            startButton = p.select('#startButton'); restartButton = p.select('#restartButton');
+            infoDisplay = p.select('#info'); simStatusDisplay = p.select('#simStatus');
+            betInfoDisplay = p.select('#betInfo'); scoreDisplay = p.select('#scoreDisplay');
+            modeButtons = { [MODE_BARRIER]: p.select('#modeBarrier'), [MODE_DIGITAL]: p.select('#modeDigital'), [MODE_KNOCK_IN]: p.select('#modeKnockIn'), [MODE_RANDOM]: p.select('#modeRandom') };
+            difficultyButtons = { EASY: p.select('#diffEasy'), MEDIUM: p.select('#diffMedium'), HARD: p.select('#diffHard') };
+
+            if (startButton) startButton.mousePressed(p.handleStartButtonPressed); else console.error("Start button not found.");
+            if (restartButton) restartButton.mousePressed(() => window.restartGame(null)); else console.error("Restart button not found.");
+            Object.values(modeButtons).forEach(button => { if (button) { button.mousePressed(() => window.restartGame(button.attribute('data-mode'))); } });
+            Object.values(difficultyButtons).forEach(button => { if (button) { button.mousePressed(() => window.changeDifficulty(button.attribute('data-difficulty'))); } });
+
+            particles = [];
+            for (let i = 0; i < NUM_PARTICLES; i++) { particles.push({ x: p.width / 2, y: p.height / 2, active: false, path: [], isPricing: false, hueOffset: p.random(360), finalX: null, finalY: null, hasHitCircle: new Set(), pricingHitKICircles: new Set() }); }
+            if(difficultyButtons[currentDifficulty]) difficultyButtons[currentDifficulty].addClass('selected');
+            updateInfoDisplayGlobal();
+        };
+
+        p.draw = () => { /* ... no changes ... */
+            p.colorMode(p.RGB);
+            // Create a gradient background
+            for (let y = 0; y < p.height; y++) {
+                let inter = p.map(y, 0, p.height, 0, 1);
+                let c = p.lerpColor(p.color(240, 242, 245), p.color(220, 225, 235), inter);
+                p.stroke(c);
+                p.line(0, y, p.width, y);
+            }
+            p.noStroke();
+
+            if (currentGameMode) {
+                // Draw center point with glow
+                p.push();
+                p.drawingContext.shadowBlur = 15;
+                p.drawingContext.shadowColor = 'rgba(102, 126, 234, 0.6)';
+                p.fill(102, 126, 234);
+                p.noStroke();
+                p.ellipse(p.width / 2, p.height / 2, 8, 8);
+                p.drawingContext.shadowBlur = 0;
+                p.pop();
+                switch (gameState) {
+                    case 'SETUP': 
+                        p.drawCircles(); 
+                        p.drawPricingLoader(); // Show only pricing loader during calibration
+                        simStatusDisplay.html('Generating obstacles and calculating market prices...'); 
+                        break;
+                    case 'START_ROUND': 
+                        p.drawCircles(); 
+                        p.drawPricingLoader(); // Show only pricing loader during calibration
+                        simStatusDisplay.html('Generating obstacles and calculating market prices...'); 
+                        break;
+                    case 'PLAYER_CHOICE': 
+                        p.drawCircles(); 
+                        p.drawInitialPrompt(); // Draw floating prompt before any bets
+                        simStatusDisplay.html('Place trades by clicking bubbles. Green=Long, Red=Short.'); 
+                        break;
+                    case 'SIMULATING': p.runVisibleSimulationStep(); p.drawCircles(); p.drawParticles(); simStatusDisplay.html(`Particles moving... ${simulationStepCount}/${SIMULATION_STEPS} steps. Watch for hits!`); p.checkSimulationEnd(); break;
+                    case 'ROUND_OVER': p.drawCircles(); simStatusDisplay.html(`Round complete! Check profit/loss on each bubble. Green=profit, Red=loss.`); break;
+                    case 'GAME_OVER': p.drawCircles(); p.drawGameOver(); simStatusDisplay.html('Simulation complete. Review your arbitrage performance.'); break;
+                }
+            } else { p.textAlign(p.CENTER, p.CENTER); p.fill(150); p.textSize(16); p.text(`Difficulty: ${currentDifficulty}. Select Mode.`, p.width/2, p.height/2); }
+        };
+
+        p.mousePressed = () => {
+            if (gameState === 'PLAYER_CHOICE') {
+                if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
+                    for (let c of circles) {
+                        if (p.dist(p.mouseX, p.mouseY, c.x, c.y) < c.r) {
+                            c.state = (c.state + 1) % 3;
+                            // Enhanced floating text with more context
+                            if (c.state === STATE_BUY) {
+                                p.triggerFloatingText(c, "LONG: Bet ON hit", p.color(0, 180, 0));
+                            } else if (c.state === STATE_SELL) {
+                                p.triggerFloatingText(c, "SHORT: Bet AGAINST hit", p.color(220, 0, 0));
+                            } else {
+                                p.triggerFloatingText(c, "CLEARED", p.color(100, 100, 100));
+                            }
+                            p.updateBetInfo();
+                            return;
+                        }
+                    }
+                }
+            }
+        };
+
+        // Add mouse hover detection
+        p.mouseMoved = () => {
+            if (gameState === 'PLAYER_CHOICE') {
+                let hovering = false;
+                for (let c of circles) {
+                    c.isHovered = false;
+                    if (p.dist(p.mouseX, p.mouseY, c.x, c.y) < c.r) {
+                        c.isHovered = true;
+                        hovering = true;
+                    }
+                }
+                // Update instruction text based on hover with bubble type info
+                if (hovering) {
+                    let hoveredCircle = circles.find(c => c.isHovered);
+                    if (hoveredCircle && simStatusDisplay) {
+                        let typeInfo = '';
+                        if (hoveredCircle.type === MODE_BARRIER) typeInfo = ' [Barrier: Stops particles]';
+                        else if (hoveredCircle.type === MODE_DIGITAL) typeInfo = ' [Digital: Pays if particle ends inside]';
+                        else if (hoveredCircle.type === MODE_KNOCK_IN) typeInfo = ' [Knock-In: Activates when touched]';
+                        
+                        let priceInfo = `Market price: ${Math.round(hoveredCircle.displayPriceProb * 100)}%`;
+                        simStatusDisplay.html(`${priceInfo}${typeInfo}. Click to trade.`);
+                    }
+                } else if (gameState === 'PLAYER_CHOICE') {
+                    if(simStatusDisplay) simStatusDisplay.html('Place trades by clicking bubbles. Green=Long, Red=Short.');
+                }
+            }
+        };
+
+        // --- Game State Management ---
+        p.changeGameState = function(newState) { /* ... (no changes) ... */
+            console.log(`Changing state from ${gameState} to ${newState}`);
+            const oldState = gameState;
+            gameState = newState;
+            if (!startButton) { console.error("Start button not found during changeGameState!"); return; }
+
+            switch (newState) {
+                case 'START_ROUND':
+                    startButton.hide();
+                    if(betInfoDisplay) betInfoDisplay.hide(); if(simStatusDisplay) simStatusDisplay.html('Creating circles...');
+                    p.createCircles();
+                    if(simStatusDisplay) simStatusDisplay.html('Calculating prices...');
+                    p.calculatePrices().then(() => {
+                        if (gameState === 'START_ROUND') { p.changeGameState('PLAYER_CHOICE'); }
+                        else { console.log("State changed during price calculation, aborting transition."); }
+                    }).catch(error => { console.error("Error calculating prices:", error); if(simStatusDisplay) simStatusDisplay.html('Error calculating prices. Please restart.'); });
+                    break;
+                case 'PLAYER_CHOICE':
+                    p.resetParticles(false); simulationStepCount = 0;
+                    p.assignDisplayProbabilities();
+                    profitAtRoundStart = totalScaledProfit;
+                    if (!historyData.pnlPoints.find(pt => pt.round === currentRound && pt.step === 0)) {
+                        historyData.pnlPoints.push({ round: currentRound, step: 0, profit: profitAtRoundStart });
+                        if(historyP5) historyP5.redraw();
+                    }
+                    startButton.html('Start Round').show().removeAttribute('disabled');
+                    p.updateInfoDisplay(); p.updateBetInfo(); if(betInfoDisplay) betInfoDisplay.show();
+                    break;
+                case 'SIMULATING':
+                    startButton.hide(); if(betInfoDisplay) betInfoDisplay.hide();
+                    p.resetParticles(true, false);
+                    p.resetCircleStats();
+                    simulationStepCount = 0;
+                    if (!historyData.pnlPoints.find(pt => pt.round === currentRound && pt.step === 0)) {
+                        historyData.pnlPoints.push({ round: currentRound, step: 0, profit: profitAtRoundStart });
+                    }
+                    break;
+                case 'ROUND_OVER':
+                    p.updateInfoDisplay(); p.updateScoreDisplay();
+                    startButton.html('Next Round').show().removeAttribute('disabled');
+                    if(betInfoDisplay) betInfoDisplay.hide(); console.log("Round Over - Next Round button enabled.");
+                    break;
+                case 'GAME_OVER':
+                    startButton.hide(); if(betInfoDisplay) betInfoDisplay.hide();
+                    p.updateInfoDisplay(); p.updateScoreDisplay();
+                    break;
+            }
+        }
+
+        // --- Simulation Helpers ---
+        p.checkSimulationEnd = function() { /* ... no changes ... */
+              if (simulationStepCount >= SIMULATION_STEPS) {
+                  for(let particle of particles) { if (particle.active) { particle.finalX = particle.x; particle.finalY = particle.y; } }
+              }
+              let allParticlesInactive = particles.every(particle => !particle.active);
+              const endConditionMet = simulationStepCount >= SIMULATION_STEPS || (currentGameMode === MODE_BARRIER && allParticlesInactive);
+              if (endConditionMet && gameState === 'SIMULATING') {
+                  console.log(`Ending simulation. Steps: ${simulationStepCount}, All inactive (Barrier only relevant): ${allParticlesInactive}`);
+                  if (allParticlesInactive && simulationStepCount < SIMULATION_STEPS) {
+                      for(let particle of particles) { if (particle.finalX === null) { particle.finalX = particle.x; particle.finalY = particle.y; } }
+                  }
+                  p.calculateRoundResults(); // This calculates final PNL and updates historyData via wrapper
+                  p.changeGameState('ROUND_OVER');
+              }
+          }
+
+        p.assignDisplayProbabilities = function() { /* ... no changes ... */
+              for (let c of circles) {
+                  let baseProb = c.price; // Price is already probability (0-1)
+                  let noise1 = baseProb * p.random(-PRICE_NOISE_PERCENT, PRICE_NOISE_PERCENT);
+                  let noise2 = p.random(-PRICE_NOISE_PERCENT, PRICE_NOISE_PERCENT);
+                  c.displayPriceProb = p.max(0, baseProb + noise1 + noise2);
+                  c.displayPriceProb = p.constrain(c.displayPriceProb, 0, 1.0); // Clamp display prob
+                  c.roundScaledProfitLoss = null;
+                  console.log(`Circle ${c.id} (Type: ${c.type}): Price=${c.price.toFixed(3)}, BaseProb=${baseProb.toFixed(3)}, DisplayProb=${c.displayPriceProb.toFixed(3)}`);
+              }
+          }
+
+        // --- Circle Creation ---
+        p.createCircles = function() {
+            circles = [];
+            let attempts = 0; const maxAttempts = 1000;
+            // Determine number of circles based on mode
+            let numCirclesThisRound = 0;
+            if (currentGameMode === MODE_BARRIER) {
+                numCirclesThisRound = p.floor(p.random(10, 16)); // 10-15
+            } else {
+                numCirclesThisRound = p.floor(p.random(13, 19)); // 13-18
+            }
+            console.log(`Creating ${numCirclesThisRound} circles for mode ${currentGameMode}`);
+
+            while (circles.length < numCirclesThisRound && attempts < maxAttempts) { // Use calculated number
+              let circleType = currentGameMode;
+              if (currentGameMode === MODE_RANDOM) { circleType = p.random(ALL_MODES); }
+              let minR = BASE_MIN_RADIUS; let maxR = BASE_MAX_RADIUS;
+              if (circleType === MODE_DIGITAL) { minR *= DIGITAL_RADIUS_MIN_FACTOR; maxR *= DIGITAL_RADIUS_MAX_FACTOR; }
+              else if (circleType === MODE_KNOCK_IN) { minR *= KNOCKIN_RADIUS_MIN_FACTOR; maxR *= KNOCKIN_RADIUS_MAX_FACTOR; }
+              let radius = p.random(minR, maxR);
+
+              let potentialCircle = {
+                    x: p.random(radius, p.width - radius), y: p.random(radius, p.height - radius), r: radius,
+                    state: STATE_NONE, type: circleType, price: 0,
+                    displayPriceProb: 0, hits: 0, id: circles.length,
+                    shakeDuration: 0, effectTimer: 0, roundScaledProfitLoss: null,
+                    knockedIn: false, knockInHitCount: 0,
+                    floatingText: null // Property for the new text effect
+                };
+                let overlapping = false;
+                for (let other of circles) { if (p.dist(potentialCircle.x, potentialCircle.y, other.x, other.y) < potentialCircle.r + other.r + 15) { overlapping = true; break; } }
+                if (p.dist(potentialCircle.x, potentialCircle.y, p.width / 2, p.height / 2) < potentialCircle.r + 50) { overlapping = true; }
+                if (!overlapping) { circles.push(potentialCircle); }
+                attempts++;
+            }
+            if (circles.length < numCirclesThisRound) { console.warn(`Could not place all ${numCirclesThisRound} circles without overlap after ${maxAttempts} attempts.`); }
+        }
+
+        // --- Drawing Functions ---
+        p.drawCircles = function() {
+            p.colorMode(p.RGB);
+            for (let c of circles) {
+                p.push();
+                if (c.shakeDuration > 0) { p.translate(p.random(-SHAKE_INTENSITY, SHAKE_INTENSITY), p.random(-SHAKE_INTENSITY, SHAKE_INTENSITY)); c.shakeDuration--; }
+                p.drawSingleCircle(c);
+                p.drawOnionGauge(c);
+                p.drawTextInsideCircle(c);
+                p.drawHitEffect(c);
+                p.drawHitRateText(c);
+                p.drawProfitLossTextNearCircle(c);
+                p.drawFloatingText(c); // Draw the new floating text effect
+                p.pop();
+            }
+        }
+        p.drawSingleCircle = function(c) {
+            p.push();
+
+            // Add shadow
+            if (c.state !== STATE_NONE || c.isHovered) {
+                p.drawingContext.shadowBlur = c.isHovered ? 20 : 12;
+                p.drawingContext.shadowColor = c.state === STATE_BUY ? 'rgba(0, 200, 0, 0.5)' :
+                                                c.state === STATE_SELL ? 'rgba(200, 0, 0, 0.5)' :
+                                                'rgba(102, 126, 234, 0.3)';
+                p.drawingContext.shadowOffsetY = 2;
+            }
+
+            // Enhanced stroke for hover state
+            let strokeWeight = c.isHovered ? 4 : 3;
+            let strokeColor = c.isHovered ? p.color(255, 215, 0) : p.color(80, 90, 110);
+            p.strokeWeight(strokeWeight); p.stroke(strokeColor);
+
+            if (c.type === MODE_DIGITAL) { p.drawingContext.setLineDash([8, 4]); }
+            else if (c.type === MODE_KNOCK_IN) { p.drawingContext.setLineDash([2, 2]); }
+
+            // Enhanced fill colors with gradients
+            let alpha = c.isHovered ? 240 : 220;
+            if (c.state === STATE_BUY) {
+                let gradient = p.drawingContext.createRadialGradient(c.x - c.r/3, c.y - c.r/3, 0, c.x, c.y, c.r);
+                gradient.addColorStop(0, `rgba(100, 255, 100, ${alpha/255})`);
+                gradient.addColorStop(1, `rgba(0, 180, 0, ${alpha/255})`);
+                p.drawingContext.fillStyle = gradient;
+            }
+            else if (c.state === STATE_SELL) {
+                let gradient = p.drawingContext.createRadialGradient(c.x - c.r/3, c.y - c.r/3, 0, c.x, c.y, c.r);
+                gradient.addColorStop(0, `rgba(255, 100, 100, ${alpha/255})`);
+                gradient.addColorStop(1, `rgba(200, 0, 0, ${alpha/255})`);
+                p.drawingContext.fillStyle = gradient;
+            }
+            else {
+                if (gameState === 'PLAYER_CHOICE') {
+                    let brightness = c.isHovered ? 220 : 190;
+                    let gradient = p.drawingContext.createRadialGradient(c.x - c.r/3, c.y - c.r/3, 0, c.x, c.y, c.r);
+                    gradient.addColorStop(0, `rgba(${brightness + 20}, ${brightness + 20}, ${brightness + 20}, ${alpha/255})`);
+                    gradient.addColorStop(1, `rgba(${brightness}, ${brightness}, ${brightness}, ${alpha/255})`);
+                    p.drawingContext.fillStyle = gradient;
+                } else {
+                    let gradient = p.drawingContext.createRadialGradient(c.x - c.r/3, c.y - c.r/3, 0, c.x, c.y, c.r);
+                    gradient.addColorStop(0, `rgba(180, 185, 220, ${alpha/255})`);
+                    gradient.addColorStop(1, `rgba(140, 150, 200, ${alpha/255})`);
+                    p.drawingContext.fillStyle = gradient;
+                }
+            }
+            p.ellipse(c.x, c.y, c.r * 2, c.r * 2);
+
+            // Reset shadow
+            p.drawingContext.shadowBlur = 0;
+            p.drawingContext.shadowOffsetY = 0;
+            p.pop();
+        }
+
+        // NEW: Floating Text Effect Functions
+        p.triggerFloatingText = function(circle, text, color) {
+            circle.floatingText = {
+                text: text,
+                color: color,
+                timer: 60, // Animation duration in frames (approx. 1 second)
+                maxTimer: 60,
+                yOffset: 0,
+            };
+        }
+
+        p.drawFloatingText = function(c) {
+            if (c.floatingText && c.floatingText.timer > 0) {
+                const ft = c.floatingText;
+                // Calculate animation progress (0 to 1)
+                const progress = (ft.maxTimer - ft.timer) / ft.maxTimer;
+
+                // Update animation values for this frame
+                ft.yOffset -= 0.8; // How fast the text rises
+                const alpha = p.lerp(255, 0, progress * progress); // Fade out with easing
+                ft.timer--;
+
+                // Draw the text
+                p.push();
+                p.textAlign(p.CENTER, p.CENTER);
+                p.textSize(16);
+                p.textStyle(p.BOLD);
+                // Use the color's components and the calculated alpha for fading
+                p.fill(p.red(ft.color), p.green(ft.color), p.blue(ft.color), alpha);
+                p.noStroke();
+                // Start text just above the circle's center and move it up
+                p.text(ft.text, c.x, c.y + ft.yOffset - c.r * 0.5);
+                p.pop();
+
+                // Reset the effect object when the animation is done
+                if (ft.timer <= 0) {
+                    c.floatingText = null;
+                }
+            }
+        }
+
+        // Onion Gauge Indicator
+        p.drawOnionGauge = function(c) { /* ... no changes ... */
+            if (gameState === 'SIMULATING' || gameState === 'ROUND_OVER' || gameState === 'GAME_OVER') {
+                let currentOutcomeRate = 0; let tradePriceProb = c.displayPriceProb;
+                if (gameState === 'SIMULATING') {
+                    if (c.type === MODE_BARRIER) { currentOutcomeRate = c.hits / NUM_PARTICLES; }
+                    else if (c.type === MODE_DIGITAL) { let insideCount = 0; let activeCount = 0; for(let particle of particles) { if(particle.active && !particle.isPricing) { activeCount++; if(p.dist(particle.x, particle.y, c.x, c.y) < c.r) { insideCount++; } } } currentOutcomeRate = (activeCount > 0) ? (insideCount / activeCount) : 0; }
+                    else if (c.type === MODE_KNOCK_IN) { currentOutcomeRate = c.knockInHitCount / NUM_PARTICLES; }
+                } else {
+                      if (c.type === MODE_BARRIER) { currentOutcomeRate = c.hits / NUM_PARTICLES; }
+                      else if (c.type === MODE_DIGITAL) { let endedInsideCount = 0; for (let particle of particles) { if (particle.finalX !== null && p.dist(particle.finalX, particle.finalY, c.x, c.y) < c.r) { endedInsideCount++; } } currentOutcomeRate = endedInsideCount / NUM_PARTICLES; }
+                      else if (c.type === MODE_KNOCK_IN) { currentOutcomeRate = c.knockInHitCount / NUM_PARTICLES; }
+                }
+                let ratio = (tradePriceProb > 0.001) ? (currentOutcomeRate / tradePriceProb) : (currentOutcomeRate > 0 ? Infinity : 0);
+                let indicatorRadius = c.r * 0.7; let indicatorStrokeWeight = 3;
+                let numFullCircles = p.floor(ratio); let finalArcAngle = (ratio % 1) * p.TWO_PI;
+                p.push(); p.noFill(); p.strokeWeight(indicatorStrokeWeight);
+                if (ratio > 1.0) { p.stroke(0, 180, 0, 150); } else if (ratio < 1.0) { p.stroke(180, 0, 0, 150); } else { p.stroke(100, 100, 100, 150); }
+                for (let i = 0; i < numFullCircles; i++) { if (indicatorRadius < 2) break; p.ellipse(c.x, c.y, indicatorRadius * 2, indicatorRadius * 2); indicatorRadius -= (indicatorStrokeWeight + 2); }
+                if (finalArcAngle > 0.01 && indicatorRadius >= 2) { p.arc(c.x, c.y, indicatorRadius * 2, indicatorRadius * 2, -p.HALF_PI, -p.HALF_PI + finalArcAngle); }
+                p.pop();
+              }
+        }
+
+        p.drawTextInsideCircle = function(c) { /* ... no changes ... */
+              if (gameState !== 'SETUP' && gameState !== 'START_ROUND' && gameState !== 'MODE_SELECTION') {
+                  p.textAlign(p.CENTER, p.CENTER); p.textSize(TEXT_SIZE_INSIDE);
+                  let displayPercent = Math.round(c.displayPriceProb * 100);
+                  if (gameState === 'SIMULATING' || gameState === 'ROUND_OVER' || gameState === 'GAME_OVER'){ p.fill(0, 0, 0, 180); } else { p.fill(0); }
+                  p.noStroke(); p.text(`${displayPercent}%`, c.x, c.y);
+              }
+          }
+        p.drawHitEffect = function(c) { /* ... no changes ... */
+              if (c.effectTimer > 0) {
+                  let effectProgress = (HIT_EFFECT_DURATION - c.effectTimer) / HIT_EFFECT_DURATION;
+                  let currentEffectRadius = c.r + (c.r * HIT_EFFECT_MAX_RADIUS_FACTOR - c.r) * effectProgress;
+                  let effectAlpha = 200 * (1 - effectProgress);
+                  p.strokeWeight(2); p.stroke(255, 100, 0, effectAlpha); p.noFill();
+                  p.ellipse(c.x, c.y, currentEffectRadius * 2, currentEffectRadius * 2); c.effectTimer--;
+              }
+          }
+        // Modified to show KI hit rate live and remove "Type:" prefix
+        p.drawHitRateText = function(c) {
+              p.textSize(TEXT_SIZE_OUTSIDE); p.textStyle(p.NORMAL); p.fill(0); p.noStroke();
+              let label = ""; let valueStr = ""; let textWidth = 0; let labelWidth = 0; let valueWidth = 0; let showText = false;
+
+              if (gameState === 'PLAYER_CHOICE' && currentGameMode === MODE_RANDOM) {
+                  label = ""; // No "Type:" prefix
+                  valueStr = c.type.replace('_', '-');
+                  p.textStyle(p.BOLD); valueWidth = p.textWidth(valueStr); textWidth = valueWidth; showText = true;
+              } else if (gameState === 'SIMULATING') {
+                  if (c.type === MODE_BARRIER) { label = "Hit: "; let currentHitRatio = c.hits / NUM_PARTICLES; valueStr = p.str(Math.round(currentHitRatio * 100)) + "%"; }
+                  else if (c.type === MODE_DIGITAL) { label = "Inside: "; let insideCount = 0; let activeCount = 0; for(let particle of particles) { if(particle.active && !particle.isPricing) { activeCount++; if(p.dist(particle.x, particle.y, c.x, c.y) < c.r) { insideCount++; } } } let insideRate = (activeCount > 0) ? (insideCount / activeCount) : 0; valueStr = p.str(Math.round(insideRate * 100)) + "%"; }
+                  else if (c.type === MODE_KNOCK_IN) { label = "Touched: "; let touchRate = c.knockInHitCount / NUM_PARTICLES; valueStr = p.str(Math.round(touchRate * 100)) + "%"; } // Show % touched live
+                  p.textStyle(p.NORMAL); labelWidth = p.textWidth(label);
+                  p.textStyle(p.BOLD); valueWidth = p.textWidth(valueStr);
+                  textWidth = labelWidth + valueWidth;
+                  showText = true;
+              } else if (gameState === 'ROUND_OVER' || gameState === 'GAME_OVER') {
+                  if (c.type === MODE_BARRIER) { label = "Final Hit: "; let finalHitRatio = c.hits / NUM_PARTICLES; valueStr = p.str(Math.round(finalHitRatio * 100)) + "%"; }
+                  else if (c.type === MODE_DIGITAL) { label = "Ended In: "; let endedInsideCount = 0; for (let particle of particles) { if (particle.finalX !== null && p.dist(particle.finalX, particle.finalY, c.x, c.y) < c.r) { endedInsideCount++; } } let finalInsideRate = endedInsideCount / NUM_PARTICLES; valueStr = p.str(Math.round(finalInsideRate * 100)) + "%"; }
+                  else if (c.type === MODE_KNOCK_IN) { label = "Final Touch: "; let finalTouchRate = c.knockInHitCount / NUM_PARTICLES; valueStr = p.str(Math.round(finalTouchRate * 100)) + "%"; } // Show final % touched
+                  p.textStyle(p.NORMAL); labelWidth = p.textWidth(label);
+                  p.textStyle(p.BOLD); valueWidth = p.textWidth(valueStr);
+                  textWidth = labelWidth + valueWidth;
+                  showText = true;
+              }
+
+              if (showText && (label || valueStr)) {
+                  let textY, startX;
+                  if (c.y + c.r + TEXT_PADDING + TEXT_SIZE_OUTSIDE < p.height) { p.textAlign(p.LEFT, p.TOP); textY = c.y + c.r + TEXT_PADDING; startX = c.x - textWidth / 2; }
+                  else { p.textAlign(p.LEFT, p.BOTTOM); textY = c.y - c.r - TEXT_PADDING; startX = c.x - textWidth / 2; }
+                  if (label) { p.textStyle(p.NORMAL); p.text(label, startX, textY); }
+                  p.textStyle(p.BOLD); p.text(valueStr, startX + labelWidth, textY);
+                  p.textStyle(p.NORMAL);
+              }
+          }
+        p.drawProfitLossTextNearCircle = function(c) { /* ... (no changes) ... */
+              if ((gameState === 'ROUND_OVER' || gameState === 'GAME_OVER') && c.roundScaledProfitLoss !== null && c.state !== STATE_NONE) {
+                  p.push(); p.textSize(TEXT_SIZE_OUTSIDE); let scaledProfitLoss = c.roundScaledProfitLoss;
+                  let label = scaledProfitLoss >= 0 ? "Profit: " : "Loss: "; let profitColor = scaledProfitLoss >= 0 ? p.color(0, 150, 0) : p.color(200, 0, 0);
+                  let valueStr = (scaledProfitLoss >= 0 ? "+" : "") + scaledProfitLoss; let fullText = label + valueStr; let textY;
+                  let statusTextIsBelow = (c.y + c.r + TEXT_PADDING + TEXT_SIZE_OUTSIDE < p.height);
+                  let spaceAbove = c.y - c.r - TEXT_PADDING - TEXT_SIZE_OUTSIDE > 0;
+                  if (spaceAbove) { p.textAlign(p.CENTER, p.BOTTOM); textY = c.y - c.r - TEXT_PADDING; }
+                  else if (statusTextIsBelow) { p.textAlign(p.CENTER, p.TOP); textY = c.y + c.r + TEXT_PADDING + TEXT_SIZE_OUTSIDE + 2; }
+                  else { p.textAlign(p.CENTER, p.BOTTOM); textY = c.y - c.r - TEXT_PADDING; }
+                  p.fill(profitColor); p.noStroke(); p.textStyle(p.BOLD); p.text(fullText, c.x, textY); p.textStyle(p.NORMAL); p.pop();
+              }
+          }
+        p.drawParticles = function() { /* ... (no changes) ... */
+              p.colorMode(p.HSB, 360, 100, 100, 1);
+              for (let particle of particles) {
+                  if (particle.active && !particle.isPricing && particle.path.length > 1) {
+                      p.push(); p.noFill(); p.beginShape();
+                      for (let i = 0; i < particle.path.length; i++) {
+                          let point = particle.path[i]; let stepWhenAdded = p.max(0, simulationStepCount - (particle.path.length - 1 - i));
+                          let hue = (particle.hueOffset + stepWhenAdded * RAINBOW_SPEED_FACTOR) % 360; let alpha = p.map(i, 0, particle.path.length -1, 0.1, 0.8);
+                          p.stroke(hue, 70, 80, alpha); p.strokeWeight(p.map(i, 0, particle.path.length -1, 1, 2)); p.vertex(point.x, point.y);
+                      } p.endShape(); p.pop();
+                  }
+              } p.colorMode(p.RGB);
+          }
+        p.drawGameOver = function() { /* ... (no changes) ... */
+              p.push(); p.colorMode(p.RGB); p.textAlign(p.CENTER, p.CENTER); p.fill(0); p.noStroke();
+              p.textSize(32); p.text("Game Over!", p.width / 2, p.height / 2 - 20);
+              p.textSize(24); p.text(`Final Profit: ${totalScaledProfit}`, p.width / 2, p.height / 2 + 20); p.pop();
+          }
+
+        // Draw floating prompt when no bets have been made yet
+        p.drawInitialPrompt = function() {
+            // Check if any bets have been made
+            let hasBets = circles.some(c => c.state !== STATE_NONE);
+            
+            if (!hasBets && circles.length > 0) {
+                // Animated floating text - using frameCount for smooth animation
+                let frameTime = p.frameCount * 0.02; // Smooth frame-based animation
+                let yOffset = p.sin(frameTime) * 8;
+                
+                // Get mode-specific instruction text
+                let modeInstruction = '';
+                switch(currentGameMode) {
+                    case MODE_BARRIER:
+                        modeInstruction = '🚧 Particles stop when hitting bubbles. Bet on hits.';
+                        break;
+                    case MODE_DIGITAL:
+                        modeInstruction = '🎯 Bet on where particles end up inside bubbles.';
+                        break;
+                    case MODE_KNOCK_IN:
+                        modeInstruction = '⚡ Bet on particles touching bubbles during movement.';
+                        break;
+                    case MODE_RANDOM:
+                        modeInstruction = '🎲 Mixed types: solid=Barrier, dashed=Digital, dotted=Knock-In.';
+                        break;
+                }
+                
+                p.push();
+                p.textAlign(p.CENTER, p.CENTER);
+                
+                // Main instruction
+                p.textSize(18);
+                p.textStyle(p.BOLD);
+                
+                // Semi-transparent background for main text - moved to top of game area
+                p.fill(0, 0, 0, 150);
+                p.noStroke();
+                let mainTextWidth = p.textWidth("CLICK BUBBLES TO BET ON THEM");
+                let tradingTextWidth = p.textWidth("Click once (Long) if too cheap, Click twice if too expensive");
+                let maxWidth = Math.max(mainTextWidth, tradingTextWidth);
+                let totalHeight = modeInstruction ? 125 : 100; // Increased height for trading instruction
+                p.rect(p.width/2 - maxWidth/2 - 20, 40 + yOffset, maxWidth + 40, totalHeight, 8);
+                
+                // Animated main text color - moved to top, using frameCount
+                let alpha = 200 + 55 * p.sin(frameTime * 2);
+                p.fill(255, 255, 100, alpha);
+                p.text("CLICK BUBBLES TO BET ON THEM", p.width / 2, 60 + yOffset);
+                
+                // Example bubble with price explanation - moved to top area
+                p.textSize(12);
+                p.textStyle(p.NORMAL);
+                p.fill(255, 255, 255, 200);
+                
+                // Draw example bubble - positioned in top area
+                let exampleX = p.width / 2 - 80;
+                let exampleY = 90 + yOffset; // In top area
+                let exampleRadius = 22; // Made bigger to match game bubbles better
+                
+                // Style it like an unselected game bubble
+                p.strokeWeight(2);
+                p.stroke(50); // Dark stroke like game bubbles
+                p.fill(180); // Gray fill like unselected game bubbles
+                p.ellipse(exampleX, exampleY, exampleRadius * 2, exampleRadius * 2);
+                
+                // Price text inside example bubble (styled like game text)
+                p.fill(0); // Black text like in game
+                p.noStroke();
+                p.textAlign(p.CENTER, p.CENTER);
+                p.textSize(11);
+                p.textStyle(p.NORMAL); // Normal weight like game text
+                p.text("67%", exampleX, exampleY);
+                
+                // Explanation text
+                p.textSize(12);
+                p.textStyle(p.NORMAL);
+                p.textAlign(p.LEFT, p.CENTER);
+                p.fill(255, 255, 255, 200);
+                p.text("= Market price (probability)", exampleX + 35, exampleY);
+                
+                // Trading instruction below bubble - moved even lower to avoid overlap
+                p.textAlign(p.CENTER, p.CENTER);
+                p.textSize(11);
+                p.fill(255, 255, 255, 180);
+                p.text("Click once (Long) if too cheap, Click twice if too expensive", p.width / 2, 125 + yOffset);
+                
+                // Mode-specific instruction below - in top area with proper spacing
+                if (modeInstruction) {
+                    p.textAlign(p.CENTER, p.CENTER);
+                    p.textSize(13);
+                    p.fill(255, 255, 255, 200);
+                    p.text(modeInstruction, p.width / 2, 145 + yOffset); // Better spacing in top area
+                }
+                
+                p.pop();
+            }
+        }
+
+        // Draw pricing loader during market price calculation
+        p.drawPricingLoader = function() {
+            // Use frameCount for smooth animation independent of millis()
+            let frameTime = p.frameCount * 0.05; // Smooth frame-based animation
+            let yOffset = p.sin(frameTime) * 3; // Gentle floating animation
+            
+            p.push();
+            p.textAlign(p.CENTER, p.CENTER);
+            
+            // Background box for pricing loader - positioned in center area
+            p.fill(0, 0, 0, 120);
+            p.noStroke();
+            let loaderWidth = 200;
+            let loaderHeight = 40;
+            p.rect(p.width/2 - loaderWidth/2, p.height/2 + 20 + yOffset, loaderWidth, loaderHeight, 6);
+            
+            // "Market Pricing" text
+            p.textSize(14);
+            p.textStyle(p.BOLD);
+            p.fill(255, 200, 100, 200);
+            p.text("Market Pricing", p.width / 2 - 20, p.height / 2 + 35 + yOffset);
+            
+            // Animated dots for loading indication using frameCount for smooth animation
+            let dots = '';
+            let dotCount = Math.floor(frameTime * 0.8) % 4; // Slower, smoother dot animation
+            for (let i = 0; i < dotCount; i++) {
+                dots += '.';
+            }
+            
+            p.textSize(14);
+            p.textStyle(p.BOLD);
+            p.fill(255, 255, 255, 200);
+            p.text(dots, p.width / 2 + 45, p.height / 2 + 35 + yOffset);
+            
+            p.pop();
+        }
+
+        // --- Simulation Logic ---
+        p.calculatePrices = async function() { /* ... (Corrected Barrier Pricing) ... */
+              p.resetCircleStats();
+              let totalOutcomesPerCircle = new Array(circles.length).fill(0); // Sum of hits/ended_in/knocked_in_counts over runs
+              const PRICING_RUNS = 3;
+
+              for(let run = 0; run < PRICING_RUNS; run++) {
+                  p.resetParticles(true, true); // Resets pricingHitKICircles
+
+                  // Simulate paths
+                  for (let step = 0; step < SIMULATION_STEPS; step++) {
+                      for (let i = 0; i < particles.length; i++) {
+                          let particle = particles[i];
+                          if (particle.active && particle.isPricing) {
+                              particle.x += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE); particle.y += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE);
+                              particle.x = p.constrain(particle.x, 0, p.width); particle.y = p.constrain(particle.y, 0, p.height);
+                              for (let j = 0; j < circles.length; j++) {
+                                  let c = circles[j];
+                                  if (p.dist(particle.x, particle.y, c.x, c.y) < c.r) {
+                                      if (c.type === MODE_BARRIER) { particle.active = false; break; } // Barrier stops particle
+                                      else if (c.type === MODE_KNOCK_IN) { particle.pricingHitKICircles.add(c.id); } // Mark KI hit
+                                  }
+                              }
+                          }
+                      }
+                      if (step % 100 === 0) await new Promise(resolve => setTimeout(resolve, 0));
+                  } // End step loop
+
+                  // Tally outcomes for this pricing run
+                  let runBarrierHits = new Array(circles.length).fill(0); // Hits per barrier circle THIS RUN
+                  let runDigitalEndedIn = new Array(circles.length).fill(0);
+                  let runKnockInHits = new Array(circles.length).fill(0); // Particles hitting each KI THIS RUN
+
+                  // Count barrier hits directly (more reliable than tracking inactive)
+                  p.resetParticles(true, true); // Need separate sim for barrier hits
+                  for (let step = 0; step < SIMULATION_STEPS; step++) {
+                      for (let i = 0; i < particles.length; i++) {
+                          let particle = particles[i];
+                          if (particle.active && particle.isPricing) {
+                              particle.x += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE); particle.y += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE);
+                              particle.x = p.constrain(particle.x, 0, p.width); particle.y = p.constrain(particle.y, 0, p.height);
+                              for (let j = 0; j < circles.length; j++) {
+                                  if (circles[j].type === MODE_BARRIER && p.dist(particle.x, particle.y, circles[j].x, circles[j].y) < circles[j].r) {
+                                      runBarrierHits[j]++; // Count hit for this specific barrier
+                                      particle.active = false;
+                                      break;
+                                  }
+                              }
+                          }
+                      }
+                  }
+                  // Reset particles again for Digital/KI tally
+                  p.resetParticles(true, true);
+                  // Simulate again to get final positions and KI hits for *this run*
+                  for (let step = 0; step < SIMULATION_STEPS; step++) {
+                      for (let i = 0; i < particles.length; i++) {
+                          let particle = particles[i];
+                          if (particle.active && particle.isPricing) {
+                              particle.x += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE); particle.y += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE);
+                              particle.x = p.constrain(particle.x, 0, p.width); particle.y = p.constrain(particle.y, 0, p.height);
+                              for (let j = 0; j < circles.length; j++) {
+                                  let c = circles[j];
+                                  if (p.dist(particle.x, particle.y, c.x, c.y) < c.r) {
+                                      if (c.type === MODE_KNOCK_IN) { particle.pricingHitKICircles.add(c.id); }
+                                  }
+                              }
+                          }
+                      }
+                  }
+                  // Tally Digital/KI based on this run's results
+                  for(let i=0; i < particles.length; i++){
+                    let particle = particles[i];
+                      for(let j=0; j<circles.length; j++){
+                          if(circles[j].type === MODE_DIGITAL){ if(p.dist(particle.x, particle.y, circles[j].x, circles[j].y) < circles[j].r){ runDigitalEndedIn[j]++; } }
+                          else if(circles[j].type === MODE_KNOCK_IN){ if(particle.pricingHitKICircles.has(circles[j].id)){ runKnockInHits[j]++; } }
+                      }
+                  }
+
+
+                  // Accumulate outcomes
+                  for (let j = 0; j < circles.length; j++) {
+                      if (circles[j].type === MODE_DIGITAL) { totalOutcomesPerCircle[j] += runDigitalEndedIn[j]; }
+                      else if (circles[j].type === MODE_KNOCK_IN) { totalOutcomesPerCircle[j] += runKnockInHits[j]; }
+                      else if (circles[j].type === MODE_BARRIER) { totalOutcomesPerCircle[j] += runBarrierHits[j]; } // Accumulate per-barrier hits
+                  }
+
+                  if(simStatusDisplay) simStatusDisplay.html(`Calculating prices... Run ${run + 1}/${PRICING_RUNS}`);
+                  await new Promise(resolve => setTimeout(resolve, 0)); // Yield
+              } // End pricing run loop
+
+              // Final Price Assignment (Normalized 0-1)
+              for (let i = 0; i < circles.length; i++) {
+                  circles[i].price = totalOutcomesPerCircle[i] / PRICING_RUNS / NUM_PARTICLES;
+              }
+              p.resetCircleStats(); // Reset for actual game round
+              if(simStatusDisplay) simStatusDisplay.html('Price calculation complete.');
+          }
+
+
+        p.runVisibleSimulationStep = function() { /* ... (Live PNL update added) ... */
+              simulationStepCount++;
+              const activeCount = particles.filter(prt => prt.active && !prt.isPricing).length;
+              // if (simulationStepCount % 60 === 1) { console.log(`Sim Step ${simulationStepCount}: ${activeCount} active particles.`); }
+
+              for (let i = 0; i < particles.length; i++) {
+                  let particle = particles[i];
+                  if (particle.active && !particle.isPricing) {
+                      particle.path.push({ x: particle.x, y: particle.y }); if (particle.path.length > TRAIL_LENGTH) particle.path.shift();
+                      particle.x += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE); particle.y += p.random(-PARTICLE_STEP_SIZE, PARTICLE_STEP_SIZE);
+                      particle.x = p.constrain(particle.x, 0, p.width); particle.y = p.constrain(particle.y, 0, p.height);
+
+                      for (let j = 0; j < circles.length; j++) {
+                        let c = circles[j];
+                          if (p.dist(particle.x, particle.y, c.x, c.y) < c.r) {
+                              if (c.type === MODE_BARRIER) {
+                                  circles[j].hits++; particles[i].active = false; particles[i].path.push({ x: particle.x, y: particle.y });
+                                  if (particles[i].path.length > TRAIL_LENGTH) particles[i].path.shift();
+                                  circles[j].shakeDuration = SHAKE_DURATION_FRAMES; circles[j].effectTimer = HIT_EFFECT_DURATION; 
+                                  // Add explanatory floating text for hits
+                                  p.triggerFloatingText(circles[j], "HIT!", p.color(255, 100, 0));
+                                  break;
+                              } else if (c.type === MODE_KNOCK_IN) {
+                                  if (!particles[i].hasHitCircle.has(c.id)) { // Check if THIS particle hit THIS circle before
+                                      particles[i].hasHitCircle.add(c.id); circles[j].knockInHitCount++; circles[j].knockedIn = true;
+                                      circles[j].shakeDuration = SHAKE_DURATION_FRAMES; circles[j].effectTimer = HIT_EFFECT_DURATION;
+                                      // Add explanatory floating text for knock-ins
+                                      p.triggerFloatingText(circles[j], "ACTIVATED!", p.color(255, 100, 0));
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+
+              // Store final positions at the very end
+              if (simulationStepCount >= SIMULATION_STEPS) {
+                  for (let particle of particles) { particle.finalX = particle.x; particle.finalY = particle.y; }
+              }
+
+              // --- Live PNL Update ---
+              if (simulationStepCount % LIVE_PNL_UPDATE_INTERVAL === 0) {
+                  p.calculateLivePNL();
+                  if (historyP5 && historyP5.redraw) {
+                      // historyP5.redraw(); // Redraw plot with live data - handled by history draw loop now
+                  }
+              }
+          }
+
+          // --- Calculate Live PNL during Simulation ---
+          p.calculateLivePNL = function() { /* ... (no changes) ... */
+              let liveRoundScaledProfit = 0;
+              for (let c of circles) {
+                  if (c.state === STATE_NONE) continue; // Skip if no bet
+
+                  let liveOutcomeRate = 0;
+                  let tradePriceProb = c.displayPriceProb;
+
+                  // Calculate current outcome rate based on type
+                  if (c.type === MODE_BARRIER) { liveOutcomeRate = c.hits / NUM_PARTICLES; }
+                  else if (c.type === MODE_DIGITAL) { let insideCount = 0; let activeCount = 0; for(let particle of particles) { if(particle.active && !particle.isPricing) { activeCount++; if(p.dist(particle.x, particle.y, c.x, c.y) < c.r) { insideCount++; } } } liveOutcomeRate = (activeCount > 0) ? (insideCount / activeCount) : 0; }
+                  else if (c.type === MODE_KNOCK_IN) { liveOutcomeRate = c.knockInHitCount / NUM_PARTICLES; }
+
+                  let liveNormalizedProfitLoss = 0;
+                  if (c.state === STATE_BUY) { liveNormalizedProfitLoss = liveOutcomeRate - tradePriceProb - normalizedCostPerContract; }
+                  else if (c.state === STATE_SELL) { liveNormalizedProfitLoss = tradePriceProb - liveOutcomeRate - normalizedCostPerContract; }
+
+                  liveRoundScaledProfit += Math.round(liveNormalizedProfitLoss * PROFIT_SCALING_FACTOR);
+              }
+
+              let liveTotalProfit = profitAtRoundStart + liveRoundScaledProfit;
+              if (historyData.pnlPoints && historyData.pnlPoints.length > 0) {
+                  historyData.pnlPoints.push({ round: currentRound, step: simulationStepCount, profit: liveTotalProfit });
+              } else { console.warn("pnlPoints array is empty or undefined during live update."); }
+          }
+
+
+        // --- Round Management ---
+        p.calculateRoundResults = function() { /* ... (no changes) ... */
+              let scaledRoundProfit = 0; let roundMaxProfit = 0; let roundMaxLoss = 0;
+              for (let c of circles) {
+                  let normalizedProfitLoss = 0; let outcome = 0; let expectedRate = c.price;
+                  let tradePriceProb = c.displayPriceProb;
+
+                  if (c.type === MODE_BARRIER) { outcome = c.hits / NUM_PARTICLES; }
+                  else if (c.type === MODE_DIGITAL) { let endedInsideCount = 0; for (let particle of particles) { if (particle.finalX !== null && p.dist(particle.finalX, particle.finalY, c.x, c.y) < c.r) { endedInsideCount++; } } outcome = endedInsideCount / NUM_PARTICLES; }
+                  else if (c.type === MODE_KNOCK_IN) { outcome = c.knockInHitCount / NUM_PARTICLES; }
+
+                  if (c.state === STATE_BUY) { normalizedProfitLoss = outcome - tradePriceProb - normalizedCostPerContract; }
+                  else if (c.state === STATE_SELL) { normalizedProfitLoss = tradePriceProb - outcome - normalizedCostPerContract; }
+
+                  let currentCircleScaledProfit = Math.round(normalizedProfitLoss * PROFIT_SCALING_FACTOR);
+                  c.roundScaledProfitLoss = currentCircleScaledProfit; scaledRoundProfit += currentCircleScaledProfit;
+
+                  let profitIfBuy = outcome - expectedRate - normalizedCostPerContract;
+                  let profitIfSell = expectedRate - outcome - normalizedCostPerContract;
+                  let theoreticalBestNormProfit = p.max(0, profitIfBuy, profitIfSell);
+                  roundMaxProfit += Math.round(theoreticalBestNormProfit * PROFIT_SCALING_FACTOR);
+                  let theoreticalWorstNormProfit = p.min(0, profitIfBuy, profitIfSell);
+                  roundMaxLoss += Math.round(theoreticalWorstNormProfit * PROFIT_SCALING_FACTOR);
+              }
+              totalScaledProfit = profitAtRoundStart + scaledRoundProfit; // Final total profit
+              gameMaxPossibleProfit += roundMaxProfit; gameMaxPossibleLoss += roundMaxLoss;
+
+              // Add FINAL point for the round to history
+              historyData.pnlPoints.push({ round: currentRound, step: SIMULATION_STEPS, profit: totalScaledProfit });
+
+              let finalScore = p.calculateScorePercent(totalScaledProfit, gameMaxPossibleProfit, gameMaxPossibleLoss);
+
+              console.log(`Round ${currentRound} FINAL Results: Actual Profit=${scaledRoundProfit}, Total Profit=${totalScaledProfit}`);
+              console.log(`Cumulative Game Totals: Max=${gameMaxPossibleProfit}, Min=${gameMaxPossibleLoss}`);
+        }
+
+
+        // --- Utility Functions ---
+        p.resetParticles = function(activate, pricing = false) { /* ... (no changes) ... */
+              console.log(`Resetting particles. Activate: ${activate}, Pricing: ${pricing}`);
+              for (let particle of particles) {
+                  particle.x = p.width / 2; particle.y = p.height / 2; particle.active = activate;
+                  particle.path = []; particle.isPricing = pricing;
+                  particle.finalX = null; particle.finalY = null;
+                  particle.hasHitCircle.clear(); particle.pricingHitKICircles.clear();
+              }
+          }
+        p.resetCircleStats = function() { /* ... (no changes) ... */
+            for (let c of circles) { c.hits = 0; c.knockedIn = false; c.knockInHitCount = 0; }
+        }
+        p.resetCircleKnockInFlags = function() { /* ... (no changes) ... */
+              for (let c of circles) { c.knockedIn = false; c.knockInHitCount = 0; }
+        }
+        p.updateInfoDisplay = function() { /* ... (no changes) ... */
+              let displayElement = infoDisplay || p.select('#info'); if(!displayElement) return;
+              if (gameState === 'GAME_OVER') { displayElement.html(`Game Over! | Final Profit: ${totalScaledProfit}`); }
+              else if (gameState !== 'MODE_SELECTION') { displayElement.html(`Round: ${currentRound}/${MAX_ROUNDS} | Total Profit: ${totalScaledProfit}`); }
+              else { displayElement.html('Select Mode & Difficulty'); }
+          }
+        p.updateBetInfo = function() {
+              let displayElement = betInfoDisplay || p.select('#betInfo'); 
+              if (gameState !== 'PLAYER_CHOICE' || !displayElement) return;
+              
+              let positions = []; 
+              let numActiveContracts = 0; 
+              let normalizedMaxProfit = 0;
+              
+              for (let c of circles) {
+                  let displayedExpectedRate = c.displayPriceProb;
+                  let marketPrice = Math.round(displayedExpectedRate * 100);
+                  
+                  if (c.state === STATE_BUY) { 
+                      positions.push(`LONG #${c.id} at ${marketPrice}% (profit if actual > ${marketPrice}%)`); 
+                      numActiveContracts++; 
+                      normalizedMaxProfit += (1.0 - displayedExpectedRate - normalizedCostPerContract); 
+                  }
+                  else if (c.state === STATE_SELL) { 
+                      positions.push(`SHORT #${c.id} at ${marketPrice}% (profit if actual < ${marketPrice}%)`); 
+                      numActiveContracts++; 
+                      normalizedMaxProfit += (displayedExpectedRate - 0.0 - normalizedCostPerContract); 
+                  }
+              }
+              
+              let scaledTotalFee = Math.round(numActiveContracts * normalizedCostPerContract * PROFIT_SCALING_FACTOR);
+              let scaledMaxPotentialProfit = Math.round(p.max(0, normalizedMaxProfit) * PROFIT_SCALING_FACTOR);
+              
+              if (positions.length === 0) {
+                  displayElement.html('<p><b>No positions</b> - click bubbles to trade</p>');
+              } else {
+                  let positionString = positions.map(pos => `<li>${pos}</li>`).join('');
+                  let infoHTML = `<p><b>Your Positions:</b></p><ul style="margin:5px 0;padding-left:20px;">${positionString}</ul>`;
+                  infoHTML += `<p><b>Transaction Cost:</b> ${scaledTotalFee} | <b>Max Possible Profit:</b> ${scaledMaxPotentialProfit}</p>`;
+                  displayElement.html(infoHTML);
+              }
+          }
+        p.calculateScorePercent = function(currentProfit, maxProfit, minLoss) { /* ... (no changes) ... */
+              let scorePercent = 0; let range = maxProfit - minLoss;
+              if (range > 0) { scorePercent = ((currentProfit - minLoss) / range) * 100; scorePercent = p.constrain(scorePercent, 0, 100); }
+              else if (currentProfit >= maxProfit) { scorePercent = 100; } else { scorePercent = 0; }
+              return scorePercent;
+          }
+          p.updateScoreDisplay = function() { /* ... (no changes) ... */
+              let displayElement = scoreDisplay || p.select('#scoreDisplay'); if(!displayElement) return;
+              let scorePercent = p.calculateScorePercent(totalScaledProfit, gameMaxPossibleProfit, gameMaxPossibleLoss);
+              displayElement.html(`Score: ${scorePercent.toFixed(1)}%`); // Update score display even if not plotted
+              console.log(`Score Updated: ${scorePercent.toFixed(1)}% (Current Profit: ${totalScaledProfit}, Max Possible: ${gameMaxPossibleProfit}, Min Possible: ${gameMaxPossibleLoss})`);
+          }
+
+        // --- Event Handlers ---
+        p.handleStartButtonPressed = function() { /* ... (no changes) ... */
+              console.log(`Button pressed in state: ${gameState}`);
+              if (gameState === 'PLAYER_CHOICE') {
+                  console.log("Attempting to change state to SIMULATING");
+                  p.changeGameState('SIMULATING');
+              } else if (gameState === 'ROUND_OVER') {
+                  currentRound++;
+                  if (currentRound > MAX_ROUNDS) { p.changeGameState('GAME_OVER'); }
+                  else { p.updateInfoDisplay(); p.changeGameState('START_ROUND'); }
+              }
+          }
+
+        // --- Internal Restart Logic ---
+        p.restartGameInternal = function(goToModeSelect = true) { /* ... (no changes) ... */
+              console.log("Internal restart called...");
+          };
+
+    }; // ================= End of mainSketch =================
+
+    // =============================================
+    // === History Plot Sketch (Instance Mode)    ===
+    // =============================================
+    const historySketch = (p) => {
+        const padding = 40; let profitColor, axisColor, guideColor;
+
+        p.setup = () => {
+            const container = document.getElementById('historyPlotContainer');
+            const containerWidth = container ? Math.min(container.offsetWidth, 900) : CANVAS_WIDTH;
+            let canvas = p.createCanvas(containerWidth, HISTORY_CANVAS_HEIGHT);
+            canvas.parent('historyPlotContainer');
+            // Keep looping for live updates
+            profitColor = p.color(0, 0, 255, 200); axisColor = p.color(50); guideColor = p.color(200);
+        };
+
+        p.draw = () => {
+            // Create a gradient background
+            for (let y = 0; y < p.height; y++) {
+                let inter = p.map(y, 0, p.height, 0, 1);
+                let c = p.lerpColor(p.color(245, 247, 250), p.color(230, 235, 245), inter);
+                p.stroke(c);
+                p.line(0, y, p.width, y);
+            }
+            p.noStroke();
+
+
+            if (!currentGameMode || !historyData || !historyData.pnlPoints || historyData.pnlPoints.length < 1) {
+                p.fill(150); p.textAlign(p.CENTER, p.CENTER); p.textSize(14); p.noStroke();
+                p.text(currentGameMode ? "Waiting for first round..." : "Select Mode & Difficulty", p.width / 2, p.height / 2);
+                return;
+            }
+
+            // Find min/max profit from all pnlPoints
+            let minProfit = 0, maxProfit = 0;
+            if (historyData.pnlPoints.length > 0) {
+                minProfit = historyData.pnlPoints[0].profit; // Start with first point
+                maxProfit = historyData.pnlPoints[0].profit;
+                for(let point of historyData.pnlPoints) {
+                    minProfit = p.min(minProfit, point.profit);
+                    maxProfit = p.max(maxProfit, point.profit);
+                }
+            }
+
+              // Add buffer, handle zero range
+              if (maxProfit === minProfit) { maxProfit += 10; minProfit -= 10; }
+              else { let range = maxProfit - minProfit; maxProfit += range * 0.1; minProfit -= range * 0.1; }
+
+            p.drawAxes(minProfit, maxProfit);
+            p.drawPnlLine(historyData.pnlPoints, minProfit, maxProfit, profitColor); // Use new drawing function
+        };
+
+        // --- History Plot Helper Functions ---
+        p.drawAxes = function(minProfit, maxProfit) { /* ... (no changes from previous version) ... */
+            p.stroke(axisColor); p.strokeWeight(1); p.line(padding, padding, padding, p.height - padding); p.line(padding, p.height - padding, p.width - padding, p.height - padding);
+            p.fill(axisColor); p.noStroke(); p.textSize(10); p.textAlign(p.CENTER, p.TOP); p.text("Round", p.width / 2, p.height - padding + 15);
+            p.textAlign(p.CENTER, p.BOTTOM); p.text("Profit", padding, padding - 2);
+            p.stroke(guideColor); p.strokeWeight(0.5); p.textAlign(p.CENTER, p.TOP);
+            for (let i = 0; i <= MAX_ROUNDS; i++) { let x = p.map(i, 0, MAX_ROUNDS, padding, p.width - padding); p.line(x, padding, x, p.height - padding); if (i % 2 === 0 || MAX_ROUNDS <= 10) { p.fill(axisColor); p.noStroke(); p.text(i, x, p.height - padding + 5); } }
+            p.textAlign(p.RIGHT, p.CENTER); let numProfitTicks = 5;
+            for (let i = 0; i <= numProfitTicks; i++) { let val = p.lerp(minProfit, maxProfit, i / numProfitTicks); let y = p.map(val, minProfit, maxProfit, p.height - padding, padding); p.line(padding, y, p.width - padding, y); p.fill(axisColor); p.noStroke(); p.text(Math.round(val), padding - 5, y); }
+        }
+
+        // New function to draw PNL line from pnlPoints array
+        p.drawPnlLine = function(points, minY, maxY, lineColor) {
+            // Draw shadow for line
+            p.drawingContext.shadowBlur = 8;
+            p.drawingContext.shadowColor = 'rgba(102, 126, 234, 0.3)';
+            p.drawingContext.shadowOffsetY = 2;
+
+            // Draw gradient line
+            p.noFill();
+            p.strokeWeight(3);
+
+            // Create gradient for stroke
+            let gradient = p.drawingContext.createLinearGradient(padding, 0, p.width - padding, 0);
+            gradient.addColorStop(0, 'rgba(102, 126, 234, 0.9)');
+            gradient.addColorStop(0.5, 'rgba(118, 75, 162, 0.9)');
+            gradient.addColorStop(1, 'rgba(102, 126, 234, 0.9)');
+
+            p.drawingContext.strokeStyle = gradient;
+            p.beginShape();
+            let pointDrawn = false;
+            for (let point of points) {
+                if (point.profit === null || point.profit === undefined) continue;
+                // Map x based on round and step progress within the round
+                let xValue = (point.round > 0 ? point.round -1 : 0) + (point.step / SIMULATION_STEPS);
+                // Ensure xValue doesn't exceed MAX_ROUNDS (can happen briefly at end of last round)
+                xValue = p.min(xValue, MAX_ROUNDS);
+                let x = p.map(xValue, 0, MAX_ROUNDS, padding, p.width - padding);
+                let y = p.map(point.profit, minY, maxY, p.height - padding, padding); // Map profit to Y (inverted)
+                p.vertex(x, y);
+                pointDrawn = true;
+            }
+            if (pointDrawn) { p.endShape(); }
+
+            // Reset shadow
+            p.drawingContext.shadowBlur = 0;
+            p.drawingContext.shadowOffsetY = 0;
+
+            // Draw current position indicator (last point)
+            if (points.length > 0 && gameState === 'SIMULATING') {
+                let lastPoint = points[points.length - 1];
+                let xValue = (lastPoint.round > 0 ? lastPoint.round -1 : 0) + (lastPoint.step / SIMULATION_STEPS);
+                xValue = p.min(xValue, MAX_ROUNDS);
+                let x = p.map(xValue, 0, MAX_ROUNDS, padding, p.width - padding);
+                let y = p.map(lastPoint.profit, minY, maxY, p.height - padding, padding);
+
+                // Pulsing indicator
+                p.drawingContext.shadowBlur = 12;
+                p.drawingContext.shadowColor = 'rgba(102, 126, 234, 0.8)';
+                p.fill(102, 126, 234);
+                p.noStroke();
+                let pulseSize = 6 + 2 * p.sin(p.frameCount * 0.1);
+                p.ellipse(x, y, pulseSize, pulseSize);
+                p.drawingContext.shadowBlur = 0;
+            }
+        }
+    }; // ================= End of historySketch =================
+
+    // =============================================
+    // === p5 Instance Creation & Modifications ===
+    // =============================================
+    let mainP5 = new p5(mainSketch);
+    let historyP5 = new p5(historySketch);
+
+    const historyContainer = document.getElementById('historyPlotContainer');
+new ResizeObserver(entries => {
+  for (let entry of entries) {
+    // entry.contentRect.width is the new width of the container
+    const newWidth = Math.min(entry.contentRect.width, 900);
+    historyP5.resizeCanvas(newWidth, HISTORY_CANVAS_HEIGHT);
+  }
+}).observe(historyContainer);
+
+
+    // --- Modify mainP5 methods AFTER instance creation to link sketches ---
+    // Wrapper for calculateRoundResults to ensure final plot update
+    const originalCalcResults = mainP5.calculateRoundResults;
+    mainP5.calculateRoundResults = function() {
+        originalCalcResults.call(mainP5); // Calculate final results & update historyData
+        if (historyP5 && historyP5.redraw) { historyP5.redraw(); } // Redraw plot with final point
+        else { console.error("historyP5 instance or redraw not found when calculating results!"); }
+    };
+    // Wrapper for changeGameState to redraw plot at specific transitions
+    const originalChangeGameState = mainP5.changeGameState;
+    mainP5.changeGameState = function(newState) {
+        originalChangeGameState.call(mainP5, newState);
+        if (newState === 'PLAYER_CHOICE' || newState === 'ROUND_OVER' || newState === 'GAME_OVER') {
+            if (historyP5 && historyP5.redraw) { historyP5.redraw(); }
+            else { console.error("historyP5 instance or redraw not found when changing state!"); }
+        }
+    };
+    window.addEventListener("load", () => {
+        window.restartGame('BARRIER');
+    });
+
+</script>
+          
+          
+          
+        </div>
+
+        
+
+        
+
+        
+
+        
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+  <a href="/posts/mcmc/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/mcmc/">
+          Drawing with Markov chain Monte Carlo
+        </div>
+      
+
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-04-07T14:47:48&#43;08:00">7 April 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+    </div>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
+
+      
+        
+
+  <a href="/posts/the-diffusion-of-discovery/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/the-diffusion-of-discovery/">
+          The diffusion of discovery
+        </div>
+      
+
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-03-03T23:47:48&#43;08:00">3 March 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+    </div>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
+
+      
+        
+
+  <a href="/posts/modeling-stock-prices/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/modeling-stock-prices/">
+          Modeling stock prices with stochastic processes
+        </div>
+      
+
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-03-03T14:47:48&#43;08:00">3 March 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+    </div>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
+
+      
+    </section>
+  
+
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts/trading-bubbles.md"
+          data-oid-likes="likes_posts/trading-bubbles.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/mcmc/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Drawing with Markov chain Monte Carlo</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-04-07T14:47:48&#43;08:00">7 April 2023</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/the-era-of-minimal-writing/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Era of minimal writing</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-10-11T00:00:00&#43;00:00">11 October 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Christos Tsanikidis, PhD
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
