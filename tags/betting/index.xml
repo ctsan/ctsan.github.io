@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Betting on Christos Tsanikidis, PhD</title>
-    <link>//localhost:1313/tags/betting/</link>
+    <link>/tags/betting/</link>
     <description>Recent content in Betting on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Fri, 22 Dec 2017 15:43:48 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/betting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Dec 2017 15:43:48 +0800</lastBuildDate><atom:link href="/tags/betting/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Creating a profitable football betting game</title>
-      <link>//localhost:1313/posts/creating-a-football-betting-game/</link>
+      <link>/posts/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/creating-a-football-betting-game/</guid>
+      <guid>/posts/creating-a-football-betting-game/</guid>
       <description></description>
       
     </item>

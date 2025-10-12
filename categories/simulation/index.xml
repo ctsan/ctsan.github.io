@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simulation on Christos Tsanikidis, PhD</title>
-    <link>//localhost:1313/categories/simulation/</link>
+    <link>/categories/simulation/</link>
     <description>Recent content in Simulation on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="//localhost:1313/categories/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jul 2025 14:47:48 +0800</lastBuildDate><atom:link href="/categories/simulation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Shorting bubbles [a trading game]</title>
-      <link>//localhost:1313/posts/trading-bubbles/</link>
+      <link>/posts/trading-bubbles/</link>
       <pubDate>Sun, 27 Jul 2025 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/trading-bubbles/</guid>
+      <guid>/posts/trading-bubbles/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Drawing with Markov chain Monte Carlo</title>
-      <link>//localhost:1313/posts/mcmc/</link>
+      <link>/posts/mcmc/</link>
       <pubDate>Fri, 07 Apr 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/mcmc/</guid>
+      <guid>/posts/mcmc/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>The diffusion of discovery</title>
-      <link>//localhost:1313/posts/the-diffusion-of-discovery/</link>
+      <link>/posts/the-diffusion-of-discovery/</link>
       <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/the-diffusion-of-discovery/</guid>
+      <guid>/posts/the-diffusion-of-discovery/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Modeling stock prices with stochastic processes</title>
-      <link>//localhost:1313/posts/modeling-stock-prices/</link>
+      <link>/posts/modeling-stock-prices/</link>
       <pubDate>Fri, 03 Mar 2023 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/modeling-stock-prices/</guid>
+      <guid>/posts/modeling-stock-prices/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Modeling and simulating pandemic spread</title>
-      <link>//localhost:1313/posts/modeling-and-simulating-a-pandemic/</link>
+      <link>/posts/modeling-and-simulating-a-pandemic/</link>
       <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/modeling-and-simulating-a-pandemic/</guid>
+      <guid>/posts/modeling-and-simulating-a-pandemic/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Creating a profitable football betting game</title>
-      <link>//localhost:1313/posts/creating-a-football-betting-game/</link>
+      <link>/posts/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/creating-a-football-betting-game/</guid>
+      <guid>/posts/creating-a-football-betting-game/</guid>
       <description></description>
       
     </item>

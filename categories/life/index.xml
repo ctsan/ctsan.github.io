@@ -2,81 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Life on Christos Tsanikidis, PhD</title>
-    <link>//localhost:1313/categories/life/</link>
+    <link>/categories/life/</link>
     <description>Recent content in Life on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="/categories/life/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Era of minimal writing</title>
-      <link>//localhost:1313/posts/the-era-of-minimal-writing/</link>
+      <link>/posts/the-era-of-minimal-writing/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/the-era-of-minimal-writing/</guid>
+      <guid>/posts/the-era-of-minimal-writing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>The diffusion of discovery</title>
-      <link>//localhost:1313/posts/the-diffusion-of-discovery/</link>
+      <link>/posts/the-diffusion-of-discovery/</link>
       <pubDate>Fri, 03 Mar 2023 23:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/the-diffusion-of-discovery/</guid>
+      <guid>/posts/the-diffusion-of-discovery/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Latent simplicity in observable phenomena</title>
-      <link>//localhost:1313/posts/hidden-simplicity-principle/</link>
+      <link>/posts/hidden-simplicity-principle/</link>
       <pubDate>Thu, 07 May 2020 19:00:00 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/hidden-simplicity-principle/</guid>
+      <guid>/posts/hidden-simplicity-principle/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Modeling and simulating pandemic spread</title>
-      <link>//localhost:1313/posts/modeling-and-simulating-a-pandemic/</link>
+      <link>/posts/modeling-and-simulating-a-pandemic/</link>
       <pubDate>Sun, 29 Mar 2020 14:47:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/modeling-and-simulating-a-pandemic/</guid>
+      <guid>/posts/modeling-and-simulating-a-pandemic/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Learning through generalization and exploration</title>
-      <link>//localhost:1313/posts/learn-by-generalizing/</link>
+      <link>/posts/learn-by-generalizing/</link>
       <pubDate>Sun, 04 Feb 2018 17:50:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/learn-by-generalizing/</guid>
+      <guid>/posts/learn-by-generalizing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Creating a profitable football betting game</title>
-      <link>//localhost:1313/posts/creating-a-football-betting-game/</link>
+      <link>/posts/creating-a-football-betting-game/</link>
       <pubDate>Fri, 22 Dec 2017 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/creating-a-football-betting-game/</guid>
+      <guid>/posts/creating-a-football-betting-game/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Logarithmic counting</title>
-      <link>//localhost:1313/posts/hierarchies/</link>
+      <link>/posts/hierarchies/</link>
       <pubDate>Sat, 02 Jan 2016 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/posts/hierarchies/</guid>
+      <guid>/posts/hierarchies/</guid>
       <description></description>
       
     </item>

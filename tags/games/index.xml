@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games on Christos Tsanikidis, PhD</title>
-    <link>//localhost:1313/tags/games/</link>
+    <link>/tags/games/</link>
     <description>Recent content in Games on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Wed, 10 Jun 2009 16:01:23 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/games/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jun 2009 16:01:23 +0800</lastBuildDate><atom:link href="/tags/games/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Warcraft 3 Mod - Pimp my Peon</title>
-      <link>//localhost:1313/project/warcraft-game/</link>
+      <link>/project/warcraft-game/</link>
       <pubDate>Wed, 10 Jun 2009 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/project/warcraft-game/</guid>
+      <guid>/project/warcraft-game/</guid>
       <description></description>
       
     </item>

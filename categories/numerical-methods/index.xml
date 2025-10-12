@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Numerical Methods on Christos Tsanikidis, PhD</title>
-    <link>//localhost:1313/categories/numerical-methods/</link>
+    <link>/categories/numerical-methods/</link>
     <description>Recent content in Numerical Methods on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Fri, 19 Feb 2016 16:01:23 +0800</lastBuildDate><atom:link href="//localhost:1313/categories/numerical-methods/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2016 16:01:23 +0800</lastBuildDate><atom:link href="/categories/numerical-methods/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Black Scholes</title>
-      <link>//localhost:1313/project/black-scholes/</link>
+      <link>/project/black-scholes/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/project/black-scholes/</guid>
+      <guid>/project/black-scholes/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Heat Equation PDE Simulation</title>
-      <link>//localhost:1313/project/heat-equation/</link>
+      <link>/project/heat-equation/</link>
       <pubDate>Fri, 19 Feb 2016 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/project/heat-equation/</guid>
+      <guid>/project/heat-equation/</guid>
       <description></description>
       
     </item>

@@ -5,7 +5,7 @@
   class="scroll-smooth"
   data-default-appearance="light"
   data-auto-appearance="true"><head>
-	<meta name="generator" content="Hugo 0.148.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.148.2">
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -23,7 +23,7 @@
   
   
   
-  <link rel="canonical" href="//localhost:1313/">
+  <link rel="canonical" href="/">
   
       <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Christos Tsanikidis, PhD" />
   
@@ -47,8 +47,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.5a424e9a428f11ef021560ef33d6a9f777045c931a565f183de5aac4a23a20bb8235337d7c63492578d2dc46187f65a43b64ae99ba9cc0f6eb184f21229235f7.css"
-    integrity="sha512-WkJOmkKPEe8CFWDvM9ap93cEXJMaVl8YPeWqxKI6ILuCNTN9fGNJJXjS3EYYf2WkO2SumbqcwPbrGE8hIpI19w==">
+    href="/css/main.bundle.min.38c212d5f53b5dd2423bfb2ee0f47159e7d779927f14222f889885a995f6b3976188eb21bb95ab3e80bf2bb9882274eb313480b87c4af6b81bf78c65a0174a39.css"
+    integrity="sha512-OMIS1fU7XdJCO/su4PRxWefXeZJ/FCIviJiFqZX2s5dhiOshu5WrPoC/K7mIInTrMTSAuHxK9rgb94xloBdKOQ==">
 
   
   
@@ -101,7 +101,7 @@
   
 
   
-  <meta property="og:url" content="//localhost:1313/">
+  <meta property="og:url" content="/">
   <meta property="og:site_name" content="Christos Tsanikidis, PhD">
   <meta property="og:title" content="Christos Tsanikidis, PhD">
   <meta property="og:locale" content="en">
@@ -115,11 +115,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "\/\/localhost:1313\/",
+    "@id": "\/",
     "name": "Christos Tsanikidis, PhD",
     
     "inLanguage": "en",
-    "url": "\/\/localhost:1313\/",
+    "url": "\/",
     
     "publisher" : {
       "@type": "Person",
@@ -538,28 +538,41 @@
         <div class="fixed inset-x-0 top-0 -z-10">
           
             <img
-              class="w-full h-[1000px] object-cover nozoom mt-0 mr-0 mb-0 ml-0"
+              class="w-full h-screen object-cover nozoom mt-0 mr-0 mb-0 ml-0 background-blur-bottom"
               src="/img/test.gif"
               role="presentation">
-            <div class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
-            <div class="opacity-60 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+            <div class="absolute inset-0 h-screen bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+            <div class="opacity-60 absolute inset-0 h-screen bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
           
         </div>
         <div class="relative px-4 py-0 mx-auto" style="max-width: 650px;">
-          <header class="flex flex-row items-start gap-4 mb-1">
+          <header class="flex flex-row items-start gap-4 mb-16 sm:mb-6">
             <div class="flex-1 text-left">
               <div class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-1">
-                <p class="mb-1">
+                <p class="mb-1 bio-full">
                   <strong>Christos Tsanikidis, PhD</strong> is a Machine Learning Engineer at Google.
                   
                     Former quantitative researcher at Morgan Stanley. His research spans applied mathematics, machine learning, and stochastic optimization with applications to finance and decision-making systems.
                   
                 </p>
-                <p class="text-xs italic text-neutral-500 dark:text-neutral-400 mt-2">
+                <p class="mb-1 bio-short">
+                  <strong>Christos Tsanikidis, PhD</strong> is a Machine Learning Engineer at Google. Former quantitative researcher at Morgan Stanley.
+                </p>
+                <p class="text-xs italic text-neutral-500 dark:text-neutral-400 mt-2 mb-4 disclaimer-full">
                   All views expressed on this site are personal and do not represent employers.
                 </p>
+                <p class="text-xs italic text-neutral-500 dark:text-neutral-400 mt-2 mb-4 disclaimer-short">
+                  Views are personal.
+                </p>
               </div>
-              <div class="flex gap-2 text-lg mt-2">
+            </div>
+            <div class="flex flex-col items-center gap-2 flex-shrink-0">
+              <img
+                class="rounded-full"
+                style="width: 110px; height: 110px; object-fit: cover;"
+                alt="Christos Tsanikidis, PhD"
+                src="/img/me.jpeg">
+              <div class="flex gap-2 text-lg">
                 
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
     
@@ -622,11 +635,6 @@
 
               </div>
             </div>
-            <img
-              class="rounded-full flex-shrink-0"
-              style="width: 110px; height: 110px; object-fit: cover;"
-              alt="Christos Tsanikidis, PhD"
-              src="/img/me.jpeg">
           </header>
         </div>
       </div>
@@ -2015,7 +2023,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="//localhost:1313/">
+  data-url="/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

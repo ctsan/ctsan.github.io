@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -22,7 +22,7 @@
   <meta name="keywords" content="interactive-simulation,mcmc,greece,USA,Manhattan,metropolis-hastings,">
   
   
-  <link rel="canonical" href="//localhost:1313/posts/trading-bubbles/">
+  <link rel="canonical" href="/posts/trading-bubbles/">
   
   
   
@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.5a424e9a428f11ef021560ef33d6a9f777045c931a565f183de5aac4a23a20bb8235337d7c63492578d2dc46187f65a43b64ae99ba9cc0f6eb184f21229235f7.css"
-    integrity="sha512-WkJOmkKPEe8CFWDvM9ap93cEXJMaVl8YPeWqxKI6ILuCNTN9fGNJJXjS3EYYf2WkO2SumbqcwPbrGE8hIpI19w==">
+    href="/css/main.bundle.min.38c212d5f53b5dd2423bfb2ee0f47159e7d779927f14222f889885a995f6b3976188eb21bb95ab3e80bf2bb9882274eb313480b87c4af6b81bf78c65a0174a39.css"
+    integrity="sha512-OMIS1fU7XdJCO/su4PRxWefXeZJ/FCIviJiFqZX2s5dhiOshu5WrPoC/K7mIInTrMTSAuHxK9rgb94xloBdKOQ==">
 
   
   
@@ -96,7 +96,7 @@
   
 
   
-  <meta property="og:url" content="//localhost:1313/posts/trading-bubbles/">
+  <meta property="og:url" content="/posts/trading-bubbles/">
   <meta property="og:site_name" content="Christos Tsanikidis, PhD">
   <meta property="og:title" content="Shorting bubbles [a trading game]">
   <meta property="og:locale" content="en">
@@ -125,7 +125,7 @@
     
     
     "inLanguage": "en",
-    "url" : "\/\/localhost:1313\/posts\/trading-bubbles\/",
+    "url" : "\/posts\/trading-bubbles\/",
     "author" : {
       "@type": "Person",
       "name": "Christos Tsanikidis, PhD"
@@ -2072,7 +2072,7 @@
             const containerWidth = container ? Math.min(container.offsetWidth, 900) : CANVAS_WIDTH;
             let canvas = p.createCanvas(containerWidth, HISTORY_CANVAS_HEIGHT);
             canvas.parent('historyPlotContainer');
-            // Keep looping for live updates
+            p.loop(); // Ensure continuous drawing for live updates
             profitColor = p.color(0, 0, 255, 200); axisColor = p.color(50); guideColor = p.color(200);
         };
 
@@ -2092,6 +2092,9 @@
                 p.text(currentGameMode ? "Waiting for first round..." : "Select Mode & Difficulty", p.width / 2, p.height / 2);
                 return;
             }
+
+            // Debug: Log number of points being drawn
+            // if (p.frameCount % 60 === 0) { console.log(`Drawing ${historyData.pnlPoints.length} points`); }
 
             // Find min/max profit from all pnlPoints
             let minProfit = 0, maxProfit = 0;
@@ -2125,24 +2128,23 @@
 
         // New function to draw PNL line from pnlPoints array
         p.drawPnlLine = function(points, minY, maxY, lineColor) {
+            if (points.length < 2) {
+                console.warn(`Not enough points to draw line: ${points.length}`);
+                return; // Need at least 2 points to draw a line
+            }
+
             // Draw shadow for line
             p.drawingContext.shadowBlur = 8;
             p.drawingContext.shadowColor = 'rgba(102, 126, 234, 0.3)';
             p.drawingContext.shadowOffsetY = 2;
 
-            // Draw gradient line
+            // Draw gradient line using p5.js stroke instead of canvas gradient
             p.noFill();
+            p.stroke(102, 126, 234, 230); // Solid color stroke - simpler and more reliable
             p.strokeWeight(3);
 
-            // Create gradient for stroke
-            let gradient = p.drawingContext.createLinearGradient(padding, 0, p.width - padding, 0);
-            gradient.addColorStop(0, 'rgba(102, 126, 234, 0.9)');
-            gradient.addColorStop(0.5, 'rgba(118, 75, 162, 0.9)');
-            gradient.addColorStop(1, 'rgba(102, 126, 234, 0.9)');
-
-            p.drawingContext.strokeStyle = gradient;
             p.beginShape();
-            let pointDrawn = false;
+            let vertexCount = 0;
             for (let point of points) {
                 if (point.profit === null || point.profit === undefined) continue;
                 // Map x based on round and step progress within the round
@@ -2152,9 +2154,14 @@
                 let x = p.map(xValue, 0, MAX_ROUNDS, padding, p.width - padding);
                 let y = p.map(point.profit, minY, maxY, p.height - padding, padding); // Map profit to Y (inverted)
                 p.vertex(x, y);
-                pointDrawn = true;
+                vertexCount++;
             }
-            if (pointDrawn) { p.endShape(); }
+            p.endShape();
+
+            // Debug log first time we draw
+            if (p.frameCount === 1 && vertexCount > 0) {
+                console.log(`Drew ${vertexCount} vertices from ${points.length} points`);
+            }
 
             // Reset shadow
             p.drawingContext.shadowBlur = 0;
@@ -2647,7 +2654,7 @@ new ResizeObserver(entries => {
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="//localhost:1313/">
+  data-url="/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

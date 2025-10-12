@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Math Exploration on Christos Tsanikidis, PhD</title>
-    <link>//localhost:1313/tags/math-exploration/</link>
+    <link>/tags/math-exploration/</link>
     <description>Recent content in Math Exploration on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sun, 01 Jan 2023 15:43:48 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/math-exploration/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2023 15:43:48 +0800</lastBuildDate><atom:link href="/tags/math-exploration/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Mathematical Parade</title>
-      <link>//localhost:1313/other/mathematical-market/</link>
+      <link>/other/mathematical-market/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/other/mathematical-market/</guid>
+      <guid>/other/mathematical-market/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical River</title>
-      <link>//localhost:1313/other/mathematical-river/</link>
+      <link>/other/mathematical-river/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/other/mathematical-river/</guid>
+      <guid>/other/mathematical-river/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Mathematical Tapestry</title>
-      <link>//localhost:1313/other/mathematical-tapestry/</link>
+      <link>/other/mathematical-tapestry/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/other/mathematical-tapestry/</guid>
+      <guid>/other/mathematical-tapestry/</guid>
       <description></description>
       
     </item>

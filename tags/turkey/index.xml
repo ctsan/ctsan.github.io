@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Turkey on Christos Tsanikidis, PhD</title>
-    <link>//localhost:1313/tags/turkey/</link>
+    <link>/tags/turkey/</link>
     <description>Recent content in Turkey on Christos Tsanikidis, PhD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sat, 27 May 2017 16:01:23 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/turkey/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2017 16:01:23 +0800</lastBuildDate><atom:link href="/tags/turkey/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Turkey to Greece missile range</title>
-      <link>//localhost:1313/project/turkey-greece-range/</link>
+      <link>/project/turkey-greece-range/</link>
       <pubDate>Sat, 27 May 2017 16:01:23 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>//localhost:1313/project/turkey-greece-range/</guid>
+      <guid>/project/turkey-greece-range/</guid>
       <description></description>
       
     </item>
