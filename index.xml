@@ -9,7 +9,17 @@
     <managingEditor>youremail@example.com (Christos Tsanikidis, PhD)</managingEditor>
     <webMaster>youremail@example.com (Christos Tsanikidis, PhD)</webMaster>
     <copyright>© 2025 Christos Tsanikidis, PhD</copyright>
-    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Research</title>
+      <link>/research-4/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/research-4/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Research</title>
@@ -23,10 +33,20 @@
     
     <item>
       <title>Research</title>
-      <link>/research-2/</link>
+      <link>/research-3/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/research-2/</guid>
+      <guid>/research-3/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about-4/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/about-4/</guid>
       <description></description>
       
     </item>
@@ -43,10 +63,10 @@
     
     <item>
       <title>About</title>
-      <link>/about-2/</link>
+      <link>/about-3/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
-      <guid>/about-2/</guid>
+      <guid>/about-3/</guid>
       <description></description>
       
     </item>
@@ -83,6 +103,16 @@
     
     <item>
       <title>CheatsheetGPT</title>
+      <link>/other/the-wall-3/</link>
+      <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/the-wall-3/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>CheatsheetGPT</title>
       <link>/other/the-wall/</link>
       <pubDate>Tue, 04 Apr 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
@@ -113,6 +143,16 @@
     
     <item>
       <title>Mathematical Parade</title>
+      <link>/other/mathematical-market-3/</link>
+      <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-market-3/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mathematical Parade</title>
       <link>/other/mathematical-market/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
@@ -123,10 +163,30 @@
     
     <item>
       <title>Mathematical River</title>
+      <link>/other/mathematical-river-3/</link>
+      <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-river-3/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mathematical River</title>
       <link>/other/mathematical-river/</link>
       <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
       <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
       <guid>/other/mathematical-river/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mathematical Tapestry</title>
+      <link>/other/mathematical-tapestry-3/</link>
+      <pubDate>Sun, 01 Jan 2023 15:43:48 +0800</pubDate>
+      <author>youremail@example.com (Christos Tsanikidis, PhD)</author>
+      <guid>/other/mathematical-tapestry-3/</guid>
       <description></description>
       
     </item>
